@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Departures Board sketch</title>
+<style>
+:root{--board:#0b0b0c;--flap:#1a1b1e;--flapHi:#222327;--ink:#f1f1ec;--amber:#ffb000;--green:#2fbf71;--red:#e5484d;--dim:.42}
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;background:#2a2b2e;font-family:"Helvetica Neue",Arial,sans-serif;color:var(--ink);overflow:hidden}
+.housing{position:absolute;inset:18px;background:linear-gradient(#1c1d20,#141517);border:1px solid #3a3b3f;border-radius:6px;padding:26px 34px}
+.top{display:flex;justify-content:space-between;align-items:center;font-size:15px;letter-spacing:.24em;text-transform:uppercase;color:var(--amber)}
+.top nav{display:flex;gap:34px;color:var(--ink)}
+.flaps{display:flex;gap:6px;margin-top:40px}
+.f{width:86px;height:122px;background:var(--flap);border-radius:5px;position:relative;font:700 96px/122px "Helvetica Neue",Arial,sans-serif;text-align:center;color:var(--ink)}
+.f::after{content:"";position:absolute;left:0;right:0;top:50%;height:2px;background:#050505}
+.f.sp{background:transparent}
+.f.am{color:var(--amber)}
+.sub{margin-top:22px;font-size:26px;max-width:880px;line-height:1.35}
+.cols{display:grid;grid-template-columns:70px 1.4fr 1.4fr 1fr 1.1fr;gap:10px;margin-top:40px;font-size:14px;letter-spacing:.2em;color:var(--amber);text-transform:uppercase}
+.row{display:grid;grid-template-columns:70px 1.4fr 1.4fr 1fr 1.1fr;gap:10px;margin-top:8px;opacity:var(--dim)}
+.row.live{opacity:1}
+.cell{background:var(--flap);height:46px;border-radius:3px;position:relative;font:600 24px/46px "Helvetica Neue",Arial,sans-serif;padding:0 12px;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap;overflow:hidden}
+.cell::after{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:#050505}
+.paid{color:var(--green)}.late{color:var(--red)}
+.slot{position:absolute;right:34px;bottom:30px;display:flex;gap:10px;align-items:center}
+.slot .cell{width:520px;color:#7c7d80}
+.btn{background:var(--amber);color:#111;font:700 22px/58px "Helvetica Neue",Arial,sans-serif;padding:0 28px;border-radius:4px;letter-spacing:.06em;text-transform:uppercase}
+.note{position:absolute;left:34px;bottom:40px;font-size:13px;letter-spacing:.2em;color:#8a8b8f;text-transform:uppercase}
+</style></head><body>
+<div class="housing">
+  <div class="top"><span>Ledgendary · Work out / Money in</span><nav><span>How it works</span><span>For agencies</span><span>The books</span><span>Waitlist</span></nav></div>
+  <div class="flaps">
+    <div class="f">F</div><div class="f">R</div><div class="f">O</div><div class="f">M</div><div class="f sp"></div>
+    <div class="f am">P</div><div class="f am">R</div><div class="f am">O</div><div class="f am">P</div><div class="f am">O</div><div class="f am">S</div><div class="f am">A</div><div class="f am">L</div>
+  </div>
+  <div class="flaps" style="margin-top:6px">
+    <div class="f">T</div><div class="f">O</div><div class="f sp"></div><div class="f" style="color:var(--green)">P</div><div class="f" style="color:var(--green)">A</div><div class="f" style="color:var(--green)">I</div><div class="f" style="color:var(--green)">D</div><div class="f">.</div>
+  </div>
+  <p class="sub">One board for every job your agency sells: proposal, invoice, payment and the books underneath, from one person to a hundred.</p>
+  <div class="cols"><span>No.</span><span>Client</span><span>Job</span><span>Amount</span><span>Status</span></div>
+  <div class="row"><div class="cell">014</div><div class="cell">Harbor &amp; Pine</div><div class="cell">Rebrand ph 2</div><div class="cell">$18,400</div><div class="cell paid">Paid</div></div>
+  <div class="row live"><div class="cell">015</div><div class="cell">Northwind Co</div><div class="cell">Site build</div><div class="cell">$42,000</div><div class="cell" style="color:var(--amber)">Accepted</div></div>
+  <div class="row"><div class="cell">016</div><div class="cell">Fable Coffee</div><div class="cell">Packaging</div><div class="cell">$6,250</div><div class="cell late">Overdue 4d</div></div>
+</div>
+<div class="note">Demo data</div>
+<div class="slot"><div class="cell">Your work email</div><div class="btn">Board the waitlist</div></div>
+</body></html>
