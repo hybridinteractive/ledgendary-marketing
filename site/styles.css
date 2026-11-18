@@ -996,7 +996,7 @@ html:not(.js) .scr { display: block; padding-bottom: 32px; }
 .fin-amt { font-size: 34px; font-weight: 800; font-stretch: 110%; letter-spacing: -0.02em; padding: 0 8px; border-radius: 6px; background: var(--gold); }
 .fin-act { margin-top: 12px; display: grid; gap: 2px; }
 .fin-act .ai { padding: 8px 4px; }
-.fin-you:not([hidden]) { animation: rise 520ms var(--ease) both; background: var(--gold-soft); }
+.fin-you.is-claimed { animation: rise 520ms var(--ease) both; background: var(--gold-soft); }
 
 /* ---------------------------------------------------------------- footer */
 
@@ -1168,7 +1168,6 @@ html:not(.js) .scr { display: block; padding-bottom: 32px; }
   .dots i, .caret { animation: none !important; opacity: 1; }
   .js .hl { background-size: 100% 42%; }
 }
-.fin-you[hidden] { display: flex; visibility: hidden; }
 .form-msg:focus { outline: none; box-shadow: none; }
 .waitlist.is-done + .fine { margin-top: 6px; }
 /* The success line takes the space the field row held, so nothing below moves. */

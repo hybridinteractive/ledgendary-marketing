@@ -89,7 +89,10 @@
       form.classList.add('is-done');
       say(`Challenge accepted. You're on the list.`, 'ok');
       const you = form.hasAttribute('data-final') ? $('[data-you]') : null;
-      if (you) you.hidden = false;
+      if (you) {
+        you.innerHTML = '<span class="ai-ic ai-gold"><svg class="ic ic-xs"><use href="#i-sparkles"/></svg></span><p>Challenge accepted<small>You\'re on the list · invite to follow</small></p>';
+        you.classList.add('is-claimed');
+      }
       msg.setAttribute('tabindex', '-1');
       msg.focus({ preventScroll: true });
     });
