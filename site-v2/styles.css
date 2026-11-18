@@ -425,11 +425,11 @@ b, strong { font-weight: 650; }
 }
 .cell:hover { background: var(--blue-wash); }
 .cell[aria-pressed="true"] { border-color: var(--blue); background: #fff; box-shadow: 0 0 0 3px rgba(36, 51, 255, 0.14); }
-.cell.is-empty { color: #8a8daa; }
+.cell.is-empty { color: #666a8a; }
 .cell.is-bump { animation: bump var(--t-mid) var(--snap); }
 @keyframes bump { 0% { background: var(--lime); } 100% { background: #fff; } }
 .cell-draft { display: inline-flex; align-items: center; gap: 6px; height: 34px; padding: 0 9px; border: 1.5px dashed #8b90d6; border-radius: 8px; font-size: 0.8125rem; font-weight: 650; color: #1a22a8; background: #f6f7ff; white-space: nowrap; }
-.cell-hidden { color: #8a8daa; padding: 0 8px; }
+.cell-hidden { color: #666a8a; padding: 0 8px; }
 .quick { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-top: 14px; padding: 10px 12px; border-radius: 10px; background: #fbfbfe; border: 1px solid var(--line); }
 .quick-cell { display: flex; align-items: center; gap: 12px; font-size: 0.875rem; color: var(--ink-2); }
 .quick-cell b { font-variant-numeric: tabular-nums; color: var(--ink); font-size: 1rem; }
@@ -542,8 +542,8 @@ b, strong { font-weight: 650; }
 .dial input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 28px; height: 28px; border-radius: 50%; background: var(--lime); border: 3px solid var(--ink); margin-top: -10px; box-shadow: 0 4px 10px -4px rgba(11, 12, 28, 0.5); transition: transform var(--t-fast) var(--snap); }
 .dial input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius: 50%; background: var(--lime); border: 3px solid var(--ink); }
 .dial input[type="range"]:active::-webkit-slider-thumb { transform: scale(1.12); }
-.dial input[type="range"]:focus-visible { outline: none; }
-.dial input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px rgba(36, 51, 255, 0.4); }
+.dial input[type="range"]:focus-visible { outline: 3px solid var(--blue); outline-offset: 6px; border-radius: 999px; }
+.dial input[type="range"]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 4px var(--blue); }
 .dial-ticks { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--ink-3); font-variant-numeric: tabular-nums; padding: 2px 4px 0; }
 .dial-stage { margin-top: 14px; font-weight: 600; color: var(--ink); min-height: 3em; }
 .org-body { padding: 4px 20px 10px; }

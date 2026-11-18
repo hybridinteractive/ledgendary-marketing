@@ -1,0 +1,221 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T23:00:00Z",
+  "title": "Design System: Ledgendary marketing home (v2)",
+  "scope": "site-v2/ only (v2 alternate). Not a project-wide system; site/ (v1) and site-v3/ are competing alternates in their own worlds. Derived from site-v2/styles.css, site-v2/index.html, site-v2/app.js as finished 2026-11-18 after the finish review and fix round. Review screenshots predate the final stylesheet; the CSS wins.",
+  "extensions": {
+    "colorMeta": {
+      "blue": { "role": "primary", "displayName": "Ultramarine Field", "canonical": "#2433ff", "tonalRamp": ["#070b4a", "#0d1478", "#121a9e", "#1b26d8", "#2433ff", "#6d78ff", "#b3b9ff", "#f3f4ff"] },
+      "blue-deep": { "role": "primary", "displayName": "Deep Ultramarine", "canonical": "#1b26d8" },
+      "blue-wash": { "role": "primary", "displayName": "Blue Wash", "canonical": "#f3f4ff" },
+      "blue-line": { "role": "primary", "displayName": "Blue Line", "canonical": "#dfe2ff" },
+      "on-blue": { "role": "neutral", "displayName": "On Blue", "canonical": "#ffffff" },
+      "on-blue-2": { "role": "neutral", "displayName": "On Blue Soft", "canonical": "#dfe2ff" },
+      "headline-tint": { "role": "neutral", "displayName": "Headline Tint", "canonical": "#d3d7ff" },
+      "select-text": { "role": "primary", "displayName": "Selection Text", "canonical": "#1a22a8" },
+      "lime": { "role": "secondary", "displayName": "Acid Lime", "canonical": "#c8ff3d", "tonalRamp": ["#263300", "#3d5200", "#5c7a00", "#83ad00", "#b4f01e", "#c8ff3d", "#ddff8a", "#f4ffd6"] },
+      "lime-deep": { "role": "secondary", "displayName": "Lime Deep", "canonical": "#b4f01e" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b0c1c", "tonalRamp": ["#0b0c1c", "#23253f", "#393c58", "#5a5d7c", "#8a8daa", "#d3d6e8", "#e4e6f2", "#fbfbfe"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink 2", "canonical": "#393c58" },
+      "ink-3": { "role": "neutral", "displayName": "Ink 3", "canonical": "#5a5d7c" },
+      "ink-hover": { "role": "neutral", "displayName": "Ink Hover", "canonical": "#23253f" },
+      "placeholder": { "role": "neutral", "displayName": "Placeholder", "canonical": "#6a6d8c" },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff" },
+      "panel": { "role": "neutral", "displayName": "Quiet Panel", "canonical": "#fbfbfe" },
+      "rail": { "role": "neutral", "displayName": "App Rail", "canonical": "#f4f5fb" },
+      "neutral-fill": { "role": "neutral", "displayName": "Neutral Fill", "canonical": "#eef0f6" },
+      "seg-fill": { "role": "neutral", "displayName": "Segment Fill", "canonical": "#eef0f8" },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#e4e6f2" },
+      "line-2": { "role": "neutral", "displayName": "Control Line", "canonical": "#d3d6e8" },
+      "range-track": { "role": "neutral", "displayName": "Range Track", "canonical": "#d7daf7" },
+      "draft-stroke": { "role": "neutral", "displayName": "Draft Stroke", "canonical": "#8b90d6" },
+      "green": { "role": "semantic", "displayName": "Signed Green", "canonical": "#0b8a5a", "tonalRamp": ["#032b1c", "#064a31", "#0b5c3d", "#0b8a5a", "#3fae82", "#86d2b0", "#b9e8cf", "#effaf4"] },
+      "green-text": { "role": "semantic", "displayName": "Green Text", "canonical": "#0b5c3d" },
+      "green-bg": { "role": "semantic", "displayName": "Green Tint", "canonical": "#e2f6ec" },
+      "red": { "role": "semantic", "displayName": "Refusal Red", "canonical": "#c81e33", "tonalRamp": ["#3d0810", "#6b0f1c", "#9a1627", "#c81e33", "#ff5f73", "#ff8fa0", "#ffb3bd", "#fff0f1"] },
+      "tamper-pink": { "role": "semantic", "displayName": "Tamper Pink", "canonical": "#ff8fa0" },
+      "switch-on": { "role": "semantic", "displayName": "Switch On", "canonical": "#ff5f73" },
+      "error-halo": { "role": "semantic", "displayName": "Error Halo", "canonical": "#ffb3bd" },
+      "amber": { "role": "semantic", "displayName": "Over-estimate Amber", "canonical": "#8a5300" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline, two lines, second in headline-tint. 640px: clamp(2.5rem, 11.6vw, 3.25rem)." },
+      "display-close": { "displayName": "Display close", "purpose": "The closing call only." },
+      "figure": { "displayName": "Figure", "purpose": "The pinned $42,000 (blue, tabular); dial readout at clamp(2.5rem, 4vw, 3.5rem)." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, balanced." },
+      "title": { "displayName": "Title", "purpose": "Sub-heading inside a section." },
+      "doc-title": { "displayName": "Document title", "purpose": "Portal, screen and invoice titles; option prices at the same size, tabular." },
+      "money": { "displayName": "Money", "purpose": "Invoice and sidebar totals; tabular." },
+      "lede": { "displayName": "Lede", "purpose": "Hero, section and closing ledes, 34 to 58ch." },
+      "body": { "displayName": "Body", "purpose": "Reading text; 16px under 640px." },
+      "ui": { "displayName": "UI", "purpose": "Text inside product windows, 13 to 15px." },
+      "button": { "displayName": "Button", "purpose": "Every button label." },
+      "label": { "displayName": "Label", "purpose": "Table headers and field labels; sentence case." },
+      "role-tag": { "displayName": "Role tag", "purpose": "Client / Studio / Books tags in the hero step track and time sidebar group heads only; uppercase, never above a heading." }
+    },
+    "fonts": [
+      { "family": "Funnel Display", "source": "site-v2/fonts/FunnelDisplay-wght.woff2 (OFL)", "weight": "300 800", "display": "swap", "preload": true },
+      { "family": "Funnel Sans", "source": "site-v2/fonts/FunnelSans-wght.woff2 (OFL)", "weight": "300 800", "display": "swap", "preload": true }
+    ],
+    "icons": { "set": "lucide-static 0.460.0 (ISC), inline SVG sprite", "size": "1em of context (17 to 18px in rails and glyph tiles)", "stroke": 2, "linecap": "round" },
+    "shadows": [
+      { "name": "shadow-field", "value": "0 44px 90px -30px rgba(5, 9, 78, 0.78), 0 14px 30px -14px rgba(5, 9, 78, 0.5)", "purpose": "Hero card on the blue field." },
+      { "name": "shadow-field-sm", "value": "0 14px 30px -18px rgba(5, 9, 78, 0.6), 0 3px 8px -4px rgba(5, 9, 78, 0.3)", "purpose": "Journal entries on the books field." },
+      { "name": "shadow-paper", "value": "0 22px 50px -26px rgba(20, 28, 120, 0.32), 0 4px 12px -6px rgba(20, 28, 120, 0.14)", "purpose": "Windows and the dial on white; windows add 0 0 0 1px rgba(20, 28, 120, 0.08)." },
+      { "name": "lime-button", "value": "0 1px 0 rgba(255,255,255,0.5) inset, 0 6px 16px -8px rgba(5, 9, 78, 0.6)", "purpose": "Lime button only." },
+      { "name": "chip", "value": "0 10px 24px -12px rgba(5, 9, 78, 0.6)", "purpose": "Prompt chip on the field." },
+      { "name": "chosen", "value": "0 10px 24px -14px rgba(11, 12, 28, 0.55)", "purpose": "Chosen option card, with translateY(-3px)." },
+      { "name": "current-item", "value": "0 1px 3px rgba(20, 28, 120, 0.18)", "purpose": "Active rail icon and segmented option." },
+      { "name": "inset-field-panel", "value": "inset 0 0 0 1px rgba(255,255,255,0.14)", "purpose": "Blue-deep panels on the field (tamper console, closing waitlist)." },
+      { "name": "armed-ring", "value": "0 0 0 4px rgba(36, 51, 255, 0.28)", "purpose": "A button the play is waiting on (send, ready signature)." },
+      { "name": "focus-ring", "value": "outline: 3px solid #2433ff; outline-offset: 3px; border-radius: 6px", "purpose": "Global focus on white and inside white surfaces; on blue grounds the outline is #c8ff3d." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default for transitions and entrances." },
+      { "name": "snap", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Springy responses: pop, chip swap, stamp, step dot, switch knob." },
+      { "name": "t-fast", "value": "200ms", "purpose": "Hover, colour and press." },
+      { "name": "t-mid", "value": "340ms", "purpose": "Pops, chip swaps, state fills." },
+      { "name": "t-slow", "value": "500ms", "purpose": "View wipes, screen slides, stamp, dock." },
+      { "name": "pop", "value": "scale 0.96 to 1, opacity 0 to 1", "purpose": "Anything that newly appears as a result of a click." },
+      { "name": "stamp", "value": "scale 1 to 1.07 to 1, 500ms, with lime fill", "purpose": "The paid total." },
+      { "name": "dock", "value": "clip-path inset(0 100% 0 0) to inset(0)", "purpose": "The books row docking in ink when posted." },
+      { "name": "flash", "value": "lime background fading out, 340 to 700ms", "purpose": "A figure that just changed." },
+      { "name": "wait-dots", "value": "three 5px blue dots, 1.1s, three cycles, staggered 0.18s", "purpose": "\"Wait for it\" before Paid." },
+      { "name": "slide", "value": "translateX(+-72px) and opacity, 500ms", "purpose": "Story screens entering from one side and leaving by the other." },
+      { "name": "idle", "value": "8000ms", "purpose": "Hero deal continues on its own after 8s without input, only while on screen." },
+      { "name": "reduced-motion", "value": "all durations 1ms, single iteration; hero opens on the finished deal; story screens static", "purpose": "Content and state never depend on motion." }
+    ],
+    "breakpoints": [
+      { "name": "wide", "value": "1180px", "purpose": "Hero stacks with the track beside the copy; chain two per row; time sidebar stacks." },
+      { "name": "tablet", "value": "900px", "purpose": "Nav links hidden; section grids single column; story becomes stacked screens under a sticky ink figure pill." },
+      { "name": "phone", "value": "640px", "purpose": "Form stacks; hero track and rail hidden; option cards compact; chain vertical; timesheet per-person grids." },
+      { "name": "short-desktop", "value": "max-height 860px and min-width 1000px", "purpose": "Tightens the hero so the whole deal card fits the first screen." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Lime Button",
+      "kind": "button",
+      "refersTo": "button-lime",
+      "description": "The one primary action (Join the waitlist): ink on lime, plainly labelled.",
+      "html": "<div class=\"ds-field\"><button class=\"ds-btn-lime\">Join the waitlist</button></div>",
+      "css": ".ds-field { background: #2433ff; padding: 24px; } .ds-btn-lime { display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; border: 0; border-radius: 10px; padding: 0.8em 1.25em; background: #c8ff3d; color: #0b0c1c; font-family: 'Funnel Sans', system-ui, sans-serif; font-weight: 650; font-size: 1rem; line-height: 1.1; cursor: pointer; box-shadow: 0 1px 0 rgba(255,255,255,0.5) inset, 0 6px 16px -8px rgba(5,9,78,0.6); transition: transform 200ms cubic-bezier(0.16,1,0.3,1), background-color 200ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-lime:hover { background: #b4f01e; } .ds-btn-lime:active { transform: translateY(1px) scale(0.98); } .ds-btn-lime:focus-visible { outline: 3px solid #c8ff3d; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ink Button",
+      "kind": "button",
+      "refersTo": "button-ink",
+      "description": "In-window action (Accept and sign, Send): white on ink, blue focus.",
+      "html": "<button class=\"ds-btn-ink\">Accept and sign</button> <button class=\"ds-btn-ink\" disabled>Accept and sign</button>",
+      "css": ".ds-btn-ink { display: inline-flex; align-items: center; gap: 0.5em; border: 0; border-radius: 10px; padding: 0.8em 1.25em; background: #0b0c1c; color: #fff; font-family: 'Funnel Sans', system-ui, sans-serif; font-weight: 650; font-size: 1rem; line-height: 1.1; cursor: pointer; transition: background-color 200ms cubic-bezier(0.16,1,0.3,1), transform 200ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-ink:hover:not(:disabled) { background: #23253f; } .ds-btn-ink:active:not(:disabled) { transform: translateY(1px) scale(0.98); } .ds-btn-ink:disabled { background: #eef0f6; color: #393c58; cursor: not-allowed; } .ds-btn-ink:focus-visible { outline: 3px solid #2433ff; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "ghost-button",
+      "description": "Play controls on the field: transparent pill, white hairline.",
+      "html": "<div class=\"ds-field\"><button class=\"ds-ghost\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/></svg>Start over</button></div>",
+      "css": ".ds-field { background: #2433ff; padding: 24px; color: #fff; } .ds-ghost { display: inline-flex; align-items: center; gap: 0.45em; border: 1px solid rgba(255,255,255,0.32); background: transparent; color: inherit; border-radius: 999px; padding: 0.4em 0.85em; font-family: 'Funnel Sans', system-ui, sans-serif; font-size: 0.875rem; font-weight: 550; cursor: pointer; transition: background-color 200ms, border-color 200ms; } .ds-ghost:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); } .ds-ghost:focus-visible { outline: 3px solid #c8ff3d; outline-offset: 3px; }"
+    },
+    {
+      "name": "Waitlist Field",
+      "kind": "input",
+      "refersTo": "waitlist-input",
+      "description": "Email field and lime button on the field; lime focus halo, pink error halo.",
+      "html": "<form class=\"ds-wl\"><label class=\"ds-wl-label\" for=\"ds-e\">Work email</label><div class=\"ds-wl-row\"><input id=\"ds-e\" class=\"ds-wl-input\" type=\"email\" placeholder=\"you@studio.com\"><button class=\"ds-wl-btn\" type=\"button\">Join the waitlist</button></div><p class=\"ds-wl-msg\">Invite-only alpha. A few studios at a time.</p></form>",
+      "css": ".ds-wl { background: #2433ff; color: #fff; padding: 24px; font-family: 'Funnel Sans', system-ui, sans-serif; } .ds-wl-label { display: block; font-size: 0.875rem; font-weight: 600; margin-bottom: 8px; } .ds-wl-row { display: flex; gap: 8px; } .ds-wl-input { flex: 1; min-width: 0; height: 50px; border-radius: 10px; border: 1.5px solid rgba(255,255,255,0.55); background: #fff; color: #0b0c1c; padding: 0 14px; font: inherit; font-size: 1rem; transition: border-color 200ms, box-shadow 200ms; } .ds-wl-input::placeholder { color: #6a6d8c; } .ds-wl-input:focus-visible { outline: none; border-color: #c8ff3d; box-shadow: 0 0 0 3px #c8ff3d; } .ds-wl-input[aria-invalid=true] { border-color: #fff; box-shadow: 0 0 0 3px #ffb3bd; } .ds-wl-btn { height: 50px; border: 0; border-radius: 10px; padding: 0 1.25em; background: #c8ff3d; color: #0b0c1c; font: inherit; font-weight: 650; cursor: pointer; } .ds-wl-btn:hover { background: #b4f01e; } .ds-wl-btn:focus-visible { outline: 3px solid #c8ff3d; outline-offset: 3px; } .ds-wl-msg { margin: 10px 0 0; font-size: 0.875rem; color: #dfe2ff; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Nav on the field: lime mark, heavy wordmark, periwinkle links, small lime button.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg width=\"30\" height=\"30\" viewBox=\"0 0 32 32\" aria-hidden=\"true\"><rect width=\"32\" height=\"32\" rx=\"9\" fill=\"#c8ff3d\"/><path d=\"M10.5 8.5v14h7.5l5-6\" fill=\"none\" stroke=\"#0b0c1c\" stroke-width=\"3\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>Ledgendary</a><nav class=\"ds-links\"><a href=\"#\">Product</a><a href=\"#\">Agencies</a><a href=\"#\">The books</a></nav><a class=\"ds-cta\" href=\"#\">Join the waitlist</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 40px; padding: 18px 32px; background: #2433ff; color: #fff; font-family: 'Funnel Sans', system-ui, sans-serif; } .ds-brand { display: inline-flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; font-family: 'Funnel Display', 'Funnel Sans', sans-serif; font-weight: 800; font-size: 1.375rem; letter-spacing: -0.03em; } .ds-links { display: flex; gap: 30px; font-weight: 550; } .ds-links a { color: #dfe2ff; text-decoration: none; text-underline-offset: 0.22em; transition: color 200ms; } .ds-links a:hover { color: #fff; text-decoration: underline; } .ds-cta { margin-left: auto; display: inline-flex; padding: 0.62em 1em; border-radius: 10px; background: #c8ff3d; color: #0b0c1c; font-weight: 650; font-size: 0.9375rem; text-decoration: none; } .ds-cta:hover { background: #b4f01e; } .ds-nav a:focus-visible { outline: 3px solid #c8ff3d; outline-offset: 3px; border-radius: 6px; }"
+    },
+    {
+      "name": "Prompt Chip",
+      "kind": "chip",
+      "refersTo": "prompt-chip",
+      "description": "Tells the visitor whose turn it is: white pill, lime role tag.",
+      "html": "<div class=\"ds-field\"><p class=\"ds-chip\"><span class=\"ds-chip-role\">You're the client</span>Pick one.</p></div>",
+      "css": ".ds-field { background: #2433ff; padding: 24px; } .ds-chip { display: inline-flex; align-items: center; gap: 10px; margin: 0; background: #fff; color: #0b0c1c; border-radius: 999px; padding: 5px 16px 5px 5px; font-family: 'Funnel Sans', system-ui, sans-serif; font-weight: 650; font-size: 0.9875rem; box-shadow: 0 10px 24px -12px rgba(5,9,78,0.6); } .ds-chip-role { background: #c8ff3d; border-radius: 999px; padding: 5px 11px; font-size: 0.8125rem; font-weight: 700; }"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "pill-paid",
+      "description": "Document status inside windows; Paid is the lime one.",
+      "html": "<span class=\"ds-pill\">Draft</span> <span class=\"ds-pill ds-sent\">Sent</span> <span class=\"ds-pill ds-ok\">Signed</span> <span class=\"ds-pill ds-paid\">Paid</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; font-family: 'Funnel Sans', system-ui, sans-serif; font-size: 0.75rem; font-weight: 650; line-height: 1; border-radius: 999px; padding: 0.4em 0.7em; background: #eef0f6; color: #393c58; } .ds-sent { background: #e6e8ff; color: #1a22a8; } .ds-ok { background: #e2f6ec; color: #0b5c3d; } .ds-paid { background: #c8ff3d; color: #0b0c1c; }"
+    },
+    {
+      "name": "Option Card",
+      "kind": "card",
+      "refersTo": "option-card",
+      "description": "Proposal option; chosen takes an ink border, lime header band and a 3px lift.",
+      "html": "<div class=\"ds-opts\"><label class=\"ds-opt\"><input type=\"radio\" name=\"ds-o\"><span class=\"ds-opt-name\"><b>A</b> Essentials</span><span class=\"ds-price\">$22,000</span><span class=\"ds-est\">Est. 40 h</span></label><label class=\"ds-opt ds-chosen\"><input type=\"radio\" name=\"ds-o\" checked><span class=\"ds-opt-name\"><b>B</b> Full build</span><span class=\"ds-price\">$30,000</span><span class=\"ds-est\">Est. 80 h</span></label></div>",
+      "css": ".ds-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 16px; background: #fff; font-family: 'Funnel Sans', system-ui, sans-serif; color: #0b0c1c; } .ds-opt { position: relative; display: flex; flex-direction: column; gap: 4px; padding: 0 14px 14px; border-radius: 12px; overflow: hidden; border: 1.5px solid #d3d6e8; background: #fff; cursor: pointer; transition: border-color 200ms, box-shadow 200ms, transform 340ms cubic-bezier(0.22,1,0.36,1); } .ds-opt:hover { border-color: #9ea3d8; } .ds-opt input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; } .ds-opt:has(input:focus-visible) { outline: 3px solid #2433ff; outline-offset: 2px; } .ds-opt-name { display: flex; align-items: center; gap: 6px; margin: 0 -14px 8px; padding: 10px 14px; border-bottom: 1px solid #e4e6f2; background: #fbfbfe; font-weight: 650; } .ds-opt-name b { display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 6px; background: #f3f4ff; color: #2433ff; font-size: 0.75rem; } .ds-price { font-family: 'Funnel Display', 'Funnel Sans', sans-serif; font-weight: 750; font-size: 1.5rem; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; } .ds-est { font-size: 0.8125rem; color: #393c58; } .ds-chosen { border-color: #0b0c1c; box-shadow: 0 10px 24px -14px rgba(11,12,28,0.55); transform: translateY(-3px); } .ds-chosen .ds-opt-name { background: #c8ff3d; border-color: #c8ff3d; } .ds-chosen .ds-opt-name b { background: #0b0c1c; color: #fff; }"
+    },
+    {
+      "name": "Product Window",
+      "kind": "card",
+      "refersTo": "product-window",
+      "description": "White window with panel bar, demo tag, tabular total that stamps lime when paid.",
+      "html": "<div class=\"ds-win\"><div class=\"ds-bar\"><span class=\"ds-ws\">LS</span><span>Invoices / <b>INV-0042</b></span><span class=\"ds-demo\">Demo data</span></div><div class=\"ds-body\"><p class=\"ds-title\">INV-0042</p><div class=\"ds-tot\"><span>Total</span><b>$42,000.00</b></div></div></div>",
+      "css": ".ds-win { background: #fff; border-radius: 14px; overflow: hidden; color: #0b0c1c; font-family: 'Funnel Sans', system-ui, sans-serif; box-shadow: 0 22px 50px -26px rgba(20,28,120,0.32), 0 4px 12px -6px rgba(20,28,120,0.14), 0 0 0 1px rgba(20,28,120,0.08); } .ds-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; border-bottom: 1px solid #e4e6f2; background: #fbfbfe; font-size: 0.8125rem; color: #5a5d7c; } .ds-bar b { color: #0b0c1c; font-weight: 600; } .ds-ws { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: #c8ff3d; color: #0b0c1c; font-size: 0.625rem; font-weight: 750; } .ds-demo { margin-left: auto; font-size: 0.6875rem; font-weight: 600; color: #5a5d7c; background: #f3f4ff; border: 1px solid #dfe2ff; border-radius: 999px; padding: 0.15em 0.6em; } .ds-body { padding: 18px 22px; } .ds-title { margin: 0; font-family: 'Funnel Display', 'Funnel Sans', sans-serif; font-weight: 750; font-size: 1.625rem; letter-spacing: -0.025em; } .ds-tot { display: flex; justify-content: flex-end; align-items: center; gap: 22px; margin-top: 12px; font-weight: 600; } .ds-tot b { font-family: 'Funnel Display', 'Funnel Sans', sans-serif; font-size: 1.625rem; font-weight: 750; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; padding: 2px 10px; border-radius: 8px; background: #c8ff3d; }"
+    },
+    {
+      "name": "Journal Entry",
+      "kind": "custom",
+      "refersTo": "journal-entry",
+      "description": "White posted entry on the books field with tabular lines and a lime hash chip.",
+      "html": "<div class=\"ds-books\"><article class=\"ds-je\"><header><b>JE-1041</b><span>Nov 16</span></header><p class=\"ds-memo\">Invoice INV-0042 · Northwind Co</p><dl class=\"ds-lines\"><div><dt>Dr Accounts receivable</dt><dd>42,000.00</dd></div><div><dt>Cr Revenue</dt><dd>42,000.00</dd></div></dl><footer><span class=\"ds-hash\">#9c07</span><span>prev #4be1</span></footer></article></div>",
+      "css": ".ds-books { background: #2433ff; padding: 28px; } .ds-je { max-width: 300px; background: #fff; color: #0b0c1c; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; font-family: 'Funnel Sans', system-ui, sans-serif; font-size: 0.875rem; box-shadow: 0 14px 30px -18px rgba(5,9,78,0.6), 0 3px 8px -4px rgba(5,9,78,0.3); } .ds-je header { display: flex; gap: 10px; } .ds-je header b { font-weight: 750; } .ds-je header span { color: #5a5d7c; } .ds-memo { margin: 0; color: #393c58; font-weight: 550; } .ds-lines { margin: 0; display: grid; gap: 4px; padding-top: 8px; border-top: 1px solid #e4e6f2; font-variant-numeric: tabular-nums; } .ds-lines div { display: flex; justify-content: space-between; gap: 10px; } .ds-lines dd { margin: 0; font-weight: 600; } .ds-je footer { display: flex; gap: 10px; align-items: center; padding-top: 8px; border-top: 1px solid #e4e6f2; font-size: 0.75rem; color: #5a5d7c; } .ds-hash { background: #c8ff3d; color: #0b0c1c; font-weight: 700; padding: 0.15em 0.5em; border-radius: 5px; }"
+    },
+    {
+      "name": "Pinned Figure",
+      "kind": "custom",
+      "refersTo": "figure",
+      "description": "The one figure that holds still while screens change around it.",
+      "html": "<div class=\"ds-fig\"><span class=\"ds-fig-num\">$42,000</span><span class=\"ds-fig-cap\">Option B, estimated total</span></div>",
+      "css": ".ds-fig { display: grid; justify-items: center; gap: 4px; padding: 24px; background: #fff; font-family: 'Funnel Sans', system-ui, sans-serif; } .ds-fig::after { content: ''; width: 2px; height: 22px; background: #2433ff; margin-top: 6px; } .ds-fig-num { font-family: 'Funnel Display', 'Funnel Sans', sans-serif; font-weight: 800; font-size: clamp(3.25rem, 5.2vw, 4.75rem); letter-spacing: -0.04em; line-height: 0.9; color: #2433ff; font-variant-numeric: tabular-nums; } .ds-fig-cap { font-size: 0.9375rem; font-weight: 600; color: #393c58; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "You Drive the Demo",
+    "overview": "A saturated ultramarine field that the visitor plays on. The blue owns three chapters edge to edge (hero with nav, the books, the closing call); white sections sit between them. On the field, white type and crisp white product surfaces; on white, near-black ink. One accent, acid lime, behaves like a stamp of done-ness: the primary button, the chosen option, Paid, a posted hash, the active step. It is always a fill carrying ink, never a line or a text colour, with one exception: the keyboard focus outline on blue grounds.\n\nEvery claim is a working product surface (client portal, studio invoice, timesheet, journal chain, organisation settings) built from one anatomy: a 14 to 16px white window, a quiet `panel` bar with workspace mark, breadcrumb and a \"Demo data\" tag, hairline-divided rows, and Lucide line icons at stroke 2. The visitor's click is the trigger: picking an option, signing, sending, adding time, flipping a tamper switch, dragging a team-size dial. The page answers with short, springy UI responses (200 to 500ms, exponential ease-out); an 8 second idle lets the hero deal finish on its own, and reduced motion opens on the finished state.\n\nType is one superfamily: Funnel Display set heavy (750 to 800) and tight (-0.025 to -0.04em) for statements, titles and money; Funnel Sans for everything read and every control. Money is tabular wherever it appears.",
+    "keyCharacteristics": [
+      "Drenched: ultramarine is the ground of three chapters, not an accent; white sections alternate with it.",
+      "One accent, acid lime, as fill with ink text; the lime focus outline on blue is the single line use.",
+      "Product surfaces are white on every ground, with soft navy shadows on the field and lighter blue-tinted shadows on white.",
+      "Funnel Display heavy and tight for display and figures; Funnel Sans for reading and UI.",
+      "Interaction-led motion: the visitor triggers state; motion confirms it, and everything has a static reduced-motion state."
+    ],
+    "rules": [
+      { "name": "The Field Owns Three Rule", "body": "Ultramarine drenches exactly the hero (with nav), the books chapter and the closing call. Story, time, scale and playbook are white, separated by 1px `line` hairlines. A fourth blue chapter is a change to the world, not a section choice.", "section": "colors" },
+      { "name": "The Lime Is a Stamp Rule", "body": "Lime is a fill with ink text on it, on any ground. Never lime text, lime borders or lime lines, and never white on lime. The single exception is the keyboard focus outline (and the waitlist input's focus halo) on blue grounds, where lime reads at about 6:1.", "section": "colors" },
+      { "name": "The Semantics Stay Inside Rule", "body": "Green, red, pink and amber appear only inside product surfaces, the tamper console and form validation. Headings, ledes and page chrome use blue, white, ink and lime alone.", "section": "colors" },
+      { "name": "The Heavy and Tight Rule", "body": "Display, titles, prices and totals are Funnel Display at 750 to 800 with negative tracking (-0.02 to -0.04em). Reading text and controls are Funnel Sans at 400 to 650 with no tracking.", "section": "typography" },
+      { "name": "The Money Is Tabular Rule", "body": "Every money figure carries `tabular-nums`: prices, totals, journal amounts, time cells, the pinned figure and the dial readout.", "section": "typography" },
+      { "name": "The Windows Float, Sections Don't Rule", "body": "Shadows belong to product surfaces, the prompt chip and the lime button. Section grounds, headings and copy never cast one, and panels on the field are inset, not raised.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep ultramarine to the hero, the books chapter and the closing call, with white sections between.",
+      "Do use lime as a fill with ink text: the primary button, the chosen thing, Paid, posted, the current step.",
+      "Do switch the focus ring to lime on blue grounds and keep it blue on white and inside white surfaces.",
+      "Do set display, titles, prices and totals in Funnel Display 750 to 800 with negative tracking; keep reading text in Funnel Sans.",
+      "Do set every money figure in tabular numerals.",
+      "Do put every product claim in a white window with the \"Demo data\" tag and the same job's figures (Northwind Co, option B, $42,000).",
+      "Do let the visitor's click drive state, answer within 200 to 500ms on the shared easing, and give every interactive beat a finished static state under reduced motion."
+    ],
+    "donts": [
+      "Don't set lime text, lime borders or lime lines (focus on blue excepted), or white text on lime.",
+      "Don't use green, red, pink or amber outside product surfaces, the tamper console and validation.",
+      "Don't add a fourth blue chapter or tint white sections blue.",
+      "Don't put shadows on section grounds or headings, or use hard offset shadows; panels on the field are inset.",
+      "Don't add uppercase tracked labels or eyebrows above headings; uppercase is limited to the step track's role tags and the time sidebar's group heads.",
+      "Don't use a wink in a primary button label."
+    ]
+  }
+}
