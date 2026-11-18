@@ -21,7 +21,7 @@ STORY: Visitor sees a proposal get picked, invoiced and paid within seconds; und
 
 FIRST VIEWPORT: Nav (wordmark, Product, Agencies, The books, Join the waitlist). Left-aligned wide display headline across ~70% width, subline, inline waitlist field plus gold button. The live product window starts at ~58% of the viewport height, full content width, top half visible, already playing: option B chosen, invoice sent, "wait for it…", Paid. Pause control and scene chips on the window.
 
-FORM: Category standard at full craft (canon exit taken by Michael after rejecting the dealt hand), bar set by Linear, Stripe and Mercury. Signature interaction: the hero job loop and the sticky scroll chapter where one product window morphs between proposal, portal, week grid, invoice, payment and journal. seed: none (canon taken; roll key 5ac26881 rejected)
+FORM: Category standard at full craft (canon exit taken by Michael after rejecting the dealt hand), bar set by Linear, Stripe and Mercury. Signature interaction: the hero job loop and the sticky scroll chapter where one product window morphs between proposal, portal, week grid, invoice, payment and journal. seed: none (unavailable)
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 

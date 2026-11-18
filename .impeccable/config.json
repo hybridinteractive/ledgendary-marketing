@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "wide-tracking",
+        "value": "*",
+        "files": [
+          ".impeccable/mocks/decision/pick.html"
+        ],
+        "createdAt": "2026-11-18T20:32:57.320Z",
+        "reason": "Rejected decision-round sketch (Michael declined the direction 2026-11-18); never ships"
+      }
+    ]
+  }
+}
