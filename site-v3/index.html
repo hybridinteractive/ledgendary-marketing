@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgendary · Win work to paid, on one ledger</title>
+<meta name="description" content="Proposals clients choose from, time that becomes the invoice, payments that post themselves, and books your accountant trusts. Invite-only alpha.">
+<meta name="theme-color" content="#0e1613">
+<meta name="color-scheme" content="dark">
+<script>document.documentElement.classList.add('js');if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('rm');}</script>
+<link rel="preload" href="fonts/BricolageGrotesque-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true"><!-- lucide-static v0.460.0, ISC licence -->
+<symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-mouse-pointer-click" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4.1 12 6" /> <path d="m5.1 8-2.9-.8" /> <path d="m6 12-1.9 2" /> <path d="M7.2 2.2 8 5.1" /> <path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z" /></symbol>
+<symbol id="i-signature" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284" /> <path d="M3 21h18" /></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 17.5v-11" /></symbol>
+<symbol id="i-credit-card" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
+<symbol id="i-link-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2" /> <path d="M15 7h2a5 5 0 1 1 0 10h-2" /> <line x1="8" x2="16" y1="12" y2="12" /></symbol>
+<symbol id="i-undo-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol>
+<symbol id="i-calendar-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" /> <path d="M16 2v4" /> <path d="M8 2v4" /> <path d="M3 10h5" /> <path d="M17.5 17.5 16 16.3V14" /> <circle cx="16" cy="16" r="6" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22" /> <line x1="6" x2="6" y1="18" y2="11" /> <line x1="10" x2="10" y1="18" y2="11" /> <line x1="14" x2="14" y1="18" y2="11" /> <line x1="18" x2="18" y1="18" y2="11" /> <polygon points="12 2 20 7 4 7" /></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /> <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></symbol>
+<symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4" /> <path d="M3 11v-1a4 4 0 0 1 4-4h14" /> <path d="m7 22-4-4 4-4" /> <path d="M21 13v1a4 4 0 0 1-4 4H3" /></symbol>
+<symbol id="i-chart-column" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="M18 17V9" /> <path d="M13 17V5" /> <path d="M8 17v-3" /></symbol>
+<symbol id="i-file-minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M9 15h6" /></symbol>
+<symbol id="i-building-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol>
+<symbol id="i-check-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 7 17l-5-5" /> <path d="m22 10-7.5 7.5L13 16" /></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14" /> <path d="M5 2h14" /> <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" /> <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" /></symbol>
+<symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+<symbol id="i-file-pen-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" /> <path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /> <path d="M8 18h1" /></symbol>
+<symbol id="i-pen-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /> <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" /></symbol>
+<symbol id="i-circle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></symbol>
+<symbol id="i-arrow-left-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 4 7l4 4" /> <path d="M4 7h16" /> <path d="m16 21 4-4-4-4" /> <path d="M20 17H4" /></symbol>
+<symbol id="i-list-checks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 17 2 2 4-4" /> <path d="m3 7 2 2 4-4" /> <path d="M13 6h8" /> <path d="M13 12h8" /> <path d="M13 18h8" /></symbol>
+<symbol id="i-command" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" /></symbol>
+<symbol id="i-lock-keyhole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="16" r="1" /> <rect x="3" y="10" width="18" height="12" rx="2" /> <path d="M7 10V7a5 5 0 0 1 10 0v3" /></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" /> <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" /> <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" /> <path d="m2 2 20 20" /></symbol>
+<symbol id="i-user-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <polyline points="16 11 18 13 22 9" /></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-ellipsis" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1" /> <circle cx="19" cy="12" r="1" /> <circle cx="5" cy="12" r="1" /></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Ledgendary, home">
+      <svg class="mark" viewBox="0 0 32 20" aria-hidden="true"><rect x="0" y="9" width="32" height="2" rx="1" fill="#f3efe6" opacity=".35"/><rect x="0" y="9" width="20" height="2" rx="1" fill="#f3efe6"/><rect x="18" y="1" width="4" height="18" rx="2" fill="#ff6b4a"/></svg>
+      <span>Ledgendary</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#story">Product</a>
+      <a href="#seats">Agencies</a>
+      <a href="#books">The books</a>
+    </nav>
+    <a class="btn btn-coral btn-sm" href="#join">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================= HERO + SCRUBBED CHAPTER ================= -->
+<section class="story" id="story" aria-labelledby="hero-h">
+  <div class="wrap hero" id="top">
+    <h1 id="hero-h" class="hero-h">Every day of the job, on one ledger.</h1>
+    <div class="hero-row">
+      <p class="hero-sub">Proposals your client chooses from, hours that become the invoice, payments that post themselves. One product from the first proposal to the books your accountant reads, for agencies of one or of hundreds.</p>
+      <form class="join-form" data-join novalidate>
+        <label class="sr-only" for="hero-email">Work email</label>
+        <div class="join-fields">
+          <input id="hero-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="hero-email-msg">
+          <button class="btn btn-coral" type="submit">Join the waitlist</button>
+        </div>
+        <p class="join-msg" id="hero-email-msg" aria-live="polite"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Invite-only alpha. One email when your invite is ready.</p>
+      </form>
+    </div>
+  </div>
+
+  <div class="stage" id="stage">
+    <div class="wrap stage-in">
+      <!-- Rail -->
+      <div class="railbar">
+        <div class="readout" aria-hidden="true">
+          <span class="rd-day" id="rd-day">Tuesday</span>
+          <span class="rd-date" id="rd-date">Oct 27</span>
+        </div>
+        <div class="rail-wrap">
+          <ol class="rail-chips" aria-hidden="true">
+            <li class="chip" data-at="0.35" style="--d:0"><svg class="ic"><use href="#i-send"/></svg>Sent, viewed</li>
+            <li class="chip" data-at="3.25" style="--d:3"><svg class="ic"><use href="#i-signature"/></svg>Signed</li>
+            <li class="chip" data-at="6.2" style="--d:6"><svg class="ic"><use href="#i-clock"/></svg>Hours</li>
+            <li class="chip chip-inv" data-at="20.7" style="--d:21"><svg class="ic"><use href="#i-file-text"/></svg>Invoiced</li>
+            <li class="chip chip-paid" data-at="22.3" style="--d:22"><svg class="ic"><use href="#i-credit-card"/></svg>Paid</li>
+          </ol>
+          <div class="rail" id="rail" role="slider" tabindex="0" aria-label="Date in the job" aria-valuemin="0" aria-valuemax="22" aria-valuenow="0" aria-valuetext="Tuesday, Oct 27: proposal sent">
+            <div class="rail-track" id="rail-track">
+              <span class="rail-band" style="--d:6;--len:12" aria-hidden="true"></span>
+              <span class="rail-fill" id="rail-fill" aria-hidden="true"></span>
+              <span class="rail-ticks" aria-hidden="true"></span>
+              <span class="rail-evs" aria-hidden="true"><i style="--t:.35"></i><i style="--t:1.2"></i><i style="--t:3.25"></i><i style="--t:3.6"></i><i style="--t:20.7"></i><i style="--t:22.3"></i><i style="--t:22.55"></i></span>
+              <span class="rail-marker" id="rail-marker" aria-hidden="true"><span class="rail-knob"></span></span>
+            </div>
+          </div>
+          <ol class="rail-dates" aria-hidden="true">
+            <li style="--d:0">Oct 27</li><li style="--d:3">Oct 30</li><li style="--d:6">Nov 2</li><li style="--d:13">Nov 9</li><li style="--d:20">Nov 16</li><li style="--d:22" class="end">Nov 18</li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- Caption column -->
+      <div class="captions">
+        <h2 class="story-h">Kids, this is the story of how we got&nbsp;paid.</h2>
+        <div class="cap" id="cap">
+          <p class="cap-title" id="cap-title">Proposal sent</p>
+          <p class="cap-text" id="cap-text">Maya sends P-0018 to Dana with three options. Time is billed at $150/h as it is logged.</p>
+        </div>
+        <dl class="tally" aria-label="The job so far">
+          <div><dt>Proposal</dt><dd id="ty-prop">Draft</dd></div>
+          <div><dt>Logged</dt><dd id="ty-time">0 h 0 m</dd></div>
+          <div><dt>Invoiced</dt><dd id="ty-inv">$0.00</dd></div>
+          <div><dt>Received</dt><dd id="ty-paid">$0.00</dd></div>
+          <div><dt>Posted</dt><dd id="ty-je">No entries</dd></div>
+        </dl>
+        <p class="hint" id="hint"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left-right"/></svg>Scroll, or drag the date.</p>
+        <div class="steps" id="steps" hidden>
+          <button class="btn btn-ghost btn-sm" type="button" id="step-prev"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg>Earlier</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="step-next">Later<svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        </div>
+        <p class="sr-only" id="live" aria-live="polite"></p>
+      </div>
+
+      <!-- Product canvas -->
+      <div class="canvas">
+        <div class="app" id="app" data-scene="proposal">
+          <aside class="app-side" aria-label="Demo app navigation">
+            <div class="ws"><span class="ws-logo">LS</span><span class="ws-name">Lumen Studio</span></div>
+            <ul class="side-nav">
+              <li data-nav="home"><svg class="ic"><use href="#i-house"/></svg><span>Home</span></li>
+              <li data-nav="proposal"><svg class="ic"><use href="#i-file-pen-line"/></svg><span>Proposals</span></li>
+              <li data-nav="time"><svg class="ic"><use href="#i-clock"/></svg><span>Time</span></li>
+              <li data-nav="invoice"><svg class="ic"><use href="#i-file-text"/></svg><span>Invoices</span></li>
+              <li data-nav="clients"><svg class="ic"><use href="#i-building-2"/></svg><span>Clients</span></li>
+              <li data-nav="books"><svg class="ic"><use href="#i-book-open"/></svg><span>Books</span></li>
+              <li data-nav="reports"><svg class="ic"><use href="#i-chart-column"/></svg><span>Reports</span></li>
+            </ul>
+            <p class="side-label">Jobs</p>
+            <ul class="side-nav side-jobs">
+              <li class="job"><span class="dot"></span><span>Northwind · Site build</span></li>
+            </ul>
+          </aside>
+
+          <div class="app-main">
+            <div class="app-bar">
+              <p class="crumb" id="crumb"><span>Proposals</span><svg class="ic"><use href="#i-chevron-right"/></svg><b>P-0018</b></p>
+              <span class="demo">Demo data</span>
+            </div>
+
+            <div class="panes">
+              <!-- PROPOSAL (Oct 27 to 29) -->
+              <section class="pane pane-proposal" data-pane="proposal" aria-label="Proposal P-0018, Oct 28">
+                <p class="pane-date">Oct 28 · Proposal viewed</p>
+                <div class="doc-head">
+                  <div>
+                    <h3 class="doc-title">Site build for Northwind Co</h3>
+                    <p class="doc-meta" id="p-meta">P-0018 · To Dana Whitfield · Sent Oct 27 by Maya Ortiz</p>
+                  </div>
+                  <span class="pill" id="p-status" data-tone="seen"><svg class="ic"><use href="#i-eye"/></svg>Viewed</span>
+                </div>
+                <table class="tbl opts">
+                  <caption class="sr-only">Options in proposal P-0018</caption>
+                  <thead><tr><th scope="col">Option</th><th scope="col" class="num">Fixed fee</th><th scope="col" class="num">Est. time</th><th scope="col" class="num">Est. total</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row"><span class="opt-k">A</span>Essentials</th><td class="num">$22,000 <small>+ time</small></td><td class="num">40 h</td><td class="num">$28,000</td></tr>
+                    <tr class="opt-rec"><th scope="row"><span class="opt-k">B</span>Full build <span class="tag">Recommended</span></th><td class="num">$30,000 <small>+ time</small></td><td class="num">80 h</td><td class="num">$42,000</td></tr>
+                    <tr><th scope="row"><span class="opt-k">C</span>Build and retainer</th><td class="num">$30,000 <small>+ time</small></td><td class="num">then</td><td class="num">$4,500/mo</td></tr>
+                  </tbody>
+                </table>
+                <p class="rate-line"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg>Time at $150/h, billed from logged hours.</p>
+                <div class="panel views">
+                  <p class="panel-h">Client activity</p>
+                  <ol class="view-slots">
+                    <li class="vs is-on" data-n="1"><svg class="ic"><use href="#i-eye"/></svg><span class="vs-t">Opened</span><span class="vs-d">Oct 28</span></li>
+                    <li class="vs is-on" data-n="2"><svg class="ic"><use href="#i-eye"/></svg><span class="vs-t">Opened again</span><span class="vs-d">Oct 28</span></li>
+                    <li class="vs is-on" data-n="3"><svg class="ic"><use href="#i-eye"/></svg><span class="vs-t">Third time</span><span class="vs-d">Oct 28</span></li>
+                  </ol>
+                </div>
+                <div class="panel decision">
+                  <svg class="ic" aria-hidden="true"><use href="#i-hourglass"/></svg>
+                  <div><p class="panel-h">Waiting on Dana</p><p class="muted" id="p-decision">She can choose an option and sign in the client portal.</p></div>
+                </div>
+              </section>
+
+              <!-- TIME (Oct 31 to Nov 15) -->
+              <section class="pane pane-time" data-pane="time" aria-label="Time on Site build, week of Nov 9">
+                <p class="pane-date">Nov 9 to 15 · Time</p>
+                <div class="doc-head">
+                  <div>
+                    <h3 class="doc-title">Time · Site build</h3>
+                    <p class="doc-meta"><span id="t-week">Week of Nov 9</span> · approver Lena Park</p>
+                  </div>
+                  <span class="pill" id="t-status" data-tone="sent"><svg class="ic"><use href="#i-check"/></svg>Submitted</span>
+                </div>
+                <table class="tbl grid" id="t-grid">
+                  <caption class="sr-only">Hours per person per day</caption>
+                  <thead><tr><th scope="col">Person</th><th scope="col" class="num" data-c="0">Mon <b>9</b></th><th scope="col" class="num" data-c="1">Tue <b>10</b></th><th scope="col" class="num" data-c="2">Wed <b>11</b></th><th scope="col" class="num" data-c="3">Thu <b>12</b></th><th scope="col" class="num" data-c="4">Fri <b>13</b></th><th scope="col" class="num we" data-c="5">Sat <b>14</b></th><th scope="col" class="num we" data-c="6">Sun <b>15</b></th><th scope="col" class="num">Total</th></tr></thead>
+                  <tbody>
+                    <tr data-r="0"><th scope="row"><span class="av">TB</span><span class="nm">Theo</span></th><td class="num" data-c="0">5 h 30 m</td><td class="num" data-c="1">6 h 0 m</td><td class="num" data-c="2">5 h 15 m</td><td class="num" data-c="3">6 h 0 m</td><td class="num" data-c="4">4 h 15 m</td><td class="num we" data-c="5">–</td><td class="num we" data-c="6">–</td><td class="num tot">27 h 0 m</td></tr>
+                    <tr data-r="1"><th scope="row"><span class="av">MO</span><span class="nm">Maya</span></th><td class="num" data-c="0">2 h 15 m</td><td class="num" data-c="1">2 h 15 m</td><td class="num" data-c="2">2 h 15 m</td><td class="num" data-c="3">2 h 30 m</td><td class="num" data-c="4">2 h 0 m</td><td class="num we" data-c="5">–</td><td class="num we" data-c="6">–</td><td class="num tot">11 h 15 m</td></tr>
+                  </tbody>
+                  <tfoot><tr data-r="sum"><th scope="row">Day total</th><td class="num" data-c="0">7 h 45 m</td><td class="num" data-c="1">8 h 15 m</td><td class="num" data-c="2">7 h 30 m</td><td class="num" data-c="3">8 h 30 m</td><td class="num" data-c="4">6 h 15 m</td><td class="num we" data-c="5">–</td><td class="num we" data-c="6">–</td><td class="num tot">38 h 15 m</td></tr></tfoot>
+                </table>
+                <div class="time-low">
+                  <div class="panel budget">
+                    <p class="panel-h">Logged on Site build</p>
+                    <p class="fig"><span id="t-logged">80 h 0 m</span> <small>of 80 h estimated</small></p>
+                    <div class="bar" aria-hidden="true"><span id="t-bar" style="transform:scaleX(1)"></span></div>
+                  </div>
+                  <div class="panel unbilled">
+                    <p class="panel-h">Unbilled at $150/h</p>
+                    <p class="fig" id="t-unbilled">$12,000.00</p>
+                    <p class="muted">Fixed fee $30,000.00 waits beside it</p>
+                  </div>
+                </div>
+                <ol class="panel approvals">
+                  <li data-w="0"><span class="ap-w">Week of Nov 2</span><span class="ap-h">41 h 45 m</span><span class="ap-s" data-tone="ok">Approved by Lena Park · Nov 9</span></li>
+                  <li data-w="1"><span class="ap-w">Week of Nov 9</span><span class="ap-h">38 h 15 m</span><span class="ap-s" data-tone="sent">Submitted · Nov 13</span></li>
+                </ol>
+              </section>
+
+              <!-- INVOICE (Nov 16 to 18) -->
+              <section class="pane pane-invoice" data-pane="invoice" aria-label="Invoice INV-0042, Nov 18">
+                <p class="pane-date">Nov 18 · Invoice paid and posted</p>
+                <div class="doc-head">
+                  <div>
+                    <h3 class="doc-title" id="inv-title">INV-0042</h3>
+                    <p class="doc-meta" id="inv-meta">Northwind Co · Issued Nov 16 · Due Dec 1</p>
+                  </div>
+                  <span class="pill" id="inv-status" data-tone="paid"><svg class="ic"><use href="#i-check"/></svg>Paid</span>
+                </div>
+                <table class="tbl lines">
+                  <caption class="sr-only">Invoice lines</caption>
+                  <thead><tr><th scope="col">Line</th><th scope="col" class="num">Qty</th><th scope="col" class="num">Rate</th><th scope="col" class="num">Amount</th></tr></thead>
+                  <tbody>
+                    <tr class="ln is-on" data-l="0"><th scope="row">Full build, fixed fee<span class="src"><svg class="ic"><use href="#i-file-pen-line"/></svg>From option B, P-0018</span></th><td class="num">1</td><td class="num">$30,000.00</td><td class="num">$30,000.00</td></tr>
+                    <tr class="ln is-on" data-l="1"><th scope="row">Design and build time, Nov 2–15<span class="src"><svg class="ic"><use href="#i-clock"/></svg>From approved weeks</span></th><td class="num">80 h 0 m</td><td class="num">$150.00</td><td class="num">$12,000.00</td></tr>
+                  </tbody>
+                </table>
+                <div class="inv-foot">
+                  <p class="pay" id="inv-pay" data-tone="paid"><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg><span id="inv-pay-t">Paid by card · Visa ending 1881 · Nov 18</span></p>
+                  <p class="methods"><span>Accepts</span><span class="btn-ui"><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg>Card</span><span class="btn-ui"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg>Bank</span></p>
+                  <dl class="totals">
+                    <div><dt>Total</dt><dd id="inv-total">$42,000.00</dd></div>
+                    <div class="due" id="inv-due-row"><dt id="inv-due-k">Paid</dt><dd id="inv-due">$42,000.00</dd></div>
+                  </dl>
+                </div>
+                <div class="je-strip">
+                  <p class="panel-h"><svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg>Posted to the books</p>
+                  <div class="je-slots">
+                    <div class="je is-on" id="je1"><p class="je-id">JE-1041 <span>Nov 16</span><b class="hash">#9c07</b></p><p class="je-l"><span>Dr Accounts receivable</span><span class="num">42,000.00</span></p><p class="je-l cr"><span>Cr Revenue</span><span class="num">42,000.00</span></p><p class="je-pre">Posts when the invoice is sent</p></div>
+                    <div class="je is-on" id="je2"><p class="je-id">JE-1042 <span>Nov 18</span><b class="hash">#e21a</b></p><p class="je-l"><span>Dr Bank</span><span class="num">42,000.00</span></p><p class="je-l cr"><span>Cr Accounts receivable</span><span class="num">42,000.00</span></p><p class="je-pre">Posts when the payment lands</p></div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <!-- PORTAL (Oct 30) -->
+          <section class="pane pane-portal" data-pane="portal" aria-label="Client portal, Oct 30">
+            <p class="pane-date">Oct 30 · Client portal</p>
+            <div class="portal-bar"><span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Client portal · what Dana sees</span><span class="demo">Demo data</span></div>
+            <div class="portal-body">
+            <div class="portal-head">
+              <span class="ws-logo">LS</span>
+              <div><p class="portal-from">Lumen Studio · Proposal for Northwind Co</p><h3 class="doc-title">Choose how we build your site</h3></div>
+              <span class="portal-who">Dana Whitfield</span>
+            </div>
+            <div class="po-opts" role="radiogroup" aria-label="Options">
+              <div class="po-opt" data-opt="A"><span class="radio"></span><div><p class="po-name">A · Essentials</p><p class="muted">Est. 40 h · est. total $28,000</p></div><p class="po-price">$22,000 <small>+ time</small></p></div>
+              <div class="po-opt is-chosen" data-opt="B"><span class="radio"></span><div><p class="po-name">B · Full build <span class="tag">Recommended</span></p><p class="muted">Est. 80 h · est. total $42,000</p></div><p class="po-price">$30,000 <small>+ time</small></p></div>
+              <div class="po-opt" data-opt="C"><span class="radio"></span><div><p class="po-name">C · Build and retainer</p><p class="muted">Then $4,500/mo</p></div><p class="po-price">$30,000 <small>+ time</small></p></div>
+            </div>
+            <div class="sign">
+              <p class="panel-h">Signature</p>
+              <div class="sign-row">
+                <p class="sig-field is-signed" id="sig-field"><span class="sig-name" id="sig-name">Dana Whitfield</span><span class="sig-ph">Type your full name</span></p>
+                <span class="btn-ui is-done" id="sig-btn"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg><span id="sig-btn-t">Signed</span></span>
+              </div>
+              <p class="muted sig-meta" id="sig-meta">Option B accepted · Signed Oct 30, 10:42 AM</p>
+            </div>
+            <p class="portal-foot muted">Time is billed at $150/h from logged hours. Questions go to Maya Ortiz.</p>
+            </div>
+          </section>
+
+          <aside class="app-activity" aria-label="Demo activity">
+            <p class="act-h">Activity</p>
+            <ol class="act" id="act">
+              <li><svg class="ic"><use href="#i-book-open"/></svg><p>JE-1042 posted<span>Nov 18 · #e21a</span></p></li>
+              <li><svg class="ic"><use href="#i-credit-card"/></svg><p>Paid by card, $42,000.00<span>Nov 18 · Visa ending 1881</span></p></li>
+              <li><svg class="ic"><use href="#i-eye"/></svg><p>Dana viewed INV-0042<span>Nov 17</span></p></li>
+              <li><svg class="ic"><use href="#i-book-open"/></svg><p>JE-1041 posted<span>Nov 16 · #9c07</span></p></li>
+              <li><svg class="ic"><use href="#i-send"/></svg><p>INV-0042 sent<span>Nov 16 · due Dec 1</span></p></li>
+              <li><svg class="ic"><use href="#i-user-check"/></svg><p>Lena approved week of Nov 9<span>Nov 16 · 38 h 15 m</span></p></li>
+              <li><svg class="ic"><use href="#i-signature"/></svg><p>Signed by Dana Whitfield<span>Oct 30 · 10:42 AM</span></p></li>
+            </ol>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SEATS ================= -->
+<section class="sec seats" id="seats" aria-labelledby="seats-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="seats-h" class="h2">One person or three hundred.</h2>
+      <p class="lede">The same Nov 18, through five seats. Each person sees the part of the job that is theirs, and nothing they shouldn't touch. Run the studio alone and you hold all five.</p>
+    </div>
+    <div class="seat-row">
+      <article class="seat" aria-labelledby="s-member">
+        <header class="seat-h"><span class="av">TB</span><div><h3 id="s-member">Theo Brandt</h3><p>Member</p></div><span class="demo">Demo data</span></header>
+        <p class="seat-today"><span class="seat-dot"></span>Nov 18 · Nothing to do</p>
+        <p class="seat-k">My time · Site build</p>
+        <ul class="seat-list">
+          <li><span>Week of Nov 9</span><b class="num">27 h 0 m</b><em data-tone="ok">Approved</em></li>
+          <li><span>Week of Nov 2</span><b class="num">29 h 0 m</b><em data-tone="ok">Approved</em></li>
+          <li><span>Private drafts</span><b class="num">1</b><em>Only me</em></li>
+        </ul>
+        <p class="seat-no"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Invoices and money are not in this seat.</p>
+      </article>
+      <article class="seat" aria-labelledby="s-appr">
+        <header class="seat-h"><span class="av">LP</span><div><h3 id="s-appr">Lena Park</h3><p>Approver, Site build</p></div><span class="demo">Demo data</span></header>
+        <p class="seat-today"><span class="seat-dot"></span>Nov 18 · Nothing to approve</p>
+        <p class="seat-k">Weeks to approve</p>
+        <ul class="seat-list">
+          <li><span>Nov 9–15</span><b class="num">38 h 15 m</b><em data-tone="ok">Approved Nov 16</em></li>
+          <li><span>Nov 2–8</span><b class="num">41 h 45 m</b><em data-tone="ok">Approved Nov 9</em></li>
+          <li><span>Waiting</span><b class="num">0</b><em>All clear</em></li>
+        </ul>
+        <p class="seat-no"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Approves time on her projects only.</p>
+      </article>
+      <article class="seat" aria-labelledby="s-fin">
+        <header class="seat-h"><span class="av">SO</span><div><h3 id="s-fin">Sam Okafor</h3><p>Finance</p></div><span class="demo">Demo data</span></header>
+        <p class="seat-today seat-hot"><span class="seat-dot"></span>Nov 18 · Payment landed</p>
+        <p class="seat-k">Money in</p>
+        <ul class="seat-list">
+          <li><span>INV-0042</span><b class="num">$42,000.00</b><em data-tone="paid">Paid</em></li>
+          <li><span>Card · Visa 1881</span><b class="num">Nov 18</b><em>Settled</em></li>
+          <li><span>Outstanding</span><b class="num">$0.00</b><em>Northwind</em></li>
+        </ul>
+        <p class="seat-no"><svg class="ic" aria-hidden="true"><use href="#i-lock-keyhole"/></svg>Refunds and voids ask for a password again.</p>
+      </article>
+      <article class="seat" aria-labelledby="s-acct">
+        <header class="seat-h"><span class="av">JC</span><div><h3 id="s-acct">Jules Carter</h3><p>Accountant, outside</p></div><span class="demo">Demo data</span></header>
+        <p class="seat-today"><span class="seat-dot"></span>Nov 18 · One new entry</p>
+        <p class="seat-k">Journal · read only</p>
+        <ul class="seat-list">
+          <li><span>JE-1042 · Nov 18</span><b class="num">42,000.00</b><em>#e21a</em></li>
+          <li><span>JE-1041 · Nov 16</span><b class="num">42,000.00</b><em>#9c07</em></li>
+          <li><span>Receivable</span><b class="num">0.00</b><em>Balanced</em></li>
+        </ul>
+        <p class="seat-no"><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg>Reads every entry and report. Changes nothing.</p>
+      </article>
+      <article class="seat seat-owner" aria-labelledby="s-own">
+        <header class="seat-h"><span class="av">MO</span><div><h3 id="s-own">Maya Ortiz</h3><p>Owner</p></div><span class="demo">Demo data</span></header>
+        <p class="seat-today seat-hot"><span class="seat-dot"></span>Nov 18 · Job paid in full</p>
+        <p class="seat-k">Site build, all of it</p>
+        <ul class="seat-list">
+          <li><span>P-0018</span><b class="num">Option B</b><em data-tone="ok">Signed</em></li>
+          <li><span>Time</span><b class="num">80 h 0 m</b><em data-tone="ok">Approved</em></li>
+          <li><span>INV-0042</span><b class="num">$42,000.00</b><em data-tone="paid">Paid</em></li>
+          <li><span>Books</span><b class="num">2 entries</b><em>Chained</em></li>
+        </ul>
+        <p class="seat-no"><svg class="ic" aria-hidden="true"><use href="#i-users"/></svg>Decides who sits in every other seat.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BOOKS AS OF ================= -->
+<section class="sec books" id="books" aria-labelledby="books-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="books-h" class="h2">Haaaave you met your books?</h2>
+      <p class="lede">Every report reconstructs from posted entries, so you can read the books as of any day. Drag the date and watch the receivable appear on Nov 16 and settle on Nov 18.</p>
+    </div>
+
+    <div class="bwin">
+      <div class="bwin-bar">
+        <p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg><b>Books</b><span class="sep">·</span><span>Lumen Studio</span></p>
+        <span class="demo">Demo data</span>
+      </div>
+      <div class="asof">
+        <p class="asof-k">As of <b id="asof-label">Tuesday, Nov 17, 2026</b></p>
+        <div class="asof-ctl" id="asof" role="slider" tabindex="0" aria-label="Books as of" aria-valuemin="0" aria-valuemax="22" aria-valuenow="21" aria-valuetext="Tuesday, Nov 17: $42,000.00 receivable">
+          <div class="asof-track" id="asof-track">
+            <span class="asof-cells" aria-hidden="true"></span>
+            <span class="asof-thumb" id="asof-thumb" aria-hidden="true"></span>
+          </div>
+          <ol class="asof-dates" aria-hidden="true"><li style="--d:0">Oct 27</li><li style="--d:6">Nov 2</li><li style="--d:13">Nov 9</li><li style="--d:20">Nov 16</li><li style="--d:22" class="end">Nov 18</li></ol>
+        </div>
+        <div class="asof-quick" role="group" aria-label="Jump to a date">
+          <button type="button" class="btn-ui" data-asof="10">Nov 6</button>
+          <button type="button" class="btn-ui" data-asof="21">Nov 17</button>
+          <button type="button" class="btn-ui" data-asof="22">Nov 18</button>
+        </div>
+      </div>
+
+      <div class="bgrid">
+        <div class="bcol">
+          <div class="bpanel">
+            <p class="panel-h">Receivables aging</p>
+            <table class="tbl aging">
+              <caption class="sr-only">Receivables as of the chosen date</caption>
+              <thead><tr><th scope="col">Client</th><th scope="col">Invoice</th><th scope="col">Due</th><th scope="col" class="num">Current</th><th scope="col" class="num">Overdue</th></tr></thead>
+              <tbody id="ag-body">
+                <tr><th scope="row">Northwind Co</th><td>INV-0042</td><td>Dec 1</td><td class="num">$42,000.00</td><td class="num">$0.00</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row" colspan="3">Total receivable</th><td class="num" id="ag-total">$42,000.00</td><td class="num">$0.00</td></tr></tfoot>
+            </table>
+            <p class="bnote" id="ag-note">INV-0042 was issued Nov 16 and is not due until Dec 1.</p>
+          </div>
+          <div class="bpanel">
+            <p class="panel-h">Profit and loss · <span id="pl-range">Oct 27 to Nov 17</span></p>
+            <table class="tbl pl">
+              <caption class="sr-only">Profit and loss, accrual and cash basis</caption>
+              <thead><tr><th scope="col"></th><th scope="col" class="num">Accrual</th><th scope="col" class="num">Cash</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Revenue, Site build</th><td class="num" id="pl-acc">$42,000.00</td><td class="num" id="pl-cash">$0.00</td></tr>
+                <tr><th scope="row">Expenses</th><td class="num">$0.00</td><td class="num">$0.00</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Net income</th><td class="num" id="pl-acc-n">$42,000.00</td><td class="num" id="pl-cash-n">$0.00</td></tr></tfoot>
+            </table>
+            <p class="bnote" id="pl-note">Accrual counts the sale when invoiced. Cash waits for the money.</p>
+          </div>
+        </div>
+        <div class="bpanel journal">
+          <p class="panel-h">Journal · posted entries</p>
+          <ol class="jl" id="jl">
+            <li class="jl-e" data-from="20">
+              <p class="je-id">JE-1041 <span>Nov 16 · Invoice INV-0042</span></p>
+              <p class="je-l"><span>Dr Accounts receivable</span><span class="num">42,000.00</span></p>
+              <p class="je-l cr"><span>Cr Revenue</span><span class="num">42,000.00</span></p>
+              <p class="chain"><svg class="ic" aria-hidden="true"><use href="#i-link-2"/></svg><b class="hash">#9c07</b> follows the entry before it</p>
+            </li>
+            <li class="jl-e" data-from="22">
+              <p class="je-id">JE-1042 <span>Nov 18 · Card payment</span></p>
+              <p class="je-l"><span>Dr Bank</span><span class="num">42,000.00</span></p>
+              <p class="je-l cr"><span>Cr Accounts receivable</span><span class="num">42,000.00</span></p>
+              <p class="chain"><svg class="ic" aria-hidden="true"><use href="#i-link-2"/></svg><b class="hash">#e21a</b> follows <b class="hash">#9c07</b></p>
+            </li>
+            <li class="jl-empty" id="jl-empty">No entries for this job yet. A proposal and logged hours are promises, not postings.</li>
+          </ol>
+          <div class="tb">
+            <p class="panel-h">Trial balance</p>
+            <table class="tbl">
+              <caption class="sr-only">Trial balance as of the chosen date</caption>
+              <thead><tr><th scope="col">Account</th><th scope="col" class="num">Debit</th><th scope="col" class="num">Credit</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Bank</th><td class="num" id="tb-bank">0.00</td><td class="num"></td></tr>
+                <tr><th scope="row">Accounts receivable</th><td class="num" id="tb-ar">42,000.00</td><td class="num"></td></tr>
+                <tr><th scope="row">Revenue</th><td class="num"></td><td class="num" id="tb-rev">42,000.00</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row">Balanced</th><td class="num" id="tb-dr">42,000.00</td><td class="num" id="tb-cr">42,000.00</td></tr></tfoot>
+            </table>
+          </div>
+          <div class="immut">
+            <div class="immut-btns">
+              <span class="btn-ui is-off" aria-disabled="true"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg>Edit</span>
+              <span class="btn-ui"><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg>Reverse</span>
+            </div>
+            <p>Posted entries are never edited. Reverse it instead.</p>
+          </div>
+        </div>
+      </div>
+      <p class="bwin-foot"><svg class="ic" aria-hidden="true"><use href="#i-check-check"/></svg>Every number here is a true story. Read from posted entries, never from today's balances.</p>
+    </div>
+
+    <ul class="book-lines">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><p><b>Period close.</b> Close October and nothing dated in it can change. A correction lands in an open period, as a new entry.</p></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><p><b>A seat for your accountant.</b> Jules reads the same journal and every report, and has no button that changes one.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= PRIVACY ================= -->
+<section class="sec privacy" id="privacy" aria-labelledby="priv-h">
+  <div class="wrap priv-grid">
+    <div class="priv-copy">
+      <h2 id="priv-h" class="h2">Your calendar stays yours.</h2>
+      <p class="lede">Connect a calendar and meetings become private time drafts: a title and a duration, nothing else. Only you see them. They count as time when you accept them, not before.</p>
+      <ul class="who" aria-label="Who can see Theo's draft">
+        <li class="who-yes"><span class="av">TB</span><span>Theo, whose calendar it is</span><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg></li>
+        <li><span class="av">LP</span><span>Lena, his approver</span><svg class="ic" aria-hidden="true"><use href="#i-eye-off"/></svg></li>
+        <li><span class="av">MO</span><span>Maya, the owner</span><svg class="ic" aria-hidden="true"><use href="#i-eye-off"/></svg></li>
+      </ul>
+    </div>
+    <div class="priv-demo" id="priv-demo">
+      <div class="cal-ev">
+        <div class="cal-top"><p class="cal-k"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg>Theo's calendar · Tue, Nov 10</p><span class="demo">Demo data</span></div>
+        <p class="cal-title">Northwind homepage review</p>
+        <dl class="cal-f">
+          <div class="keep"><dt>Time</dt><dd>10:00 to 11:30 AM</dd></div>
+          <div class="drop"><dt>Guests</dt><dd>Dana Whitfield, Maya Ortiz, +2</dd></div>
+          <div class="drop"><dt>Notes</dt><dd>Walk through the new homepage and the pricing page copy.</dd></div>
+          <div class="drop"><dt>Video</dt><dd>Meeting link</dd></div>
+          <div class="drop"><dt>Room</dt><dd>Studio, second floor</dd></div>
+        </dl>
+      </div>
+      <p class="priv-arrow"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>Kept: title and duration. Dropped at the door: guests, notes, links, place.</p>
+      <div class="draft">
+        <div class="cal-top"><p class="cal-k"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Theo's time · private draft</p><span class="demo">Demo data</span></div>
+        <div class="draft-row">
+          <p class="draft-t">Northwind homepage review<span>Tue, Nov 10</span></p>
+          <p class="draft-d num">1 h 30 m</p>
+        </div>
+        <div class="draft-act">
+          <span class="btn-ui"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Accept as time</span>
+          <span class="btn-ui">Dismiss</span>
+          <span class="draft-only"><svg class="ic" aria-hidden="true"><use href="#i-eye-off"/></svg>Hidden from everyone else and from every total</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PLAYBOOK ================= -->
+<section class="sec playbook" id="playbook" aria-labelledby="pb-h">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="pb-h" class="h2">The playbook.</h2>
+      <p class="lede">Everything else an agency runs on, in the same product and on the same books. Search it the way you would in the app.</p>
+    </div>
+    <div class="pbwin">
+      <div class="pb-search">
+        <svg class="ic" aria-hidden="true"><use href="#i-search"/></svg>
+        <label class="sr-only" for="pb-q">Search the playbook</label>
+        <input id="pb-q" type="text" placeholder="Search the playbook" autocomplete="off" role="combobox" aria-expanded="true" aria-controls="pb-list" aria-autocomplete="list">
+        <span class="kbd" aria-hidden="true"><svg class="ic"><use href="#i-command"/></svg>K</span>
+        <span class="demo">Demo data</span>
+      </div>
+      <div class="pb-body">
+        <ul class="pb-list" id="pb-list" role="listbox" aria-label="Playbook">
+          <li role="option" id="pb-0" data-story="Not used on Site build: Dana chose between options" data-where="Proposals" data-posts="no"><svg class="ic"><use href="#i-file-pen-line"/></svg><span class="pb-n">Estimates</span><span class="pb-w">Proposals</span><span class="pb-d">Price a job without options. Convert an accepted estimate into an invoice at the rate it was agreed at, even if your default rate changes later.</span></li>
+          <li role="option" id="pb-1" data-story="Option C would have billed $4,500/mo" data-where="Invoices" data-posts="yes"><svg class="ic"><use href="#i-repeat"/></svg><span class="pb-n">Recurring invoices</span><span class="pb-w">Invoices</span><span class="pb-d">Retainers bill themselves on a schedule. One invoice per period, never two, even if the scheduler runs twice.</span></li>
+          <li role="option" id="pb-2" data-story="INV-0042 was paid before any reminder was due" data-where="Invoices" data-posts="yes"><svg class="ic"><use href="#i-bell"/></svg><span class="pb-n">Reminders and late fees</span><span class="pb-w">Invoices</span><span class="pb-d">Polite nudges before and after the due date. A late fee posts its own entry and raises the total in the same step, so the invoice and the books never disagree.</span></li>
+          <li role="option" id="pb-3" data-story="None issued to Northwind" data-where="Invoices" data-posts="yes"><svg class="ic"><use href="#i-file-minus"/></svg><span class="pb-n">Credit notes</span><span class="pb-w">Invoices</span><span class="pb-d">Give money back as credit a client can apply to the next invoice. Every cent of issued credit is either still available or applied somewhere you can see.</span></li>
+          <li role="option" id="pb-4" data-story="Where Dana chose option B and signed" data-where="Portal" data-posts="no"><svg class="ic"><use href="#i-mouse-pointer-click"/></svg><span class="pb-n">Client portal</span><span class="pb-w">Portal</span><span class="pb-d">Your client chooses an option, signs, reads invoices and pays, all from the link you send.</span></li>
+          <li role="option" id="pb-5" data-story="INV-0042, Visa ending 1881, Nov 18" data-where="Payments" data-posts="yes"><svg class="ic"><use href="#i-credit-card"/></svg><span class="pb-n">Card and bank payments</span><span class="pb-w">Payments</span><span class="pb-d">Clients pay online by card or bank. A payment posts to the books as it lands, and a provider retry never records it twice.</span></li>
+          <li role="option" id="pb-6" data-story="None on Site build" data-where="Expenses" data-posts="yes"><svg class="ic"><use href="#i-receipt"/></svg><span class="pb-n">Expenses and receipts</span><span class="pb-w">Expenses</span><span class="pb-d">Log spend with the receipt attached. Fix an amount later and the books restate the period it belongs to, instead of quietly rewriting it.</span></li>
+          <li role="option" id="pb-7" data-story="None on Site build" data-where="Bills" data-posts="yes"><svg class="ic"><use href="#i-building-2"/></svg><span class="pb-n">Bills and vendors</span><span class="pb-w">Bills</span><span class="pb-d">Track what you owe and when it is due. Paying a bill never counts twice as an expense, and a full tax id is never stored.</span></li>
+          <li role="option" id="pb-8" data-story="JE-1042 debits Bank on Nov 18" data-where="Banking" data-posts="yes"><svg class="ic"><use href="#i-landmark"/></svg><span class="pb-n">Bank feeds</span><span class="pb-w">Banking</span><span class="pb-d">Bring in bank transactions and match them to what you already recorded, so the bank and the books tell the same story.</span></li>
+          <li role="option" id="pb-9" data-story="Northwind is billed in US dollars" data-where="Invoices" data-posts="yes"><svg class="ic"><use href="#i-arrow-left-right"/></svg><span class="pb-n">Multi-currency</span><span class="pb-w">Invoices</span><span class="pb-d">Bill in your client's currency. Each document keeps the exchange rate it was issued at, and reports read your base currency.</span></li>
+          <li role="option" id="pb-10" data-story="The P&L and aging above, as of any day" data-where="Reports" data-posts="no"><svg class="ic"><use href="#i-chart-column"/></svg><span class="pb-n">Reports</span><span class="pb-w">Reports</span><span class="pb-d">Profit and loss, balance sheet, aging, tax and more, all read from the same posted books and all as of any date you pick.</span></li>
+          <li role="option" id="pb-11" data-story="October could close today: nothing posted in it" data-where="Books" data-posts="no"><svg class="ic"><use href="#i-calendar"/></svg><span class="pb-n">Period close</span><span class="pb-w">Books</span><span class="pb-d">Close a month and nothing dated in it can change. Closing and reopening ask for your password again.</span></li>
+          <li role="option" id="pb-12" data-story="Five seats on Site build, above" data-where="Settings" data-posts="no"><svg class="ic"><use href="#i-users"/></svg><span class="pb-n">Roles and approvals</span><span class="pb-w">Settings</span><span class="pb-d">Owners, finance seats, approvers per project, members and a read-only accountant. Weeks are submitted and approved before they bill.</span></li>
+          <li class="pb-none" id="pb-none" hidden>Nothing in the playbook matches that. Try "invoice" or "time".</li>
+        </ul>
+        <div class="pb-prev" id="pb-prev" aria-live="polite">
+          <svg class="ic pb-ic" aria-hidden="true"><use href="#i-repeat"/></svg>
+          <p class="pb-pn">Recurring invoices</p>
+          <p class="pb-pd">Retainers bill themselves on a schedule. One invoice per period, never two, even if the scheduler runs twice.</p>
+          <dl class="pb-facts"><div><dt>Lives in</dt><dd id="pb-where">Invoices</dd></div><div><dt>Posts to the books</dt><dd id="pb-posts">Yes, through the same ledger</dd></div><div><dt>On Site build</dt><dd id="pb-story">Option C would have billed $4,500/mo</dd></div></dl>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CALL ================= -->
+<section class="sec final" id="join" aria-labelledby="join-h">
+  <div class="wrap final-in">
+    <div class="final-copy">
+      <h2 id="join-h" class="h2 final-h">Suit up.</h2>
+      <p class="lede">Ledgendary is in invite-only alpha. Leave your work email and we'll send one email when your invite is ready.</p>
+    </div>
+    <form class="join-form join-final" data-join novalidate>
+      <label class="join-label" for="final-email">Work email</label>
+      <div class="join-fields">
+        <input id="final-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="final-email-msg">
+        <button class="btn btn-coral" type="submit">Join the waitlist</button>
+      </div>
+      <p class="join-msg" id="final-email-msg" aria-live="polite"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>We use it for the invite and nothing else.</p>
+    </form>
+    <div class="rest" aria-label="Where the story ends: Nov 18, paid">
+      <div class="rest-rail" aria-hidden="true"><span class="rest-fill"></span><span class="rest-marker"></span></div>
+      <div class="rest-row">
+        <p class="rest-date">Nov 18</p>
+        <p class="rest-doc">INV-0042 · Northwind Co<span>Posted as JE-1042 · #e21a</span></p>
+        <p class="rest-amt num">$42,000.00</p>
+        <span class="pill" data-tone="paid"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Paid</span>
+        <span class="demo">Demo data</span>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="#top" aria-label="Ledgendary, back to top">
+      <svg class="mark" viewBox="0 0 32 20" aria-hidden="true"><rect x="0" y="9" width="32" height="2" rx="1" fill="#f3efe6" opacity=".35"/><rect x="0" y="9" width="20" height="2" rx="1" fill="#f3efe6"/><rect x="18" y="1" width="4" height="18" rx="2" fill="#ff6b4a"/></svg>
+      <span>Ledgendary</span>
+    </a>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#story">Product</a><a href="#seats">Agencies</a><a href="#books">The books</a><a href="#privacy">Privacy</a><a href="#join">Waitlist</a>
+    </nav>
+    <p class="foot-c">© 2026 Ledgendary · True story.</p>
+  </div>
+</footer>
+<script src="app.js" defer></script>
+</body>
+</html>
