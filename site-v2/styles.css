@@ -718,6 +718,8 @@ b, strong { font-weight: 650; }
   .pb li { grid-template-columns: 40px minmax(0, 1fr); row-gap: 2px; }
   .pb li > span:last-child { grid-column: 2; }
   .org-row { grid-template-columns: 1fr; gap: 6px; }
+  .org-v > .av + span { flex: 1 1 160px; }
+  .week tfoot th { text-align: left; padding-left: 0; }
   .foot-legal { margin-left: 0; width: 100%; }
 }
 
