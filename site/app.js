@@ -114,7 +114,7 @@
     // Cursor script: moves, presses and visibility, in timeline order.
     const CURSOR = [
       { at: 0, kind: 'park', x: 0.62, y: 0.86, who: 'dana' },
-      { at: 600, kind: 'move', target: '#tgt-b' },
+      { at: 600, kind: 'move', target: '.opt-b', fy: 0.9 },
       { at: 1700, kind: 'press', target: '#tgt-b' },
       { at: 3000, kind: 'move', target: '.sign-field' },
       { at: 3550, kind: 'move', target: '.sign-check .box' },
@@ -151,7 +151,7 @@
         const r = target.getBoundingClientRect();
         if (!r.width) return;
         x = r.left - box.left + r.width * 0.55;
-        y = r.top - box.top + r.height * 0.5;
+        y = r.top - box.top + r.height * (ev.fy ?? 0.5);
       }
       cursor.style.setProperty('--x', `${Math.round(x)}px`);
       cursor.style.setProperty('--y', `${Math.round(y)}px`);
