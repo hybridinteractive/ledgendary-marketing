@@ -758,3 +758,101 @@ html:not(.js) .tally { display: none; }
 @media (max-width: 720px) { .methods { display: none; } .je-id { white-space: nowrap; } .je-id span { display: none; } .pane-invoice { gap: 10px; } }
 .rest-row .pill { justify-self: start; }
 @media (max-width: 720px) { .rest-marker { right: -4px; } }
+
+/* ===== Finish round: hero, climax, flattening, phone ===== */
+
+/* Hero: headline left, the ask beside it; the date and the rail are the image below */
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); column-gap: 64px; align-items: end; padding-top: clamp(32px, 6vh, 64px); padding-bottom: 28px; }
+.hero-row { grid-template-columns: 1fr; margin-top: 0; gap: 20px; justify-content: stretch; }
+.hero-sub { font-size: 18px; }
+.rd-date { font-size: clamp(3.5rem, 5.2vw, 5.75rem); font-weight: 300; letter-spacing: -.035em; line-height: .86; }
+.rd-day { font-size: 15px; margin-bottom: 6px; }
+.readout { padding-bottom: 14px; }
+.js:not(.rm) .stage-in { align-content: center; }
+
+/* Chips: the short label below 1360 keeps a gap between same-week events */
+@media (max-width: 1360px) { .chip-x { display: none; } }
+
+/* Climax: the received figure fills with coral as Nov 18 lands, scrub-linked */
+.climax { padding-top: 16px; border-top: 1px solid var(--line); }
+.climax-k { font-size: 13px; color: var(--mut); font-weight: 550; }
+.climax-fig { position: relative; display: inline-block; margin-top: 6px; font-size: 3.5rem; line-height: 1; font-weight: 760; font-stretch: 75%; letter-spacing: -.02em; font-variant-numeric: tabular-nums; }
+.climax-zero { display: inline-block; padding: 4px 10px 6px 0; color: var(--mut-2); font-weight: 300; }
+.climax-paid { position: absolute; left: 0; top: 0; padding: 4px 12px 6px; border-radius: 10px; background: var(--coral); color: var(--ink); white-space: nowrap; clip-path: inset(0 calc((1 - var(--c, 0)) * 100%) 0 0 round 10px); }
+.climax.is-paid .climax-zero { visibility: hidden; }
+html:not(.js) .climax { display: none; }
+.tally { margin-top: 0; }
+.captions { justify-content: flex-start; }
+
+/* Client activity: rows, like the activity rail, not tiles */
+.view-slots { display: grid; grid-template-columns: 1fr; gap: 0; margin-top: 6px; }
+.vs { grid-template-columns: 16px 1fr auto; padding: 8px 0; border-radius: 0; box-shadow: none; border-top: 1px solid var(--line); background: none !important; }
+.vs:first-child { border-top: 0; }
+.vs .ic { grid-row: auto; }
+.views { padding-bottom: 6px; }
+
+/* Seat footers: a hairline footnote */
+.seat-no { padding: 10px 0 0; border-radius: 0; background: none; border-top: 1px solid var(--line); }
+
+/* Section intros vary */
+.sec-head--stack { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.sec-head--stack .lede { max-width: 60ch; }
+.sec-head--center { grid-template-columns: minmax(0, 1fr); justify-items: center; text-align: center; gap: 18px; }
+
+/* Playbook sized to its results */
+.pb-body { min-height: 0; align-items: start; }
+.pb-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 6px; align-content: start; }
+.pb-list .pb-none { grid-column: 1 / -1; }
+.pb-facts { margin-top: 0; }
+.js .pb-prev { padding: 32px 36px 24px; }
+
+/* Invoice status: two lines, never a middot at a line start */
+.pay-t { display: flex; flex-direction: column; min-width: 0; }
+.pay-sub { font-size: 12.5px; opacity: .85; white-space: nowrap; }
+.pay-t > span:first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.grid td.num, .grid th.num { white-space: nowrap; }
+
+@media (max-width: 1100px) {
+  .hero { grid-template-columns: 1fr; row-gap: 20px; }
+  .pb-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 720px) {
+  .hero { padding-top: 24px; }
+  .rd-date { font-size: 2.25rem; font-weight: 300; }
+  .rd-day { margin-bottom: 0; }
+  .story-h { font-size: 1.125rem; }
+  .cap { display: block; min-height: 0; }
+  .cap-title { display: inline; font-size: 15px; }
+  .cap-title::after { content: ""; margin: 0; }
+  .cap-text { display: inline; margin-left: 6px; font-size: 14px; -webkit-line-clamp: unset; overflow: visible; }
+  .climax { display: none; }
+  .grid .is-off-m { display: none; }
+  .grid .nm { display: inline; }
+  .grid tbody th .av { display: none; }
+  .grid td.num { white-space: nowrap; }
+  .js:not(.rm) .stage-in { grid-template-rows: auto auto auto; align-content: start; }
+  .js .app { height: auto; min-height: 0; }
+  .js .panes { flex: none; }
+  .js .pane.is-active { position: relative; }
+  .je-strip { margin-top: 0; }
+  .lines .src { display: none; }
+  .pb-list { grid-template-columns: 1fr; }
+  .js .pane-portal.is-active { position: relative; }
+}
+@media (max-width: 720px) { .js .app[data-scene="portal"] .app-main { display: none; } }
+
+.chip-x { margin-left: -6px; }
+.rd-date { font-size: clamp(3.25rem, 4.6vw, 4.5rem); color: var(--text); transform-origin: 0 100%; will-change: transform; }
+.rd-day { margin: 8px 0 0; }
+@media (max-width: 720px) { .rd-date { transform: none !important; } .rd-day { margin: 0; } }
+.hero { padding-bottom: 64px; padding-top: clamp(24px, 4vh, 48px); }
+.rd-date { color: var(--text-2); }
+@media (max-width: 720px) { .hero { padding-bottom: 24px; } }
+.pb-list li[role="option"] { min-height: 46px; }
+.pb-list.is-filtered { grid-template-columns: 1fr; }
+.js .pb-prev { padding: 24px 32px 16px; }
+.pb-pn { margin-top: 18px; }
+.pb-facts { padding-top: 20px; }
+.climax { order: 5; }
+@media (max-width: 720px) { .hero-sub { font-size: 16px; } .rd-date { font-size: 2rem; } .rail-wrap { padding-top: 46px; } }

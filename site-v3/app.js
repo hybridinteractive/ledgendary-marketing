@@ -9,7 +9,13 @@
   var rmQuery = window.matchMedia ? matchMedia('(prefers-reduced-motion: reduce)') : null;
   var reduced = !!(rmQuery && rmQuery.matches);
 
-  function setText(el, s) { if (el && el.textContent !== s) { el.textContent = s; } }
+  /* Typesetting: a middot never starts a line, a date never splits from its day. */
+  function nb(s) { return String(s).replace(/ · /g, ' · ').replace(/\b(Oct|Nov|Dec) (\d)/g, '$1 $2'); }
+  function setText(el, s) { s = nb(s); if (el && el.textContent !== s) { el.textContent = s; } }
+  (function walk(node) {
+    var w = document.createTreeWalker(node, NodeFilter.SHOW_TEXT, null), t;
+    while ((t = w.nextNode())) { if (/ · |(Oct|Nov|Dec) \d/.test(t.nodeValue)) { t.nodeValue = nb(t.nodeValue); } }
+  })(document.body);
   function setAttr(el, k, v) { if (el && el.getAttribute(k) !== String(v)) { el.setAttribute(k, v); } }
   function toggle(el, c, on) { if (el && el.classList.contains(c) !== !!on) { el.classList.toggle(c, !!on); } }
   function land(el, c) { c = c || 'is-land'; el.classList.remove(c); void el.offsetWidth; el.classList.add(c); }
@@ -174,7 +180,8 @@
     renderTally(t);
   }
 
-  var ty = { prop: $('#ty-prop'), time: $('#ty-time'), inv: $('#ty-inv'), paid: $('#ty-paid'), je: $('#ty-je') };
+  var ty = { prop: $('#ty-prop'), time: $('#ty-time'), inv: $('#ty-inv'), je: $('#ty-je') };
+  var climax = $('#climax');
   function renderTally(t) {
     var views = VIEWS.filter(function (v) { return t >= v; }).length;
     setText(ty.prop, t < 0.35 ? 'Draft' : t < 3.6 ? (views ? 'Viewed ' + (views === 1 ? 'once' : views === 2 ? 'twice' : '3 times') : 'Sent') : 'Signed, option B');
@@ -185,9 +192,8 @@
     var inv = t >= 20.7, paid = t >= 22.3;
     setText(ty.inv, inv ? '$42,000.00' : '$0.00');
     toggle(ty.inv, 'is-zero', !inv);
-    setText(ty.paid, paid ? '$42,000.00' : '$0.00');
-    toggle(ty.paid, 'is-zero', !paid);
-    toggle(ty.paid, 'is-paid', paid);
+    climax.style.setProperty('--c', clamp((t - 22.3) / 0.18, 0, 1).toFixed(3));
+    toggle(climax, 'is-paid', paid);
     setText(ty.je, t < 20.72 ? 'No entries' : t < 22.55 ? 'JE-1041' : 'JE-1041, JE-1042');
     toggle(ty.je, 'is-zero', t < 20.72);
   }
@@ -239,6 +245,8 @@
     var first = 2 + 7 * wk;
     var short = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     var todayC = d - 6 - 7 * wk;
+    var hi = Math.min(4, Math.max(2, todayC)), lo = hi - 2;
+    $$('[data-c]', el.tGrid).forEach(function (n) { var c = +n.dataset.c; toggle(n, 'is-off-m', c < lo || c > hi); });
     gridHead.forEach(function (th, c) {
       var html = short[c] + ' <b>' + (first + c) + '</b>';
       if (th.dataset.k !== html) { th.dataset.k = html; th.innerHTML = html; }
@@ -314,15 +322,15 @@
     setText(el.due, usd(total));
 
     var pay;
-    if (t < 20.7) { pay = ['draft', 'file-text', 'Not sent yet · Fixed fee and approved time pulled from Site build']; }
-    else if (t < 21.5) { pay = ['draft', 'send', 'Sent to Dana Whitfield, Nov 16 · Card or bank in the portal']; }
-    else if (t < 22.3) { pay = ['seen', 'hourglass', 'Viewed by Dana, Nov 17 · Wait for it…']; }
-    else { pay = ['paid', 'credit-card', 'Paid by card · Visa ending 1881 · Nov 18']; }
+    if (t < 20.7) { pay = ['draft', 'file-text', 'Not sent yet', 'Fee and approved time from Site build']; }
+    else if (t < 21.5) { pay = ['draft', 'send', 'Sent to Dana Whitfield, Nov 16', 'Card or bank in the portal']; }
+    else if (t < 22.3) { pay = ['seen', 'hourglass', 'Viewed by Dana, Nov 17', 'Wait for it…']; }
+    else { pay = ['paid', 'credit-card', 'Paid by card, Visa ending 1881', 'Nov 18']; }
     var pk = pay.join('|');
     if (el.pay.dataset.k !== pk) {
       el.pay.dataset.k = pk;
       el.pay.setAttribute('data-tone', pay[0]);
-      el.pay.innerHTML = icon(pay[1]) + '<span>' + pay[2] + '</span>';
+      el.pay.innerHTML = icon(pay[1]) + '<span class="pay-t"><span>' + nb(pay[2]) + '</span><span class="pay-sub">' + nb(pay[3]) + '</span></span>';
     }
 
     var j1 = t >= 20.72, j2 = t >= 22.55;
@@ -342,7 +350,7 @@
     var html = list.slice().reverse().slice(0, 7).map(function (e, i) {
       var sub = e.s === 'views' ? 'Oct 28 · ' + (views === 1 ? 'once' : views === 2 ? 'twice' : '3 times') : e.s;
       var cls = (e.paid ? 'is-paid ' : '') + (i === 0 && grew ? 'is-new' : '');
-      return '<li class="' + cls + '">' + icon(e.ic) + '<p>' + e.t + '<span>' + sub + '</span></p></li>';
+      return '<li class="' + cls + '">' + icon(e.ic) + '<p>' + nb(e.t) + '<span>' + nb(sub) + '</span></p></li>';
     }).join('');
     if (!list.length) { html = '<li>' + icon('file-pen-line') + '<p>Proposal P-0018 drafted<span>Oct 27 · Maya Ortiz</span></p></li>'; }
     el.act.innerHTML = html;
@@ -381,6 +389,9 @@
       var y = window.scrollY;
       toggle(nav, 'is-scrolled', y > 8);
       if (reduced) { return; }
+      /* The date is the hero's image, then settles into its readout as the chapter pins */
+      var q = window.innerWidth > 720 ? clamp(1 - y / Math.max(1, L.pinStart), 0, 1) : 0;
+      el.date.style.transform = q ? 'scale(' + (1 + q * (window.innerWidth >= 1400 ? 1.15 : 0.8)).toFixed(3) + ')' : '';
       if (y > L.pinStart + L.len + window.innerHeight) { return; }
       render(pToT((y - L.pinStart) / L.len));
     });
@@ -575,6 +586,7 @@
       opts.forEach(function (o) { o.hidden = !!s && o.textContent.toLowerCase().indexOf(s) === -1; });
       var v = visible();
       none.hidden = v.length > 0;
+      toggle($('#pb-list'), 'is-filtered', !!s);
       if (v.length && v.indexOf(opts[sel]) === -1) { select(opts.indexOf(v[0])); }
     });
     q.addEventListener('keydown', function (e) {
@@ -602,8 +614,14 @@
       e.preventDefault();
       if (form.dataset.done) { return; }
       var v = input.value.trim();
+      var at = v.indexOf('@'), dom = at > -1 ? v.slice(at + 1) : '';
       var err = !v ? 'Enter your work email so we can send the invite.'
-        : !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? 'Missing the @ or the domain. Try you@studio.com.' : '';
+        : /\s/.test(v) ? 'Remove the spaces from the address.'
+        : at === -1 ? 'The @ is missing. Try you@studio.com.'
+        : at === 0 ? 'Add your name before the @.'
+        : v.indexOf('@', at + 1) > -1 ? 'An address has one @. Remove the extra one.'
+        : !dom ? 'The domain is missing after the @, like studio.com.'
+        : !/^[^.]+(\.[^.]+)*\.[a-z]{2,}$/i.test(dom) ? 'The domain needs an ending, like studio.com.' : '';
       if (err) {
         input.setAttribute('aria-invalid', 'true');
         msg.className = 'join-msg is-err';

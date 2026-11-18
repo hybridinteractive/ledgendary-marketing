@@ -98,12 +98,12 @@
       <!-- Rail -->
       <div class="railbar">
         <div class="readout" aria-hidden="true">
-          <span class="rd-day" id="rd-day">Tuesday</span>
           <span class="rd-date" id="rd-date">Oct 27</span>
+          <span class="rd-day" id="rd-day">Tuesday</span>
         </div>
         <div class="rail-wrap">
           <ol class="rail-chips" aria-hidden="true">
-            <li class="chip" data-at="0.35" style="--d:0"><svg class="ic"><use href="#i-send"/></svg>Sent, viewed</li>
+            <li class="chip" data-at="0.35" style="--d:0"><svg class="ic"><use href="#i-send"/></svg>Sent<span class="chip-x">, viewed</span></li>
             <li class="chip" data-at="3.25" style="--d:3"><svg class="ic"><use href="#i-signature"/></svg>Signed</li>
             <li class="chip" data-at="6.2" style="--d:6"><svg class="ic"><use href="#i-clock"/></svg>Hours</li>
             <li class="chip chip-inv" data-at="20.7" style="--d:21"><svg class="ic"><use href="#i-file-text"/></svg>Invoiced</li>
@@ -131,11 +131,14 @@
           <p class="cap-title" id="cap-title">Proposal sent</p>
           <p class="cap-text" id="cap-text">Maya sends P-0018 to Dana with three options. Time is billed at $150/h as it is logged.</p>
         </div>
+        <div class="climax" id="climax" aria-hidden="true">
+          <p class="climax-k">Received on Site build</p>
+          <p class="climax-fig"><span class="climax-zero" id="climax-zero">$0</span><span class="climax-paid">$42,000</span></p>
+        </div>
         <dl class="tally" aria-label="The job so far">
           <div><dt>Proposal</dt><dd id="ty-prop">Draft</dd></div>
           <div><dt>Logged</dt><dd id="ty-time">0 h 0 m</dd></div>
           <div><dt>Invoiced</dt><dd id="ty-inv">$0.00</dd></div>
-          <div><dt>Received</dt><dd id="ty-paid">$0.00</dd></div>
           <div><dt>Posted</dt><dd id="ty-je">No entries</dd></div>
         </dl>
         <p class="hint" id="hint"><svg class="ic" aria-hidden="true"><use href="#i-arrow-left-right"/></svg>Scroll, or drag the date.</p>
@@ -263,7 +266,7 @@
                   </tbody>
                 </table>
                 <div class="inv-foot">
-                  <p class="pay" id="inv-pay" data-tone="paid"><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg><span id="inv-pay-t">Paid by card · Visa ending 1881 · Nov 18</span></p>
+                  <p class="pay" id="inv-pay" data-tone="paid"><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg><span class="pay-t"><span>Paid by card, Visa ending 1881</span><span class="pay-sub">Nov 18</span></span></p>
                   <p class="methods"><span>Accepts</span><span class="btn-ui"><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg>Card</span><span class="btn-ui"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg>Bank</span></p>
                   <dl class="totals">
                     <div><dt>Total</dt><dd id="inv-total">$42,000.00</dd></div>
@@ -329,7 +332,7 @@
 <!-- ================= SEATS ================= -->
 <section class="sec seats" id="seats" aria-labelledby="seats-h">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head sec-head--stack">
       <h2 id="seats-h" class="h2">One person or three hundred.</h2>
       <p class="lede">The same Nov 18, through five seats. Each person sees the part of the job that is theirs, and nothing they shouldn't touch. Run the studio alone and you hold all five.</p>
     </div>
@@ -544,7 +547,7 @@
 <!-- ================= PLAYBOOK ================= -->
 <section class="sec playbook" id="playbook" aria-labelledby="pb-h">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head sec-head--center">
       <h2 id="pb-h" class="h2">The playbook.</h2>
       <p class="lede">Everything else an agency runs on, in the same product and on the same books. Search it the way you would in the app.</p>
     </div>
