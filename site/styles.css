@@ -803,22 +803,18 @@ html:not(.js) .scr { display: block; padding-bottom: 32px; }
 .role-note { padding: 12px 22px; border-top: 1px solid var(--line); background: #fbfbfc; color: var(--ink-2); font-size: 13px; min-height: 45px; }
 
 /* per role */
-.win-role[data-role="finance"] [data-act="approve"]:not(.rb-done),
 .win-role[data-role="accountant"] [data-act="approve"]:not(.rb-done) { opacity: 0; transform: translateX(6px); pointer-events: none; }
-.win-role[data-role="approver"] [data-act="send"],
-.win-role[data-role="approver"] [data-act="record"] { display: none; }
 .win-role[data-role="accountant"] .rp-acts .rb:not(.rb-ro) { display: none; }
 .win-role[data-role="accountant"] .rb-ro { display: inline-flex; }
-.win-role[data-role="finance"] [data-act="send"] { display: inline-flex; }
 .win-role[data-role="member"] .tl-row:not([data-who="theo"]) { max-height: 0; opacity: 0; padding-block: 0; border-color: transparent; }
 .win-role[data-role="member"] [data-who="theo"] [data-act="approve"] { display: none; }
 .win-role[data-role="member"] [data-who="theo"] .rb-own { display: inline-flex; }
 .win-role[data-role="member"] .rp-empty { display: flex; }
 .win-role[data-role="member"] .rp-sum[data-r="all"] { opacity: 0; }
-.win-role:is([data-role="member"], [data-role="approver"]) .rp-money .il,
-.win-role:is([data-role="member"], [data-role="approver"]) .rp-money .rp-acts,
-.win-role:is([data-role="member"], [data-role="approver"]) .rp-money .rp-h { opacity: 0; visibility: hidden; }
-.win-role:is([data-role="member"], [data-role="approver"]) .rp-locked { opacity: 1; visibility: visible; transition: opacity 360ms 120ms var(--ease), visibility 0s; }
+.win-role[data-role="member"] .rp-money .il,
+.win-role[data-role="member"] .rp-money .rp-acts,
+.win-role[data-role="member"] .rp-money .rp-h { opacity: 0; visibility: hidden; }
+.win-role[data-role="member"] .rp-locked { opacity: 1; visibility: visible; transition: opacity 360ms 120ms var(--ease), visibility 0s; }
 
 .sizes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
 .sizes li { color: var(--ink-2); font-size: 1rem; max-width: 34ch; }

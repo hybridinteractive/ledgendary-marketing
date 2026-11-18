@@ -35,10 +35,15 @@
   const onScroll = () => nav.classList.toggle('is-scrolled', window.scrollY > 8);
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-  const dark = $('#books');
-  if (dark) {
-    new IntersectionObserver((list) => list.forEach((e) => nav.classList.toggle('is-dark', e.isIntersecting)),
-      { rootMargin: '-30px 0px -95% 0px' }).observe(dark);
+  // Every ink chapter (the home's books, an audience page's [data-ink] sections) turns the nav dark.
+  const darks = $$('#books, [data-ink]');
+  if (darks.length) {
+    const under = new Set();
+    const dio = new IntersectionObserver((list) => {
+      list.forEach((e) => (e.isIntersecting ? under.add(e.target) : under.delete(e.target)));
+      nav.classList.toggle('is-dark', under.size > 0);
+    }, { rootMargin: '-30px 0px -95% 0px' });
+    darks.forEach((d) => dio.observe(d));
   }
 
   /* --------------------------------------------------------------- highlighter */
@@ -373,9 +378,8 @@
     const tabs = $$('.role');
     const ROLE = {
       owner: { name: 'Maya Ortiz, Owner', note: 'Owners see everything and can change anything, including who sees what.' },
-      finance: { name: 'Sam Okafor, Finance', note: 'Finance sends invoices and records payments. Hours show as totals; approving weeks is not their call.' },
+      admin: { name: 'Sam Okafor, Administrator', note: 'Sam approves weeks, sends invoices and records payments. Voids, refunds and closing a month ask him to confirm it’s him first.' },
       member: { name: 'Theo Brandt, Member', note: 'Theo sees his own week and submits it. Invoices and other people’s hours are not part of his seat.', locked: ['Invoices aren’t shared with members.', 'Members log and submit their own time. That’s the whole seat.'] },
-      approver: { name: 'Lena Park, Approver', note: 'Lena approves weeks on the projects she is assigned to. Money stays out of her view.', locked: ['Money isn’t part of this seat.', 'Approvers see hours for the projects they approve, never invoices or payments.'] },
       accountant: { name: 'Jules Carter, Accountant', note: 'Jules reads everything, from invoices to the journal, and can’t change any of it.' },
     };
     const nameEl = $('[data-role-name]', rolePanel);
@@ -517,7 +521,7 @@
       fx: ['INV-0044 · Ferro GmbH', `<div class="pv-big"><span>Billed in euros</span><b class="num">€12,000.00</b></div>${row('Rate on the invoice', 'Kept with the document', '1.0842')}${row('In your books', 'USD', '$13,010.40')}<p class="pv-note">${ic('scale')}The rate is stored once. Reports never recompute it.</p>`],
       reports: ['Reports', `${row('Profit and loss', 'Accrual or cash basis', 'Open', '<span></span>')}${row('Balance sheet', 'As of any date', 'Open', '<span></span>')}${row('Receivables aging', 'Rebuilt as of the date you ask', 'Open', '<span></span>')}${row('Cash basis', 'What actually arrived, by client', 'Open', '<span></span>')}`],
       close: ['Periods', `${row('September 2026', 'Closed Oct 2 · Sam Okafor', '', P.grey('Closed'))}${row('October 2026', 'Closed Nov 3 · Sam Okafor', '', P.grey('Closed'))}${row('November 2026', 'Open', '', P.green('Open'))}<p class="pv-note">${ic('lock')}Nothing dated in a closed month can change.</p>`],
-      roles: ['Seats · Lumen Studio', `${row('Maya Ortiz', 'Everything', '', P.grey('Owner'))}${row('Sam Okafor', 'Invoices, payments, close', '', P.grey('Finance'))}${row('Lena Park', 'Approves Site build, Rebrand', '', P.grey('Approver'))}${row('Theo Brandt', 'Own time', '', P.grey('Member'))}${row('Jules Carter', 'Reads everything', '', P.grey('Accountant'))}`],
+      roles: ['Seats · Lumen Studio', `${row('Maya Ortiz', 'Everything', '', P.grey('Owner'))}${row('Sam Okafor', 'Approves weeks, invoices, payments, close', '', P.grey('Administrator'))}${row('Theo Brandt', 'Own time, own projects', '', P.grey('Member'))}${row('Priya Nair', 'Own time, own projects', '', P.grey('Member'))}${row('Jules Carter', 'Reads everything', '', P.grey('Accountant'))}`],
     };
     const title = $('.pv-title', prev);
     const body = $('.pv-body', prev);
