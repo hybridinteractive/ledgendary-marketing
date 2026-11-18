@@ -167,7 +167,7 @@
       invLine.className = 'inv-status is-paid';
       invLine.innerHTML = `${icon('credit-card')}<span>Paid by card · Visa ending 1881 · Nov 18</span>`;
       books.className = 'books-row is-posted';
-      books.innerHTML = `${icon('circle-check')}<span><b>Posted to the books</b> · JE-1041, JE-1042 · chained #9c07, #e21a</span>`;
+      books.innerHTML = `${icon('circle-check')}<span><b class="posted">Posted to the books</b> JE-1041, JE-1042 · chained #9c07, #e21a</span>`;
       setStep('paid');
       setChip('paid');
       say(`Paid. ${total} by card, posted to the books as JE-1041 and JE-1042.`);
@@ -250,7 +250,6 @@
     const screens = $$('[data-scr]', story);
     const pills = $$('.story-steps li', story);
     const cap = $('[data-fig-cap]', story);
-    const intro = $('[data-story-intro]', story);
     const CAPS = ['Option B, estimated total', 'What Dana signed for', 'INV-0042, total due', 'Paid by card, Nov 18', 'Posted: JE-1041, JE-1042'];
     const desk = window.matchMedia('(min-width: 901px)');
     let cur = -1;
@@ -260,12 +259,9 @@
       cur = s;
       stage.dataset.s = String(s);
       stage.dataset.side = screens[s].classList.contains('scr-l') ? 'l' : 'r';
-      const near = s === 0 ? -1 : s - 1;
-      intro.classList.toggle('is-on', s === 0);
       screens.forEach((el, i) => {
         el.classList.toggle('is-on', i === s);
-        el.classList.toggle('is-near', i === near && i !== s);
-        el.classList.toggle('is-gone', i < s && i !== near);
+        el.classList.toggle('is-gone', i < s);
         el.setAttribute('aria-hidden', i === s || !desk.matches ? 'false' : 'true');
       });
       pills.forEach((li, i) => { li.classList.toggle('is-on', i === s); li.classList.toggle('is-past', i < s); });
@@ -305,6 +301,7 @@
   const time = $('[data-time]');
   if (time) {
     const DAYS = ['Mon Nov 9', 'Tue Nov 10', 'Wed Nov 11', 'Thu Nov 12', 'Fri Nov 13'];
+    const SHORT = ['Mon 9', 'Tue 10', 'Wed 11', 'Thu 12', 'Fri 13'];
     const START = [
       { name: 'Theo Brandt', av: 'TB', cls: 'av-tb', mins: [270, 360, 225, 120, 90] },
       { name: 'Priya Nair', av: 'PN', cls: 'av-pn', mins: [180, 255, 300, 270, 225] },
@@ -337,6 +334,7 @@
         tr.append(th);
         row.mins.forEach((m, c) => {
           const td = document.createElement('td');
+          td.dataset.day = SHORT[c];
           if (r === 2 && c === 2 && draft === 'pending') {
             if (viewer === 'maya') td.innerHTML = `<span class="cell-draft" title="Private draft from your calendar">${icon('lock')}1 h 0 m</span>`;
             else td.innerHTML = '<span class="cell-hidden" aria-label="No time">–</span>';
@@ -355,6 +353,7 @@
         });
         const tot = document.createElement('td');
         tot.className = 'num';
+        tot.dataset.day = 'Total';
         tot.textContent = dur(row.mins.reduce((a, b) => a + b, 0));
         tr.append(tot);
         tbody.append(tr);
