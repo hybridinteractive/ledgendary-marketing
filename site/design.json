@@ -1,0 +1,177 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T00:00:00Z",
+  "title": "Design System: Ledgendary marketing home (v1)",
+  "scope": "site/ only (v1 alternate). Not a project-wide system; site-v2/ is a competing alternate in a different world. Derived from site/styles.css, site/index.html, site/app.js at fcc4957.",
+  "extensions": {
+    "colorMeta": {
+      "gold": { "role": "primary", "displayName": "Legendary Gold", "canonical": "#ffc629", "tonalRamp": ["#3d2c00", "#664a00", "#8f6900", "#b88800", "#e0a800", "#ffc629", "#ffd24f", "#fff1c7"] },
+      "gold-hover": { "role": "primary", "displayName": "Gold Hover", "canonical": "#ffd24f" },
+      "gold-soft": { "role": "primary", "displayName": "Soft Gold", "canonical": "#fff1c7" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0d0e12", "tonalRamp": ["#0d0e12", "#15171d", "#2f323b", "#5b5f6b", "#9aa0ac", "#d4d7de", "#e3e5ea", "#f4f5f7"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink 2", "canonical": "#2f323b" },
+      "ink-3": { "role": "neutral", "displayName": "Ink 3", "canonical": "#5b5f6b" },
+      "white": { "role": "neutral", "displayName": "White", "canonical": "#ffffff" },
+      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#f4f5f7" },
+      "mist-2": { "role": "neutral", "displayName": "Mist 2", "canonical": "#eceef2" },
+      "quiet-panel": { "role": "neutral", "displayName": "Quiet Panel", "canonical": "#fbfbfc" },
+      "line": { "role": "neutral", "displayName": "Hairline", "canonical": "#e3e5ea" },
+      "line-2": { "role": "neutral", "displayName": "Control Line", "canonical": "#d4d7de" },
+      "draft-stroke": { "role": "neutral", "displayName": "Draft Stroke", "canonical": "#9aa0ac" },
+      "green": { "role": "semantic", "displayName": "Paid Green", "canonical": "#0f7a55", "tonalRamp": ["#05291c", "#0a4a33", "#0f7a55", "#2f9a73", "#62b896", "#9fd6be", "#cbe9dc", "#e3f4ec"] },
+      "green-bg": { "role": "semantic", "displayName": "Paid Green Tint", "canonical": "#e3f4ec" },
+      "red": { "role": "semantic", "displayName": "Error Red", "canonical": "#b42318" },
+      "blue": { "role": "semantic", "displayName": "Selection Blue", "canonical": "#2457e6", "tonalRamp": ["#0b1d52", "#14318a", "#1d47bf", "#2457e6", "#5a80ee", "#93abf4", "#c6d4fa", "#e8eefd"] },
+      "blue-text": { "role": "semantic", "displayName": "Selection Blue Text", "canonical": "#1d47bf" },
+      "blue-bg": { "role": "semantic", "displayName": "Selection Blue Tint", "canonical": "#e8eefd" },
+      "grey-bg": { "role": "semantic", "displayName": "Neutral Status Tint", "canonical": "#eef0f3" },
+      "d-panel": { "role": "neutral", "displayName": "Ink Chapter Panel", "canonical": "#15171d" },
+      "d-panel-2": { "role": "neutral", "displayName": "Ink Chapter Raised", "canonical": "#1b1e25" },
+      "d-line": { "role": "neutral", "displayName": "Ink Chapter Line", "canonical": "#2a2d36" },
+      "d-text": { "role": "neutral", "displayName": "Ink Chapter Text", "canonical": "#eef0f4" },
+      "d-mut": { "role": "neutral", "displayName": "Ink Chapter Muted", "canonical": "#a3a8b4" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headline; wide and heavy, max about 13.5ch." },
+      "display-wide": { "displayName": "Display wide", "purpose": "Closing call and feature index title; widest setting." },
+      "headline": { "displayName": "Headline", "purpose": "Section headings, max 18ch." },
+      "title": { "displayName": "Title", "purpose": "Story step headings; same wide-heavy recipe at smaller sizes for tier and playbook labels." },
+      "lede": { "displayName": "Lede", "purpose": "Section and hero ledes, ink-2, 44 to 58ch." },
+      "body": { "displayName": "Body", "purpose": "Marketing reading text; 16px under 860px." },
+      "ui": { "displayName": "UI", "purpose": "Everything inside product windows." },
+      "label": { "displayName": "Label", "purpose": "Table headers, field labels, sidebar group heads; sentence case." },
+      "figure-column": { "displayName": "Column figures", "purpose": "Numbers standing in columns only (tnum)." },
+      "mono": { "displayName": "Mono", "purpose": "Chain hashes only." }
+    },
+    "fonts": [
+      { "family": "Mona Sans", "source": "site/fonts/MonaSansVF.woff2 (OFL)", "weight": "200 900", "stretch": "75% 125%", "display": "swap", "preload": true }
+    ],
+    "icons": { "set": "lucide-static 0.460.0 (ISC), inline SVG sprite", "size": "18px (14px xs)", "stroke": 1.75, "linecap": "round" },
+    "shadows": [
+      { "name": "shadow-win", "value": "0 1px 2px rgba(13, 14, 18, 0.06), 0 12px 32px -8px rgba(13, 14, 18, 0.14), 0 40px 80px -24px rgba(13, 14, 18, 0.18)", "purpose": "Every product window." },
+      { "name": "shadow-pop", "value": "0 2px 4px rgba(13, 14, 18, 0.06), 0 16px 36px -10px rgba(13, 14, 18, 0.22)", "purpose": "A surface above a window: client sheet, derived calendar draft." },
+      { "name": "gold-bevel", "value": "inset 0 -2px 0 rgba(13, 14, 18, 0.12), 0 1px 2px rgba(13, 14, 18, 0.1)", "purpose": "Gold button at rest." },
+      { "name": "gold-bevel-hover", "value": "inset 0 -2px 0 rgba(13, 14, 18, 0.12), 0 6px 16px -6px rgba(176, 124, 0, 0.55)", "purpose": "Gold button hover glow." },
+      { "name": "current-item", "value": "0 1px 2px rgba(13, 14, 18, 0.08), 0 0 0 1px #e3e5ea", "purpose": "Active sidebar or rail item, white on mist." },
+      { "name": "selected-halo", "value": "0 0 0 3px rgba(36, 87, 230, 0.16)", "purpose": "Chosen option inside product UI." },
+      { "name": "focus-ring", "value": "outline: 2px solid #0d0e12; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(255, 198, 41, 0.6)", "purpose": "Global focus on light grounds; on the ink chapter and dark nav the outline turns gold and the halo drops." }
+    ],
+    "motion": [
+      { "name": "ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Default for every transition and entrance." },
+      { "name": "ease-q", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Declared alternate; not referenced by any rule in v1." },
+      { "name": "rise", "value": "opacity 0 to 1, translateY(8px) to 0, 380 to 520ms", "purpose": "Standard entrance for panels and rows." },
+      { "name": "rowIn", "value": "opacity 0, translateY(-6px), 460 to 520ms, staggered 60 to 80ms", "purpose": "Table and list rows arriving." },
+      { "name": "highlighter", "value": "background-size 0% to 100% 42%, 900ms, 150ms delay", "purpose": "Gold sweep under the payoff word." },
+      { "name": "gold-flash", "value": "clip-path wipe 620ms plus ring 900ms", "purpose": "The money-landed moment." },
+      { "name": "draw", "value": "scaleY 0 to 1, 620ms", "purpose": "Journal chain line drawing to a new entry." },
+      { "name": "refuse", "value": "translateX shake -4/4/-2px, 420ms", "purpose": "A refused edit on a posted entry." },
+      { "name": "reduced-motion", "value": "all durations 1ms; highlighter shown full; dots and caret static", "purpose": "Content never depends on motion." }
+    ],
+    "breakpoints": [
+      { "name": "hero-narrow", "value": "1320px", "purpose": "Narrows the hero window rails." },
+      { "name": "tablet", "value": "1100px", "purpose": "Drops the hero sidebar; story grid tightens; playbook items stack." },
+      { "name": "compact", "value": "860px", "purpose": "Single column everywhere; nav links hidden; form stacks; story steps carry inline windows; chip and role rows scroll." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Gold Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "The one primary action (Join the waitlist); ink on gold with a soft bevel.",
+      "html": "<button class=\"ds-btn-gold\">Join the waitlist</button>",
+      "css": ".ds-btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border: 0; border-radius: 10px; background: #ffc629; color: #0d0e12; font-family: 'Mona Sans', ui-sans-serif, sans-serif; font-weight: 650; font-size: 1rem; font-stretch: 105%; cursor: pointer; box-shadow: inset 0 -2px 0 rgba(13,14,18,0.12), 0 1px 2px rgba(13,14,18,0.1); transition: transform 160ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1), background-color 200ms cubic-bezier(0.16,1,0.3,1); } .ds-btn-gold:hover { background: #ffd24f; box-shadow: inset 0 -2px 0 rgba(13,14,18,0.12), 0 6px 16px -6px rgba(176,124,0,0.55); } .ds-btn-gold:active { transform: translateY(1px); box-shadow: inset 0 1px 0 rgba(13,14,18,0.12); } .ds-btn-gold:focus-visible { outline: 2px solid #0d0e12; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(255,198,41,0.6); }"
+    },
+    {
+      "name": "Waitlist Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Inline email field beside the gold button; gold halo on focus, red on error.",
+      "html": "<div class=\"ds-row\"><input class=\"ds-input\" type=\"email\" placeholder=\"you@agency.com\" aria-label=\"Work email\"><button class=\"ds-btn\">Join the waitlist</button></div>",
+      "css": ".ds-row { display: flex; gap: 8px; } .ds-input { height: 48px; flex: 1; min-width: 0; padding: 0 16px; border: 1px solid #d4d7de; border-radius: 10px; background: #fff; color: #0d0e12; font: inherit; font-size: 1rem; transition: border-color 160ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1); } .ds-input::placeholder { color: #6b6f7b; } .ds-input:hover { border-color: #b9bdc6; } .ds-input:focus-visible { outline: none; border-color: #0d0e12; box-shadow: 0 0 0 4px rgba(255,198,41,0.55); } .ds-input[aria-invalid=true] { border-color: #b42318; } .ds-btn { height: 48px; padding: 0 22px; border: 0; border-radius: 10px; background: #ffc629; color: #0d0e12; font-weight: 650; font-size: 1rem; cursor: pointer; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Sticky translucent bar: wordmark, three links, small gold button.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">Ledgendary</a><nav class=\"ds-links\"><a href=\"#\">Product</a><a href=\"#\">Agencies</a><a href=\"#\">The books</a></nav><a class=\"ds-cta\" href=\"#\">Join the waitlist</a></header>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 40px; height: 64px; padding: 0 32px; background: rgba(255,255,255,0.86); backdrop-filter: saturate(1.4) blur(12px); border-bottom: 1px solid #e3e5ea; color: #0d0e12; } .ds-brand { font-weight: 800; font-stretch: 116%; font-size: 1.1875rem; letter-spacing: -0.03em; text-decoration: none; color: inherit; } .ds-links { display: flex; gap: 28px; } .ds-links a { text-decoration: none; font-size: 0.9375rem; font-weight: 520; color: #2f323b; transition: color 150ms; } .ds-links a:hover { color: #0d0e12; } .ds-links a:focus-visible, .ds-cta:focus-visible { outline: 2px solid #0d0e12; outline-offset: 2px; border-radius: 6px; } .ds-cta { margin-left: auto; display: inline-flex; align-items: center; height: 38px; padding: 0 16px; border-radius: 9px; background: #ffc629; color: #0d0e12; font-weight: 650; font-size: 0.9375rem; text-decoration: none; }"
+    },
+    {
+      "name": "Scene Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Demo scene selector; pressed state takes ink, a 2px ink bar shows progress.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\" aria-pressed=\"true\"><span>Proposal</span><i class=\"ds-fill\" style=\"--p:.6\"></i></button><button class=\"ds-chip\" aria-pressed=\"false\"><span>Invoice</span><i class=\"ds-fill\"></i></button></div>",
+      "css": ".ds-chips { display: flex; gap: 6px; } .ds-chip { position: relative; overflow: hidden; height: 34px; padding: 0 14px; border-radius: 999px; border: 1px solid #d4d7de; background: #fff; font: inherit; font-size: 0.875rem; font-weight: 600; color: #2f323b; cursor: pointer; transition: border-color 160ms, color 160ms; } .ds-chip:hover { border-color: #5b5f6b; color: #0d0e12; } .ds-chip[aria-pressed=true] { border-color: #0d0e12; color: #0d0e12; } .ds-chip:focus-visible { outline: 2px solid #0d0e12; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(255,198,41,0.6); } .ds-chip > span { position: relative; } .ds-fill { position: absolute; left: 0; bottom: 0; height: 2px; width: 100%; background: #0d0e12; transform-origin: left; transform: scaleX(var(--p, 0)); }"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "pill-green",
+      "description": "App-semantic status inside product windows only.",
+      "html": "<span class=\"ds-pill ds-green\">Paid</span> <span class=\"ds-pill ds-blue\">Sent</span> <span class=\"ds-pill ds-grey\">Draft</span>",
+      "css": ".ds-pill { display: inline-flex; align-items: center; gap: 4px; height: 22px; padding: 0 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; } .ds-green { background: #e3f4ec; color: #0f7a55; } .ds-blue { background: #e8eefd; color: #1d47bf; } .ds-grey { background: #eef0f3; color: #2f323b; }"
+    },
+    {
+      "name": "Product Window",
+      "kind": "card",
+      "refersTo": "product-window",
+      "description": "The universal container: hairline, 14px corners, layered shadow, breadcrumb bar with demo tag.",
+      "html": "<div class=\"ds-win\"><div class=\"ds-top\"><span class=\"ds-crumbs\">Northwind Co / <b>Invoice INV-0042</b></span><span class=\"ds-tag\">Demo data</span></div><div class=\"ds-body\"><div class=\"ds-title\">Site build, option B</div><div class=\"ds-row\"><span>Total</span><b>$42,000.00</b></div><button class=\"ds-ui-ink\">Send</button></div></div>",
+      "css": ".ds-win { background: #fff; border: 1px solid #e3e5ea; border-radius: 14px; box-shadow: 0 1px 2px rgba(13,14,18,0.06), 0 12px 32px -8px rgba(13,14,18,0.14), 0 40px 80px -24px rgba(13,14,18,0.18); overflow: hidden; font-size: 13px; line-height: 1.45; color: #0d0e12; } .ds-top { display: flex; align-items: center; justify-content: space-between; height: 46px; padding: 0 16px; border-bottom: 1px solid #e3e5ea; color: #5b5f6b; } .ds-crumbs b { color: #0d0e12; font-weight: 600; } .ds-tag { font-size: 11px; font-weight: 600; color: #5b5f6b; background: #f4f5f7; border: 1px solid #e3e5ea; padding: 2px 7px; border-radius: 999px; } .ds-body { padding: 22px 26px; } .ds-title { font-size: 20px; font-weight: 700; font-stretch: 108%; letter-spacing: -0.015em; } .ds-row { display: flex; justify-content: space-between; margin: 14px 0; padding-top: 10px; border-top: 1px solid #e3e5ea; font-weight: 600; } .ds-row b { font-size: 20px; font-weight: 750; font-feature-settings: 'tnum' 1; } .ds-ui-ink { height: 30px; padding: 0 12px; border-radius: 8px; border: 1px solid #0d0e12; background: #0d0e12; color: #fff; font: inherit; font-weight: 600; font-size: 12.5px; cursor: pointer; transition: transform 140ms cubic-bezier(0.16,1,0.3,1); } .ds-ui-ink:active { transform: scale(0.95); } .ds-ui-ink:focus-visible { outline: 2px solid #0d0e12; outline-offset: 2px; box-shadow: 0 0 0 5px rgba(255,198,41,0.6); }"
+    },
+    {
+      "name": "Highlighter Heading",
+      "kind": "custom",
+      "refersTo": "display",
+      "description": "Wide heavy display with one gold-highlighted payoff word.",
+      "html": "<h2 class=\"ds-display\">Suit <span class=\"ds-hl\">up</span>.</h2>",
+      "css": ".ds-display { margin: 0; font-family: 'Mona Sans', ui-sans-serif, sans-serif; font-size: clamp(2.75rem, 6vw, 5rem); font-weight: 800; font-stretch: 125%; letter-spacing: -0.04em; line-height: 0.98; color: #0d0e12; } .ds-hl { background-image: linear-gradient(#ffc629, #ffc629); background-repeat: no-repeat; background-position: 0 88%; background-size: 100% 42%; padding: 0 0.06em; margin: 0 -0.06em; border-radius: 2px; }"
+    },
+    {
+      "name": "Journal Entry",
+      "kind": "custom",
+      "refersTo": "journal-entry",
+      "description": "Ink-chapter posted entry with gold chain dot and line, tabular lines and mono hash chip.",
+      "html": "<div class=\"ds-chain\"><div class=\"ds-je\"><div class=\"ds-je-top\"><b>JE-0107</b><span>Payment received</span></div><div class=\"ds-l\"><span>Dr</span><span>Bank</span><span class=\"ds-n\">42,000.00</span></div><div class=\"ds-l\"><span>Cr</span><span>Receivables</span><span class=\"ds-n\">42,000.00</span></div><div class=\"ds-h\">Chain <code class=\"ds-hash\">9f3a…c21e</code></div></div><button class=\"ds-jbtn\">Try to edit</button></div>",
+      "css": ".ds-chain { background: #0d0e12; padding: 24px 24px 24px 58px; color: #eef0f4; } .ds-je { position: relative; padding: 14px 16px; border-radius: 12px; background: #15171d; border: 1px solid #2a2d36; font-size: 13.5px; } .ds-je::before { content: ''; position: absolute; left: -29px; top: 18px; width: 12px; height: 12px; border-radius: 50%; background: #ffc629; box-shadow: 0 0 0 4px #0d0e12; } .ds-je-top { display: flex; gap: 12px; } .ds-je-top span { color: #a3a8b4; } .ds-l { display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; margin-top: 4px; color: #a3a8b4; } .ds-l span:nth-child(2), .ds-n { color: #eef0f4; } .ds-n { font-feature-settings: 'tnum' 1; } .ds-h { margin-top: 10px; padding-top: 10px; border-top: 1px solid #2a2d36; font-size: 12px; } .ds-hash { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: 11px; color: #0d0e12; background: #ffc629; padding: 0 5px; border-radius: 4px; } .ds-jbtn { margin-top: 12px; height: 34px; padding: 0 12px; border-radius: 8px; border: 1px solid #3a3e48; background: #1b1e25; color: #eef0f4; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color 160ms, transform 140ms; } .ds-jbtn:hover { border-color: #5a5f6b; } .ds-jbtn:active { transform: translateY(1px); } .ds-jbtn:focus-visible { outline: 2px solid #ffc629; outline-offset: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Product Is the Hero",
+    "overview": "A daylight SaaS page whose proof is working product UI. White and cool mist grounds carry near-black ink; one saturated gold is the only brand colour and it behaves like a highlighter: it fills, it rarely draws. Every section is built from the same product-window anatomy (1px hairlines, 10 to 14px corners, soft layered shadows, Lucide line icons at 1.75 stroke), so the page reads as one application seen from several angles rather than a marketing collage. The same demo job and the same figures recur in every window.\n\nType is one variable family, Mona Sans, used at two widths: wide, heavy and tight for display, normal width for everything a person reads. Density changes by register: marketing copy is generous (17px body, 1.55 leading, 120 to 128px section padding), the product windows are app-dense (13px, 1.45 leading, 30px controls). One chapter, the books, inverts to an ink ground with dark panels; everything else stays light.\n\nMotion is narrative rather than decorative: rows rise in, a cursor moves and presses, a highlighter sweeps under a word, a gold flash marks the money landing, a journal line draws between entries. All of it collapses under reduced motion without hiding content.",
+    "keyCharacteristics": [
+      "One accent, gold, used as fill on light grounds; app semantics (green paid, blue selection, red error) live only inside product UI and form validation.",
+      "Two type registers from one family: wide display (wdth 112 to 125, weight 800) and normal-width reading text (wdth 100).",
+      "Product windows as the universal container, with labelled demo data.",
+      "Flat light sections separated by mist bands and 1px hairlines; one ink chapter.",
+      "Proportional figures by default; tabular figures only in columns."
+    ],
+    "rules": [
+      { "name": "The Highlighter Rule", "body": "On light grounds gold is a fill (highlighter, button, chip, flash, dot), never a text or line colour: gold text on white is illegible. On the ink chapter gold may also colour a few marks (the chain line, fact icons, a refusal's key phrase) because there it is legible.", "section": "colors" },
+      { "name": "The Semantics Stay Inside Rule", "body": "Green, blue and grey tints appear only inside product windows; red appears only for form validation. Marketing copy, headings and page chrome use ink, mist and gold alone.", "section": "colors" },
+      { "name": "The Width Is the Voice Rule", "body": "Hierarchy comes from width plus weight (wdth 112 to 125 at 800) on display, and only display; reading text stays at wdth 100.", "section": "typography" },
+      { "name": "The Columns Get Tabular Rule", "body": "Figures default to proportional lining (pnum, lnum). Tabular figures (tnum) apply only where numbers stand in columns: table cells, totals, journal amounts, timesheet cells. Mona Sans's tabular zero is dotted with no plain alternate, so it is kept out of prose and headline figures.", "section": "typography" },
+      { "name": "The Windows Float, Sections Don't Rule", "body": "Shadows belong to product UI. Section bands, headings and copy never cast one.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do use gold as a fill on light grounds: one highlighter word per display heading, the primary button, the money-landed moment.",
+      "Do put every product claim inside a product window with the \"Demo data\" tag and the same job's figures.",
+      "Do set display at 800 weight, wdth 112 to 125, negative tracking (-0.025 to -0.04em); keep reading text at wdth 100.",
+      "Do apply tabular figures only in columns of numbers.",
+      "Do keep the focus ring as 2px ink outline with gold halo on light, gold outline on the ink chapter.",
+      "Do use soft layered ink-tinted shadows for windows and popped surfaces only.",
+      "Do make every motion beat collapse under reduced motion with its content fully visible."
+    ],
+    "donts": [
+      "Don't set gold text or gold lines on white or mist.",
+      "Don't use green, blue or grey tints outside product UI, or red outside validation.",
+      "Don't put white text on gold.",
+      "Don't use hard offset shadows or shadows on section bands.",
+      "Don't add uppercase tracked labels or eyebrows above headings; the build has none.",
+      "Don't use tabular figures in prose or headline figures (the dotted zero)."
+    ]
+  }
+}
