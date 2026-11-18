@@ -54,7 +54,7 @@ Most tools stop at one end: a proposal tool that hands off to an invoicing tool 
   - Full taxpayer identification numbers are never stored (kind and last four only); W-9 collection is tracked as a lifecycle.
   - Personal context on signatures (address, browser) is kept only as a keyed fingerprint, never raw.
   - Data-subject requests anonymise rather than delete financial records, which are retained as the law requires.
-- Also real: milestones and celebrations (an organisation can turn them on; badges for firsts like the first invoice paid, with reactions from the team).
+- Also real: milestones and celebrations (an organisation can turn them on, with reactions from the team). The badges that exist: first client, first invoice sent, first payment, first retainer, first estimate accepted, first estimate won, first week submitted, 10 payments, 50 payments, paid on time 5 times, 10 estimates won, 12 weeks on schedule, a month of timesheets. Never invent another.
 - Never claim: SSO/SAML, SOC 2 or other certifications, uptime or support SLAs, data residency choices, an API or MCP (planned during the alpha), finance roles, per-project approvers, payroll, a Microsoft calendar connection, prices, customer counts.
 - Undecided: final domain copy for the waitlist form, whether a public roadmap is linked.
 

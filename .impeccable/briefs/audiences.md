@@ -30,7 +30,7 @@ Signature features (must all appear, in this priority):
 4. Recurring retainers that issue one invoice per period and never two, even if the scheduler runs twice.
 5. Expenses and bills, kept apart so spend is never counted twice; cash-basis view per client.
 6. Books an accountant reads: invite them read only; reports as of any date; tamper-evident chain (lighter touch than enterprise).
-7. Milestones: your first invoice paid gets a celebration ("Up top.").
+7. Milestones: a real badge from PRODUCT.md's list (e.g. first retainer, paid on time 5 times) gets a celebration ("Up top."). Never invent a badge.
 Voice hooks: "Nothing good happens after 2 a.m. Except your invoice going out on schedule." · "Kids, this is the story of how I stopped chasing invoices."
 
 ## Team page: "Your whole studio, on one ledger."
@@ -44,10 +44,10 @@ Signature features:
 4. Money actions behind a second check: voids, write-offs, refunds and period close ask the person to confirm who they are again first.
 5. The client portal: clients pick, sign and pay; the signature keeps the name and moment, not their raw address or browser.
 6. Bills and vendors: W-9 collection tracked; full tax ids never stored; paying a bill never doubles as an expense.
-7. Milestones with team reactions ("High five." moments).
+7. Milestones with team reactions ("High five." moments), using a real badge from PRODUCT.md's list (e.g. first week submitted, 12 weeks on schedule).
 Voice hooks: "Haaaave you met your team's timesheets?" · "Challenge accepted: month end without a spreadsheet."
 
-## Enterprise page: "Books that hold up in court. Legen— wait for it —dary."
+## Enterprise page: "Books you can prove. Legen— wait for it —dary."
 
 Who: large agencies and groups (hundreds of people, several offices and currencies), their finance leads, controllers and auditors.
 Promise: books you can prove, not just books you keep. This page shows the crazy features at full strength.
@@ -64,7 +64,7 @@ Signature features (the tamper-proof story is the spine):
 10. Privacy by construction: full tax ids never stored; signature context kept as keyed fingerprints; calendar capture keeps titles and durations only; data-subject requests anonymise rather than delete records the law says to keep.
 11. Step-up on every action that takes money off the books.
 Voice hooks: "Haaaave you met your auditor? They're going to love you." · "True story. Signed by someone who isn't us." · "Kids, in the year 2036, your auditor asked about one invoice from last March…"
-Never on this page: SSO, SOC 2, SLAs, data residency, an API, dedicated support, prices, customer logos, "enterprise-grade" filler. The CTA is the same waitlist ("Join the waitlist"), invite-only alpha.
+Never on this page: courtroom or legal-admissibility claims, SSO, SOC 2, SLAs, data residency, an API, dedicated support, prices, customer logos, "enterprise-grade" filler. The CTA is the same waitlist ("Join the waitlist"), invite-only alpha.
 
 ## Page anatomy (each look composes it in its own grammar)
 
