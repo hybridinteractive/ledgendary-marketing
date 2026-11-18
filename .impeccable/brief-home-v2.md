@@ -14,7 +14,7 @@ STORY: Visitor gets the deal done themselves within the first screen, then sees 
 
 FIRST VIEWPORT: Blue field edge to edge. Nav in white. Headline big and white across the top-left ("Close the deal. Get paid. Keep the books." or stronger), short subline, waitlist field plus lime button on the field. Right of or under the headline, the interactive client-portal card at large scale with a prompt chip "You're the client. Pick one." Three options visible; clicking one starts the play.
 
-FORM: Category standard at full craft, second alternate; bar Linear, Stripe, Mercury, Ramp. Signature interactions: (1) play-it-yourself hero (client, then studio; idle 8s runs it automatically; reduced motion shows the final state); (2) "one number, five screens": $42,000 pinned in the centre on scroll while proposal, portal, invoice, payment and journal slide in around it. seed: none (unavailable)
+FORM: Category standard at full craft, second alternate; bar Linear, Stripe, Mercury, Ramp. Signature interactions: (1) play-it-yourself hero (client, then studio; idle 8s runs it automatically; reduced motion shows the final state); (2) "one number, five screens": $42,000 pinned in the centre on scroll while proposal, portal, invoice, payment and journal slide in around it. seed: none (canon exit; alternate of a canon direction, no roll). Michael, 2026-11-18: "try another one, different style, same winks, same animated stuff, just as good in marketing"
 
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
