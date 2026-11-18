@@ -872,12 +872,13 @@ html:not(.js) .scr { display: block; padding-bottom: 32px; }
 .jbtn:hover { border-color: #5a5f6b; }
 .jbtn:active { transform: translateY(1px); }
 .jbtn[disabled] { opacity: 0.55; cursor: default; }
+.jbtn[hidden] { display: none; }
 .jbtn-gold { background: var(--gold); color: var(--ink); border-color: var(--gold); }
 .jbtn-gold:hover { background: #ffd24f; border-color: #ffd24f; }
 .jbtn-ghost { background: transparent; margin-top: 18px; }
 .refuse {
   margin-top: 12px; padding: 12px 14px; border-radius: 10px;
-  background: #241d10; border: 1px solid #5c4813; color: #e9dcc0;
+  background: var(--d-panel-2); border: 1px solid var(--d-line); color: var(--d-mut);
 }
 .refuse p { margin-bottom: 10px; }
 .refuse b { color: var(--gold); }
@@ -886,7 +887,7 @@ html:not(.js) .scr { display: block; padding-bottom: 32px; }
 [data-edit-target] { border-radius: 4px; transition: box-shadow 200ms; }
 .je.is-editing [data-edit-target] { box-shadow: 0 0 0 1px var(--gold), 0 0 0 4px rgba(255, 198, 41, 0.18); padding: 0 4px; }
 .je.is-reversed { opacity: 0.72; }
-.je-rev { border-color: #4a3d1a; }
+.je-rev { border-color: var(--gold); }
 .je.is-posting { animation: post 620ms var(--ease) both; }
 .je.is-posting::after { animation: draw 620ms 220ms var(--ease) both; }
 .journal.armed .je:not(.is-in) { opacity: 0; transform: translateY(10px); }

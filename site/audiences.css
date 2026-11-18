@@ -661,7 +661,7 @@ div.stack { justify-items: stretch; }
 .a-seatbar { display: flex; align-items: center; gap: 6px; padding: 8px 22px; border-bottom: 1px solid var(--line); background: var(--mist); color: var(--ink-2); font-size: 12px; font-weight: 600; }
 
 /* As of Oct 31 the Northwind invoice did not exist yet. */
-[data-scope="asof"][data-s="oct31"] .a-row-nw > * { visibility: hidden; }
+[data-scope="asof"][data-s="oct31"] .a-row-nw { display: none; }
 
 /* Phone: chip rows wrap instead of clipping their last chip. */
 @media (max-width: 860px) {
@@ -708,3 +708,39 @@ div.stack { justify-items: stretch; }
 @media (max-width: 860px) { .aud .demo-bar { align-items: flex-start; } }
 div.stack.a-tamper-btn { justify-items: end; }
 @media (max-width: 860px) { div.stack.a-tamper-btn { justify-items: start; } }
+
+/* ---------------------------------------------------------------- review round 3 */
+
+.cursor.is-up-left .cursor-l { left: auto; right: 6px; top: auto; bottom: 18px; border-radius: 6px 6px 2px 6px; }
+.win-story .a-av-so { display: none; }
+.win-story:has(.scr-on[data-who="so"]) .a-av-so { display: inline-grid; }
+.win-story:has(.scr-on[data-who="so"]) .a-av-tb { display: none; }
+
+@media (max-width: 860px) {
+  /* 1. The paid scene carries the provenance line, filling the band above the books bar. */
+  .aud .win-hero:has(.strip-paid.on) .inv-foot > div:nth-child(3) { display: block; grid-column: 1 / -1; }
+  /* 2. On a phone the confirm card is the window's content, not a card floating in it. */
+  .a-stepup { padding: 0; place-items: stretch; background: var(--white); }
+  .a-stepup-card { width: 100%; border: 0; border-radius: 0; box-shadow: none; display: flex; flex-direction: column; justify-content: center; }
+  /* 3. Seat tabs wrap two by two; a phone shows only the current seat's lines. */
+  .aud .roles { flex-wrap: wrap; overflow: visible; margin-inline: 0; padding: 0; }
+  .aud .role { flex: 1 1 calc(50% - 4px); min-width: 0; }
+  .a-seat .stack > [data-show]:not(.is-shown) { display: none; }
+}
+@media (max-width: 860px) {
+  .aud .win-hero .inv-foot { margin-top: 8px; padding: 8px 12px; gap: 4px 12px; }
+}
+.cursor.is-tagless .cursor-l { opacity: 0; }
+.cursor-l { transition: opacity 200ms; }
+@media (max-width: 860px) {
+  /* The confirm step replaces the window's content on a phone, so the window is the dialog's size. */
+  .a-close-body:has(.a-stepup.is-shown) > :not(.a-stepup) { display: none; }
+  .a-close-body:has(.a-stepup.is-shown) { padding: 0; }
+  .a-stepup { position: static; }
+  .a-stepup-card { align-items: center; padding: 20px 16px 14px; }
+  .a-stepup-btns { width: 100%; }
+}
+@media (max-width: 860px) {
+  .a-seat-note.stack:not(:has(.is-shown)) { display: none; }
+  .a-il li > .num:nth-child(3) { justify-self: end; }
+}

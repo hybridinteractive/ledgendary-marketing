@@ -81,6 +81,7 @@
       cursor.classList.remove('is-hidden');
       if (ev.label) cursorLabel.textContent = ev.label;
       if (ev.ink !== undefined) cursor.classList.toggle('is-maya', !!ev.ink);
+      if (ev.tag) { cursor.classList.toggle('is-up-left', ev.tag === 'up-left'); cursor.classList.toggle('is-tagless', ev.tag === 'none'); }
       const box = stage.getBoundingClientRect();
       let x; let y;
       if (ev.kind === 'park') {
@@ -99,14 +100,15 @@
     };
 
     const settleCursor = (now) => {
-      let pos = null; let label; let ink;
+      let pos = null; let label; let ink; let tag;
       CURSOR.forEach((ev) => {
         if (ev.at > now) return;
         if (ev.label) label = ev.label;
         if (ev.ink !== undefined) ink = ev.ink;
+        if (ev.tag) tag = ev.tag;
         if (ev.kind !== 'press') pos = ev;
       });
-      if (pos) requestAnimationFrame(() => placeCursor({ ...pos, label, ink }, false));
+      if (pos) requestAnimationFrame(() => placeCursor({ ...pos, label, ink, tag: tag || 'default' }, false));
     };
 
     const press = (sel) => {
