@@ -79,7 +79,7 @@
     if (d <= 19) { return ['Weekend', 'Two weeks, 80 h 0 m, waiting on approval.']; }
     if (d === 20) { return t < 20.7 ? ['The invoice writes itself', 'The fixed fee comes from option B and the time from approved weeks: $42,000.00.'] : ['Invoiced and posted', 'INV-0042 goes to Dana, due Dec 1. Sending it posts JE-1041 to the books.']; }
     if (d === 21) { return ['Wait for it…', 'Sent Nov 16, due Dec 1. Dana opens it on Nov 17.']; }
-    return t < 22.3 ? ['Wait for it…', 'Nov 18. Still nothing. Then:'] : ['Paid.', 'Dana pays by card, Visa ending 1881. The payment posts as JE-1042, chained to the entry before it.'];
+    return t < 22.3 ? ['Wait for it…', 'Nov 18. Still nothing. Then:'] : ['Paid.', 'Dana pays by card, Visa ending 1881. The payment posts as JE-1042, chained to the entry before\u00a0it.'];
   }
 
   /* ---------- Scroll weights: the wait stretch scrolls slowest ---------- */
@@ -391,7 +391,7 @@
       if (reduced) { return; }
       /* The date is the hero's image, then settles into its readout as the chapter pins */
       var q = window.innerWidth > 720 ? clamp(1 - y / Math.max(1, L.pinStart), 0, 1) : 0;
-      el.date.style.transform = q ? 'scale(' + (1 + q * (window.innerWidth >= 1400 ? 1.15 : 0.8)).toFixed(3) + ')' : '';
+      el.date.style.transform = q ? 'scale(' + (1 + q * (window.innerWidth >= 1400 ? 0.3 : 0.25)).toFixed(3) + ')' : '';
       if (y > L.pinStart + L.len + window.innerHeight) { return; }
       render(pToT((y - L.pinStart) / L.len));
     });
