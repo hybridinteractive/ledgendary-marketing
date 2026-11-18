@@ -35,6 +35,9 @@ Most tools stop at one end: a proposal tool that hands off to an invoicing tool 
 - Alpha is invite only. The marketing site's one action is joining the waitlist; no trial, checkout or pricing table promised on the home page this round.
 - Tiers exist (Solo, Team, Pro) but the home page states no prices.
 - Never promise an integration that is not verified (a Microsoft calendar connection and a payroll connection are unverified).
+- Anything a person can reach that takes money off the books (voids, write-offs, refunds, period close and reopen) asks them to confirm who they are again (password, passkey or emailed code) first.
+- A recurring template issues one invoice per period, and never two, even if the scheduler runs twice.
+- Approving timesheets is scoped per project: an approver approves weeks on their projects only.
 - Personal-data stance is a real feature: private calendar drafts stay private, capture keeps titles and durations only, sensitive identifiers like full tax ids are never stored.
 - Undecided: final domain copy for the waitlist form, whether a public roadmap is linked.
 
