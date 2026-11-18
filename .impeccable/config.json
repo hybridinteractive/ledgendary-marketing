@@ -11,6 +11,15 @@
         ],
         "createdAt": "2026-11-18T20:32:57.320Z",
         "reason": "Rejected decision-round sketch (Michael declined the direction 2026-11-18); never ships"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "files": [
+          "site/styles.css"
+        ],
+        "createdAt": "2026-11-18T21:04:56.540Z",
+        "reason": "Direction contract for v1 names Mona Sans; upheld by the finish review 2026-11-18"
       }
     ]
   }
