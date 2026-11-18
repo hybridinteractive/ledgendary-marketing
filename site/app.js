@@ -377,7 +377,7 @@
   if (rolePanel) {
     const tabs = $$('.role');
     const ROLE = {
-      owner: { name: 'Maya Ortiz, Owner', note: 'Owners see everything and can change anything, including who sees what.' },
+      owner: { name: 'Maya Ortiz, Owner', note: 'Owners see everything and decide who sees what.' },
       admin: { name: 'Sam Okafor, Administrator', note: 'Sam approves weeks, sends invoices and records payments. Voids, refunds and closing a month ask him to confirm it’s him first.' },
       member: { name: 'Theo Brandt, Member', note: 'Theo sees his own week and submits it. Invoices and other people’s hours are not part of his seat.', locked: ['Invoices aren’t shared with members.', 'Members log and submit their own time. That’s the whole seat.'] },
       accountant: { name: 'Jules Carter, Accountant', note: 'Jules reads everything, from invoices to the journal, and can’t change any of it.' },
