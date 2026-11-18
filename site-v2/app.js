@@ -95,7 +95,7 @@
       signInput.disabled = false;
       signBtn.disabled = false;
       signForm.classList.add('is-ready');
-      signLabel.textContent = 'Signature · type your name, or just press Accept and sign';
+      signLabel.textContent = 'Signature · type a name, or just press sign';
       if (st.step === 'pick') { setStep('sign'); setChip('sign'); }
       say(`Option ${key} chosen. Now sign it.`);
       if (!fromUser && document.activeElement && play.contains(document.activeElement)) signInput.focus({ preventScroll: true });
@@ -114,7 +114,7 @@
     };
 
     const sign = () => {
-      if (st.step !== 'sign' || st.typing) return;
+      if (st.step !== 'sign' || st.typing || signForm.classList.contains('is-signed')) return;
       const typed = signInput.value.trim().replace(/\s+/g, ' ').slice(0, 40);
       if (!typed) { typeName('Dana Whitfield', sign); return; }
       st.signer = typed;
@@ -212,7 +212,7 @@
     radios.forEach((r) => r.addEventListener('change', () => choose(r.value, true)));
     signForm.addEventListener('submit', (e) => { e.preventDefault(); sign(); });
     sendBtn.addEventListener('click', send);
-    restartBtn.addEventListener('click', () => { reset(); say("Started over. You're the client: pick an option."); radios[0].focus({ preventScroll: true }); });
+    restartBtn.addEventListener('click', (e) => { reset(); say("Started over. You're the client: pick an option."); if (e.detail === 0) radios[1].focus({ preventScroll: true }); });
     startBtn.addEventListener('click', () => {
       startBtn.hidden = true; restartBtn.hidden = false;
       reset(); say("You're the client: pick an option."); radios[1].focus({ preventScroll: true });
@@ -232,6 +232,8 @@
       choose('B', false);
       signInput.value = 'Dana Whitfield';
       sign();
+      clearTimers();
+      toStudio(false);
       send();
       clearTimers();
       paid();
@@ -248,7 +250,8 @@
     const screens = $$('[data-scr]', story);
     const pills = $$('.story-steps li', story);
     const cap = $('[data-fig-cap]', story);
-    const CAPS = ['Option B, estimated total', 'What Dana signed for', 'INV-0042, total due', 'Paid by card, Nov 18', 'Posted as JE-1041 and JE-1042'];
+    const intro = $('[data-story-intro]', story);
+    const CAPS = ['Option B, estimated total', 'What Dana signed for', 'INV-0042, total due', 'Paid by card, Nov 18', 'Posted: JE-1041, JE-1042'];
     const desk = window.matchMedia('(min-width: 901px)');
     let cur = -1;
 
@@ -257,7 +260,8 @@
       cur = s;
       stage.dataset.s = String(s);
       stage.dataset.side = screens[s].classList.contains('scr-l') ? 'l' : 'r';
-      const near = s === 0 ? 1 : s - 1;
+      const near = s === 0 ? -1 : s - 1;
+      intro.classList.toggle('is-on', s === 0);
       screens.forEach((el, i) => {
         el.classList.toggle('is-on', i === s);
         el.classList.toggle('is-near', i === near && i !== s);
@@ -342,7 +346,8 @@
             b.className = 'cell' + (m ? '' : ' is-empty');
             b.textContent = m ? dur(m) : '–';
             b.setAttribute('aria-label', `${row.name}, ${DAYS[c]}, ${m ? dur(m) : 'no time'}`);
-            b.setAttribute('aria-pressed', String(sel[0] === r && sel[1] === c));
+            b.setAttribute('aria-pressed', String(viewer === 'maya' && sel[0] === r && sel[1] === c));
+            b.disabled = viewer !== 'maya';
             b.dataset.r = r; b.dataset.c = c;
             td.append(b);
           }
