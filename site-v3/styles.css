@@ -174,7 +174,7 @@ button.btn-ui[aria-pressed="true"] { background: var(--text); color: var(--ink);
   display: grid; grid-template-columns: 300px minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr);
   column-gap: 32px; row-gap: 18px; padding-top: 14px; padding-bottom: 24px;
 }
-.js:not(.rm) .stage-in { grid-template-rows: auto minmax(0, 640px); align-content: start; }
+.js:not(.rm) .stage-in { grid-template-rows: auto minmax(0, 580px); align-content: start; }
 .railbar { display: contents; }
 .readout { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; justify-content: flex-end; padding-bottom: 20px; }
 .rd-day { font-size: 14px; color: var(--mut); font-weight: 500; }
@@ -231,7 +231,7 @@ button.btn-ui[aria-pressed="true"] { background: var(--text); color: var(--ink);
 /* ---------- App frame ---------- */
 .app {
   position: relative; display: grid; grid-template-columns: 184px minmax(0, 1fr) 236px;
-  height: 100%; min-height: 560px; max-height: 720px;
+  height: 100%; min-height: 540px; max-height: 720px;
   background: var(--panel); border-radius: var(--r-lg); overflow: hidden;
   box-shadow: inset 0 0 0 1px var(--line), 0 30px 60px -24px rgba(0, 0, 0, .7);
   font-size: 14px; line-height: 1.45;
@@ -577,7 +577,7 @@ html:not(.js) .readout .rd-date::after { content: ""; }
 .js:not(.rm) .stage { position: sticky; top: var(--nav); height: calc(100vh - var(--nav)); height: calc(100svh - var(--nav)); }
 .js:not(.rm) .stage-in { height: 100%; }
 .js .app { height: 100%; }
-.rm .app { height: 640px; }
+.rm .app { height: 580px; }
 
 /* ---------- Mid widths ---------- */
 @media (max-width: 1360px) {

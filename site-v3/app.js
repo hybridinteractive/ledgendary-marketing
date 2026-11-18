@@ -204,7 +204,7 @@
       pill(el.pStatus, 'sent', 'eye', views === 1 ? 'Viewed' : 'Viewed ' + views + ' times');
       setText(el.pMeta, 'P-0018 · To Dana Whitfield · Sent Oct 27 by Maya Ortiz');
     }
-    var names = ['Opened', 'Opened again', 'Opened a third time'];
+    var names = ['Opened', 'Opened again', 'Third time'];
     el.vs.forEach(function (li, i) {
       var on = views > i;
       toggle(li, 'is-on', on);
