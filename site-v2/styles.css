@@ -362,7 +362,7 @@ b, strong { font-weight: 650; }
 .fig-cap.is-swap { animation: pop var(--t-mid) var(--ease) both; }
 .scr {
   grid-column: 1; grid-row: 2; align-self: start; background: #fff; border-radius: var(--r); box-shadow: var(--shadow-paper), 0 0 0 1px rgba(20, 28, 120, 0.09);
-  border-top: 2px solid var(--blue); overflow: hidden; font-size: 1rem; width: 100%; max-width: 600px;
+  overflow: hidden; font-size: 1rem; width: 100%; max-width: 600px;
   transition: transform var(--t-slow) var(--ease), opacity var(--t-mid) var(--ease);
 }
 .scr-l { --from: -72px; }
