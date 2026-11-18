@@ -385,7 +385,7 @@
       const row = rows[sel[0]];
       const editable = viewer === 'maya';
       addBtns.forEach((b) => { b.disabled = !editable; });
-      if (!editable) { quickWho.textContent = 'Lena approves this week. She reviews time; she doesn\'t log it for others.'; quickVal.textContent = ''; return; }
+      if (!editable) { quickWho.textContent = 'Sam approves the week once it\'s submitted.'; quickVal.textContent = ''; return; }
       quickWho.textContent = `${row.name} · ${DAYS[sel[1]]}`;
       quickVal.textContent = dur(row.mins[sel[1]]);
     };
@@ -395,9 +395,9 @@
       if (draft === 'accepted') {
         draftRow.classList.add('is-accepted');
         draftRow.innerHTML = `${icon('circle-check')}<span><b>Northwind check-in</b> is now 1 h 0 m of Maya's time on Site build. The title and duration came in; nothing else did.</span>`;
-      } else if (viewer === 'lena') {
+      } else if (viewer === 'sam') {
         draftRow.classList.add('is-plain');
-        draftRow.innerHTML = `${icon('eye-off')}<span>Viewing as <b>Lena Park</b>, approver. Maya's calendar draft isn't here, and it isn't in any total. It's hers until she accepts it.</span>`;
+        draftRow.innerHTML = `${icon('eye')}<span>Viewing as <b>Sam Okafor</b>, administrator. Sam approves submitted weeks.</span>`;
       } else {
         draftRow.innerHTML = `${icon('calendar')}<span><b>Northwind check-in · 1 h 0 m</b>, Wed. A private draft from your calendar. Only you can see it.</span><button type="button" class="tbtn" data-accept>${icon('check')}Accept</button>`;
       }
@@ -496,32 +496,29 @@
     const stageText = $('[data-stage]');
     const stack = $('[data-stack]', org);
     const members = $('[data-members]', org);
-    const PEOPLE = [['MO', 'av-mo'], ['TB', 'av-tb'], ['PN', 'av-pn'], ['LP', 'av-lp'], ['SO', 'av-so'], ['JC', 'av-jc'], ['RA', 'av-tb'], ['KD', 'av-pn']];
+    const PEOPLE = [['MO', 'av-mo'], ['SO', 'av-so'], ['TB', 'av-tb'], ['PN', 'av-pn'], ['JC', 'av-jc'], ['RA', 'av-lp'], ['KD', 'av-tb'], ['EV', 'av-pn']];
     const av = (i, c) => `<span class="av ${c}" aria-hidden="true">${i}</span>`;
     const muted = (t) => `<span class="muted">${t}</span>`;
 
     const rowsFor = (n) => {
-      const extra = Math.max(0, Math.floor(n / 12) - 3);
       return {
         approve: n === 1 ? ['solo', muted("No approvals. You're the only one logging time.")]
-          : n < 10 ? ['one', `${av('LP', 'av-lp')}<span><b>Lena Park</b> approves every week</span>`]
-          : n < 40 ? ['two', `<span class="proj">${av('LP', 'av-lp')}Site build</span><span class="proj">${av('TB', 'av-tb')}Rebrand</span><span class="muted">one approver per project</span>`]
-          : ['many', `<span class="proj">${av('LP', 'av-lp')}Site build</span><span class="proj">${av('TB', 'av-tb')}Rebrand</span><span class="proj">${av('PN', 'av-pn')}Retainer</span>${extra ? `<span class="muted">+ ${extra} more projects</span>` : ''}`],
-        finance: n < 10 ? ['owner', muted('Maya keeps the money. No separate finance seat yet.')]
-          : n < 80 ? ['one', `${av('SO', 'av-so')}<span><b>Sam Okafor</b> · invoices, payments, bills</span>`]
-          : ['team', `${av('SO', 'av-so')}<span><b>Sam Okafor</b> + 2 finance seats</span><span class="tag">Receivables</span><span class="tag">Payables</span>`],
-        teams: n < 25 ? ['one', muted('One team. Everyone works on every job.')]
-          : n < 100 ? ['few', '<span class="tag">Design</span><span class="tag">Build</span><span class="tag">Strategy</span>']
-          : ['many', '<span class="tag">Design</span><span class="tag">Build</span><span class="tag">Strategy</span><span class="tag">Client services</span><span class="tag">Operations</span>'],
+          : n < 5 ? ['owner', `${av('MO', 'av-mo')}<span><b>Maya</b> approves every submitted week</span>`]
+          : ['admins', `${av('MO', 'av-mo')}${av('SO', 'av-so')}<span>An owner or administrator approves submitted weeks</span>`],
+        finance: n < 5 ? ['owner', muted('Maya handles the money. Add an administrator when you want one.')]
+          : n < 80 ? ['one', `${av('SO', 'av-so')}<span><b>Sam Okafor</b> · invoices, payments, approvals</span>`]
+          : ['many', `${av('SO', 'av-so')}<span><b>Sam Okafor</b> + ${Math.max(2, Math.floor(n / 60))} more administrators</span>`],
+        teams: n < 5 ? ['all', muted('Everyone is on every project.')]
+          : ['scoped', `<span class="proj">${av('TB', 'av-tb')}Site build, Rebrand</span><span class="muted">members see only the projects they're on</span>`],
         acct: n < 5 ? ['none', muted('Invite your accountant whenever you want one.')]
           : ['seat', `${av('JC', 'av-jc')}<span><b>Jules Carter</b> · read-only, every entry and report</span>`],
       };
     };
 
-    const stageFor = (n) => n === 1 ? 'Just you. Owner, approver and finance at once, with nothing in your way.'
-      : n < 10 ? 'A studio. One approver, and the owner keeps the money.'
-      : n < 40 ? 'A growing studio. A finance seat takes invoices and payments off the owner.'
-      : n < 150 ? 'An agency. Teams, an approver per project, finance seats and an accountant who only reads.'
+    const stageFor = (n) => n === 1 ? 'Just you. You own it, log it, bill it, with nothing in your way.'
+      : n < 5 ? 'A few of you. The owner approves the weeks and handles the money.'
+      : n < 40 ? 'A studio. An administrator takes the money and the approvals off the owner.'
+      : n < 150 ? 'An agency. Administrators, members on their own projects, and an accountant who only reads.'
       : 'A large agency. The same deal and the same books, and every seat sees only its part.';
 
     const seen = {};
