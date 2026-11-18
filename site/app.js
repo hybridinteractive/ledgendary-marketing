@@ -41,6 +41,18 @@
       { rootMargin: '-30px 0px -95% 0px' }).observe(dark);
   }
 
+  /* --------------------------------------------------------------- highlighter */
+
+  const marks = $$('.hl');
+  if (reduced.matches || !('IntersectionObserver' in window)) {
+    marks.forEach((m) => m.classList.add('hl-in'));
+  } else {
+    const hio = new IntersectionObserver((list) => list.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('hl-in'); hio.unobserve(e.target); }
+    }), { threshold: 1, rootMargin: '0px 0px -12% 0px' });
+    marks.forEach((m) => hio.observe(m));
+  }
+
   /* --------------------------------------------------------------- waitlist */
 
   const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
@@ -76,6 +88,8 @@
       input.removeAttribute('aria-invalid');
       form.classList.add('is-done');
       say(`Challenge accepted. You're on the list.`, 'ok');
+      const you = form.hasAttribute('data-final') ? $('[data-you]') : null;
+      if (you) you.hidden = false;
       msg.setAttribute('tabindex', '-1');
       msg.focus({ preventScroll: true });
     });
@@ -274,6 +288,19 @@
       steps[i].appendChild(copy);
     });
 
+    const screensBox = $('.screens', stage);
+    const fit = (scr) => {
+      const pad = parseFloat(getComputedStyle(screensBox).paddingTop) * 2;
+      const h = Math.ceil(scr.scrollHeight + pad);
+      screensBox.style.setProperty('--h', `${h}px`);
+      // Keep the window centred in the viewport below the nav, whatever the scene's height.
+      const full = h + 46;
+      stage.style.top = `${Math.max(80, Math.round((window.innerHeight - full) / 2 + 30))}px`;
+    };
+    fit(screens[0]);
+    window.addEventListener('resize', () => fit(screens[current]));
+    if (document.fonts) document.fonts.ready.then(() => fit(screens[current]));
+
     const setRail = (i) => railIcons.forEach((ic) => ic.classList.toggle('is-cur', ic.dataset.rail.split(' ').includes(String(i))));
 
     const countUp = (scr) => {
@@ -300,6 +327,7 @@
       from.classList.remove('scr-on');
       to.classList.add('scr-on');
       crumb.textContent = to.dataset.crumbtext;
+      fit(to);
       setRail(i);
       current = i;
       steps.forEach((s, j) => s.classList.toggle('is-on', j === i));
@@ -478,7 +506,7 @@
       recurring: ['Ferro · Retainer', `<div class="pv-big"><span>Every month on the 1st</span><b class="num">$4,500.00</b></div>${row('Dec 1', 'INV-0046', '$4,500.00', P.blue('Scheduled'))}${row('Nov 1', 'INV-0038', '$4,500.00', P.green('Paid'))}${row('Oct 1', 'INV-0031', '$4,500.00', P.green('Paid'))}<p class="pv-note">${ic('repeat')}One invoice per period. Never two.</p>`],
       reminders: ['INV-0042 · Reminders', `${row('3 days before due', 'Nov 28', 'Email', P.grey('Not needed'))}${row('On the due date', 'Dec 1', 'Email', P.grey('Not needed'))}${row('7 days late', 'Dec 8', 'Email', P.grey('Not needed'))}${row('Late fee 1.5%', 'Dec 16', 'Entry', P.grey('Not needed'))}<p class="pv-note">${ic('book-open')}A late fee posts as its own entry. The invoice is never rewritten.</p>`],
       credit: ['Credit note CN-0004', `<div class="pv-big"><span>Halcyon · Rebrand</span><b class="num">$1,200.00</b></div>${row('Issued', 'Nov 6 · Scope reduced', '$1,200.00', P.blue('Issued'))}${row('Applied to INV-0045', 'Nov 9', '−$1,200.00', P.green('Applied'))}${row('Credit left', '', '$0.00')}`],
-      portal: ['Client portal · Northwind Co', `${row('Proposal P-0018', 'Site build', '$42,000.00', P.green('Accepted'))}${row('INV-0042', 'Paid Nov 18', '$42,000.00', P.green('Paid'))}${row('INV-0043', 'Due Dec 15', '$3,600.00', P.blue('Pay now'))}<p class="pv-note">${ic('globe')}Dana accepts, signs and pays here, on one page per client.</p>`],
+      portal: ['Client portal · Northwind Co', `${row('Proposal P-0018', 'Site build · option B', '$30,000 + time', P.green('Accepted'))}${row('INV-0042', 'Paid Nov 18', '$42,000.00', P.green('Paid'))}${row('INV-0043', 'Due Dec 15', '$3,600.00', P.blue('Pay now'))}<p class="pv-note">${ic('globe')}Dana accepts, signs and pays here, on one page per client.</p>`],
       payments: ['Payments', `${row('Northwind Co', 'Nov 18 · Card · INV-0042', '$42,000.00', P.green('Matched'))}${row('Halcyon', 'Nov 12 · Bank transfer · INV-0039', '$11,250.00', P.green('Matched'))}${row('Ferro', 'Nov 1 · Card · INV-0038', '$4,500.00', P.green('Matched'))}`],
       expenses: ['Expenses', `${row('Font licences', 'Oct 31 · Northwind · Site build', '$1,250.00', P.grey('Receipt'))}${row('Stock photography', 'Nov 3 · Halcyon · Rebrand', '$380.00', P.grey('Receipt'))}${row('Train to client', 'Nov 10 · Northwind · Site build', '$96.00', P.grey('Receipt'))}<p class="pv-note">${ic('receipt')}Every expense is tagged to a job and posts on save.</p>`],
       bills: ['Bills', `${row('Pixel Foundry', 'BILL-0012 · Due Nov 30', '$6,400.00', P.blue('Open'))}${row('Hosting', 'BILL-0011 · Paid Nov 2', '$240.00', P.green('Paid'))}<p class="pv-note">${ic('building-2')}A bill books what you owe when you owe it, and the cash when it leaves.</p>`],

@@ -7,9 +7,7 @@
   <meta name="description" content="Proposals clients choose from, time that bills itself, invoices that get paid, and books your accountant trusts. One ledger for agencies of one or of hundreds. Invite-only alpha.">
   <meta name="theme-color" content="#ffffff">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 28 28%22%3E%3Crect x=%221%22 y=%221%22 width=%2226%22 height=%2226%22 rx=%227%22 fill=%22%230d0e12%22/%3E%3Crect x=%227%22 y=%2217.5%22 width=%2214%22 height=%223%22 rx=%221.5%22 fill=%22%23ffc629%22/%3E%3Crect x=%227%22 y=%2213%22 width=%2210%22 height=%222.2%22 rx=%221.1%22 fill=%22%23fff%22/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:wdth,wght@75..125,200..900&amp;display=swap">
+  <link rel="preload" href="fonts/MonaSansVF.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js');</script>
   <script src="app.js" defer></script>
@@ -100,7 +98,7 @@
           </div>
           <p class="form-msg" id="email-hero-msg" aria-live="polite"></p>
         </form>
-        <p class="fine"><svg class="ic" aria-hidden="true"><use href="#i-lock-keyhole"/></svg>Invite-only alpha. We let people in a few studios at a time.</p>
+        <p class="fine"><svg class="ic" aria-hidden="true"><use href="#i-lock-keyhole"/></svg><span>Invite-only alpha. We let in a few studios at a time.</span></p>
       </div>
     </div>
   </div>
@@ -148,33 +146,42 @@
               <table class="tbl">
                 <thead><tr><th>Option</th><th>Scope</th><th class="r">Price</th></tr></thead>
                 <tbody>
-                  <tr><td><span class="opt-k">A</span>Essentials</td><td class="mut">Design system, 8 templates</td><td class="r num">$28,000</td></tr>
-                  <tr class="row-b"><td><span class="opt-k">B</span>Full build</td><td class="mut">20 templates, 80 h build time</td><td class="r num">$42,000</td></tr>
-                  <tr><td><span class="opt-k">C</span>Build + retainer</td><td class="mut">Full build, monthly care</td><td class="r num">$42,000 + $4,500/mo</td></tr>
+                  <tr><td><span class="opt-k">A</span>Essentials</td><td class="mut">Design system, 8 templates</td><td class="r">$22,000 + time</td></tr>
+                  <tr><td><span class="opt-k">B</span>Full build</td><td class="mut">20 templates, est. 80 h</td><td class="r">$30,000 + time</td></tr>
+                  <tr><td><span class="opt-k">C</span>Build + retainer</td><td class="mut">Full build, monthly care</td><td class="r">$30,000 + time, $4,500/mo</td></tr>
                 </tbody>
               </table>
             </div>
 
-            <!-- client portal sheet -->
+            <!-- client portal sheet: opaque, slides in; only the scrim fades -->
+            <div class="scrim" data-until="5800"></div>
             <div class="sheet" data-until="5800">
               <div class="sheet-bar"><svg class="ic ic-xs"><use href="#i-globe"/></svg><span>Client portal</span><span class="sheet-who">Lumen Studio for Northwind Co</span><span class="sheet-view">What Dana sees</span></div>
               <div class="sheet-step vis-until" data-until="2800">
-                <p class="sheet-h">Choose how you'd like to build it</p>
+                <p class="sheet-intro">Hi Dana, here are three ways to build the new site. Fixed fees cover the agreed scope; design and build time is billed at $150/h as we log it.</p>
                 <div class="opts">
-                  <div class="opt"><span class="opt-l">A · Essentials</span><span class="opt-p num">$28,000</span><ul><li>Design system</li><li>8 page templates</li><li>2 revision rounds</li></ul><span class="opt-btn">Choose A</span></div>
-                  <div class="opt opt-b" data-at="1800"><span class="opt-l">B · Full build <em class="rec">Recommended</em></span><span class="opt-p num">$42,000</span><ul><li>Everything in A</li><li>20 templates, custom parts</li><li>80 h design and build</li></ul><span class="opt-btn" id="tgt-b">Choose B</span><span class="opt-chosen"><svg class="ic ic-xs"><use href="#i-check"/></svg>Chosen</span></div>
-                  <div class="opt"><span class="opt-l">C · Build + retainer</span><span class="opt-p num">$42,000<small> + $4,500/mo</small></span><ul><li>Everything in B</li><li>30 h care each month</li><li>Quarterly roadmap</li></ul><span class="opt-btn">Choose C</span></div>
+                  <div class="opt"><span class="opt-l">A · Essentials</span><span class="opt-p">$22,000<small> + time</small></span><span class="opt-est">Est. 40 h · est. total $28,000</span><ul><li>Design system</li><li>8 page templates</li><li>2 revision rounds</li></ul><span class="opt-btn">Choose A</span></div>
+                  <div class="opt opt-b" data-at="1800"><span class="opt-l">B · Full build <em class="rec">Recommended</em></span><span class="opt-p">$30,000<small> + time</small></span><span class="opt-est">Est. 80 h · est. total $42,000</span><ul><li>Everything in A</li><li>20 templates, custom parts</li><li>30 days launch support</li></ul><span class="opt-btn" id="tgt-b">Choose B</span><span class="opt-chosen"><svg class="ic ic-xs"><use href="#i-check"/></svg>Chosen</span></div>
+                  <div class="opt"><span class="opt-l">C · Build + retainer</span><span class="opt-p">$30,000<small> + time</small></span><span class="opt-est">Then $4,500/mo for 30 h of care</span><ul><li>Everything in B</li><li>Monthly care plan</li><li>Quarterly roadmap</li></ul><span class="opt-btn">Choose C</span></div>
                 </div>
+                <dl class="terms">
+                  <div><dt>Rate</dt><dd>$150/h, billed as logged</dd></div>
+                  <div><dt>Valid until</dt><dd>Nov 10, 2026</dd></div>
+                  <div><dt>Prepared by</dt><dd>Maya Ortiz, Lumen Studio</dd></div>
+                </dl>
               </div>
               <div class="sheet-step sign vis-at" data-at="2800">
-                <div class="sign-sum"><span>Option B · Full build</span><b class="num">$42,000.00</b></div>
-                <span class="sign-l">Type your full name to sign</span>
-                <div class="sign-field"><span class="sign-name" data-at="3200">Dana Whitfield</span><span class="caret"></span></div>
-                <div class="sign-foot">
-                  <span class="sign-check" data-at="3950"><span class="box"><svg class="ic ic-xs"><use href="#i-check"/></svg></span>I accept the proposal and its terms</span>
-                  <span class="btn-ui btn-ui-ink" id="tgt-sign">Accept and sign</span>
+                <div class="sign-sum"><div><span>Option B · Full build</span><small>Time at $150/h, estimated 80 h ($12,000)</small></div><b>$30,000 + time</b></div>
+                <ul class="sign-scope"><li>Everything in Essentials</li><li>20 templates, custom parts</li><li>30 days launch support</li></ul>
+                <div class="sign-block">
+                  <span class="sign-l">Type your full name to sign</span>
+                  <div class="sign-field"><span class="sign-name" data-at="3200">Dana Whitfield</span><span class="caret"></span></div>
+                  <div class="sign-foot">
+                    <span class="sign-check" data-at="3950"><span class="box"><svg class="ic ic-xs"><use href="#i-check"/></svg></span>I accept the proposal and its terms</span>
+                    <span class="btn-ui btn-ui-ink" id="tgt-sign">Accept and sign</span>
+                  </div>
+                  <div class="signed vis-at" data-at="4500"><svg class="ic"><use href="#i-circle-check-big"/></svg><div><b>Accepted, signed</b><span>Dana Whitfield · Oct 30, 2026, 10:42 AM</span></div></div>
                 </div>
-                <div class="signed vis-at" data-at="4500"><svg class="ic"><use href="#i-circle-check-big"/></svg><div><b>Accepted, signed</b><span>Dana Whitfield · Oct 30, 2026, 10:42 AM</span></div></div>
               </div>
             </div>
 
@@ -198,13 +205,18 @@
               <table class="tbl tbl-inv">
                 <thead><tr><th>Line</th><th class="r">Qty</th><th class="r">Rate</th><th class="r">Amount</th></tr></thead>
                 <tbody>
-                  <tr class="ins" data-at="6100"><td>Full build, fixed fee<span class="src"><svg class="ic ic-xs"><use href="#i-file-text"/></svg>From option B</span></td><td class="r num">1</td><td class="r num">$30,000.00</td><td class="r num">$30,000.00</td></tr>
-                  <tr class="ins" data-at="6550"><td>Design and build time, Nov 2–15<span class="src"><svg class="ic ic-xs"><use href="#i-clock"/></svg>From unbilled time</span></td><td class="r num">80 h 0 m</td><td class="r num">$150.00</td><td class="r num">$12,000.00</td></tr>
+                  <tr class="ins" data-at="6100"><td>Full build, fixed fee<span class="src"><svg class="ic ic-xs"><use href="#i-file-text"/></svg>From option B</span></td><td class="r num">1</td><td class="r col">$30,000.00</td><td class="r col">$30,000.00</td></tr>
+                  <tr class="ins" data-at="6550"><td>Design and build time, Nov 2–15<span class="src"><svg class="ic ic-xs"><use href="#i-clock"/></svg>From logged time · estimate was 80 h</span></td><td class="r col">80 h 0 m</td><td class="r col">$150.00</td><td class="r col">$12,000.00</td></tr>
                 </tbody>
               </table>
               <div class="tot">
                 <div class="tot-row"><span>Subtotal</span><span class="num" data-roll="42000" data-roll-at="6900">$42,000.00</span></div>
                 <div class="tot-row tot-big"><span>Total due</span><span class="amt"><span class="flash" data-at="11200"></span><b class="num" data-roll="42000" data-roll-at="6900">$42,000.00</b></span></div>
+              </div>
+              <div class="inv-foot">
+                <div><span>Pay</span><b>Card or bank transfer in the client portal</b></div>
+                <div><span>Terms</span><b>Net 15 · reminders on</b></div>
+                <div><span>From</span><b>P-0018, option B, signed Oct 30</b></div>
               </div>
             </div>
           </div>
@@ -217,7 +229,7 @@
             <li class="ai" data-at="11200"><span class="ai-ic ai-green"><svg class="ic ic-xs"><use href="#i-credit-card"/></svg></span><p>Paid by card, <span class="num">$42,000.00</span><small>Nov 18 · Dana Whitfield</small></p></li>
             <li class="ai" data-at="7900"><span class="ai-ic"><svg class="ic ic-xs"><use href="#i-send"/></svg></span><p>INV-0042 sent<small>Nov 16 · Maya Ortiz</small></p></li>
             <li class="ai" data-at="4500"><span class="ai-ic ai-green"><svg class="ic ic-xs"><use href="#i-pen-line"/></svg></span><p>Signed by Dana Whitfield<small>Oct 30 · 10:42 AM</small></p></li>
-            <li class="ai" data-at="1800"><span class="ai-ic ai-blue"><svg class="ic ic-xs"><use href="#i-mouse-pointer-2"/></svg></span><p>Dana chose option B<small>Oct 30 · Full build</small></p></li>
+            <li class="ai" data-at="1800"><span class="ai-ic ai-blue"><svg class="ic ic-xs"><use href="#i-mouse-pointer-2"/></svg></span><p>Dana chose option B<small>Oct 30 · $30,000 + time</small></p></li>
             <li class="ai ai-static"><span class="ai-ic"><svg class="ic ic-xs"><use href="#i-file-text"/></svg></span><p>Dana viewed P-0018<small>Oct 28 · 3 times</small></p></li>
             <li class="ai ai-static"><span class="ai-ic"><svg class="ic ic-xs"><use href="#i-send"/></svg></span><p>P-0018 sent<small>Oct 27 · Maya Ortiz</small></p></li>
           </ol>
@@ -277,20 +289,20 @@
             <div class="scr scr-on" data-scr="0" data-crumbtext="Proposal P-0018">
               <div class="doc-h"><div><p class="doc-title vt-title">Site build for Northwind Co</p><p class="doc-meta">Three options · Sent to Dana Whitfield · Viewed 3 times</p></div><span class="pill pill-blue">Awaiting client</span></div>
               <div class="olist">
-                <div class="orow"><span class="opt-k">A</span><div><b>Essentials</b><span>Design system, 8 page templates, 2 revision rounds</span></div><span class="num">$28,000</span></div>
-                <div class="orow orow-b"><span class="opt-k">B</span><div><b>Full build <em class="rec">Recommended</em></b><span>$30,000 fixed, plus 80 h design and build at $150</span></div><span class="num vt-amount">$42,000</span></div>
-                <div class="orow"><span class="opt-k">C</span><div><b>Build + retainer</b><span>Everything in B, then 30 h of care each month</span></div><span class="num">$42,000<small> + $4,500/mo</small></span></div>
+                <div class="orow"><span class="opt-k">A</span><div><b>Essentials</b><span>8 page templates. Est. 40 h, est. total $28,000</span></div><span class="oprice">$22,000<small>+ time</small></span></div>
+                <div class="orow orow-b"><span class="opt-k">B</span><div><b>Full build <em class="rec">Recommended</em></b><span>20 templates. Est. 80 h at $150, est. total $42,000</span></div><span class="oprice vt-amount">$30,000<small>+ time</small></span></div>
+                <div class="orow"><span class="opt-k">C</span><div><b>Build + retainer</b><span>Everything in B, then 30 h of care a month</span></div><span class="oprice">$30,000<small>+ time, $4,500/mo</small></span></div>
               </div>
               <div class="mini-note"><svg class="ic ic-xs"><use href="#i-globe"/></svg>Dana compares the three in the client portal and picks one. No back and forth over a PDF.</div>
             </div>
 
             <!-- 2 Decide -->
             <div class="scr" data-scr="1" data-crumbtext="Client portal">
-              <div class="portal-h"><span class="ws-logo ws-logo-sm">LS</span><b>Lumen Studio</b><span class="mut">for Northwind Co</span><span class="pill pill-green"><svg class="ic ic-xs"><use href="#i-check"/></svg>Accepted</span></div>
+              <div class="portal-h"><span class="ws-logo ws-logo-sm">LS</span><span class="portal-names"><b>Lumen Studio</b> <span class="mut">for Northwind Co</span></span><span class="pill pill-green"><svg class="ic ic-xs"><use href="#i-check"/></svg>Accepted</span></div>
               <p class="doc-title vt-title">Site build for Northwind Co</p>
               <div class="chosen-card">
-                <div class="chosen-top"><span class="opt-k opt-k-on">B</span><b>Full build</b><span class="num vt-amount">$42,000.00</span></div>
-                <p class="mut">Option A and option C were not chosen. They stay on the record, greyed out.</p>
+                <div class="chosen-top"><span class="opt-k opt-k-on">B</span><b>Full build</b><span class="oprice vt-amount">$30,000<small>+ time</small></span></div>
+                <p class="mut">Time at $150/h, estimated 80 h ($12,000). Options A and C stay on the record, greyed out.</p>
               </div>
               <div class="sig">
                 <span class="sig-l">Signature</span>
@@ -321,12 +333,12 @@
                 <span class="ub-h"><svg class="ic ic-xs"><use href="#i-clock"/></svg>Unbilled time</span>
                 <span class="ub-w">Nov 2–8 <b class="num">41 h 45 m</b></span>
                 <span class="ub-w">Nov 9–15 <b class="num">38 h 15 m</b></span>
-                <span class="ub-t">80 h 0 m <svg class="ic ic-xs"><use href="#i-arrow-right"/></svg> line 2</span>
+                <span class="ub-t">80 h 0 m logged, on the 80 h estimate <svg class="ic ic-xs"><use href="#i-arrow-right"/></svg> line 2</span>
               </div>
               <table class="tbl tbl-inv">
                 <thead><tr><th>Line</th><th class="r">Qty</th><th class="r">Rate</th><th class="r">Amount</th></tr></thead>
                 <tbody>
-                  <tr class="lrow"><td>Full build, fixed fee<span class="src"><svg class="ic ic-xs"><use href="#i-file-text"/></svg>From option B</span></td><td class="r num">1</td><td class="r num">$30,000.00</td><td class="r num">$30,000.00</td></tr>
+                  <tr class="lrow"><td>Full build, fixed fee<span class="src"><svg class="ic ic-xs"><use href="#i-file-text"/></svg>From option B</span></td><td class="r num">1</td><td class="r col">$30,000.00</td><td class="r col">$30,000.00</td></tr>
                   <tr class="lrow"><td>Design and build time<span class="src"><svg class="ic ic-xs"><use href="#i-clock"/></svg>From unbilled time</span></td><td class="r num">80 h 0 m</td><td class="r num">$150.00</td><td class="r num">$12,000.00</td></tr>
                 </tbody>
               </table>
@@ -358,7 +370,7 @@
     <ol class="steps">
       <li class="step" data-step="0">
         <h3 class="step-h">Propose</h3>
-        <p>Send one proposal with three ways to say yes. Essentials, the full build, or the build with a retainer. Each option carries its own scope and price, and nobody retypes them later.</p>
+        <p>Send one proposal with three ways to say yes. Essentials, the full build, or the build with a retainer. Each option carries its own scope, fixed fee and time estimate, and nobody retypes them later.</p>
       </li>
       <li class="step" data-step="1">
         <h3 class="step-h">Decide</h3>
@@ -370,7 +382,7 @@
       </li>
       <li class="step" data-step="3">
         <h3 class="step-h">Bill</h3>
-        <p>The accepted option becomes the first invoice line. Two weeks of unbilled hours become the second. The invoice adds up to exactly what Dana agreed to.</p>
+        <p>The fixed fee Dana signed for becomes the first invoice line. The 80 hours the team logged become the second, at the rate she agreed. The work came in on the estimate, so the invoice is the $42,000 she was quoted, and every line says where it came from.</p>
       </li>
       <li class="step" data-step="4">
         <h3 class="step-h">Get paid</h3>
@@ -513,7 +525,7 @@
 <section class="privacy" aria-labelledby="privacy-h">
   <div class="wrap privacy-grid">
     <div class="privacy-copy">
-      <h2 class="display h2" id="privacy-h">Your calendar stays yours.</h2>
+      <h2 class="display h2" id="privacy-h">Your calendar stays <span class="hl">yours</span>.</h2>
       <p>A meeting on Maya's calendar becomes a private draft in her week. Only Maya sees it: not the owner of the workspace, not an approver, not a report.</p>
       <p>We keep the title and the duration. Nothing else on the event comes in, so there is nothing else to leak.</p>
     </div>
@@ -547,8 +559,10 @@
 <!-- =================================================================== PLAYBOOK -->
 <section class="playbook" aria-labelledby="pb-h">
   <div class="wrap">
-    <h2 class="display h2" id="pb-h">The playbook.</h2>
-    <p class="sec-lede">Everything else the money needs, on the same ledger.</p>
+    <div class="pb-head">
+      <h2 class="display pb-title" id="pb-h">The playbook.</h2>
+      <p class="sec-lede">Everything else the money needs, on the same ledger. Point at one to see it.</p>
+    </div>
   </div>
   <div class="wrap pb-grid">
     <ul class="pb-list" id="pblist">
@@ -577,18 +591,39 @@
 
 <!-- =================================================================== FINAL -->
 <section class="final" id="join" aria-labelledby="join-h">
-  <div class="wrap final-in">
-    <h2 class="display final-h" id="join-h">Suit up.</h2>
-    <p class="sec-lede">Ledgendary is in an invite-only alpha. Leave your email and we'll send an invite when there's a seat for your studio.</p>
-    <form class="waitlist waitlist-final" novalidate data-waitlist>
-      <label class="sr-only" for="email-final">Work email</label>
-      <div class="field-row">
-        <input class="input" id="email-final" name="email" type="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="email-final-msg">
-        <button class="btn btn-gold" type="submit">Join the waitlist</button>
+  <div class="wrap final-grid">
+    <div class="final-copy">
+      <h2 class="display final-h" id="join-h">Suit <span class="hl">up</span>.</h2>
+      <p class="sec-lede">Ledgendary is in an invite-only alpha. Leave your email and we'll send an invite when there's a seat for your studio.</p>
+      <form class="waitlist waitlist-final" novalidate data-waitlist data-final>
+        <label class="sr-only" for="email-final">Work email</label>
+        <div class="field-row">
+          <input class="input" id="email-final" name="email" type="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="email-final-msg">
+          <button class="btn btn-gold" type="submit">Join the waitlist</button>
+        </div>
+        <p class="form-msg" id="email-final-msg" aria-live="polite"></p>
+      </form>
+      <p class="fine">No card, no trial clock. One email when your invite is ready.</p>
+    </div>
+    <div class="win win-final" aria-hidden="true">
+      <header class="top">
+        <nav class="crumbs"><span class="ws-logo ws-logo-sm">LS</span><span>Northwind Co</span><svg class="ic ic-xs"><use href="#i-chevron-right"/></svg><b>Invoice INV-0042</b></nav>
+        <div class="top-r"><span class="demo-tag">Demo data</span></div>
+      </header>
+      <div class="fin-body">
+        <div class="fin-paid">
+          <div><span class="pill pill-green"><svg class="ic ic-xs"><use href="#i-check"/></svg>Paid</span><p class="fin-meta">Card · Visa ending 1881 · Nov 18</p></div>
+          <b class="fin-amt">$42,000.00</b>
+        </div>
+        <ol class="fin-act">
+          <li class="ai fin-you" data-you hidden><span class="ai-ic ai-gold"><svg class="ic ic-xs"><use href="#i-sparkles"/></svg></span><p>Challenge accepted<small>You're on the list · invite to follow</small></p></li>
+          <li class="ai"><span class="ai-ic ai-gold"><svg class="ic ic-xs"><use href="#i-book-open"/></svg></span><p>Posted to the books<small>JE-1041, JE-1042 · chained #9c07, #e21a</small></p></li>
+          <li class="ai"><span class="ai-ic ai-green"><svg class="ic ic-xs"><use href="#i-credit-card"/></svg></span><p>Paid by card, $42,000.00<small>Nov 18 · Dana Whitfield</small></p></li>
+          <li class="ai"><span class="ai-ic"><svg class="ic ic-xs"><use href="#i-send"/></svg></span><p>INV-0042 sent<small>Nov 16 · Maya Ortiz</small></p></li>
+          <li class="ai"><span class="ai-ic ai-green"><svg class="ic ic-xs"><use href="#i-pen-line"/></svg></span><p>Signed by Dana Whitfield<small>Oct 30 · option B, $30,000 + time</small></p></li>
+        </ol>
       </div>
-      <p class="form-msg" id="email-final-msg" aria-live="polite"></p>
-    </form>
-    <p class="fine">No card, no trial clock. One email when your invite is ready.</p>
+    </div>
   </div>
 </section>
 
