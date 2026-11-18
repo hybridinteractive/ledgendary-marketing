@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-18T23:30:00Z",
+  "title": "Design System: Ledgendary marketing home (v3)",
+  "scope": "site-v3/ only (v3 alternate). Not a project-wide system; site/ (v1) and site-v2/ are competing alternates in their own worlds. Derived from site-v3/styles.css, site-v3/index.html, site-v3/app.js as finished 2026-11-18 after the finish review and fix round. Values are the final cascaded ones (the stylesheet layers a finish-round block over earlier declarations).",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Evening Ground",
+        "canonical": "#0e1613",
+        "tonalRamp": [
+          "#0e1613",
+          "#121b17",
+          "#16211c",
+          "#1b2822",
+          "#24332c",
+          "#33463d",
+          "#8a9c93",
+          "#a9b8b0"
+        ]
+      },
+      "inset": {
+        "role": "neutral",
+        "displayName": "Inset",
+        "canonical": "#121b17"
+      },
+      "panel": {
+        "role": "neutral",
+        "displayName": "Panel",
+        "canonical": "#16211c"
+      },
+      "panel-2": {
+        "role": "neutral",
+        "displayName": "Raised Panel",
+        "canonical": "#1b2822"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#24332c"
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Control Line",
+        "canonical": "#33463d"
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Warm Off-white",
+        "canonical": "#f3efe6",
+        "tonalRamp": [
+          "#3a3833",
+          "#5c5a53",
+          "#807d75",
+          "#a6a39a",
+          "#c4c1b8",
+          "#d3d6cd",
+          "#e6e2d9",
+          "#f3efe6"
+        ]
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Text 2",
+        "canonical": "#d3d6cd"
+      },
+      "mut": {
+        "role": "neutral",
+        "displayName": "Muted Green",
+        "canonical": "#a9b8b0"
+      },
+      "mut-2": {
+        "role": "neutral",
+        "displayName": "Muted Green 2",
+        "canonical": "#8a9c93"
+      },
+      "coral": {
+        "role": "primary",
+        "displayName": "Signal Coral",
+        "canonical": "#ff6b4a",
+        "tonalRamp": [
+          "#3d120a",
+          "#661d10",
+          "#992b17",
+          "#cc3a1f",
+          "#ff6b4a",
+          "#ff825f",
+          "#ffb4a3",
+          "#ffe9e3"
+        ]
+      },
+      "coral-hi": {
+        "role": "primary",
+        "displayName": "Coral Hi",
+        "canonical": "#ff825f"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0e1613"
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Done Mint",
+        "canonical": "#9fdcb9",
+        "tonalRamp": [
+          "#0f2a1c",
+          "#1b4a32",
+          "#2a6e4b",
+          "#3f9467",
+          "#6fbf92",
+          "#9fdcb9",
+          "#c7ecd6",
+          "#eef9f2"
+        ]
+      },
+      "mint-bg": {
+        "role": "secondary",
+        "displayName": "Mint Tint",
+        "canonical": "rgba(159, 220, 185, .12)"
+      },
+      "err": {
+        "role": "semantic",
+        "displayName": "Error",
+        "canonical": "#ffb4a3"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only, 15ch, balanced; 3.25rem on phones."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings; closing call at clamp(3rem, 7vw, 5.5rem); 2.6rem on phones."
+      },
+      "date-numeral": {
+        "displayName": "Date numeral",
+        "purpose": "Scrubbed chapter's date readout in text-2; scales up to 1.3x above the pinned stage (1.25x under 1400px), 1x when pinned, unscaled 2rem at 720px and below."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Received figure filling coral on Nov 18; rest date (2rem) and timesheet totals (26px, 85% width) follow the recipe."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Chapter story line and playbook preview name (2rem)."
+      },
+      "doc-title": {
+        "displayName": "Document title",
+        "purpose": "Titles inside product frames and caption titles; 17px on phones in frames."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Hero and section ledes in mut, 46 to 60ch, pretty wrap."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text; 16px on phones."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Text inside product frames, 13 to 14.5px."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Button labels; 14px on small buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Table heads, panel heads, sidebar groups, demo tags; sentence case, 12 to 12.5px, 550 to 600."
+      }
+    },
+    "fonts": [
+      {
+        "family": "Bricolage Grotesque",
+        "source": "site-v3/fonts/BricolageGrotesque-VF.woff2 (OFL)",
+        "weight": "200 800",
+        "stretch": "75% 100%",
+        "display": "swap",
+        "preload": true,
+        "opticalSizing": "auto"
+      }
+    ],
+    "icons": {
+      "set": "lucide-static 0.460.0 (ISC), inline SVG sprite",
+      "size": "16px default; 12 to 14px in chips and tool buttons; 18px in list leads",
+      "stroke": 2,
+      "linecap": "round"
+    },
+    "shadows": [
+      {
+        "name": "frame",
+        "value": "inset 0 0 0 1px #24332c, 0 30px 60px -24px rgba(0, 0, 0, .7)",
+        "purpose": "The pinned product frame."
+      },
+      {
+        "name": "window",
+        "value": "inset 0 0 0 1px #24332c, 0 30px 60px -30px rgba(0, 0, 0, .6)",
+        "purpose": "Books and playbook windows."
+      },
+      {
+        "name": "ring",
+        "value": "inset 0 0 0 1px #24332c (or #33463d)",
+        "purpose": "Every card, control, chip and tag; replaces borders."
+      },
+      {
+        "name": "knob",
+        "value": "0 0 0 4px #0e1613, 0 2px 8px rgba(0, 0, 0, .5)",
+        "purpose": "Scrubber knob; as-of thumb and rest marker take the ground ring only."
+      },
+      {
+        "name": "wait-halo",
+        "value": "0 0 0 4px #0e1613, 0 0 0 10px rgba(255, 107, 74, .22) at peak",
+        "purpose": "Knob breathing while the invoice waits (Nov 17 to Nov 18)."
+      },
+      {
+        "name": "focus",
+        "value": "outline: 2px solid #f3efe6; outline-offset: 3px; border-radius: 6px",
+        "purpose": "Global focus; inputs use inset 0 0 0 2px #f3efe6 instead."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "The one easing for state and entrances."
+      },
+      {
+        "name": "t-press",
+        "value": "150ms",
+        "purpose": "Hover, press, input ring."
+      },
+      {
+        "name": "t-state",
+        "value": "250 to 350ms",
+        "purpose": "Chip, pill, sidebar, tally and slot colour changes."
+      },
+      {
+        "name": "land",
+        "value": "opacity 0 to 1, translateY 6px to 0, 320 to 500ms",
+        "purpose": "Captions, panes, journal entries, playbook preview; activity rows drop 8px."
+      },
+      {
+        "name": "sign-wipe",
+        "value": "clip-path inset(0 100% 0 0) to inset(0), 700ms",
+        "purpose": "The signature writing in."
+      },
+      {
+        "name": "climax-fill",
+        "value": "clip-path driven by --c (0 to 1) from scroll",
+        "purpose": "Received figure filling coral as Nov 18 lands."
+      },
+      {
+        "name": "wait",
+        "value": "1.6s ease-in-out infinite",
+        "purpose": "Knob halo while waiting for payment; the wink 'Wait for it…' captions the same stretch."
+      },
+      {
+        "name": "scroll-weights",
+        "value": "per-day weights 0.4 to 2.6",
+        "purpose": "Wait stretch and paid day scroll slowest."
+      },
+      {
+        "name": "date-scale",
+        "value": "scale 1 + q x 0.3 (0.25 under 1400px), q from 1 at top to 0 at pin",
+        "purpose": "Hero date numeral settling into the readout; off at 720px and below."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "durations .01ms; stage un-pinned; Earlier/Later stepper shown",
+        "purpose": "State never depends on motion; no-JS shows dated static panes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mid",
+        "value": "1360px",
+        "purpose": "App sidebar to 56px icon rail; stage column 260px; short event chip labels."
+      },
+      {
+        "name": "tablet",
+        "value": "1100px",
+        "purpose": "Activity column dropped; hero, section heads, books grid and closing call stack."
+      },
+      {
+        "name": "phone",
+        "value": "720px",
+        "purpose": "Frame un-pinned and flowing; rail chips and mid dates hidden; captions inline; figure and tally hidden; grids single column; nav 56px."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Coral Button",
+      "kind": "button",
+      "refersTo": "button-coral",
+      "description": "The one primary action (Join the waitlist): ink on coral, plainly labelled.",
+      "html": "<div class=\"ds-g\"><button class=\"ds-btn-coral\">Join the waitlist</button> <button class=\"ds-btn-coral\" disabled>Join the waitlist</button></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-btn-coral{display:inline-flex;align-items:center;justify-content:center;gap:8px;height:52px;padding:0 22px;border:0;border-radius:10px;background:#ff6b4a;color:#0e1613;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;font-weight:650;font-size:16px;cursor:pointer;transition:background-color .15s ease,transform .15s ease;} .ds-btn-coral:hover:not(:disabled){background:#ff825f;} .ds-btn-coral:active:not(:disabled){transform:translateY(1px);} .ds-btn-coral:disabled{background:#1b2822;color:#a9b8b0;cursor:default;} .ds-btn-coral:focus-visible{outline:2px solid #f3efe6;outline-offset:3px;}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary control on the ground: transparent with a line-2 inset ring.",
+      "html": "<div class=\"ds-g\"><button class=\"ds-ghost\">Earlier</button> <button class=\"ds-ghost\">Later</button></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-ghost{display:inline-flex;align-items:center;gap:8px;height:38px;padding:0 14px;border:0;border-radius:8px;background:transparent;color:#f3efe6;box-shadow:inset 0 0 0 1px #33463d;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;font-weight:650;font-size:14px;cursor:pointer;transition:background-color .15s ease;} .ds-ghost:hover{background:#1b2822;} .ds-ghost:focus-visible{outline:2px solid #f3efe6;outline-offset:3px;}"
+    },
+    {
+      "name": "Tool Button",
+      "kind": "button",
+      "refersTo": "button-ui",
+      "description": "In-frame control: panel-2 with ring; pressed inverts to off-white, done takes mint.",
+      "html": "<div class=\"ds-g\"><button class=\"ds-ui\">Nov 6</button> <button class=\"ds-ui\" aria-pressed=\"true\">Nov 18</button> <span class=\"ds-ui ds-done\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Signed</span></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-ui{display:inline-flex;align-items:center;gap:6px;min-height:30px;padding:6px 10px;border:0;border-radius:7px;background:#1b2822;color:#f3efe6;box-shadow:inset 0 0 0 1px #33463d;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;font-size:13px;font-weight:550;line-height:18px;cursor:pointer;} button.ds-ui:hover{background:#22302a;} .ds-ui[aria-pressed=true]{background:#f3efe6;color:#0e1613;box-shadow:none;} .ds-done{background:rgba(159,220,185,.12);color:#9fdcb9;box-shadow:none;cursor:default;} .ds-ui:focus-visible{outline:2px solid #f3efe6;outline-offset:3px;}"
+    },
+    {
+      "name": "Waitlist Field",
+      "kind": "input",
+      "refersTo": "waitlist-input",
+      "description": "Email field and coral button; off-white focus ring, err ring when invalid.",
+      "html": "<form class=\"ds-g ds-wl\"><div class=\"ds-wl-row\"><input class=\"ds-wl-in\" type=\"email\" placeholder=\"you@studio.com\" aria-label=\"Work email\"><button class=\"ds-wl-btn\" type=\"button\">Join the waitlist</button></div><p class=\"ds-wl-msg\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect width=\"18\" height=\"11\" x=\"3\" y=\"11\" rx=\"2\" ry=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/></svg>Invite-only alpha. One email when your invite is ready.</p></form>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-wl-row{display:flex;gap:8px;} .ds-wl-in{flex:1;min-width:0;height:52px;padding:0 16px;border:0;border-radius:10px;background:#16211c;color:#f3efe6;box-shadow:inset 0 0 0 1px #33463d;font:inherit;font-size:16px;transition:box-shadow .15s ease;} .ds-wl-in::placeholder{color:#8a9c93;} .ds-wl-in:hover{box-shadow:inset 0 0 0 1px #4a5f55;} .ds-wl-in:focus{outline:none;box-shadow:inset 0 0 0 2px #f3efe6;} .ds-wl-in[aria-invalid=true]{box-shadow:inset 0 0 0 2px #ffb4a3;} .ds-wl-btn{min-width:176px;height:52px;padding:0 22px;border:0;border-radius:10px;background:#ff6b4a;color:#0e1613;font:inherit;font-weight:650;font-size:16px;cursor:pointer;} .ds-wl-btn:hover{background:#ff825f;} .ds-wl-btn:focus-visible{outline:2px solid #f3efe6;outline-offset:3px;} .ds-wl-msg{display:flex;align-items:center;gap:8px;margin:10px 0 0;font-size:14px;color:#a9b8b0;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "Sticky nav on the ground: rule-and-tick mark, condensed wordmark, text-2 links, small coral button.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><svg width=\"30\" height=\"19\" viewBox=\"0 0 32 20\" aria-hidden=\"true\"><rect x=\"0\" y=\"9\" width=\"32\" height=\"2\" rx=\"1\" fill=\"#f3efe6\" opacity=\".35\"/><rect x=\"0\" y=\"9\" width=\"20\" height=\"2\" rx=\"1\" fill=\"#f3efe6\"/><rect x=\"18\" y=\"1\" width=\"4\" height=\"18\" rx=\"2\" fill=\"#ff6b4a\"/></svg>Ledgendary</a><nav class=\"ds-links\"><a href=\"#\">Product</a><a href=\"#\">Agencies</a><a href=\"#\">The books</a></nav><a class=\"ds-cta\" href=\"#\">Join the waitlist</a></header>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-nav{display:flex;align-items:center;gap:40px;height:64px;padding:0 32px;background:#0e1613;color:#f3efe6;border-bottom:1px solid #24332c;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-brand{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:750;font-size:20px;font-stretch:85%;letter-spacing:-.01em;} .ds-links{display:flex;gap:28px;font-size:15px;color:#d3d6cd;} .ds-links a{color:inherit;text-decoration:none;text-underline-offset:.22em;} .ds-links a:hover{color:#f3efe6;text-decoration:underline;} .ds-cta{margin-left:auto;display:inline-flex;align-items:center;height:38px;padding:0 14px;border-radius:8px;background:#ff6b4a;color:#0e1613;font-weight:650;font-size:14px;text-decoration:none;} .ds-cta:hover{background:#ff825f;} .ds-nav a:focus-visible{outline:2px solid #f3efe6;outline-offset:3px;border-radius:6px;}"
+    },
+    {
+      "name": "Status Pills",
+      "kind": "chip",
+      "refersTo": "pill-paid",
+      "description": "Document status in frames; Paid is the coral one, ok is the mint tint.",
+      "html": "<div class=\"ds-g\"><span class=\"ds-pill ds-draft\">Draft</span> <span class=\"ds-pill\">Sent</span> <span class=\"ds-pill ds-ok\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Signed</span> <span class=\"ds-pill ds-paid\"><svg width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20 6 9 17l-5-5\"/></svg>Paid</span> <span class=\"ds-demo\">Demo data</span></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-pill{display:inline-flex;align-items:center;gap:5px;height:26px;padding:0 10px;border-radius:999px;font-size:12.5px;font-weight:600;background:#1b2822;color:#d3d6cd;box-shadow:inset 0 0 0 1px #33463d;} .ds-draft{color:#a9b8b0;} .ds-ok{background:rgba(159,220,185,.12);color:#9fdcb9;box-shadow:none;} .ds-paid{background:#ff6b4a;color:#0e1613;box-shadow:none;} .ds-demo{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:550;color:#a9b8b0;box-shadow:inset 0 0 0 1px #33463d;}"
+    },
+    {
+      "name": "Date Rail",
+      "kind": "custom",
+      "refersTo": "event-chip",
+      "description": "The scrubber: track with day ticks, coral fill, marker and knob, event chips that lift as their day passes.",
+      "html": "<div class=\"ds-g\"><div class=\"ds-rd\"><span class=\"ds-rd-date\">Nov 17</span><span class=\"ds-rd-day\">Tuesday</span></div><div class=\"ds-rw\"><div class=\"ds-chips\"><span class=\"ds-chip ds-past\" style=\"left:0\">Sent, viewed</span><span class=\"ds-chip ds-past\" style=\"left:30%\">Hours</span><span class=\"ds-chip\" style=\"right:0\">Paid</span></div><div class=\"ds-rail\" role=\"slider\" tabindex=\"0\" aria-label=\"Date\" aria-valuetext=\"Nov 17\"><div class=\"ds-track\"><div class=\"ds-fill\"></div></div><div class=\"ds-ticks\"></div><div class=\"ds-marker\"><span class=\"ds-knob\"></span></div></div><div class=\"ds-dates\"><span>Oct 27</span><span>Nov 18</span></div></div></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-rd{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;} .ds-rd-date{font-size:3.25rem;line-height:.86;font-weight:300;font-stretch:75%;letter-spacing:-.035em;color:#d3d6cd;} .ds-rd-day{font-size:14px;color:#a9b8b0;} .ds-rw{position:relative;padding-top:34px;} .ds-chips{position:absolute;left:0;right:0;top:0;height:28px;} .ds-chip{position:absolute;top:0;display:inline-flex;align-items:center;height:26px;padding:0 9px;border-radius:7px;font-size:12.5px;font-weight:600;color:#8a9c93;box-shadow:inset 0 0 0 1px #24332c;} .ds-past{color:#f3efe6;background:#16211c;box-shadow:inset 0 0 0 1px #33463d;} .ds-rail{position:relative;height:40px;cursor:ew-resize;border-radius:8px;} .ds-rail:focus-visible{outline:2px solid #f3efe6;outline-offset:2px;} .ds-track{position:absolute;left:0;right:0;top:50%;height:6px;margin-top:-3px;border-radius:3px;background:#24332c;} .ds-fill{position:absolute;inset:0;border-radius:3px;background:#ff6b4a;transform-origin:0 50%;transform:scaleX(.957);} .ds-ticks{position:absolute;left:0;right:0;top:12px;height:7px;background:repeating-linear-gradient(to right,#33463d 0 1px,transparent 1px calc(100% / 23));} .ds-marker{position:absolute;top:-17px;bottom:-17px;left:95.7%;width:2px;background:#ff6b4a;border-radius:1px;} .ds-knob{position:absolute;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:#ff6b4a;box-shadow:0 0 0 4px #0e1613,0 2px 8px rgba(0,0,0,.5);animation:ds-wait 1.6s ease-in-out infinite;} @keyframes ds-wait{0%,100%{box-shadow:0 0 0 4px #0e1613,0 0 0 4px rgba(255,107,74,0);}50%{box-shadow:0 0 0 4px #0e1613,0 0 0 10px rgba(255,107,74,.22);}} .ds-dates{display:flex;justify-content:space-between;margin-top:2px;font-size:12px;color:#a9b8b0;font-variant-numeric:tabular-nums;} @media (prefers-reduced-motion:reduce){.ds-knob{animation:none;}}"
+    },
+    {
+      "name": "Product Frame",
+      "kind": "card",
+      "refersTo": "product-frame",
+      "description": "Dark-theme app frame: panel body, inset sidebar, 50px bar with demo tag, total row that turns coral when paid.",
+      "html": "<div class=\"ds-g\"><div class=\"ds-app\"><aside class=\"ds-side\"><span class=\"ds-ws\">LS</span></aside><div class=\"ds-main\"><div class=\"ds-bar\"><span>Invoices &rsaquo; <b>INV-0042</b></span><span class=\"ds-demo\">Demo data</span></div><div class=\"ds-pane\"><p class=\"ds-title\">INV-0042</p><dl class=\"ds-tot\"><div><dt>Subtotal</dt><dd>$42,000.00</dd></div><div class=\"ds-due\"><dt>Paid</dt><dd>$42,000.00</dd></div></dl></div></div></div></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-app{display:grid;grid-template-columns:56px 1fr;background:#16211c;border-radius:16px;overflow:hidden;box-shadow:inset 0 0 0 1px #24332c,0 30px 60px -24px rgba(0,0,0,.7);font-size:14px;line-height:1.45;} .ds-side{padding:14px 8px;background:#121b17;border-right:1px solid #24332c;display:flex;justify-content:center;} .ds-ws{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:6px;background:#f3efe6;color:#0e1613;font-size:11px;font-weight:750;} .ds-bar{display:flex;align-items:center;justify-content:space-between;height:50px;padding:0 20px;border-bottom:1px solid #24332c;font-size:13.5px;color:#a9b8b0;} .ds-bar b{color:#f3efe6;font-weight:600;} .ds-demo{display:inline-flex;align-items:center;height:22px;padding:0 8px;border-radius:999px;font-size:11.5px;font-weight:550;color:#a9b8b0;box-shadow:inset 0 0 0 1px #33463d;} .ds-pane{padding:20px 22px;} .ds-title{margin:0;font-size:21px;font-weight:700;letter-spacing:-.01em;} .ds-tot{margin:12px 0 0;max-width:250px;margin-left:auto;} .ds-tot div{display:flex;justify-content:space-between;align-items:center;height:34px;} .ds-tot dt{color:#a9b8b0;} .ds-tot dd{margin:0;font-weight:650;font-variant-numeric:tabular-nums;} .ds-due{height:auto!important;margin-top:4px;padding:10px 12px;border-radius:9px;background:#ff6b4a;} .ds-due dt,.ds-due dd{color:#0e1613;font-weight:750;}"
+    },
+    {
+      "name": "Journal Entry",
+      "kind": "custom",
+      "refersTo": "journal-entry",
+      "description": "Posted entry with hash chip and tabular lines; the unposted slot is a dashed outline.",
+      "html": "<div class=\"ds-g ds-jg\"><article class=\"ds-je\"><p class=\"ds-je-id\">JE-1042 <span>Payment</span><b class=\"ds-hash\">#e21a</b></p><p class=\"ds-l\"><span>Dr Bank</span><span>42,000.00</span></p><p class=\"ds-l\"><span class=\"ds-cr\">Cr Accounts receivable</span><span>42,000.00</span></p></article><div class=\"ds-je-pre\">Posts when paid</div></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-jg{display:grid;grid-template-columns:1fr 1fr;gap:10px;} .ds-je{padding:12px 14px;border-radius:10px;background:#121b17;box-shadow:inset 0 0 0 1px #24332c;font-size:13px;} .ds-je p{margin:0;} .ds-je-id{display:flex;align-items:center;gap:8px;font-weight:650;} .ds-je-id span{color:#a9b8b0;font-weight:450;} .ds-hash{margin-left:auto;font-weight:600;font-size:12px;padding:1px 6px;border-radius:5px;background:#1b2822;color:#d3d6cd;box-shadow:inset 0 0 0 1px #33463d;font-variant-numeric:tabular-nums;} .ds-l{display:flex;justify-content:space-between;gap:12px;margin-top:4px!important;color:#d3d6cd;font-variant-numeric:tabular-nums;} .ds-cr{padding-left:14px;} .ds-je-pre{display:flex;align-items:center;justify-content:center;min-height:88px;border:1px dashed #33463d;border-radius:10px;color:#8a9c93;font-size:12.5px;}"
+    },
+    {
+      "name": "Received Figure",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "The chapter's climax: a light zero that a coral fill wipes over as Nov 18 lands, scrub-linked.",
+      "html": "<div class=\"ds-g\"><p class=\"ds-k\">Received on Site build</p><p class=\"ds-fig\"><span class=\"ds-zero\">$0</span><span class=\"ds-paid\" style=\"--c:.7\">$42,000</span></p></div>",
+      "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-k{margin:0;font-size:13px;color:#a9b8b0;font-weight:550;} .ds-fig{position:relative;display:inline-block;margin:6px 0 0;font-size:3.5rem;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:-.02em;font-variant-numeric:tabular-nums;} .ds-zero{display:inline-block;padding:4px 10px 6px 0;color:#8a9c93;font-weight:300;} .ds-paid{position:absolute;left:0;top:0;padding:4px 12px 6px;border-radius:10px;background:#ff6b4a;color:#0e1613;white-space:nowrap;clip-path:inset(0 calc((1 - var(--c,0)) * 100%) 0 0 round 10px);}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Scroll Is Time",
+    "overview": "One evening, one ground. A deep green-black field runs edge to edge under every chapter; there are no light sections. The product is drawn in its own dark theme on that field: tonal steps of the same green (inset, panel, raised panel) separated by crisp 1px lines, with no glow, no neon edge and no glass. Warm off-white carries the text. One accent, signal coral, marks two things only: *now* (the scrubber, the current-date marker, today's column, the as-of thumb) and *settled* (Paid, the received figure, the primary button). Ink sits on coral, always.\n\nThe page is a date. The first chapter pins a product canvas under a horizontal rail from Oct 27 to Nov 18, and the canvas state is a pure function of that date: proposal, portal, timesheet and invoice panes swap as scroll moves the marker, the activity column fills, the tally and the received figure follow. A large light date numeral in the hero is the image; it settles into the chapter's readout as the stage pins. Later chapters repeat the idea at smaller scale: five seats read on Nov 18, a books window with its own date control reconstructs receivables, P&L and the journal as of any day, and the closing call ends on a rested rail at Nov 18, paid.\n\nType is one variable family, Bricolage Grotesque, used on its width axis: statements condensed (75 to 82%) and heavy (740 to 760), dates condensed and light (300), everything read at full width and 400 to 650. Numbers in columns and money are tabular.",
+    "keyCharacteristics": [
+      "Evening ground everywhere; depth from tonal steps of one green and 1px inset lines, not from light sections or glow.",
+      "Coral is now and paid: the scrubbers, today, Paid, the received figure and the primary button. Ink on coral.",
+      "Mint is a quiet second signal for done (signed, approved, success), as text or a 12% tint, never a fill under text.",
+      "Bricolage Grotesque on its width axis: condensed heavy statements, condensed light dates, full-width text.",
+      "Every product surface carries \"Demo data\" and the same job: Lumen Studio, Northwind Co, P-0018, INV-0042, $42,000."
+    ],
+    "rules": [
+      {
+        "name": "The Evening Ground Rule",
+        "body": "Every section sits on `ground`. Surfaces step up through `inset`, `panel` and `panel-2`; off-white is never a surface or section ground, only text and fills no larger than a chip or a progress bar.",
+        "section": "colors"
+      },
+      {
+        "name": "The Coral Is Now and Paid Rule",
+        "body": "Coral marks the current date and settled money, plus the one primary action. It is a fill carrying `ink`, or the scrubber's own marker and fill line; never coral text on the dark ground and never a decorative coral border.",
+        "section": "colors"
+      },
+      {
+        "name": "The Heavy Statement, Light Date Rule",
+        "body": "Statements are condensed (75 to 82%) at 740 to 760 with negative tracking; dates and signatures are condensed at 300; everything read or clicked is full width at 400 to 650 with no tracking.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Columns Rule",
+        "body": "Figures in columns, totals, tallies, money and rail dates carry `tabular-nums`; running copy does not.",
+        "section": "typography"
+      },
+      {
+        "name": "The Lines, Not Lifts Rule",
+        "body": "Containers are separated by tone and a 1px inset ring. A cast shadow belongs only to the three product windows; cards inside them and sections around them stay flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep every section on the evening ground and build depth from `inset`, `panel`, `panel-2` and 1px inset rings.",
+      "Do use coral for the current date and for settled money, plus the one primary button, always with ink text on it.",
+      "Do use mint as text or a 12% tint for signed, approved and success states.",
+      "Do set statements condensed and heavy and dates condensed and light in Bricolage Grotesque; keep reading text at full width.",
+      "Do set figures in columns, totals and money in tabular numerals.",
+      "Do make product state a function of the date, and give it a finished static form under reduced motion and without JavaScript.",
+      "Do tag every product surface \"Demo data\" and keep the one job's names and figures."
+    ],
+    "donts": [
+      "Don't add a light section, or use off-white as a surface or section ground.",
+      "Don't set coral text on the dark ground or use coral as a decorative border; its lines belong to the scrubbers.",
+      "Don't add glow, neon edges, glass or hard offset shadows; cast shadows stay on the three product windows.",
+      "Don't add uppercase tracked labels or eyebrows above headings; labels are sentence case.",
+      "Don't let the hero's date numeral scale past 1.3x or compete with the H1.",
+      "Don't use a wink in a primary button label."
+    ]
+  }
+}
