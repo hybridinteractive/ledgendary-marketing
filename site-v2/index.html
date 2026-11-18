@@ -1,0 +1,552 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgendary · Close the deal, get paid, keep the books</title>
+<meta name="description" content="Ledgendary takes an agency from the proposal a client signs to the payment in the bank, on one ledger with books an accountant trusts. Invite-only alpha.">
+<meta name="theme-color" content="#2433ff">
+<link rel="preload" href="fonts/FunnelDisplay-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/FunnelSans-wght.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" class="sprite" aria-hidden="true" focusable="false"><!-- lucide-static 0.460.0, ISC licence -->
+<symbol id="i-alarm-clock" viewBox="0 0 24 24"><svg class="lucide lucide-alarm-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="13" r="8" /> <path d="M12 9v4l2 2" /> <path d="M5 3 2 6" /> <path d="m22 6-3-3" /> <path d="M6.38 18.7 4 21" /> <path d="M17.64 18.67 20 21" /></symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><svg class="lucide lucide-arrow-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol>
+<symbol id="i-bell" viewBox="0 0 24 24"><svg class="lucide lucide-bell" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" /> <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" /></symbol>
+<symbol id="i-book-open" viewBox="0 0 24 24"><svg class="lucide lucide-book-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></symbol>
+<symbol id="i-briefcase-business" viewBox="0 0 24 24"><svg class="lucide lucide-briefcase-business" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 12h.01" /> <path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /> <path d="M22 13a18.15 18.15 0 0 1-20 0" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><svg class="lucide lucide-briefcase" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /> <rect width="20" height="14" x="2" y="6" rx="2" /></symbol>
+<symbol id="i-building-2" viewBox="0 0 24 24"><svg class="lucide lucide-building-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></symbol>
+<symbol id="i-calendar-check" viewBox="0 0 24 24"><svg class="lucide lucide-calendar-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="m9 16 2 2 4-4" /></symbol>
+<symbol id="i-calendar-clock" viewBox="0 0 24 24"><svg class="lucide lucide-calendar-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h3.5" /> <path d="M16 2v4" /> <path d="M8 2v4" /> <path d="M3 10h5" /> <path d="M17.5 17.5 16 16.3V14" /> <circle cx="16" cy="16" r="6" /></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><svg class="lucide lucide-calendar" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol>
+<symbol id="i-chart-column" viewBox="0 0 24 24"><svg class="lucide lucide-chart-column" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="M18 17V9" /> <path d="M13 17V5" /> <path d="M8 17v-3" /></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><svg class="lucide lucide-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 6 9 17l-5-5" /></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24"><svg class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m6 9 6 6 6-6" /></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><svg class="lucide lucide-chevron-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m9 18 6-6-6-6" /></symbol>
+<symbol id="i-circle-check-big" viewBox="0 0 24 24"><svg class="lucide lucide-circle-check-big" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M21.801 10A10 10 0 1 1 17 3.335" /> <path d="m9 11 3 3L22 4" /></symbol>
+<symbol id="i-circle-check" viewBox="0 0 24 24"><svg class="lucide lucide-circle-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-circle-dollar-sign" viewBox="0 0 24 24"><svg class="lucide lucide-circle-dollar-sign" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 18V6" /></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><svg class="lucide lucide-clock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol>
+<symbol id="i-credit-card" viewBox="0 0 24 24"><svg class="lucide lucide-credit-card" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="14" x="2" y="5" rx="2" /> <line x1="2" x2="22" y1="10" y2="10" /></symbol>
+<symbol id="i-eye-off" viewBox="0 0 24 24"><svg class="lucide lucide-eye-off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" /> <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" /> <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" /> <path d="m2 2 20 20" /></symbol>
+<symbol id="i-eye" viewBox="0 0 24 24"><svg class="lucide lucide-eye" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-file-check" viewBox="0 0 24 24"><svg class="lucide lucide-file-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="m9 15 2 2 4-4" /></symbol>
+<symbol id="i-file-minus" viewBox="0 0 24 24"><svg class="lucide lucide-file-minus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M9 15h6" /></symbol>
+<symbol id="i-file-text" viewBox="0 0 24 24"><svg class="lucide lucide-file-text" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><svg class="lucide lucide-globe" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="12" r="10" /> <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /> <path d="M2 12h20" /></symbol>
+<symbol id="i-hourglass" viewBox="0 0 24 24"><svg class="lucide lucide-hourglass" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 22h14" /> <path d="M5 2h14" /> <path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22" /> <path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2" /></symbol>
+<symbol id="i-house" viewBox="0 0 24 24"><svg class="lucide lucide-house" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol>
+<symbol id="i-inbox" viewBox="0 0 24 24"><svg class="lucide lucide-inbox" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol>
+<symbol id="i-landmark" viewBox="0 0 24 24"><svg class="lucide lucide-landmark" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <line x1="3" x2="21" y1="22" y2="22" /> <line x1="6" x2="6" y1="18" y2="11" /> <line x1="10" x2="10" y1="18" y2="11" /> <line x1="14" x2="14" y1="18" y2="11" /> <line x1="18" x2="18" y1="18" y2="11" /> <polygon points="12 2 20 7 4 7" /></symbol>
+<symbol id="i-layout-panel-left" viewBox="0 0 24 24"><svg class="lucide lucide-layout-panel-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="7" height="18" x="3" y="3" rx="1" /> <rect width="7" height="7" x="14" y="3" rx="1" /> <rect width="7" height="7" x="14" y="14" rx="1" /></symbol>
+<symbol id="i-link-2-off" viewBox="0 0 24 24"><svg class="lucide lucide-link-2-off" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9 17H7A5 5 0 0 1 7 7" /> <path d="M15 7h2a5 5 0 0 1 4 8" /> <line x1="8" x2="12" y1="12" y2="12" /> <line x1="2" x2="22" y1="2" y2="22" /></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><svg class="lucide lucide-link" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></symbol>
+<symbol id="i-lock-keyhole" viewBox="0 0 24 24"><svg class="lucide lucide-lock-keyhole" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="16" r="1" /> <rect x="3" y="10" width="18" height="12" rx="2" /> <path d="M7 10V7a5 5 0 0 1 10 0v3" /></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><svg class="lucide lucide-lock" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><svg class="lucide lucide-mail" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol>
+<symbol id="i-mouse-pointer-2" viewBox="0 0 24 24"><svg class="lucide lucide-mouse-pointer-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M4.037 4.688a.495.495 0 0 1 .651-.651l16 6.5a.5.5 0 0 1-.063.947l-6.124 1.58a2 2 0 0 0-1.438 1.435l-1.579 6.126a.5.5 0 0 1-.947.063z" /></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><svg class="lucide lucide-pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <rect x="14" y="4" width="4" height="16" rx="1" /> <rect x="6" y="4" width="4" height="16" rx="1" /></symbol>
+<symbol id="i-pen-line" viewBox="0 0 24 24"><svg class="lucide lucide-pen-line" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12 20h9" /> <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" /></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><svg class="lucide lucide-play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <polygon points="6 3 20 12 6 21 6 3" /></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><svg class="lucide lucide-plus" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M5 12h14" /> <path d="M12 5v14" /></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><svg class="lucide lucide-receipt" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 17.5v-11" /></symbol>
+<symbol id="i-refresh-cw" viewBox="0 0 24 24"><svg class="lucide lucide-refresh-cw" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /> <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" /> <path d="M8 16H3v5" /></symbol>
+<symbol id="i-repeat" viewBox="0 0 24 24"><svg class="lucide lucide-repeat" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m17 2 4 4-4 4" /> <path d="M3 11v-1a4 4 0 0 1 4-4h14" /> <path d="m7 22-4-4 4-4" /> <path d="M21 13v1a4 4 0 0 1-4 4H3" /></symbol>
+<symbol id="i-rotate-ccw" viewBox="0 0 24 24"><svg class="lucide lucide-rotate-ccw" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /></symbol>
+<symbol id="i-rotate-cw" viewBox="0 0 24 24"><svg class="lucide lucide-rotate-cw" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" /> <path d="M21 3v5h-5" /></symbol>
+<symbol id="i-scale" viewBox="0 0 24 24"><svg class="lucide lucide-scale" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /> <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /> <path d="M7 21h10" /> <path d="M12 3v18" /> <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" /></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><svg class="lucide lucide-search" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="11" cy="11" r="8" /> <path d="m21 21-4.3-4.3" /></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><svg class="lucide lucide-send" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /></symbol>
+<symbol id="i-settings" viewBox="0 0 24 24"><svg class="lucide lucide-settings" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" /> <circle cx="12" cy="12" r="3" /></symbol>
+<symbol id="i-shield-check" viewBox="0 0 24 24"><svg class="lucide lucide-shield-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24"><svg class="lucide lucide-sparkles" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" /> <path d="M20 3v4" /> <path d="M22 5h-4" /> <path d="M4 17v2" /> <path d="M5 18H3" /></symbol>
+<symbol id="i-store" viewBox="0 0 24 24"><svg class="lucide lucide-store" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" /> <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" /> <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" /> <path d="M2 7h20" /> <path d="M22 7v3a2 2 0 0 1-2 2a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12a2 2 0 0 1-2-2V7" /></symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24"><svg class="lucide lucide-triangle-alert" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" /> <path d="M12 9v4" /> <path d="M12 17h.01" /></symbol>
+<symbol id="i-undo-2" viewBox="0 0 24 24"><svg class="lucide lucide-undo-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol>
+<symbol id="i-user-check" viewBox="0 0 24 24"><svg class="lucide lucide-user-check" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <polyline points="16 11 18 13 22 9" /></symbol>
+<symbol id="i-user-round" viewBox="0 0 24 24"><svg class="lucide lucide-user-round" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <circle cx="12" cy="8" r="5" /> <path d="M20 21a8 8 0 0 0-16 0" /></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><svg class="lucide lucide-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol>
+<symbol id="i-wallet" viewBox="0 0 24 24"><svg class="lucide lucide-wallet" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><svg class="lucide lucide-x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" > <path d="M18 6 6 18" /> <path d="m6 6 12 12" /></symbol>
+</svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav field">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top" aria-label="Ledgendary, home">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#c8ff3d"/><path d="M10.5 8.5v14h7.5l5-6" fill="none" stroke="#0b0c1c" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Ledgendary</span>
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="#story">Product</a></li>
+        <li><a href="#scale">Agencies</a></li>
+        <li><a href="#books">The books</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-lime btn-sm" href="#join">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ================================================================ HERO -->
+<section class="hero field" id="top" aria-labelledby="hero-title">
+  <div class="wrap">
+    <h1 id="hero-title" class="hero-title"><span class="hl">Close the deal. Get paid.</span> <span class="hl tint">Keep the books.</span></h1>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="lede">One product from the proposal your client signs to the books your accountant reads. Don't take our word for it: play the deal yourself.</p>
+
+        <form class="wl wl-hero" novalidate data-waitlist>
+          <label class="wl-label" for="wl-hero-email">Work email</label>
+          <div class="wl-row">
+            <input id="wl-hero-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="wl-hero-msg" required>
+            <button class="btn btn-lime" type="submit">Join the waitlist</button>
+          </div>
+          <p class="wl-msg" id="wl-hero-msg" aria-live="polite">Invite-only alpha. A few studios at a time.</p>
+        </form>
+
+        <ol class="track" aria-label="The deal, step by step">
+          <li data-at="pick"><span class="track-dot" aria-hidden="true"></span><span class="track-role">Client</span>Pick an option</li>
+          <li data-at="sign"><span class="track-dot" aria-hidden="true"></span><span class="track-role">Client</span>Sign it</li>
+          <li data-at="send"><span class="track-dot" aria-hidden="true"></span><span class="track-role">Studio</span>Send the invoice</li>
+          <li data-at="wait"><span class="track-dot" aria-hidden="true"></span><span class="track-role">Studio</span>Wait for it</li>
+          <li data-at="paid"><span class="track-dot" aria-hidden="true"></span><span class="track-role">Books</span>Paid, and posted</li>
+        </ol>
+      </div>
+
+      <div class="play" id="play" data-step="pick">
+        <div class="play-top">
+          <p class="chip" aria-hidden="true"><span class="chip-role" data-chip-role>You're the client</span><span class="chip-text" data-chip-text>Pick one.</span></p>
+          <div class="play-ctl">
+            <button class="ghost-btn" type="button" data-play-start hidden><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg><span class="lbl">Play it</span></button>
+            <button class="ghost-btn" type="button" data-play-restart><svg class="ic" aria-hidden="true"><use href="#i-rotate-ccw"/></svg><span class="lbl">Start over</span></button>
+          </div>
+        </div>
+        <p class="sr-only" aria-live="polite" data-play-live></p>
+
+        <div class="card" data-card>
+          <!-- Client portal view -->
+          <div class="view view-portal" data-view="portal">
+            <div class="portal-bar">
+              <span class="ws"><span class="ws-mark" aria-hidden="true">LS</span>Lumen Studio</span>
+              <span class="portal-path">Proposal P-0018 · for Northwind Co</span>
+              <span class="demo">Demo data</span>
+            </div>
+            <div class="portal-head">
+              <h2 class="portal-title">Site build for Northwind Co</h2>
+              <p class="portal-meta">Hi Dana, three ways to build it. A fixed fee for the scope, plus time at $150/h as we log it.</p>
+            </div>
+            <fieldset class="opts">
+              <legend class="sr-only">Choose an option</legend>
+              <label class="opt" data-opt="A">
+                <input type="radio" name="opt" value="A">
+                <span class="opt-flag" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg>Chosen</span>
+                <span class="opt-name"><b>A</b> Essentials</span>
+                <span class="opt-price">$22,000 <small>+ time</small></span>
+                <span class="opt-est">Est. 40 h · est. total $28,000</span>
+                <span class="opt-list"><span>Design system</span><span>8 page templates</span><span>2 revision rounds</span></span>
+                <span class="opt-cta" aria-hidden="true"><span class="cta-off">Choose A</span><span class="cta-on"><svg class="ic"><use href="#i-check"/></svg>Chosen</span></span>
+              </label>
+              <label class="opt" data-opt="B">
+                <input type="radio" name="opt" value="B">
+                <span class="opt-flag" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg>Chosen</span>
+                <span class="opt-name"><b>B</b> Full build <em class="rec">Recommended</em></span>
+                <span class="opt-price">$30,000 <small>+ time</small></span>
+                <span class="opt-est">Est. 80 h · est. total $42,000</span>
+                <span class="opt-list"><span>Everything in A</span><span>20 templates, custom parts</span><span>30 days launch support</span></span>
+                <span class="opt-cta" aria-hidden="true"><span class="cta-off">Choose B</span><span class="cta-on"><svg class="ic"><use href="#i-check"/></svg>Chosen</span></span>
+              </label>
+              <label class="opt" data-opt="C">
+                <input type="radio" name="opt" value="C">
+                <span class="opt-flag" aria-hidden="true"><svg class="ic"><use href="#i-check"/></svg>Chosen</span>
+                <span class="opt-name"><b>C</b> Build + retainer</span>
+                <span class="opt-price">$30,000 <small>+ time</small></span>
+                <span class="opt-est">Then $4,500/mo for 30 h of care</span>
+                <span class="opt-list"><span>Everything in B</span><span>Monthly care plan</span><span>Quarterly roadmap</span></span>
+                <span class="opt-cta" aria-hidden="true"><span class="cta-off">Choose C</span><span class="cta-on"><svg class="ic"><use href="#i-check"/></svg>Chosen</span></span>
+              </label>
+            </fieldset>
+            <form class="sign" data-sign novalidate>
+              <div class="sign-field">
+                <label for="sign-name" data-sign-label>Signature · pick an option first</label>
+                <input id="sign-name" type="text" autocomplete="off" spellcheck="false" placeholder="Type your full name" disabled data-sign-input>
+              </div>
+              <button class="btn btn-ink" type="submit" disabled data-sign-btn><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg>Accept and sign</button>
+              <p class="sign-done" data-sign-done hidden><svg class="ic" aria-hidden="true"><use href="#i-circle-check"/></svg><span><b data-sign-who>Dana Whitfield</b> signed option <span data-k="opt">B</span> · Oct 30, 2026, 10:42 AM</span></p>
+            </form>
+          </div>
+
+          <!-- Studio invoice view -->
+          <div class="view view-invoice" data-view="invoice" aria-hidden="true">
+            <div class="app-bar">
+              <span class="ws-mark" aria-hidden="true">LS</span>
+              <span class="crumbs"><span class="cr-path">Northwind Co <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> Site build <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></span> <b>INV-0042</b></span>
+              <span class="demo">Demo data</span>
+              <span class="av av-mo" aria-hidden="true">MO</span>
+            </div>
+            <div class="inv-head">
+              <div>
+                <h2 class="inv-no">INV-0042 <span class="pill" data-inv-status>Draft</span></h2>
+                <p class="inv-meta">Northwind Co · Issued Nov 16, 2026 · Due Dec 1, 2026</p>
+              </div>
+              <button class="btn btn-ink" type="button" data-send tabindex="-1"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg>Send</button>
+            </div>
+            <p class="prov"><svg class="ic" aria-hidden="true"><use href="#i-file-check"/></svg><span>From P-0018, option <span data-k="opt">B</span>, signed by <span data-signer>Dana Whitfield</span> on Oct 30</span></p>
+            <table class="lines">
+              <caption class="sr-only">Invoice lines</caption>
+              <thead><tr><th scope="col">Line</th><th scope="col" class="num">Qty</th><th scope="col" class="num">Rate</th><th scope="col" class="num">Amount</th></tr></thead>
+              <tbody>
+                <tr><td><span data-k="feeName">Full build</span>, fixed fee<small>From option <span data-k="opt">B</span></small></td><td class="num">1</td><td class="num" data-k="fee">$30,000.00</td><td class="num" data-k="fee">$30,000.00</td></tr>
+                <tr><td>Design and build time, Nov 2–15<small>From logged time · estimate was <span data-k="hours">80</span> h</small></td><td class="num"><span data-k="hours">80</span> h 0 m</td><td class="num">$150.00</td><td class="num" data-k="time">$12,000.00</td></tr>
+                <tr class="note-row"><td colspan="4" data-k="note">Terms · Net 15 · reminders on</td></tr>
+              </tbody>
+            </table>
+            <div class="inv-total"><span>Total due</span><b class="total" data-k="total">$42,000.00</b></div>
+            <p class="inv-status" data-inv-line><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg><span>Ready to send to Dana Whitfield, Northwind Co</span></p>
+            <p class="books-row" data-books><svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg><span>Books · nothing posted yet. It posts itself when money moves.</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ STORY -->
+<section class="story" id="story" aria-labelledby="story-title">
+  <div class="story-pin">
+    <div class="wrap story-head">
+      <h2 id="story-title" class="h2">Kids, this is the story of how we got paid.</h2>
+      <ol class="story-steps" aria-label="Where the figure lives">
+        <li data-s="0">Proposal</li><li data-s="1">Client portal</li><li data-s="2">Invoice</li><li data-s="3">Payment</li><li data-s="4">Journal</li>
+      </ol>
+    </div>
+    <div class="wrap story-stage" data-story-stage data-s="0">
+      <div class="figure" aria-hidden="true">
+        <span class="fig-num">$42,000</span>
+        <span class="fig-cap" data-fig-cap>Option B, estimated total</span>
+      </div>
+
+      <!-- 0 Proposal -->
+      <article class="scr scr-l" data-scr="0" aria-label="Proposal P-0018">
+        <div class="scr-bar"><span class="ws-mark" aria-hidden="true">LS</span><span>Proposals <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>P-0018</b></span><span class="demo">Demo data</span></div>
+        <div class="scr-body">
+          <p class="scr-title">Site build for Northwind Co</p>
+          <p class="scr-sub">Sent Oct 27 to Dana Whitfield · Viewed 3 times</p>
+          <table class="mini">
+            <thead><tr><th scope="col">Option</th><th scope="col" class="num">Fee</th><th scope="col" class="num">Est. total</th></tr></thead>
+            <tbody>
+              <tr><td>A · Essentials</td><td class="num">$22,000</td><td class="num">$28,000</td></tr>
+              <tr class="hot"><td>B · Full build</td><td class="num">$30,000</td><td class="num"><mark>$42,000</mark></td></tr>
+              <tr><td>C · Build + retainer</td><td class="num">$30,000</td><td class="num">+ $4,500/mo</td></tr>
+            </tbody>
+          </table>
+          <p class="scr-foot">Est. 80 h at $150/h, billed as logged</p>
+        </div>
+      </article>
+
+      <!-- 1 Portal -->
+      <article class="scr scr-r" data-scr="1" aria-label="Client portal">
+        <div class="scr-bar"><span class="ws-mark ws-client" aria-hidden="true">NW</span><span>Client portal · <b>Northwind Co</b></span><span class="demo">Demo data</span></div>
+        <div class="scr-body">
+          <p class="scr-title">B · Full build <span class="pill pill-ok">Accepted</span></p>
+          <p class="scr-sub">$30,000 fixed + est. 80 h at $150/h</p>
+          <div class="kv"><span>Estimated total</span><mark>$42,000</mark></div>
+          <div class="sig"><span class="sig-name">Dana Whitfield</span><span class="sig-meta">Signed Oct 30, 2026, 10:42 AM</span></div>
+          <p class="scr-foot">A and C stay on the record, not chosen</p>
+        </div>
+      </article>
+
+      <!-- 2 Invoice -->
+      <article class="scr scr-l" data-scr="2" aria-label="Invoice INV-0042">
+        <div class="scr-bar"><span class="ws-mark" aria-hidden="true">LS</span><span>Invoices <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>INV-0042</b></span><span class="demo">Demo data</span></div>
+        <div class="scr-body">
+          <p class="scr-title">INV-0042 <span class="pill">Sent</span></p>
+          <p class="scr-sub">Issued Nov 16 · Due Dec 1 · Net 15</p>
+          <table class="mini">
+            <tbody>
+              <tr><td>Full build, fixed fee</td><td class="num">$30,000.00</td></tr>
+              <tr><td>Time, 80 h 0 m × $150</td><td class="num">$12,000.00</td></tr>
+              <tr class="hot"><td><b>Total due</b></td><td class="num"><mark>$42,000.00</mark></td></tr>
+            </tbody>
+          </table>
+          <p class="scr-foot">Logged 41 h 45 m + 38 h 15 m, on the estimate</p>
+        </div>
+      </article>
+
+      <!-- 3 Payment -->
+      <article class="scr scr-r" data-scr="3" aria-label="Payment">
+        <div class="scr-bar"><span class="ws-mark" aria-hidden="true">LS</span><span>Payments <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Card</b></span><span class="demo">Demo data</span></div>
+        <div class="scr-body">
+          <p class="scr-title">Payment received <span class="pill pill-paid">Paid</span></p>
+          <p class="scr-sub">Visa ending 1881 · Nov 18 · Dana Whitfield</p>
+          <div class="kv"><span>Amount</span><mark>$42,000.00</mark></div>
+          <div class="kv kv-quiet"><span>Applied to</span><span>INV-0042</span></div>
+          <div class="kv kv-quiet"><span>Balance due</span><span>$0.00</span></div>
+        </div>
+      </article>
+
+      <!-- 4 Journal -->
+      <article class="scr scr-l" data-scr="4" aria-label="Journal">
+        <div class="scr-bar"><span class="ws-mark" aria-hidden="true">LS</span><span>Books <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Journal</b></span><span class="demo">Demo data</span></div>
+        <div class="scr-body">
+          <table class="mini je">
+            <tbody>
+              <tr class="je-h"><td colspan="2">JE-1041 · Nov 16 · INV-0042</td></tr>
+              <tr><td>Dr Accounts receivable</td><td class="num"><mark>42,000.00</mark></td></tr>
+              <tr><td class="cr">Cr Revenue</td><td class="num">42,000.00</td></tr>
+              <tr class="je-h"><td colspan="2">JE-1042 · Nov 18 · Card payment</td></tr>
+              <tr><td>Dr Bank</td><td class="num"><mark>42,000.00</mark></td></tr>
+              <tr><td class="cr">Cr Accounts receivable</td><td class="num">42,000.00</td></tr>
+            </tbody>
+          </table>
+          <p class="scr-foot"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg>Chained #9c07 → #e21a</p>
+        </div>
+      </article>
+    </div>
+    <p class="wrap story-note">One job, Northwind Co and Lumen Studio. Dana picked B. The same figure on every screen, because it is one ledger.</p>
+  </div>
+</section>
+
+<!-- ================================================================ TIME -->
+<section class="time" id="time" aria-labelledby="time-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="time-title" class="h2">Time that bills itself.</h2>
+      <p class="sec-lede">The team logs hours against the job. Unbilled time becomes the invoice line, at the rate the client signed for. Pick a cell and add time; watch the draft follow.</p>
+    </div>
+
+    <div class="win time-win" data-time>
+      <div class="app-bar">
+        <span class="ws-mark" aria-hidden="true">LS</span>
+        <span class="crumbs">Northwind Co <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> Site build <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Time · Week of Nov 9</b></span>
+        <div class="seg" role="radiogroup" aria-label="Viewing as">
+          <button type="button" role="radio" aria-checked="true" data-viewer="maya"><span class="av av-mo" aria-hidden="true">MO</span>Maya, you</button>
+          <button type="button" role="radio" aria-checked="false" data-viewer="lena"><span class="av av-lp" aria-hidden="true">LP</span>Lena, approver</button>
+        </div>
+        <span class="demo">Demo data</span>
+      </div>
+      <div class="time-body">
+        <div class="time-main">
+          <table class="week">
+            <caption class="sr-only">Hours logged on Site build, week of Nov 9, 2026. Select a cell, then add time.</caption>
+            <thead><tr><th scope="col">Person</th><th scope="col">Mon 9</th><th scope="col">Tue 10</th><th scope="col">Wed 11</th><th scope="col">Thu 12</th><th scope="col">Fri 13</th><th scope="col" class="num">Total</th></tr></thead>
+            <tbody data-week></tbody>
+            <tfoot><tr><th scope="row" colspan="6">Week total</th><td class="num" data-week-total>38 h 15 m</td></tr></tfoot>
+          </table>
+          <div class="quick" data-quick>
+            <p class="quick-cell" aria-live="polite"><span data-quick-who>Theo Brandt · Wed Nov 11</span><b data-quick-val>3 h 45 m</b></p>
+            <div class="quick-btns">
+              <button type="button" class="tbtn" data-add="15">+15m</button>
+              <button type="button" class="tbtn" data-add="30">+30m</button>
+              <button type="button" class="tbtn" data-add="60">+1h</button>
+              <button type="button" class="tbtn tbtn-quiet" data-time-reset><svg class="ic" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Reset week</button>
+            </div>
+          </div>
+          <div class="draft-row" data-draft-row aria-live="polite"></div>
+        </div>
+        <aside class="time-side" aria-label="Unbilled time and draft invoice">
+          <p class="side-h">Unbilled time</p>
+          <dl class="side-kv">
+            <div><dt>Nov 2–8</dt><dd>41 h 45 m</dd></div>
+            <div><dt>Nov 9–15</dt><dd data-unb-week>38 h 15 m</dd></div>
+            <div class="sum"><dt>Total</dt><dd data-unb-total>80 h 0 m</dd></div>
+          </dl>
+          <p class="side-est" data-est>On the 80 h estimate</p>
+          <p class="side-h">Invoice line, draft</p>
+          <div class="side-line">
+            <p>Design and build time, Nov 2–15</p>
+            <p class="side-calc"><span data-line-qty>80 h 0 m</span> × $150.00</p>
+            <p class="side-amt" data-line-amt>$12,000.00</p>
+          </div>
+          <div class="side-total"><span>Invoice total</span><b data-inv-draft>$42,000.00</b></div>
+          <p class="side-foot">Fixed fee $30,000.00 from option B. Nothing goes to Dana until you send it.</p>
+        </aside>
+      </div>
+    </div>
+
+    <div class="privacy">
+      <h3 class="h3">Your calendar stays yours.</h3>
+      <p>A meeting on Maya's calendar arrives as a private draft in her week. Only Maya sees it: not her approver, not the rest of the team, not a report, until she accepts it. We keep the title and the duration. Guests, notes, links and places never come in.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ BOOKS -->
+<section class="books field" id="books" aria-labelledby="books-title">
+  <div class="wrap">
+    <div class="books-head">
+      <h2 id="books-title" class="h2">Haaaave you met your books?</h2>
+      <p class="sec-lede">Everything the deal did posted itself, double-entry, as it happened. Each entry carries the fingerprint of the one before it, so a changed number shows. Every number here is a true story.</p>
+    </div>
+
+    <div class="chain" data-chain>
+      <article class="je-card" data-je="1040">
+        <header><b>JE-1040</b><span>Oct 31</span><span class="lock"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>October closed</span></header>
+        <p class="je-memo">Expense · Font licences for Northwind</p>
+        <dl class="je-lines">
+          <div><dt>Dr Software and subscriptions</dt><dd data-tamper-amt>1,250.00</dd></div>
+          <div><dt class="cr">Cr Bank</dt><dd>1,250.00</dd></div>
+        </dl>
+        <footer><span class="hash" data-hash="1040">#4be1</span><span class="prev">prev #c51f</span></footer>
+      </article>
+      <span class="link" data-link="1041" aria-hidden="true"><svg class="ic ic-ok"><use href="#i-link"/></svg><svg class="ic ic-broken"><use href="#i-link-2-off"/></svg></span>
+      <article class="je-card" data-je="1041">
+        <header><b>JE-1041</b><span>Nov 16</span></header>
+        <p class="je-memo">Invoice INV-0042 · Northwind Co</p>
+        <dl class="je-lines">
+          <div><dt>Dr Accounts receivable</dt><dd>42,000.00</dd></div>
+          <div><dt class="cr">Cr Revenue</dt><dd>42,000.00</dd></div>
+        </dl>
+        <footer><span class="hash">#9c07</span><span class="prev" data-prev="1041">prev #4be1</span></footer>
+      </article>
+      <span class="link" aria-hidden="true"><svg class="ic ic-ok"><use href="#i-link"/></svg></span>
+      <article class="je-card" data-je="1042">
+        <header><b>JE-1042</b><span>Nov 18</span></header>
+        <p class="je-memo">Card payment · INV-0042</p>
+        <dl class="je-lines">
+          <div><dt>Dr Bank</dt><dd>42,000.00</dd></div>
+          <div><dt class="cr">Cr Accounts receivable</dt><dd>42,000.00</dd></div>
+        </dl>
+        <footer><span class="hash">#e21a</span><span class="prev">prev #9c07</span></footer>
+      </article>
+      <span class="link link-next" aria-hidden="true"><svg class="ic ic-ok"><use href="#i-link"/></svg></span>
+      <article class="je-card je-next" data-je="1043">
+        <div class="je-pre">
+          <p><b>JE-1043</b></p>
+          <p>The next entry links here. A correction is a new entry, never an edit.</p>
+        </div>
+        <div class="je-post">
+          <header><b>JE-1043</b><span>Nov 18</span></header>
+          <p class="je-memo">Reversal of JE-1040</p>
+          <dl class="je-lines">
+            <div><dt>Dr Bank</dt><dd>1,250.00</dd></div>
+            <div><dt class="cr">Cr Software and subscriptions</dt><dd>1,250.00</dd></div>
+          </dl>
+          <footer><span class="hash">#7f3d</span><span class="prev">prev #e21a</span></footer>
+        </div>
+      </article>
+    </div>
+
+    <div class="tamper" data-tamper-panel>
+      <div class="tamper-ctl">
+        <button type="button" class="switch" role="switch" aria-checked="false" data-tamper><span class="switch-knob" aria-hidden="true"></span>Tamper with JE-1040</button>
+        <button type="button" class="btn btn-lime" data-reverse><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg>Reverse JE-1040 instead</button>
+        <button type="button" class="ghost-btn" data-books-reset hidden><svg class="ic" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Reset</button>
+      </div>
+      <p class="tamper-msg" data-tamper-msg aria-live="polite">Flip the switch to change a posted amount behind the ledger's back, and see what the chain does.</p>
+    </div>
+
+    <ul class="books-facts">
+      <li><svg class="ic" aria-hidden="true"><use href="#i-calendar-check"/></svg><span><b>Period close.</b> Close October and nothing dated in it can change; corrections land in an open period.</span></li>
+      <li><svg class="ic" aria-hidden="true"><use href="#i-eye"/></svg><span><b>A seat for your accountant.</b> Jules reads every entry and every report, and can't change a thing.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ SCALE -->
+<section class="scale" id="scale" aria-labelledby="scale-title">
+  <div class="wrap scale-grid">
+    <div class="scale-copy">
+      <h2 id="scale-title" class="h2">One person or three hundred.</h2>
+      <p class="sec-lede">The same deal, the same books. As the team grows, seats, approvers and finance roles show up where the work needs them, and nobody sees what isn't theirs.</p>
+      <div class="dial">
+        <label for="team-size" class="dial-label">Team size</label>
+        <output class="dial-out" for="team-size" data-size-out><b>12</b> people</output>
+        <input id="team-size" type="range" min="1" max="300" value="12" step="1" aria-valuetext="12 people" data-size>
+        <div class="dial-ticks" aria-hidden="true"><span>1</span><span>100</span><span>200</span><span>300</span></div>
+        <p class="dial-stage" data-stage>A studio. One approver, and the owner keeps the money.</p>
+      </div>
+    </div>
+
+    <div class="win org" data-org>
+      <div class="app-bar">
+        <span class="ws-mark" aria-hidden="true">LS</span>
+        <span class="crumbs">Settings <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Team and roles</b></span>
+        <span class="demo">Demo data</span>
+      </div>
+      <div class="org-body">
+        <div class="org-row org-seats">
+          <span class="org-k">Members</span>
+          <div class="org-v"><div class="stack" data-stack aria-hidden="true"></div><span data-members>12 people</span></div>
+        </div>
+        <div class="org-row"><span class="org-k">Owner</span><div class="org-v"><span class="av av-mo" aria-hidden="true">MO</span><span><b>Maya Ortiz</b> · everything, including who sees what</span></div></div>
+        <div class="org-row" data-row="approve"><span class="org-k">Approvals</span><div class="org-v" data-v></div></div>
+        <div class="org-row" data-row="finance"><span class="org-k">Finance</span><div class="org-v" data-v></div></div>
+        <div class="org-row" data-row="teams"><span class="org-k">Teams</span><div class="org-v" data-v></div></div>
+        <div class="org-row" data-row="acct"><span class="org-k">Accountant</span><div class="org-v" data-v></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ PLAYBOOK -->
+<section class="playbook" id="playbook" aria-labelledby="pb-title">
+  <div class="wrap">
+    <div class="pb-head">
+      <h2 id="pb-title" class="h2">The playbook.</h2>
+      <p class="sec-lede">Everything else the money needs, on the same ledger.</p>
+    </div>
+    <ul class="pb" data-pb>
+      <li><span class="g g-est" aria-hidden="true"><i></i><i></i></span><b>Estimates</b><span>Quote once, convert to an invoice at the agreed price.</span></li>
+      <li><span class="g g-rec" aria-hidden="true"><svg class="ic"><use href="#i-repeat"/></svg></span><b>Recurring invoices</b><span>Retainers bill themselves, once per period.</span></li>
+      <li><span class="g g-bell" aria-hidden="true"><svg class="ic"><use href="#i-bell"/></svg></span><b>Reminders and late fees</b><span>A schedule you set. A fee posts as its own entry.</span></li>
+      <li><span class="g g-credit" aria-hidden="true"><svg class="ic"><use href="#i-file-minus"/></svg></span><b>Credit notes</b><span>Give credit back, apply it to the next invoice.</span></li>
+      <li><span class="g g-portal" aria-hidden="true"><svg class="ic"><use href="#i-pen-line"/></svg></span><b>Client portal</b><span>Clients accept, sign and pay in one place.</span></li>
+      <li><span class="g g-card" aria-hidden="true"><svg class="ic"><use href="#i-credit-card"/></svg></span><b>Card and bank payments</b><span>Paid online, matched to the invoice, posted.</span></li>
+      <li><span class="g g-receipt" aria-hidden="true"><svg class="ic"><use href="#i-receipt"/></svg></span><b>Expenses and receipts</b><span>Attach the receipt, tag the job.</span></li>
+      <li><span class="g g-bills" aria-hidden="true"><svg class="ic"><use href="#i-store"/></svg></span><b>Bills and vendors</b><span>What you owe, and when it leaves the bank.</span></li>
+      <li><span class="g g-feed" aria-hidden="true"><i></i><i></i><i></i></span><b>Bank feeds</b><span>Transactions arrive; you match them.</span></li>
+      <li><span class="g g-fx" aria-hidden="true"><span>€</span><span>$</span></span><b>Multi-currency</b><span>Bill in euros, report in dollars, the rate kept.</span></li>
+      <li><span class="g g-bars" aria-hidden="true"><i></i><i></i><i></i></span><b>Reports</b><span>Profit and loss, balance sheet, aging, cash basis.</span></li>
+      <li><span class="g g-close" aria-hidden="true"><svg class="ic"><use href="#i-lock"/></svg></span><b>Period close</b><span>Close a month; it stays the way you filed it.</span></li>
+      <li><span class="g g-roles" aria-hidden="true"><svg class="ic"><use href="#i-user-check"/></svg></span><b>Roles and approvals</b><span>Who sees money, who approves weeks.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================================================================ JOIN -->
+<section class="join field" id="join" aria-labelledby="join-title">
+  <div class="wrap join-grid">
+    <div>
+      <h2 id="join-title" class="join-title">Suit up.</h2>
+      <p class="join-lede">Ledgendary is in an invite-only alpha. Leave your work email and we'll send one invite when there's a seat for your studio.</p>
+    </div>
+    <form class="wl wl-join" novalidate data-waitlist>
+      <label class="wl-label" for="wl-join-email">Work email</label>
+      <div class="wl-row">
+        <input id="wl-join-email" name="email" type="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="wl-join-msg" required>
+        <button class="btn btn-lime" type="submit">Join the waitlist</button>
+      </div>
+      <p class="wl-msg" id="wl-join-msg" aria-live="polite">No card, no trial clock. One email when your invite is ready.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand brand-ink" href="#top" aria-label="Ledgendary, back to top">
+      <svg class="mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2433ff"/><path d="M10.5 8.5v14h7.5l5-6" fill="none" stroke="#c8ff3d" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Ledgendary</span>
+    </a>
+    <ul class="foot-links">
+      <li><a href="#story">Product</a></li>
+      <li><a href="#scale">Agencies</a></li>
+      <li><a href="#books">The books</a></li>
+      <li><a href="#join">Waitlist</a></li>
+    </ul>
+    <p class="foot-legal">© 2026 Ledgendary · True story.</p>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
