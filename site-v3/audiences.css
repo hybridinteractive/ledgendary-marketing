@@ -579,3 +579,4 @@ button.btn-ui[disabled][data-tone="done"] { background: var(--mint-bg); color: v
   .aud-ent [data-pane="edit"] .rowset:not(.refuse), .aud-team [data-pane="invoice"] .unb { display: none; }
   .aud-ent [data-pane="post"] .rows.checks li:first-child { display: none; }
 }
+@media (max-width: 720px) { .aud .jl-e .je-id span { display: inline; } .aud .jl-e .je-id { white-space: normal; flex-wrap: wrap; } }
