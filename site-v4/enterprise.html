@@ -214,7 +214,7 @@
             <li><button class="beat" type="button" data-go="1" data-cap="The entry for INV-08813 is built: debits $6,290.00, credits $6,290.00. Check one."><span class="n">1</span>Built</button></li>
             <li><button class="beat" type="button" data-go="2" data-cap="First try: the chain row can't be written, so the posting rolls back with it. No number taken, nothing half-written."><span class="n">2</span>Chain fails</button></li>
             <li><button class="beat" type="button" data-go="3" data-cap="Retry: it posts as JE-20419, is checked again, and chain row #e6a3 carrying #0c5f is written in the same transaction."><span class="n">3</span>Posted and chained</button></li>
-            <li><button class="beat" type="button" data-go="4" data-cap="Every night, every entry in every office is checked again. Nov 17, 1:00 AM UTC: JE-00001 to JE-20419, all in balance."><span class="n">4</span>Every night</button></li>
+            <li><button class="beat" type="button" data-go="4" data-cap="Every night, every entry in every office is checked again. Nov 17, 1:00 AM UTC: all 20,419 entries in balance."><span class="n">4</span>Every night</button></li>
           </ol>
         </div>
         <div class="win">
@@ -275,7 +275,7 @@
                   <tr><td>Lisbon</td><td>EUR</td><td class="r">6,804</td><td class="r"><span class="swap end"><span class="chip" data-until="3">Tonight</span><span class="chip ok rise" data-from="4">In balance</span></span></td></tr>
                   <tr><td>London</td><td>GBP</td><td class="r">4,293</td><td class="r"><span class="swap end"><span class="chip" data-until="3">Tonight</span><span class="chip ok rise" data-from="4">In balance</span></span></td></tr>
                 </tbody>
-                <tfoot><tr><td colspan="2"><span class="swap"><span data-until="2">JE-00001 to JE-20418</span><span data-from="3">JE-00001 to JE-20419</span></span></td><td class="r"><span class="swap end"><span data-until="2">20,418</span><span data-from="3">20,419</span></span></td><td class="r"><span class="swap end"><span data-until="3">&nbsp;</span><span data-from="4">In balance</span></span></td></tr></tfoot>
+                <tfoot><tr><td colspan="2"><span class="swap"><span data-until="2"><span class="nowrap">JE-00001</span> to <span class="nowrap">JE-20418</span></span><span data-from="3"><span class="nowrap">JE-00001</span> to <span class="nowrap">JE-20419</span></span></span></td><td class="r"><span class="swap end"><span data-until="2">20,418</span><span data-from="3">20,419</span></span></td><td class="r"><span class="swap end"><span data-until="3">&nbsp;</span><span data-from="4">In balance</span></span></td></tr></tfoot>
               </table>
               <p class="sm muted mt-s">A database can't compare one row with another, so a check runs every night over all of them.</p>
             </div>
