@@ -145,9 +145,33 @@
     if (cap && stage._cap) cap.innerHTML = stage._cap;
   }
 
+  function hiddenIn(stage, sel) {
+    var t = stage.querySelector(".win " + sel);
+    return !t || !!t.closest(".off");
+  }
+
+  function capFor(btn) {
+    return '<strong>' + (btn.getAttribute("data-cap") || "Magnified") + '</strong>' + (btn.getAttribute("data-cap-sub") || "Demo data, magnified");
+  }
+
+  /* When a demo changes state, the loupe follows: if its detail is no longer on screen,
+     it moves to a receipt whose detail is, and an open receipt that no longer applies closes. */
   function refreshLoupesIn(scope) {
     var stage = scope.classList && scope.classList.contains("stage") ? scope : scope.querySelector && scope.querySelector(".stage");
-    if (stage && stage.getAttribute("data-aim")) requestAnimationFrame(function () { aim(stage); });
+    if (!stage || !stage.getAttribute("data-aim")) return;
+    var group = stage.closest(".proof, .hero-proof");
+    if (hiddenIn(stage, stage.getAttribute("data-aim")) && group) {
+      var demo = stage.querySelector("[data-demo]");
+      var state = demo ? demo.getAttribute("data-state") : "";
+      var btns = Array.prototype.slice.call(group.querySelectorAll(".prove"));
+      var pick = btns.filter(function (b) { return b.getAttribute("data-go-demo") === state && !hiddenIn(stage, b.getAttribute("data-target")); })[0] ||
+        btns.filter(function (b) { return !hiddenIn(stage, b.getAttribute("data-target")); })[0];
+      btns.forEach(function (b) {
+        if (b.getAttribute("aria-expanded") === "true" && hiddenIn(stage, b.getAttribute("data-target"))) closeClaim(b);
+      });
+      if (pick) { stage.setAttribute("data-aim", pick.getAttribute("data-target")); stage._cap = capFor(pick); }
+    }
+    requestAnimationFrame(function () { aim(stage); });
   }
 
   function prove(btn, quiet) {
