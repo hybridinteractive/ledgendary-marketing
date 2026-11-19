@@ -1,0 +1,363 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T12:00:00Z",
+  "title": "Design System: Ledgendary audience pages (v5 \"Prove it\")",
+  "scope": "site-v5/ only (look v5 alternate). Not a project-wide system; site/, site-v2/, site-v3/, site-v4/ and others are competing alternates in their own worlds. Derived from site-v5/styles.css, the four HTML pages and app.js as finished 2026-11-19 after the finish review (ship verdict) and a polish round.",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Cool Daylight Ground",
+        "canonical": "#eceef2",
+        "tonalRamp": [
+          "#15161a",
+          "#2b2d34",
+          "#565b68",
+          "#6a6f7c",
+          "#b9bdc8",
+          "#d9dce3",
+          "#eceef2",
+          "#ffffff"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "White Surface",
+        "canonical": "#ffffff"
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Quiet Surface",
+        "canonical": "#f5f6f9"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Graphite Ink",
+        "canonical": "#15161a"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Cool Secondary Ink",
+        "canonical": "#565b68"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "canonical": "#d9dce3"
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Row Line",
+        "canonical": "#e7e9ee"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Hover Line",
+        "canonical": "#b9bdc8"
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "#6a6f7c"
+      },
+      "violet": {
+        "role": "primary",
+        "displayName": "Electric Violet",
+        "canonical": "#6b2cff",
+        "tonalRamp": [
+          "#1d0a4a",
+          "#2f1280",
+          "#4413c4",
+          "#5418e8",
+          "#6b2cff",
+          "#9a73ff",
+          "#c9b6ff",
+          "#f1ebff"
+        ]
+      },
+      "violet-deep": {
+        "role": "primary",
+        "displayName": "Deep Violet",
+        "canonical": "#5418e8"
+      },
+      "violet-wash": {
+        "role": "primary",
+        "displayName": "Violet Wash",
+        "canonical": "#f1ebff"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Page headline, two lines, spanning the hero."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section, macro and final heads."
+      },
+      "subline": {
+        "displayName": "Subline",
+        "purpose": "Enterprise hero's three-beat line."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Comparison column heads."
+      },
+      "claim": {
+        "displayName": "Claim",
+        "purpose": "Every claim sentence."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Under headlines, ink-2, 58ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy."
+      },
+      "receipt": {
+        "displayName": "Receipt",
+        "purpose": "Proof text under a claim."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary and Prove it controls."
+      },
+      "stamp": {
+        "displayName": "Stamp",
+        "purpose": "\"True story.\" only; slanted."
+      },
+      "ui": {
+        "displayName": "Window UI",
+        "purpose": "Product window base text."
+      },
+      "window-title": {
+        "displayName": "Window title",
+        "purpose": "Record title inside a window."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Chips, table heads, tags; sentence case."
+      },
+      "id": {
+        "displayName": "IDs and hashes",
+        "purpose": "Document ids, entry ids and hashes; slashed zero."
+      }
+    },
+    "shadows": [
+      {
+        "name": "soft",
+        "value": "0 1px 2px rgba(21, 22, 26, 0.06), 0 18px 40px -18px rgba(21, 22, 26, 0.22)",
+        "purpose": "Product windows, opened claim cards, the comparison."
+      },
+      {
+        "name": "lift",
+        "value": "0 2px 4px rgba(21, 22, 26, 0.08), 0 28px 60px -20px rgba(31, 14, 84, 0.38)",
+        "purpose": "The loupe only, under its violet ring and halo."
+      },
+      {
+        "name": "loupe-ring",
+        "value": "0 0 0 3px #6b2cff, 0 0 0 7px rgba(107, 44, 255, 0.14)",
+        "purpose": "The loupe's ring, layered over lift."
+      },
+      {
+        "name": "hairline-ring",
+        "value": "0 0 0 1px #d9dce3",
+        "purpose": "Current nav link, current sidebar item, segmented track and selection."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px rgba(107, 44, 255, 0.22)",
+        "purpose": "Email field focus, with a violet border."
+      },
+      {
+        "name": "field-error",
+        "value": "0 0 0 1px #15161a",
+        "purpose": "Invalid email field, with an ink border."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Every state transition."
+      },
+      {
+        "name": "ease-wait",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "The 1.3s wait bar fill."
+      },
+      {
+        "name": "hover",
+        "value": "150ms to 180ms",
+        "purpose": "Buttons, Prove it, fields, window controls."
+      },
+      {
+        "name": "receipt",
+        "value": "450ms",
+        "purpose": "Receipt expands by grid rows; proof text rises 6px."
+      },
+      {
+        "name": "loupe",
+        "value": "600ms to 700ms",
+        "purpose": "Loupe settles and lens pans to the target."
+      },
+      {
+        "name": "swap",
+        "value": "350ms in, 200ms out",
+        "purpose": "In-window state swaps."
+      },
+      {
+        "name": "beat",
+        "value": "700ms after 1.1s",
+        "purpose": "The enterprise subline's last beat un-blurs from 6px."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop-stage",
+        "value": "1181px",
+        "purpose": "Sticky stage with a 188px lens column; four-up wide claims."
+      },
+      {
+        "name": "stack",
+        "value": "1180px",
+        "purpose": "Hero, proofs and final stack; loupe moves under the window."
+      },
+      {
+        "name": "phone",
+        "value": "760px",
+        "purpose": "16px gutter, nav wraps, sidebars hide, tables stack, 168px loupe."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Join the waitlist, in the nav, hero and final.",
+      "html": "<button class=\"ds-btn\">Join the waitlist</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:10px;border:0;font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-weight:600;font-size:15px;letter-spacing:-0.005em;background:#6b2cff;color:#fff;cursor:pointer;transition:background-color .15s,transform .15s cubic-bezier(0.16,1,0.3,1)}.ds-btn:hover{background:#5418e8}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid #6b2cff;outline-offset:3px}"
+    },
+    {
+      "name": "Prove it",
+      "kind": "button",
+      "refersTo": "prove-it",
+      "description": "Opens a claim's receipt and aims the loupe; ink outline, ink on hover, violet when open.",
+      "html": "<button class=\"ds-prove\" aria-expanded=\"false\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/><path d=\"M11 8v6\"/><path d=\"M8 11h6\"/></svg>Prove it</button>",
+      "css": ".ds-prove{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 13px 0 10px;border-radius:999px;border:1px solid #15161a;background:transparent;color:#15161a;font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:14px;font-weight:600;cursor:pointer;transition:background-color .18s,color .18s,border-color .18s}.ds-prove:hover{background:#15161a;color:#fff}.ds-prove[aria-expanded=true]{background:#6b2cff;border-color:#6b2cff;color:#fff}.ds-prove:focus-visible{outline:2px solid #6b2cff;outline-offset:3px}"
+    },
+    {
+      "name": "Claim with receipt",
+      "kind": "card",
+      "refersTo": "claim-open",
+      "description": "An opened claim: white card, claim sentence, open control, stamped receipt.",
+      "html": "<div class=\"ds-claim\"><p class=\"ds-claim-t\">Ferro is late, so a late fee posted as its own entry.</p><p class=\"ds-rcpt\"><span class=\"ds-stamp\">True story.</span> JE-0207 still says $2,400.00. The $120.00 fee is JE-0214.</p></div>",
+      "css": ".ds-claim{max-width:420px;padding:14px 16px;border-radius:12px;background:#fff;border:1px solid #d9dce3;box-shadow:0 1px 2px rgba(21,22,26,.06),0 18px 40px -18px rgba(21,22,26,.22);font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;color:#15161a}.ds-claim-t{margin:0;font-size:1.0625rem;line-height:1.35;font-weight:500;letter-spacing:-0.012em}.ds-rcpt{margin:12px 0 0;font-size:14.5px;line-height:1.45}.ds-stamp{display:inline-flex;padding:3px 9px 3px 7px;border-radius:6px;background:#6b2cff;color:#fff;font-weight:700;font-style:oblique 10deg;font-variation-settings:'slnt' -10;font-size:.875rem;line-height:1.3;margin-right:6px}"
+    },
+    {
+      "name": "Waitlist field",
+      "kind": "input",
+      "refersTo": "waitlist-field",
+      "description": "White field with violet focus ring; errors in ink.",
+      "html": "<input class=\"ds-field\" type=\"email\" placeholder=\"you@studio.com\">",
+      "css": ".ds-field{min-height:48px;padding:0 14px;border-radius:10px;border:1px solid #d9dce3;background:#fff;font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:16px;color:#15161a;caret-color:#6b2cff;transition:border-color .15s,box-shadow .15s}.ds-field::placeholder{color:#6a6f7c}.ds-field:hover{border-color:#b9bdc8}.ds-field:focus{outline:none;border-color:#6b2cff;box-shadow:0 0 0 3px rgba(107,44,255,.22)}.ds-field[aria-invalid=true]{border-color:#15161a;box-shadow:0 0 0 1px #15161a}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Frosted sticky bar; current page on white with a hairline ring.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Home</a><a href=\"#\" aria-current=\"page\">Solo</a><a href=\"#\">Team</a></nav>",
+      "css": ".ds-nav{display:flex;gap:4px;padding:12px;background:rgba(236,238,242,.92);font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif}.ds-nav a{padding:8px 12px;border-radius:8px;text-decoration:none;font-size:15px;font-weight:500;color:#565b68}.ds-nav a:hover{color:#15161a;background:rgba(21,22,26,.05)}.ds-nav a[aria-current=page]{color:#15161a;background:#fff;box-shadow:0 0 0 1px #d9dce3}.ds-nav a:focus-visible{outline:2px solid #6b2cff;outline-offset:3px}"
+    },
+    {
+      "name": "Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Status pills: white with a line, violet for Paid, ink for Overdue and Closed.",
+      "html": "<span class=\"ds-chip\">Sent</span> <span class=\"ds-chip ds-paid\">Paid Nov 18</span> <span class=\"ds-chip ds-ink\">Overdue · 19 days</span> <span class=\"ds-tag\">Demo data</span>",
+      "css": ".ds-chip{display:inline-flex;align-items:center;padding:1px 7px;border-radius:999px;font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:12px;font-weight:600;line-height:1.6;border:1px solid #d9dce3;color:#15161a;background:#fff}.ds-paid{background:#6b2cff;border-color:#6b2cff;color:#fff}.ds-ink{background:#15161a;border-color:#15161a;color:#fff}.ds-tag{font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:12px;font-weight:500;color:#565b68;border:1px solid #d9dce3;border-radius:999px;padding:1px 8px}"
+    },
+    {
+      "name": "Product window",
+      "kind": "card",
+      "refersTo": "product-window",
+      "description": "Light, dense app window with bar, Demo data tag and a highlighted target cell.",
+      "html": "<div class=\"ds-win\"><div class=\"ds-bar\"><span>Invoices › <b>INV-0010</b></span><span class=\"ds-tag\">Demo data</span></div><div class=\"ds-body\"><table><tr><th>Entry</th><th>What posted</th><th class=\"n\">Amount</th></tr><tr><td>JE-0207</td><td>Invoice sent</td><td class=\"n\">$2,400.00</td></tr><tr><td>JE-0214</td><td><span class=\"ds-target\">Late fee, own entry</span></td><td class=\"n\">$120.00</td></tr></table></div></div>",
+      "css": ".ds-win{max-width:460px;background:#fff;border:1px solid #d9dce3;border-radius:12px;box-shadow:0 1px 2px rgba(21,22,26,.06),0 18px 40px -18px rgba(21,22,26,.22);font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:13px;line-height:1.45;color:#15161a;overflow:hidden}.ds-bar{display:flex;align-items:center;justify-content:space-between;min-height:42px;padding:6px 12px 6px 14px;border-bottom:1px solid #d9dce3;font-size:12.5px;color:#565b68}.ds-bar b{color:#15161a;font-weight:600}.ds-tag{font-size:12px;font-weight:500;border:1px solid #d9dce3;border-radius:999px;padding:1px 8px}.ds-body{padding:16px}.ds-body table{width:100%;border-collapse:collapse;font-size:12.75px}.ds-body th{text-align:left;font-weight:500;font-size:12px;color:#565b68;padding:6px 8px;border-bottom:1px solid #d9dce3}.ds-body td{padding:7px 8px;border-bottom:1px solid #e7e9ee}.ds-body .n{text-align:right}.ds-target{background:rgba(107,44,255,.13);box-shadow:inset 0 -2px 0 #6b2cff;border-radius:3px}"
+    },
+    {
+      "name": "Loupe",
+      "kind": "custom",
+      "refersTo": "loupe",
+      "description": "The one lifted object: a violet-ringed circle magnifying the proving detail.",
+      "html": "<div class=\"ds-loupe\"><span>Late fee, own entry</span></div>",
+      "css": ".ds-loupe{width:188px;height:188px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:30px;color:#15161a;overflow:hidden;box-shadow:0 0 0 3px #6b2cff,0 0 0 7px rgba(107,44,255,.14),0 2px 4px rgba(21,22,26,.08),0 28px 60px -20px rgba(31,14,84,.38)}.ds-loupe span{font-size:17px;padding:4px 8px;background:rgba(107,44,255,.13);box-shadow:inset 0 -2px 0 #6b2cff;border-radius:3px}"
+    },
+    {
+      "name": "Segmented control",
+      "kind": "custom",
+      "refersTo": "segmented",
+      "description": "In-window view switch; selected item on white with a hairline ring.",
+      "html": "<div class=\"ds-seg\"><button aria-pressed=\"true\">Member</button><button aria-pressed=\"false\">Accountant</button></div>",
+      "css": ".ds-seg{display:inline-flex;padding:3px;gap:2px;border-radius:9px;background:#f5f6f9;box-shadow:inset 0 0 0 1px #d9dce3}.ds-seg button{font-family:\"Geologica\", ui-sans-serif, system-ui, sans-serif;font-size:12.5px;font-weight:600;border:0;background:transparent;color:#565b68;padding:5px 10px;border-radius:7px;min-height:30px;cursor:pointer}.ds-seg button[aria-pressed=true]{background:#fff;color:#15161a;box-shadow:0 1px 2px rgba(21,22,26,.12),0 0 0 1px #d9dce3}.ds-seg button:focus-visible{outline:2px solid #6b2cff}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Receipt Drawer",
+    "overview": "A cool, daylight page where nothing is asserted without evidence. Each feature is one plain, confident sentence; under it a pill-shaped \"Prove it\" control opens the receipt: the claim lifts onto a white card, a short text receipt slides in (usually led by a violet, slanted \"True story.\" stamp), and a circular loupe beside the product window magnifies the exact cell, chip or row that proves it, while the same target is washed violet in the window itself. The evidence is always stated in words as well as shown.\n\nThe world is grey-blue ground, white working surfaces, graphite ink and one electric violet. Product UI is drawn crisp, dense and light-themed at 13px with 1px cool lines, the way the app itself looks. Depth is layering plus one soft shadow recipe; the loupe is the single lifted object, ringed in violet. Geologica carries everything, upright and tight at 700 to 800 for headlines, 500 for claims, and slanted only where something is being attested.\n\nPages open on the ground with a full-width two-line headline, a lead, the waitlist and a two-column table of contents of \"the other receipts on this page\", beside the boldest claim already proven. Sections follow as claims-plus-stage pairs, one macro-to-full sequence where a close-up of a journal row zooms out to the whole screen on scroll, a two-column comparison, and a final waitlist with a tally of receipts opened.",
+    "keyCharacteristics": [
+      "Cool grey ground, white surfaces, graphite ink, one violet; no other hue anywhere.",
+      "Every claim is a sentence, a Prove it control and a text receipt; the loupe shows, the receipt says.",
+      "Product windows are light, dense, 1px-lined and tagged \"Demo data\".",
+      "One soft shadow for cards and windows; one lifted object, the loupe.",
+      "Geologica alone; slant means \"attested\" (the stamp, a recorded signature)."
+    ],
+    "rules": [
+      {
+        "name": "The One Violet Rule",
+        "body": "Violet is the only hue, and it is a fill with white text or a ring, never copy colour. If a second hue seems needed, use ink, a wash or a line instead.",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Is The Alarm Rule",
+        "body": "Errors, invalid fields, overdue and closed states are ink, not red: an ink border with a 1px ink ring, a bold ink message led by an 8px ink dot, an ink chip. The page keeps one accent even when something is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Slant Attests Rule",
+        "body": "Oblique type appears only where something is being vouched for: the \"True story.\" stamp and a person's recorded signature. Headlines, claims and UI stay upright.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "No uppercase labels, no tracking-out. Labels, chips, table heads and the TOC heading are sentence case at 12 to 14px.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Lifted Object Rule",
+        "body": "The lift shadow belongs to the loupe. Everything else is either flat on the ground or carries the soft shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do pair every claim with a Prove it control and a receipt stated in words, so the evidence never lives only in the loupe.",
+      "Do keep violet a fill under white text or a ring; deepen it for hover.",
+      "Do draw product windows light, dense and 1px-lined, and tag every one \"Demo data\".",
+      "Do keep the soft shadow for windows, opened claims and the comparison, and the lift for the loupe alone.",
+      "Do show errors and closed states in ink.",
+      "Do set IDs and hashes with slashed zeros, and right-align amounts.",
+      "Do give every moving piece a finished state under reduced motion."
+    ],
+    "donts": [
+      "Don't introduce a second hue, including red for errors or green for paid.",
+      "Don't use violet as text colour on copy or as a section background.",
+      "Don't slant anything that is not attesting: the stamp and a recorded signature only.",
+      "Don't lift any object other than the loupe, and don't use hard offset shadows.",
+      "Don't put uppercase labels or kickers above headings; section heads are a headline and a lead.",
+      "Don't add a second family or a system display face; Geologica carries everything."
+    ]
+  }
+}
