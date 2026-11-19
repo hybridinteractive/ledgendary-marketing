@@ -52,9 +52,9 @@
     { at: 3.6, ic: 'signature', t: 'Signed by Dana Whitfield', s: 'Oct 30 · 10:42 AM' },
     { at: 4.3, ic: 'briefcase', t: 'Job Site build created', s: 'Oct 31 · 80 h estimated' },
     { at: 10.9, ic: 'check', t: 'Week of Nov 2 submitted', s: 'Nov 6 · 41 h 45 m' },
-    { at: 13.15, ic: 'user-check', t: 'Lena approved week of Nov 2', s: 'Nov 9 · 41 h 45 m' },
+    { at: 13.15, ic: 'user-check', t: 'Sam approved week of Nov 2', s: 'Nov 9 · 41 h 45 m' },
     { at: 17.9, ic: 'check', t: 'Week of Nov 9 submitted', s: 'Nov 13 · 38 h 15 m' },
-    { at: 20.1, ic: 'user-check', t: 'Lena approved week of Nov 9', s: 'Nov 16 · 38 h 15 m' },
+    { at: 20.1, ic: 'user-check', t: 'Sam approved week of Nov 9', s: 'Nov 16 · 38 h 15 m' },
     { at: 20.7, ic: 'send', t: 'INV-0042 sent', s: 'Nov 16 · due Dec 1' },
     { at: 20.72, ic: 'book-open', t: 'JE-1041 posted', s: 'Nov 16 · #9c07' },
     { at: 21.5, ic: 'eye', t: 'Dana viewed INV-0042', s: 'Nov 17' },
@@ -72,8 +72,8 @@
     if (d <= 5) { return ['The proposal becomes the job', 'Option B is now Site build: $30,000 fixed, 80 h estimated. Nothing retyped.']; }
     if (d === 10 && t >= 10.9) { return ['Week submitted', 'Theo and Maya submit the week of Nov 2: 41 h 45 m.']; }
     if (d <= 10) { return HOURS; }
-    if (d <= 12) { return ['Weekend', 'The week of Nov 2 waits for Lena: 41 h 45 m submitted.']; }
-    if (d === 13) { return ['Approved', 'Lena approves the week of Nov 2. Approved hours are ready to bill.']; }
+    if (d <= 12) { return ['Weekend', 'The week of Nov 2 waits for an owner or administrator: 41 h 45 m submitted.']; }
+    if (d === 13) { return ['Approved', 'Sam, an administrator, approves the week of Nov 2. Approved hours are ready to bill.']; }
     if (d === 17 && t >= 17.9) { return ['80 h 0 m, on the estimate', 'The week of Nov 9 is in: 38 h 15 m. Two weeks, exactly the 80 h option B said.']; }
     if (d <= 17) { return HOURS; }
     if (d <= 19) { return ['Weekend', 'Two weeks, 80 h 0 m, waiting on approval.']; }
@@ -292,8 +292,8 @@
       else { pill(el.tStatus, 'sent', 'check', 'Submitted'); }
     }
 
-    var s0 = t < 6 ? ['draft', 'Not started'] : t < 10.9 ? ['draft', 'Open · logging'] : t < 13.15 ? ['sent', 'Submitted · Nov 6'] : ['ok', 'Approved by Lena Park · Nov 9'];
-    var s1 = t < 13 ? ['draft', 'Not started'] : t < 17.9 ? ['draft', 'Open · logging'] : t < 20.1 ? ['sent', 'Submitted · Nov 13'] : ['ok', 'Approved by Lena Park · Nov 16'];
+    var s0 = t < 6 ? ['draft', 'Not started'] : t < 10.9 ? ['draft', 'Open · logging'] : t < 13.15 ? ['sent', 'Submitted · Nov 6'] : ['ok', 'Approved by Sam Okafor · Nov 9'];
+    var s1 = t < 13 ? ['draft', 'Not started'] : t < 17.9 ? ['draft', 'Open · logging'] : t < 20.1 ? ['sent', 'Submitted · Nov 13'] : ['ok', 'Approved by Sam Okafor · Nov 16'];
     [[w0, s0], [w1, s1]].forEach(function (x, i) {
       var li = el.ap[i];
       setText($('.ap-h', li), fmtH(x[0]));
