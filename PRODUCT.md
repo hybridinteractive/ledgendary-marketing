@@ -37,6 +37,7 @@ Most tools stop at one end: a proposal tool that hands off to an invoicing tool 
 - Never promise an integration that is not verified (a Microsoft calendar connection and a payroll connection are unverified).
 - Anything a person can reach that takes money off the books (voids, write-offs, refunds, period close and reopen) asks them to confirm who they are again (password, passkey or emailed code) first.
 - A recurring template issues one invoice per period, and never two, even if the scheduler runs twice.
+- A private calendar draft leaves private only by its owner's own action: accepting it, or submitting the week it sits in (submitting your own week publishes your drafts in it). An administrator submitting an active member's week publishes nothing of theirs.
 - Weeks are submitted by the person and approved by an owner or administrator; an approved week is locked, and an invoiced entry takes a note and nothing else.
 - Personal-data stance is a real feature: private calendar drafts stay private, capture keeps titles and durations only, sensitive identifiers like full tax ids are never stored.
 - The books, as built (safe to claim, phrase plainly):

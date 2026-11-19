@@ -11,7 +11,7 @@ Scope: the v4 look's three audience pages, `site-v4/solo.html`, `site-v4/team.ht
 
 ## Direction contract
 
-THESIS: Every feature is an episode. The page is structured like a season of a sitcom: each signature feature gets a title card ("S01E03 · The One Where the Invoice Pays Itself") followed by the product doing it, live. Fully in voice, and still a SaaS product page: the episode cards are typography and structure, never TV imagery, never naming any show. Refuses the category default and all three earlier looks.
+THESIS: Every feature is an episode. The page is structured like a season of a sitcom: each signature feature gets a title card ("S01E03 · The Late Fee Incident": short "The …" titles; never the "The One Where…" formula, which belongs to a different sitcom) followed by the product doing it, live. Fully in voice, and still a SaaS product page: the episode cards are typography and structure, never TV imagery, never naming any show. Refuses the category default and all three earlier looks.
 
 OWN-WORLD: Full palette on white. Ground #ffffff; ink #121212; four saturated-but-soft section fields with named roles: mint #b8f0d4 (getting paid), sky #bfe2ff (time and people), peach #ffd0b5 (proposals and clients), lilac #dacbff (the books and trust). Each episode owns one field; product windows are white with ink 1.5px outlines and soft offset shadows. One hot accent for actions and Paid: tomato #ff4a1c as fill with white text only at large/bold sizes (check 3:1 large, use ink text otherwise). Type: Gabarito (400 to 900) for everything; display 800 to 900, tight; tabular figures in columns.
 
