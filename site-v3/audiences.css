@@ -470,3 +470,60 @@ button.btn-ui[disabled][data-tone="done"] { background: var(--mint-bg); color: v
 @media (max-width: 720px) {
   .aud-ent [data-pane="post"] .chainrows li:first-child, .aud-ent [data-pane="post"] .rowset-note, .aud-ent [data-pane="reverse"] .pane-note, .aud-ent [data-pane="anchor"] .rowset, .aud-ent [data-pane="audit"] .merkle, .aud-ent [data-pane="audit"] .pane-note { display: none; }
 }
+
+/* ===== Review round: nothing boxed inside a product window; rows and plain blocks only ===== */
+.aud .app .panel, .aud .bwin .panel { padding: 12px 0 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); }
+.aud .time-low { gap: 24px; }
+.aud .draft-p, .aud .submit-p { padding: 12px 0 0; }
+.aud .je, .aud .jl-e { padding: 10px 0 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); min-height: 0; }
+.aud .je:not(.is-on) { background: none; box-shadow: none; }
+.aud .je:not(.is-on) .je-pre { inset: 1px 0 0; justify-content: flex-start; align-items: center; border: 0; border-radius: 0; }
+.aud .je:not(.is-on) > :not(.je-pre) { visibility: hidden; }
+.aud .je-slots { gap: 24px; }
+.aud .je-strip { margin-top: 0; }
+.aud .pay { min-height: 0; padding: 10px 0 0; border-radius: 0; background: none !important; box-shadow: none !important; border-top: 1px solid var(--line); }
+.aud .pay-t > span:first-child { white-space: normal; overflow: visible; text-overflow: clip; }
+.aud .totals .due { margin-top: 0; padding: 8px 0 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line-2); }
+.aud .totals .due.is-on { background: none; }
+.aud .totals .due.is-on dt { color: var(--text); }
+.aud .totals .due.is-on dd { padding: 1px 10px; border-radius: 7px; background: var(--coral); color: var(--ink); }
+.aud .chainrows { gap: 0; }
+.aud .chainrows li { padding: 10px 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); min-height: 52px; }
+.aud .chainrows li:first-child { border-top: 0; }
+.aud .chainrows li.cr-new:not(.is-on) .cr-pre { position: absolute; inset: 0; justify-content: flex-start; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+.aud .merkle { padding: 4px 0 0; border-radius: 0; background: none; box-shadow: none; }
+.aud .an-out { min-height: 132px; padding: 14px 0 0; border-radius: 0; background: none !important; box-shadow: none !important; border-top: 1px solid var(--line); }
+.aud .an-out[data-tone="refused"] .an-h { color: var(--err); }
+.aud .nf { justify-content: flex-start; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.aud .draft-box { padding: 12px 0 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); }
+.aud .lock-msg { padding: 12px 0 0; border-radius: 0; background: none !important; box-shadow: none !important; border-top: 1px solid var(--line); min-height: 44px; }
+.aud .life li { padding: 6px 0; border-radius: 0; box-shadow: none; background: none; border-top: 2px solid var(--line-2); }
+.aud .life li.is-on { background: none; border-top-color: var(--mint); }
+.aud .su-stamp { padding: 10px 0 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); }
+.aud .su-stamp[data-tone="ok"] { background: none; }
+.aud .cashline div { padding: 10px 0 0; border-radius: 0; background: none; box-shadow: none; border-top: 1px solid var(--line); }
+.aud .views { padding-bottom: 0; }
+
+/* Solo milestone: two columns inside one window */
+.ms-wide { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px; align-items: start; }
+.ms-left { display: grid; gap: 16px; }
+.ms-why { font-size: 14px; color: var(--mut); max-width: 44ch; }
+.spend-note { margin-top: 14px; }
+
+/* Team: twelve weeks, all lit; the Mon 16 label sits on its own tick */
+.weeks12 span, .weeks12 span:last-child { background: var(--mint); box-shadow: none; opacity: .85; }
+.weeks12 span:last-child { opacity: 1; }
+.aud-team .rail-dates li.last { transform: none; }
+
+/* Enterprise: independent redelivery and refund demos */
+.dbl, .rfd { display: grid; gap: 10px; }
+.dbl .btn-ui, .rfd .btn-ui { justify-self: start; }
+.rfd { padding-top: 12px; border-top: 1px solid var(--line); }
+.rfd-slot { min-height: 128px; }
+.rfd-row { display: grid; gap: 8px; }
+
+@media (max-width: 1100px) { .ms-wide { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) {
+  .aud-team .rail-dates li.last { display: block; left: auto; right: 0; }
+  .aud .je-slots { grid-template-columns: 1fr 1fr; gap: 12px; }
+}

@@ -157,8 +157,8 @@
             </ul>
             <p class="side-label">Jobs</p>
             <ul class="side-nav side-jobs">
-              <li class="job"><span class="dot"></span><span>Halcyon · Retainer</span></li>
-              <li class="job" data-show="4.7" data-land><span class="dot"></span><span>Northwind · Brand refresh</span></li>
+              <li class="job"><span class="dot dot-2"></span><span>Halcyon retainer</span></li>
+              <li class="job" data-show="4.7" data-land><span class="dot"></span><span>Brand refresh</span></li>
             </ul>
           </aside>
 
@@ -561,22 +561,20 @@
       <p class="lede">Expenses and bills live apart. A bill books the cost when it arrives and the cash when you pay it, so paying it never adds a second expense. And the cash view answers per client, not as one lump.</p>
     </div>
     <div class="duo">
-      <div class="bwin" data-tl="demo">
-        <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg><span>Spend, October</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg><b data-txt='[[0,"As of Oct 19"],[1,"As of Oct 20"]]'>As of Oct 19</b></p><span class="demo">Demo data</span></div>
+      <div class="bwin">
+        <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-receipt"/></svg><b>Spend, October</b></p><span class="demo">Demo data</span></div>
         <div class="win-pad">
           <table class="tbl">
             <caption class="sr-only">Expenses and bills in October</caption>
-            <thead><tr><th scope="col">Item</th><th scope="col">Kind</th><th scope="col" class="num">Amount</th></tr></thead>
+            <thead><tr><th scope="col">Item</th><th scope="col">Kind</th><th scope="col" class="num">Spend</th></tr></thead>
             <tbody>
               <tr><th scope="row">Font licence<span class="sub">Oct 9 · paid by card · JE-0030</span></th><td>Expense</td><td class="num">$240.00</td></tr>
-              <tr><th scope="row">B-0004 · Kestrel Print<span class="sub" data-txt='[[0,"Received Oct 12 · due Oct 26 · JE-0031"],[1,"Received Oct 12 · paid Oct 20 · JE-0033"]]'>Received Oct 12 · paid Oct 20 · JE-0033</span></th><td>Bill</td><td class="num">$1,200.00</td></tr>
+              <tr><th scope="row">B-0004 · Kestrel Print<span class="sub">Received Oct 12 · cost booked · JE-0031</span></th><td>Bill</td><td class="num">$1,200.00</td></tr>
+              <tr><th scope="row">B-0004 paid by bank<span class="sub">Oct 20 · cash out · JE-0033</span></th><td>Payment</td><td class="num">–</td></tr>
             </tbody>
             <tfoot><tr><th scope="row" colspan="2">Spend in October</th><td class="num">$1,440.00</td></tr></tfoot>
           </table>
-          <div class="ret-act">
-            <button type="button" class="btn-ui" data-set="1" data-dis="1"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg>Pay B-0004</button>
-            <p class="act-note" data-txt='[[0,"B-0004 is open, $1,200.00 owed to Kestrel Print."],[1,"Paid. The cost was booked when the bill arrived, so spend stays $1,440.00."]]' aria-live="polite">B-0004 is open, $1,200.00 owed to Kestrel Print.</p>
-          </div>
+          <p class="act-note spend-note">Paying B-0004 moved $1,200.00 out of the bank on Oct 20. The cost was already booked when the bill arrived, so the payment adds no expense and spend stays $1,440.00.</p>
         </div>
       </div>
       <div class="bwin">
@@ -662,17 +660,21 @@
 
 <!-- ================= MILESTONE ================= -->
 <section class="sec" id="milestone" aria-labelledby="ms-h">
-  <div class="wrap split split-r">
-    <div class="split-copy">
+  <div class="wrap">
+    <div class="sec-head">
       <h2 id="ms-h" class="h2">Up top.</h2>
       <p class="lede">Turn milestones on and the books notice the good days too. Northwind paying eleven days early made it five invoices paid on time, and that's a badge.</p>
     </div>
     <div class="bwin">
       <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg><b>Milestones</b></p><span class="demo">Demo data</span></div>
-      <div class="win-pad ms">
-        <div class="ms-head">
-          <span class="ms-badge"><svg class="ic" aria-hidden="true"><use href="#i-badge-check"/></svg></span>
-          <div><p class="ms-name">Paid on time 5 times</p><p class="muted">Earned Oct 29, when INV-0012 was paid</p></div>
+      <div class="win-pad ms ms-wide">
+        <div class="ms-left">
+          <div class="ms-head">
+            <span class="ms-badge"><svg class="ic" aria-hidden="true"><use href="#i-badge-check"/></svg></span>
+            <div><p class="ms-name">Paid on time 5 times</p><p class="muted">Earned Oct 29, when INV-0012 was paid</p></div>
+          </div>
+          <p class="ms-why">Each invoice below was paid on or before its due date. Ferro's INV-0010, paid 21 days late, is not one of them.</p>
+          <p class="ms-earlier"><span>Earlier</span><span class="tag">First client</span><span class="tag">First invoice sent</span><span class="tag">First payment</span><span class="tag">First retainer</span></p>
         </div>
         <ol class="rows ms-list">
           <li><span class="r-t">Aug 6</span><span class="r-m">INV-0007 · Halcyon</span><span class="r-s">1</span></li>
@@ -681,7 +683,6 @@
           <li><span class="r-t">Oct 8</span><span class="r-m">INV-0011 · Halcyon</span><span class="r-s">4</span></li>
           <li class="is-hot"><span class="r-t">Oct 29</span><span class="r-m">INV-0012 · Northwind Co</span><span class="r-s">5</span></li>
         </ol>
-        <p class="ms-earlier"><span>Earlier</span><span class="tag">First client</span><span class="tag">First invoice sent</span><span class="tag">First payment</span><span class="tag">First retainer</span></p>
       </div>
     </div>
   </div>

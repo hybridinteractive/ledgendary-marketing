@@ -221,6 +221,13 @@
                     <li data-on="1.65"><svg class="ic" aria-hidden="true"><use href="#i-database"/></svg><span class="r-m"><b>A database trigger</b> refuses the update on the table itself</span><span class="r-s" data-txt='[[0,"–"],[1.65,"Refused"]]'>Refused</span></li>
                   </ul>
                 </div>
+                <div class="rowset">
+                  <p class="panel-h"><svg class="ic" aria-hidden="true"><use href="#i-history"/></svg>After the attempt</p>
+                  <ul class="rows rows-tight">
+                    <li><span class="cr-id">JE-20417</span><span class="r-m">Still 18,400.00, chain row #b7e2 unchanged</span><span class="r-s">Intact</span></li>
+                    <li><span class="cr-id">INV-08812</span><span class="r-m">Still $18,400.00, as Harbor &amp; Finch received it</span><span class="r-s">Sent</span></li>
+                  </ul>
+                </div>
                 <div class="su-stamp"><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg><p>Posted entries are never edited. The way out is a reversal: void INV-08812, and a new entry reverses exactly what JE-20417 stored.</p></div>
               </section>
 
@@ -254,11 +261,11 @@
                   <caption class="sr-only">Entries checked per office</caption>
                   <thead><tr><th scope="col">Office</th><th scope="col">Currency</th><th scope="col" class="num">Entries</th><th scope="col" class="num">Result</th></tr></thead>
                   <tbody>
-                    <tr data-on="3.15"><th scope="row">New York</th><td>USD</td><td class="num">98,212</td><td class="num" data-txt='[[0,"Checking"],[3.15,"In balance"]]'>In balance</td></tr>
-                    <tr data-on="3.25"><th scope="row">Lisbon</th><td>EUR</td><td class="num">71,440</td><td class="num" data-txt='[[0,"Queued"],[3.15,"Checking"],[3.25,"In balance"]]'>In balance</td></tr>
-                    <tr data-on="3.35"><th scope="row">London</th><td>GBP</td><td class="num">44,728</td><td class="num" data-txt='[[0,"Queued"],[3.25,"Checking"],[3.35,"In balance"]]'>In balance</td></tr>
+                    <tr data-on="3.15"><th scope="row">New York</th><td>USD</td><td class="num">9,412</td><td class="num" data-txt='[[0,"Checking"],[3.15,"In balance"]]'>In balance</td></tr>
+                    <tr data-on="3.25"><th scope="row">Lisbon</th><td>EUR</td><td class="num">6,781</td><td class="num" data-txt='[[0,"Queued"],[3.15,"Checking"],[3.25,"In balance"]]'>In balance</td></tr>
+                    <tr data-on="3.35"><th scope="row">London</th><td>GBP</td><td class="num">4,226</td><td class="num" data-txt='[[0,"Queued"],[3.25,"Checking"],[3.35,"In balance"]]'>In balance</td></tr>
                   </tbody>
-                  <tfoot><tr><th scope="row" colspan="2">Meridian &amp; Vale</th><td class="num">214,380</td><td class="num" data-txt='[[0,"–"],[3.4,"All in balance"]]'>All in balance</td></tr></tfoot>
+                  <tfoot><tr><th scope="row" colspan="2">Meridian &amp; Vale</th><td class="num">20,419</td><td class="num" data-txt='[[0,"–"],[3.4,"All in balance"]]'>All in balance</td></tr></tfoot>
                 </table>
                 <div class="rowset">
                   <p class="panel-h"><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg>Today's three entries, checked three times</p>
@@ -376,7 +383,7 @@
   "scenes": [[0,"post"],[1,"edit"],[2,"reverse"],[3,"night"],[4,"anchor"],[5,"close"],[6,"audit"]],
   "nav": {"edit":"post","reverse":"invoice","night":"post"},
   "crumbs": {"post":["Journal","New York"],"edit":["Journal","JE-20417"],"reverse":["Invoices","INV-08812"],"night":["Journal","Balance check"],"anchor":["Trust","Anchors","Batch 0418"],"close":["Books","Periods"],"audit":["Reports","As of Nov 30, 2026"]},
-  "who": {"post":["NB","Nadia Brooks","Administrator · New York"],"edit":["NB","Nadia Brooks","Administrator · New York"],"reverse":["NB","Nadia Brooks","Administrator · New York"],"night":["#clock","Scheduled check","Runs on its own"],"anchor":["#stamp","Anchoring","Runs on its own"],"close":["RM","Rui Matos","Administrator · Lisbon"],"audit":["EV","Elena Voss","Accountant · read only"]},
+  "who": {"post":["NB","Nadia Brooks","Administrator · New York"],"edit":["NB","Nadia Brooks","Administrator · New York"],"reverse":["NB","Nadia Brooks","Administrator · New York"],"night":["#clock","Balance check","Every entry, every night"],"anchor":["#stamp","Anchoring","Batch 0418"],"close":["RM","Rui Matos","Administrator · Lisbon"],"audit":["EV","Elena Voss","Accountant · read only"]},
   "steps": [0.6,1.8,2.85,3.6,4.9,5.85,6.85],
   "empty": ["book-open","Nov 16, 2:01 PM","INV-08812 is about to go out"],
   "caps": [
@@ -395,7 +402,7 @@
     [2.25,"fingerprint","Nadia Brooks confirmed with a passkey","Nov 16 · 3:11 PM"],
     [2.45,"undo-2","JE-20418 reverses JE-20417","Nov 16 · #0c5f · prev #b7e2"],
     [2.7,"book-open","JE-20419 posted, INV-08813","Nov 16 · #e6a3 · prev #0c5f"],
-    [3.4,"scale","Every entry in balance","Nov 17 · 1:00 AM UTC · 214,380 entries"],
+    [3.4,"scale","Every entry in balance","Nov 17 · 1:00 AM UTC · 20,419 entries"],
     [4.6,"stamp","Batch 0418 signed","Nov 17 · 2:00 AM UTC · root 3f9a…c21e"],
     [5.25,"key-round","Rui Matos confirmed with his password","Dec 4 · 10:20 AM"],
     [5.4,"lock","November 2026 closed","Dec 4 · by Rui Matos"],
@@ -410,7 +417,7 @@
   <div class="wrap">
     <div class="sec-head">
       <h2 id="an-h" class="h2">True story. Signed by someone who isn't us.</h2>
-      <p class="lede">An organisation's unanchored entries are reduced to one Merkle root, and a third-party timestamp authority signs it. The evidence sits in storage nobody can delete before its retention date, us included. Someone with full database access could rewrite a chain. They can't make the timestamp authority have signed a different root last March.</p>
+      <p class="lede">An organisation's unanchored entries are reduced to one Merkle root, and a third-party timestamp authority signs it. The evidence sits in storage nobody can delete before its retention date, us included. Someone with full database access could rewrite a chain. They can't make the timestamp authority have signed a different root on Nov 17, 2026.</p>
     </div>
     <div class="bwin" data-tl="demo">
       <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg><span>Trust</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg><span>Anchors</span><svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg><b>Batch 0418</b></p><span class="demo">Demo data</span></div>
@@ -502,18 +509,41 @@
           <button type="button" class="btn-ui" data-set="1" data-dis="1"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>Create three at once, one fails</button>
         </div>
       </div>
-      <div class="bwin" data-tl="demo">
-        <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-copy-check"/></svg><b>No doubles</b></p><span class="demo">Demo data</span></div>
+      <div class="bwin">
+        <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-copy-check"/></svg><b>No doubles</b></p><div class="bar-r"><span class="signed"><span class="av">NB</span><span class="signed-n"><b>Nadia Brooks</b><span>Administrator</span></span></span><span class="demo">Demo data</span></div></div>
         <div class="win-pad">
           <p class="tri-t">A payment the provider reports twice is applied once. A refund is charged at the provider first and recorded second, so the books never show money back that never left.</p>
-          <ul class="rows">
-            <li><span class="r-t">Nov 16</span><span class="r-m">Card payment, INV-08805</span><span class="r-s num">$26,750.00</span></li>
-            <li data-on="1"><span class="r-t" data-txt='[[0,"Again?"],[1,"Nov 16"]]'>Again?</span><span class="r-m" data-txt='[[0,"Deliver the same payment again"],[1,"Same payment, delivered twice: applied once"]]'>Deliver the same payment again</span><span class="r-s num" data-txt='[[0,""],[1,"$0.00 more"]]'></span></li>
-            <li data-on="2"><span class="r-t" data-txt='[[0,"Refund"],[2,"Nov 18"]]'>Refund</span><span class="r-m" data-txt='[[0,"Refund $400.00 of it"],[2,"Confirmed by Nadia Brooks, passkey · charged at the provider, then recorded as JE-20420"]]'>Refund $400.00 of it</span><span class="r-s num" data-txt='[[0,""],[2,"−$400.00"]]'></span></li>
-          </ul>
-          <div class="tri-btns">
-            <button type="button" class="btn-ui" data-set="1" data-dis="1 2"><svg class="ic" aria-hidden="true"><use href="#i-refresh-cw"/></svg>Deliver it again</button>
-            <button type="button" class="btn-ui" data-set="2" data-dis="=2"><svg class="ic" aria-hidden="true"><use href="#i-fingerprint"/></svg>Refund $400.00</button>
+          <div class="dbl" data-tl="demo">
+            <ul class="rows">
+              <li><span class="r-t">Nov 16</span><span class="r-m">Card payment, INV-08805</span><span class="r-s num">$26,750.00</span></li>
+              <li data-on="1"><span class="r-t" data-txt='[[0,"Again?"],[1,"Nov 16"]]'>Again?</span><span class="r-m" data-txt='[[0,"The provider reports the same payment again"],[1,"Reported twice: applied once"]]'>The provider reports the same payment again</span><span class="r-s num" data-txt='[[0,""],[1,"$0.00 more"]]'></span></li>
+            </ul>
+            <button type="button" class="btn-ui" data-set="1" data-dis="1"><svg class="ic" aria-hidden="true"><use href="#i-refresh-cw"/></svg>Deliver it again</button>
+            <p class="sr-only" data-live data-say='[[0,""],[1,"Reported twice, applied once."]]' aria-live="polite"></p>
+          </div>
+          <div class="rfd" data-tl="demo">
+            <p class="panel-h">Refund $400.00 of INV-08805</p>
+            <div class="rfd-slot">
+              <div data-show="=0" class="rfd-row">
+                <button type="button" class="btn-ui" data-set="1" data-focus=".rfd-opts button"><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg>Refund $400.00</button>
+                <p class="act-note">Takes money off the books, so it asks who you are first.</p>
+              </div>
+              <div data-show="1:3" data-land>
+                <p class="su-h"><svg class="ic" aria-hidden="true"><use href="#i-shield-check"/></svg>Confirm it's you</p>
+                <p class="act-note" data-txt='[[1,"Use a passkey, your password or a code by email."],[2,"Waiting for your passkey…"]]'>Use a passkey, your password or a code by email.</p>
+                <div class="su-opts rfd-opts">
+                  <button type="button" class="btn-ui" data-set="2" data-dis="2"><svg class="ic" aria-hidden="true"><use href="#i-fingerprint"/></svg>Use passkey</button>
+                  <span class="btn-ui is-off"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Password</span>
+                  <button type="button" class="btn-ui" data-set="3" data-show="2">Confirm</button>
+                </div>
+              </div>
+              <ul class="rows" data-show="3" data-land>
+                <li><span class="r-t">1</span><span class="r-m">Confirmed by Nadia Brooks, passkey</span><span class="r-s">Nov 18</span></li>
+                <li><span class="r-t">2</span><span class="r-m">Charged at the card provider</span><span class="r-s num">−$400.00</span></li>
+                <li><span class="r-t">3</span><span class="r-m">Recorded as JE-20420</span><span class="r-s">Posted</span></li>
+              </ul>
+            </div>
+            <p class="sr-only" data-live data-say='[[0,""],[1,"Confirm it is you before refunding."],[2,"Waiting for the passkey."],[3,"Refund charged at the provider, then recorded as JE-20420."]]' aria-live="polite"></p>
           </div>
         </div>
       </div>
@@ -521,16 +551,16 @@
         <div class="bwin-bar"><p class="crumb"><svg class="ic" aria-hidden="true"><use href="#i-search-x"/></svg><b>No peeking</b></p><span class="demo">Demo data</span></div>
         <div class="win-pad">
           <p class="tri-t">Tenancy is enforced on every read and every write. Another organisation's record doesn't exist for you.</p>
-          <div class="urlbar"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><span>ledgendary.app/invoices/INV-0042</span></div>
+          <div class="urlbar"><svg class="ic" aria-hidden="true"><use href="#i-globe"/></svg><span>ledgendary.app/invoices/7f3e9c</span></div>
           <div class="nf" data-show="1" data-land>
             <p class="nf-h">Not found.</p>
           </div>
-          <p class="nf-pre" data-show="=0">Signed in as an administrator at Meridian &amp; Vale.</p>
-          <button type="button" class="btn-ui" data-set="1" data-dis="1"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>Open INV-0042</button>
+          <p class="nf-pre" data-show="=0">A link to an invoice in another organisation, opened as an administrator at Meridian &amp; Vale.</p>
+          <button type="button" class="btn-ui" data-set="1" data-dis="1"><svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg>Open the link</button>
         </div>
       </div>
     </div>
-    <p class="cap-out">INV-0042 is real: it belongs to Lumen Studio, another organisation on Ledgendary. From Meridian &amp; Vale the answer is "not found", not "forbidden", so even its existence stays theirs.</p>
+    <p class="cap-out">Another organisation's record answers "not found" from here, never "forbidden".</p>
   </div>
 </section>
 

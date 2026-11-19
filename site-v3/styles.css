@@ -853,3 +853,6 @@ html:not(.js) .climax { display: none; }
 .pb-facts { padding-top: 20px; }
 .climax { order: 5; }
 @media (max-width: 720px) { .hero-sub { font-size: 16px; } .rd-date { font-size: 2rem; } .rail-wrap { padding-top: 46px; } }
+
+/* Current page in the nav (shared with the audience pages) */
+.nav-links a[aria-current="page"] { color: var(--text); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .4em; }
