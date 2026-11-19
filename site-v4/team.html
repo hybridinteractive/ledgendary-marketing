@@ -1,0 +1,747 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgendary for studios · Your whole studio, on one ledger</title>
+<meta name="description" content="Ledgendary for studios and agencies of 3 to 50: seats that see what they need, weekly timesheets that lock, hours that become invoices, and money actions behind a second check. Invite-only alpha.">
+<link rel="preload" href="fonts/Gabarito-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--sprite:start--><!-- Icons: lucide-static 0.460.0, ISC licence --><svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-ban" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol><symbol id="i-banknote" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2" /> <circle cx="12" cy="12" r="2" /> <path d="M6 12h.01M18 12h.01" /></symbol><symbol id="i-book-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></symbol><symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /></symbol><symbol id="i-calendar-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="m9 16 2 2 4-4" /></symbol><symbol id="i-chart-column" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16" /> <path d="M18 17V9" /> <path d="M13 17V5" /> <path d="M8 17v-3" /></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-check-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 7 17l-5-5" /> <path d="m22 10-7.5 7.5L13 16" /></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6" /></symbol><symbol id="i-circle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-clipboard-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1" /> <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" /> <path d="m9 14 2 2 4-4" /></symbol><symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <polyline points="12 6 12 12 16 14" /></symbol><symbol id="i-coins" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6" /> <path d="M18.09 10.37A6 6 0 1 1 10.34 18" /> <path d="M7 6h1v4" /> <path d="m16.71 13.88.7.71-2.82 2.82" /></symbol><symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol><symbol id="i-eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49" /> <path d="M14.084 14.158a3 3 0 0 1-4.242-4.242" /> <path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143" /> <path d="m2 2 20 20" /></symbol><symbol id="i-file-pen-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" /> <path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /> <path d="M8 18h1" /></symbol><symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="M10 9H8" /> <path d="M16 13H8" /> <path d="M16 17H8" /></symbol><symbol id="i-file-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" /> <path d="M14 2v4a2 2 0 0 0 2 2h4" /> <path d="m14.5 12.5-5 5" /> <path d="m9.5 12.5 5 5" /></symbol><symbol id="i-fingerprint" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" /> <path d="M14 13.12c0 2.38 0 6.38-1 8.88" /> <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02" /> <path d="M2 12a10 10 0 0 1 18-6" /> <path d="M2 16h.01" /> <path d="M21.8 16c.2-2 .131-5.354 0-6" /> <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2" /> <path d="M8.65 22c.21-.66.45-1.32.57-2" /> <path d="M9 6.8a6 6 0 0 1 9 5.2v2" /></symbol><symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" /></symbol><symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" /> <path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" /> <path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" /> <path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" /></symbol><symbol id="i-house" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" /> <path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /></symbol><symbol id="i-inbox" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12" /> <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z" /></symbol><symbol id="i-key-round" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol><symbol id="i-landmark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="22" y2="22" /> <line x1="6" x2="6" y1="18" y2="11" /> <line x1="10" x2="10" y1="18" y2="11" /> <line x1="14" x2="14" y1="18" y2="11" /> <line x1="18" x2="18" y1="18" y2="11" /> <polygon points="12 2 20 7 4 7" /></symbol><symbol id="i-link-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7A5 5 0 0 1 7 7h2" /> <path d="M15 7h2a5 5 0 1 1 0 10h-2" /> <line x1="8" x2="16" y1="12" y2="12" /></symbol><symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-lock-keyhole" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="16" r="1" /> <rect x="3" y="10" width="18" height="12" rx="2" /> <path d="M7 10V7a5 5 0 0 1 10 0v3" /></symbol><symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-party-popper" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.8 11.3 2 22l10.7-3.79" /> <path d="M4 3h.01" /> <path d="M22 8h.01" /> <path d="M15 2h.01" /> <path d="M22 20h.01" /> <path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10" /> <path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17" /> <path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" /> <path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" /></symbol><symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" /> <rect x="6" y="4" width="4" height="16" rx="1" /></symbol><symbol id="i-pen-line" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9" /> <path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z" /></symbol><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" /></symbol><symbol id="i-receipt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z" /> <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" /> <path d="M12 17.5v-11" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /></symbol><symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" /> <path d="m21.854 2.147-10.94 10.939" /></symbol><symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-signature" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21 17-2.156-1.868A.5.5 0 0 0 18 15.5v.5a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1c0-2.545-3.991-3.97-8.5-4a1 1 0 0 0 0 5c4.153 0 4.745-11.295 5.708-13.5a2.5 2.5 0 1 1 3.31 3.284" /> <path d="M3 21h18" /></symbol><symbol id="i-split" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5" /> <path d="M8 3H3v5" /> <path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /> <path d="m15 9 6-6" /></symbol><symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" /></symbol><symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" /> <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" /> <path d="M4 22h16" /> <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" /> <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22" /> <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z" /></symbol><symbol id="i-undo-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14 4 9l5-5" /> <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11" /></symbol><symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" /> <circle cx="9" cy="7" r="4" /> <path d="M22 21v-2a4 4 0 0 0-3-3.87" /> <path d="M16 3.13a4 4 0 0 1 0 7.75" /></symbol><symbol id="i-wallet" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1" /> <path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4" /></symbol></svg><!--sprite:end-->
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Ledgendary home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Ledgendary</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="solo.html">Solo</a>
+      <a href="team.html" aria-current="page">Team</a>
+      <a href="enterprise.html">Enterprise</a>
+    </nav>
+    <a class="btn btn-sm" href="#finale">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero-grid">
+    <h1 id="hero-h"><span class="l">Your whole studio,</span> <span class="l">on one ledger.</span></h1>
+    <div class="hero-lower">
+      <div>
+        <p class="hero-sub">Everyone sees what their seat needs and <strong>nothing they shouldn't.</strong> Proposal to paid is one product, so nobody re-keys a figure between tools.</p>
+        <p class="season-line"><b>Season 1</b><span class="dot" aria-hidden="true"></span>7 episodes<span class="dot" aria-hidden="true"></span>Starring Lumen Studio</p>
+      </div>
+      <form class="wl" novalidate>
+        <div class="wl-row">
+          <label class="vh" for="wl-hero">Work email</label>
+          <input id="wl-hero" type="email" name="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="wl-hero-note">
+          <button class="btn" type="submit">Join the waitlist</button>
+        </div>
+        <p class="wl-note" id="wl-hero-note" aria-live="polite">Invite-only alpha. One email when your invite is ready.</p>
+      </form>
+    </div>
+
+    <div class="recap" data-recap aria-labelledby="recap-h">
+      <div class="recap-head">
+        <p class="recap-title" id="recap-h">Previously on…</p>
+        <button class="icon-btn recap-toggle" type="button"></button>
+        <span class="tag">Demo data</span>
+      </div>
+      <div class="recap-bar" role="group" aria-label="Recap frames">
+        <button class="recap-seg" type="button" aria-label="Frame 1: Proposal picked"><i></i></button>
+        <button class="recap-seg" type="button" aria-label="Frame 2: Hours logged"><i></i></button>
+        <button class="recap-seg" type="button" aria-label="Frame 3: Invoice sent"><i></i></button>
+        <button class="recap-seg" type="button" aria-label="Frame 4: Wait for it"><i></i></button>
+        <button class="recap-seg" type="button" aria-label="Frame 5: Paid"><i></i></button>
+      </div>
+      <p class="vh recap-live" aria-live="polite"></p>
+      <ol class="recap-frames">
+        <li class="frame" data-field="peach" aria-label="Proposal picked: Northwind picks option B, $30,000 plus time">
+          <p class="frame-label"><span class="ix">1</span>Proposal picked</p>
+          <div class="frame-body">
+            <span class="frame-opt pick"><span>B, picked by Dana</span><span class="money">$30,000 + time</span></span>
+            <span class="frame-row"><span>Est. time</span><b class="dur">80 h</b></span>
+            <span class="frame-row"><span>Est. total</span><b class="money">$42,000</b></span>
+          </div>
+        </li>
+        <li class="frame" data-field="sky" aria-label="Hours logged: Theo 41 h 45 m and Priya 38 h 15 m">
+          <p class="frame-label"><span class="ix">2</span>Hours logged</p>
+          <div class="frame-body">
+            <span class="frame-row"><span class="who"><span class="av mint">TB</span>Theo</span><b class="dur">41 h 45 m</b></span>
+            <span class="frame-row"><span class="who"><span class="av lilac">PN</span>Priya</span><b class="dur">38 h 15 m</b></span>
+            <span class="frame-row"><span>Approved</span><span class="chip ok">80 h</span></span>
+          </div>
+        </li>
+        <li class="frame" data-field="mint" aria-label="Invoice sent: INV-0042, $42,000.00">
+          <p class="frame-label"><span class="ix">3</span>Invoice sent</p>
+          <div class="frame-body">
+            <span class="frame-big money">$42,000.00</span>
+            <span class="frame-row"><span>INV-0042</span><span class="chip sent">Sent</span></span>
+            <span>To Northwind Co, card or bank</span>
+          </div>
+        </li>
+        <li class="frame" data-field="lilac" aria-label="Wait for it">
+          <p class="frame-label"><span class="ix">4</span>Dana opens it</p>
+          <div class="frame-body">
+            <span class="wait">wait for <span class="nowrap">it<i>.</i><i>.</i><i>.</i></span></span>
+            <span>Viewed in the client portal</span>
+          </div>
+        </li>
+        <li class="frame" data-field="tomato" aria-label="Paid: $42,000.00 by bank">
+          <p class="frame-label"><span class="ix">5</span>Paid</p>
+          <div class="frame-body">
+            <span class="paid-stamp"><svg class="icon" aria-hidden="true"><use href="#i-check-check"></use></svg>Paid</span>
+            <span class="frame-row"><span>By bank</span><b class="money">$42,000.00</b></span>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<div class="wrap season">
+  <nav class="index" aria-label="Season index">
+    <p class="index-title">Season 1</p>
+    <p class="index-sub">Lumen Studio, five seats, one Northwind job.</p>
+    <ol>
+      <li class="index-fill" aria-hidden="true"></li>
+      <li><a href="#e01" data-field="sky"><span class="index-pin">E01</span><span class="index-t">Four seats</span></a></li>
+      <li><a href="#e02" data-field="sky"><span class="index-pin">E02</span><span class="index-t">The week gets locked</span></a></li>
+      <li><a href="#e03" data-field="peach"><span class="index-pin">E03</span><span class="index-t">Northwind says yes</span></a></li>
+      <li><a href="#e04" data-field="mint"><span class="index-pin">E04</span><span class="index-t">Hours become the invoice</span></a></li>
+      <li><a href="#e05" data-field="sky"><span class="index-pin">E05</span><span class="index-t">Money asks who you are</span></a></li>
+      <li><a href="#e06" data-field="lilac"><span class="index-pin">E06</span><span class="index-t">The bill isn't an expense</span></a></li>
+      <li><a href="#e07" data-field="sky"><span class="index-pin">E07</span><span class="index-t">High five</span></a></li>
+    </ol>
+  </nav>
+
+  <div class="episodes">
+
+    <!-- E01 · Seats -->
+    <section class="ep" id="e01" data-field="sky" aria-labelledby="e01-h">
+      <header class="tc">
+        <h2 id="e01-h"><span class="sxe">S01E01</span><span class="tt">The One With Four Seats</span></h2>
+        <p class="tc-lede">Owner, administrator, member, accountant. Each seat opens the same studio and sees what it needs. Members see only the projects they're on, and the accountant reads everything and changes nothing.</p>
+        <p class="tc-wink">The playbook: everyone sees their seat, and nothing else.</p>
+      </header>
+      <div class="demo" data-demo="choice" data-start="1">
+        <div class="beats">
+          <ol aria-label="View the studio as">
+            <li><button class="beat" type="button" data-go="1" data-cap="Maya, owner: approvals, money and every project."><span class="av peach">MO</span>Owner</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Sam, administrator: the same approvals and money screens as the owner."><span class="av sky">SO</span>Administrator</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="Theo, member: his own time and the two projects he's on. No approvals, no invoice drafts, no money."><span class="av mint">TB</span>Member</button></li>
+            <li><button class="beat" type="button" data-go="4" data-cap="Jules, accountant: every report and every entry, read only. Nothing here changes anything."><span class="av">JC</span>Accountant</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs crumb-swap">
+              <span data-at="1 2 3" data-default><span>Projects</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Northwind · Site build</b></span>
+              <span data-at="4"><span>Reports</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Receivables</b></span>
+            </span>
+            <span class="bar-end"><span class="tag">Demo data</span>
+              <span class="swap end">
+                <span class="who" data-at="1" data-default><span class="ph-hide sm">Maya Ortiz · Owner</span><span class="av peach">MO</span></span>
+                <span class="who" data-at="2"><span class="ph-hide sm">Sam Okafor · Administrator</span><span class="av sky">SO</span></span>
+                <span class="who" data-at="3"><span class="ph-hide sm">Theo Brandt · Member</span><span class="av mint">TB</span></span>
+                <span class="who" data-at="4"><span class="ph-hide sm">Jules Carter · Accountant</span><span class="av">JC</span></span>
+              </span>
+            </span>
+          </div>
+          <div class="win-split">
+            <div class="win-side swap">
+              <div data-at="1 2" data-default>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-house"></use></svg>Home</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-file-pen-line"></use></svg>Proposals</span>
+                <span class="sn on"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>Projects · 6</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Time</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-clipboard-check"></use></svg>Approvals · 2</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-file-text"></use></svg>Invoices</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg>Bills</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-chart-column"></use></svg>Reports</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-users"></use></svg>People</span>
+              </div>
+              <div data-at="3">
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-house"></use></svg>Home</span>
+                <span class="sn on"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>Projects · 2</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Time</span>
+              </div>
+              <div data-at="4">
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-house"></use></svg>Home</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-file-text"></use></svg>Invoices</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg>Bills</span>
+                <span class="sn on"><svg class="icon" aria-hidden="true"><use href="#i-chart-column"></use></svg>Reports</span>
+                <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-book-open"></use></svg>Journal</span>
+              </div>
+            </div>
+            <div class="win-main swap">
+              <div data-at="1 2" data-default>
+                <div class="w-h">
+                  <div><p class="w-title">Northwind Co · Site build</p><p class="w-sub">Option B: $30,000 + time · est. <span class="dur">80 h</span> · est. total $42,000.00</p></div>
+                  <span class="chip ok">Active</span>
+                </div>
+                <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-clipboard-check"></use></svg>Approvals · week of Nov 3</p>
+                <table class="tbl">
+                  <tbody>
+                    <tr><td><span class="who"><span class="av mint">TB</span>Theo Brandt</span></td><td class="r dur">41 h 45 m</td><td class="r"><span class="fbtn">Approve</span></td></tr>
+                    <tr><td><span class="who"><span class="av lilac">PN</span>Priya Nair</span></td><td class="r dur">38 h 15 m</td><td class="r"><span class="fbtn">Approve</span></td></tr>
+                  </tbody>
+                  <tfoot><tr><td>Submitted</td><td class="r dur">80 h</td><td></td></tr></tfoot>
+                </table>
+                <p class="w-sec mt"><svg class="icon" aria-hidden="true"><use href="#i-coins"></use></svg>Budget</p>
+                <div class="row between sm"><span>Logged against the estimate</span><b><span class="dur">80 h</span> of <span class="dur">80 h</span></b></div>
+              </div>
+              <div data-at="3">
+                <div class="w-h">
+                  <div><p class="w-title">Northwind Co · Site build</p><p class="w-sub">You're on this project</p></div>
+                  <span class="chip ok">Active</span>
+                </div>
+                <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Your time · week of Nov 3</p>
+                <div class="row between sm"><span><b class="dur">41 h 45 m</b> on Site build</span><span class="chip sky">Submitted</span></div>
+                <p class="w-sec mt"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>Your projects</p>
+                <table class="tbl">
+                  <tbody>
+                    <tr><td>Northwind Co · Site build</td><td class="r"><span class="chip ok">Active</span></td></tr>
+                    <tr><td>Harbor Coffee · Menu refresh</td><td class="r"><span class="chip ok">Active</span></td></tr>
+                  </tbody>
+                </table>
+                <p class="note sky mt"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg><span>Theo sees the two projects he's on. The studio has six.</span></p>
+              </div>
+              <div data-at="4">
+                <div class="w-h">
+                  <div><p class="w-title">Receivables</p><p class="w-sub">As of Nov 7, 2026</p></div>
+                  <span class="chip lilac"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>Read only</span>
+                </div>
+                <table class="tbl">
+                  <thead><tr><th>Client</th><th>Oldest</th><th class="r">Owed</th></tr></thead>
+                  <tbody>
+                    <tr><td>Halden &amp; Co</td><td>Current</td><td class="r money">$6,400.00</td></tr>
+                    <tr><td>Orbit Labs</td><td>1 to 30 days</td><td class="r money">$3,150.00</td></tr>
+                    <tr><td>Pell &amp; Co</td><td>61 to 90 days</td><td class="r money">$850.00</td></tr>
+                  </tbody>
+                  <tfoot><tr><td colspan="2">Owed</td><td class="r money">$10,400.00</td></tr></tfoot>
+                </table>
+                <p class="note lilac mt"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg><span>Every report, every entry. There's no button on this seat that changes anything.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>Maya, owner: approvals, money and every project.</span></p>
+      </div>
+    </section>
+
+    <!-- E02 · Timesheets -->
+    <section class="ep" id="e02" data-field="sky" aria-labelledby="e02-h">
+      <header class="tc">
+        <h2 id="e02-h"><span class="sxe">S01E02</span><span class="tt">The One Where the Week Gets Locked</span></h2>
+        <p class="tc-lede">People log a weekly grid. A calendar event can become a private draft that only its owner sees, not even the studio's owner. The person submits the week, an owner or administrator approves it, and an approved week locks.</p>
+        <p class="tc-wink">Haaaave you met your team's timesheets?</p>
+      </header>
+      <div class="demo" data-demo>
+        <div class="beats">
+          <button class="icon-btn beat-play" type="button"></button>
+          <ol aria-label="Episode beats">
+            <li><button class="beat" type="button" data-go="1" data-cap="Theo's week: 41 h 45 m on Site build, and a private calendar draft that only Theo can see."><span class="n">1</span>Theo's week</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Theo submits 41 h 45 m. He leaves the draft alone, so it stays private and out of the total."><span class="n">2</span>Submit</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="Sam, administrator, opens approvals: two weeks, 80 h, and nothing private in sight."><span class="n">3</span>Sam reviews</button></li>
+            <li><button class="beat" type="button" data-go="4" data-cap="Sam approves both weeks. Approved weeks lock."><span class="n">4</span>Approved, locked</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs crumb-swap">
+              <span data-until="2"><span>Time</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Week of Nov 3</b></span>
+              <span data-from="3"><span>Approvals</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Week of Nov 3</b></span>
+            </span>
+            <span class="bar-end"><span class="tag">Demo data</span>
+              <span class="swap end">
+                <span class="who" data-until="2"><span class="ph-hide sm">Theo Brandt</span><span class="av mint">TB</span></span>
+                <span class="who" data-from="3"><span class="ph-hide sm">Sam Okafor</span><span class="av sky">SO</span></span>
+              </span>
+            </span>
+          </div>
+          <div class="win-body swap">
+            <div data-until="2">
+              <div class="w-h">
+                <div><p class="w-title">Northwind Co · Site build</p><p class="w-sub">Week of Nov 3 · Theo Brandt</p></div>
+                <span class="swap"><span class="chip draft" data-until="1">Not submitted</span><span class="chip sky rise" data-from="2">Submitted</span></span>
+              </div>
+              <div class="two">
+              <div>
+              <div class="day-row"><span class="d">Mon<small>Nov 3</small></span><span class="day-bar" aria-hidden="true"><i style="width:85%"></i></span><span class="h">8 h 30 m</span></div>
+              <div class="day-row"><span class="d">Tue<small>Nov 4</small></span><span class="day-bar" aria-hidden="true"><i style="width:87.5%"></i></span><span class="h">8 h 45 m</span></div>
+              <div class="day-row"><span class="d">Wed<small>Nov 5</small></span><span class="day-bar" aria-hidden="true"><i style="width:82.5%"></i></span><span class="h">8 h 15 m</span></div>
+              <div class="day-row"><span class="d">Thu<small>Nov 6</small></span><span class="day-bar" aria-hidden="true"><i style="width:85%"></i></span><span class="h">8 h 30 m</span></div>
+              <div class="day-row"><span class="d">Fri<small>Nov 7</small></span><span class="day-bar" aria-hidden="true"><i style="width:77.5%"></i></span><span class="h">7 h 45 m</span></div>
+              <div class="total-line"><span>Week total</span><span class="dur">41 h 45 m</span></div>
+              </div>
+              <div>
+              <div class="draft-row">
+                <svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg>
+                <span class="grow"><b>Dentist</b><br><span class="meta">From Theo's calendar · Thu 4:00 PM · <span class="dur">1 h</span> · private draft, only Theo sees it</span></span>
+                <span class="swap"><span class="fbtn" data-until="1">Accept</span><span class="chip draft rise" data-from="2">Left private</span></span>
+              </div>
+              <div class="swap mt">
+                <div class="row between" data-until="1"><span class="sm muted">Submitting sends the week to an owner or administrator.</span><span class="fbtn go" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg>Submit week</span></div>
+                <p class="note sky rise" data-from="2"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span><b>Submitted Nov 7.</b> The draft stays private and isn't part of the week.</span></p>
+              </div>
+              <p class="sm muted mt ph-hide">Calendar capture keeps a title and a duration. Attendees, descriptions and links never come across.</p>
+              </div>
+            </div>
+            </div>
+            <div data-from="3">
+              <div class="w-h">
+                <div><p class="w-title">Approvals</p><p class="w-sub">Week of Nov 3 · Lumen Studio</p></div>
+                <span class="swap"><span class="chip sky" data-until="3">2 waiting</span><span class="chip ok rise" data-from="4">All approved</span></span>
+              </div>
+              <div class="two">
+              <div>
+              <table class="tbl">
+                <thead><tr><th>Person</th><th class="r">Hours</th><th class="r">Status</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="who"><span class="av mint">TB</span><span>Theo Brandt<span class="sm">Site build</span></span></span></td><td class="r dur">41 h 45 m</td><td class="r"><span class="swap end"><span class="fbtn" data-until="3" data-press="4">Approve</span><span class="chip lock rise" data-from="4"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></span></td></tr>
+                  <tr><td><span class="who"><span class="av lilac">PN</span><span>Priya Nair<span class="sm">Site build</span></span></span></td><td class="r dur">38 h 15 m</td><td class="r"><span class="swap end"><span class="fbtn" data-until="3">Approve</span><span class="chip lock rise" data-from="4"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></span></td></tr>
+                </tbody>
+                <tfoot><tr><td>Week of Nov 3</td><td class="r dur">80 h</td><td></td></tr></tfoot>
+              </table>
+              <div class="swap mt">
+                <p class="note" data-until="3"><svg class="icon" aria-hidden="true"><use href="#i-clipboard-check"></use></svg><span>Owners and administrators approve weeks. Members never see this screen.</span></p>
+                <p class="note lilac rise" data-from="4"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg><span><b>Approved by Sam Okafor, Nov 10.</b> Both weeks are locked. Their 80 hours are ready to bill.</span></p>
+              </div>
+              </div>
+              <div>
+              <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Theo Brandt, by day</p>
+              <table class="tbl">
+                <tbody>
+                  <tr><td>Mon, Nov 3</td><td class="r dur">8 h 30 m</td></tr>
+                  <tr><td>Tue, Nov 4</td><td class="r dur">8 h 45 m</td></tr>
+                  <tr><td>Wed, Nov 5</td><td class="r dur">8 h 15 m</td></tr>
+                  <tr><td>Thu, Nov 6</td><td class="r dur">8 h 30 m</td></tr>
+                  <tr><td>Fri, Nov 7</td><td class="r dur">7 h 45 m</td></tr>
+                </tbody>
+                <tfoot><tr><td>Theo's week</td><td class="r dur">41 h 45 m</td></tr></tfoot>
+              </table>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>Sam approves both weeks. Approved weeks lock.</span></p>
+      </div>
+    </section>
+
+    <!-- E03 · Portal -->
+    <section class="ep" id="e03" data-field="peach" aria-labelledby="e03-h">
+      <header class="tc">
+        <h2 id="e03-h"><span class="sxe">S01E03</span><span class="tt">The One Where Northwind Says Yes</span></h2>
+        <p class="tc-lede">In the client portal, clients pick an option, sign and pay. The signature keeps their name and the moment. Their address and browser are kept only as a keyed fingerprint, never the raw values.</p>
+        <p class="tc-wink">Kids, this is the story of how Northwind said yes.</p>
+      </header>
+      <div class="demo" data-demo>
+        <div class="beats">
+          <button class="icon-btn beat-play" type="button"></button>
+          <ol aria-label="Episode beats">
+            <li><button class="beat" type="button" data-go="1" data-cap="Dana Whitfield opens P-0019 in the portal: three options for the Northwind site."><span class="n">1</span>Three options</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Dana picks option B and signs."><span class="n">2</span>Pick and sign</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="What Lumen keeps: Dana's name, the moment, and a keyed fingerprint instead of her address and browser."><span class="n">3</span>What's kept</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs crumb-swap">
+              <span data-until="2"><span>Client portal</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>P-0019</b></span>
+              <span data-from="3"><span>Proposals</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>P-0019</b></span>
+            </span>
+            <span class="bar-end"><span class="tag">Demo data</span>
+              <span class="swap end">
+                <span class="who" data-until="2"><span class="ph-hide sm">Dana Whitfield · Northwind</span><span class="av peach">DW</span></span>
+                <span class="who" data-from="3"><span class="ph-hide sm">Sam Okafor</span><span class="av sky">SO</span></span>
+              </span>
+            </span>
+          </div>
+          <div class="win-body">
+            <div class="w-h">
+              <div><p class="w-title">Northwind Co · Site build</p><p class="w-sub">Proposal P-0019 from Lumen Studio</p></div>
+              <span class="swap"><span class="chip sent" data-until="1">Awaiting your choice</span><span class="chip ok rise" data-from="2"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Accepted · option B</span></span>
+            </div>
+            <div class="opts">
+              <div class="opt">
+                <p class="opt-h"><span>A · Site, fixed</span></p>
+                <p class="opt-price money">$26,000</p>
+                <ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Design and build, fixed fee</li></ul>
+              </div>
+              <div class="opt">
+                <span class="ring rise" data-from="2"></span>
+                <p class="opt-h"><span>B · Site and time</span><span class="chip paid rise" data-from="2">Picked</span></p>
+                <p class="opt-price money">$30,000 <span class="sm muted">+ time</span></p>
+                <ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span>Est. <span class="dur">80 h</span> at $150, est. $42,000</span></li></ul>
+              </div>
+              <div class="opt">
+                <p class="opt-h"><span>C · Site, time, care</span></p>
+                <p class="opt-price money">$30,000 <span class="sm muted">+ time + $1,500/mo</span></p>
+                <ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>B, plus a monthly care plan</li></ul>
+              </div>
+            </div>
+            <div class="swap mt">
+              <div class="row between" data-until="1"><span class="sm muted">Pick one option, then sign to accept it.</span><span class="fbtn go" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-signature"></use></svg>Sign and accept</span></div>
+              <div class="row rise" data-at="2"><span class="sig">Dana Whitfield</span><span class="sm"><b>Signed</b> · Oct 27, 10:12 AM</span></div>
+              <div class="rise" data-from="3">
+                <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-fingerprint"></use></svg>Signature record</p>
+                <dl class="kv">
+                  <dt>Signed by</dt><dd>Dana Whitfield, Northwind Co</dd>
+                  <dt>When</dt><dd>Oct 27, 2026, 10:12 AM</dd>
+                  <dt>Address and browser</dt><dd>Keyed fingerprint <span class="hash">k·7f3a…e19c</span>, never the raw values</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>What Lumen keeps: Dana's name, the moment, and a keyed fingerprint instead of her address and browser.</span></p>
+      </div>
+    </section>
+
+    <!-- E04 · Hours to invoice -->
+    <section class="ep" id="e04" data-field="mint" aria-labelledby="e04-h">
+      <header class="tc">
+        <h2 id="e04-h"><span class="sxe">S01E04</span><span class="tt">The One Where the Hours Become the Invoice</span></h2>
+        <p class="tc-lede">Approved hours flow onto the invoice, priced at the agreed rate, next to the fixed fee the client picked. Once an entry is invoiced it takes a note and nothing else, so the invoice and the timesheet never disagree.</p>
+        <p class="tc-wink">True story: month end without a spreadsheet.</p>
+      </header>
+      <div class="demo" data-demo>
+        <div class="beats">
+          <button class="icon-btn beat-play" type="button"></button>
+          <ol aria-label="Episode beats">
+            <li><button class="beat" type="button" data-go="1" data-cap="80 approved hours are waiting to be billed on Northwind's site build."><span class="n">1</span>Approved hours</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Sam builds the invoice draft: the option B fee plus both people's hours at $150. Total $42,000.00."><span class="n">2</span>Draft</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="INV-0042 is sent on Nov 10 and posts JE-1041."><span class="n">3</span>Sent</button></li>
+            <li><button class="beat" type="button" data-go="4" data-cap="Northwind pays $42,000.00 by bank on Nov 20. JE-1042 posts the payment."><span class="n">4</span>Paid</button></li>
+            <li><button class="beat" type="button" data-go="5" data-cap="Theo opens an invoiced entry: the hours are locked, and he can add a note."><span class="n">5</span>Notes only</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs crumb-swap">
+              <span data-until="2"><span>Invoices</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>New</b></span>
+              <span data-at="3 4"><span>Invoices</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>INV-0042</b></span>
+              <span data-from="5"><span>Time</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Mon, Nov 3</b></span>
+            </span>
+            <span class="bar-end"><span class="tag">Demo data</span>
+              <span class="swap end">
+                <span class="who" data-until="4"><span class="ph-hide sm">Sam Okafor</span><span class="av sky">SO</span></span>
+                <span class="who" data-from="5"><span class="ph-hide sm">Theo Brandt</span><span class="av mint">TB</span></span>
+              </span>
+            </span>
+          </div>
+          <div class="win-body swap">
+            <div data-until="4">
+              <div class="w-h">
+                <div>
+                  <p class="w-title swap"><span data-until="2">Invoice draft · Northwind Co</span><span data-from="3">INV-0042 · Northwind Co</span></p>
+                  <p class="w-sub swap"><span data-until="2">Site build · not issued</span><span data-from="3">Issued Nov 10 · due Dec 10</span></p>
+                </div>
+                <span class="swap">
+                  <span class="chip draft" data-until="2">Draft</span>
+                  <span class="chip sent rise" data-at="3">Sent</span>
+                  <span class="big-stamp" data-from="4"><svg class="icon" aria-hidden="true"><use href="#i-check-check"></use></svg>Paid</span>
+                </span>
+              </div>
+              <div class="two">
+                <div>
+                  <table class="tbl">
+                    <thead><tr><th>Line</th><th class="r">Amount</th></tr></thead>
+                    <tbody>
+                      <tr><td>Site build, option B fixed fee</td><td class="r"><span class="swap end"><span class="money muted" data-until="1">not yet added</span><span class="money rise" data-from="2">$30,000.00</span></span></td></tr>
+                      <tr><td>Theo Brandt, <span class="dur">41 h 45 m</span> at $150</td><td class="r"><span class="swap end"><span class="money muted" data-until="1">not yet added</span><span class="money rise" data-from="2">$6,262.50</span></span></td></tr>
+                      <tr><td>Priya Nair, <span class="dur">38 h 15 m</span> at $150</td><td class="r"><span class="swap end"><span class="money muted" data-until="1">not yet added</span><span class="money rise" data-from="2">$5,737.50</span></span></td></tr>
+                    </tbody>
+                  </table>
+                  <div class="total-line"><span>Total</span><span class="swap end"><span class="money" data-until="1">$0.00</span><span class="money rise" data-from="2">$42,000.00</span></span></div>
+                </div>
+                <div>
+                  <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-book-open"></use></svg>Journal</p>
+                  <div class="swap">
+                    <p class="note" data-until="2"><svg class="icon" aria-hidden="true"><use href="#i-file-text"></use></svg><span>A draft posts nothing. The books hear about it when it's sent.</span></p>
+                    <div class="chain rise" data-from="3">
+                      <div class="chain-row" style="grid-template-columns:76px minmax(0,1fr) auto"><span class="id">JE-1041</span><span class="what">INV-0042 sent<small>Nov 10 · receivable up</small></span><span class="money b">$42,000.00</span></div>
+                      <div class="chain-row" style="grid-template-columns:76px minmax(0,1fr) auto">
+                        <span class="id swap"><span data-until="3" class="muted">JE-1042</span><span data-from="4">JE-1042</span></span>
+                        <span class="what swap"><span data-until="3" class="muted">Payment, when it arrives</span><span data-from="4" class="rise">Payment by bank<small>Nov 20 · receivable settled</small></span></span>
+                        <span class="swap"><span data-until="3" class="muted">&nbsp;</span><span class="money b rise" data-from="4">$42,000.00</span></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div data-from="5">
+              <div class="w-h">
+                <div><p class="w-title">Mon, Nov 3 · Site build</p><p class="w-sub">Theo Brandt · invoiced on INV-0042</p></div>
+                <span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Invoiced</span>
+              </div>
+              <dl class="kv">
+                <dt>Hours</dt><dd class="row"><span class="dur">8 h 30 m</span><span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></dd>
+                <dt>Project</dt><dd class="row">Northwind Co · Site build<span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></dd>
+                <dt>Billable</dt><dd class="row">Yes<span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></dd>
+                <dt>Note</dt><dd>Homepage build and the staging review with Dana.</dd>
+              </dl>
+              <p class="note mint mt"><svg class="icon" aria-hidden="true"><use href="#i-pen-line"></use></svg><span>Invoiced entries take a note and nothing else. The hours stay what the invoice was built from.</span></p>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>Theo opens an invoiced entry: the hours are locked, and he can add a note.</span></p>
+      </div>
+    </section>
+
+    <!-- E05 · Step-up -->
+    <section class="ep" id="e05" data-field="sky" aria-labelledby="e05-h">
+      <header class="tc">
+        <h2 id="e05-h"><span class="sxe">S01E05</span><span class="tt">The One Where Money Asks Who You Are</span></h2>
+        <p class="tc-lede">Voids, write-offs, refunds, and closing or reopening a period all take money off the books or freeze them, so each one asks the person to confirm who they are again first: a password, a passkey or an emailed code.</p>
+        <p class="tc-wink">Suit up: anything that takes money off the books checks it's really you.</p>
+      </header>
+      <div class="demo" data-demo>
+        <div class="beats">
+          <button class="icon-btn beat-play" type="button"></button>
+          <ol aria-label="Episode beats">
+            <li><button class="beat" type="button" data-go="1" data-cap="INV-0038 to Pell &amp; Co, $850.00, is over 90 days late. Sam chooses to write it off."><span class="n">1</span>Write off</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Before anything posts, Ledgendary asks Sam to confirm it's him."><span class="n">2</span>Confirm it's you</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="Sam confirms with a passkey. The write-off posts as JE-1043, and the receipt says who confirmed it."><span class="n">3</span>Written off</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs"><span>Invoices</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>INV-0038</b></span>
+            <span class="bar-end"><span class="tag">Demo data</span><span class="who"><span class="ph-hide sm">Sam Okafor</span><span class="av sky">SO</span></span></span>
+          </div>
+          <div class="win-body two">
+            <div>
+              <div class="w-h">
+                <div><p class="w-title">INV-0038 · Pell &amp; Co</p><p class="w-sub">Issued Jul 14 · due Aug 13</p></div>
+                <span class="swap"><span class="chip due" data-until="2">Over 90 days</span><span class="chip lilac rise" data-from="3">Written off</span></span>
+              </div>
+              <div class="row between sm"><span>Owed</span><span class="swap end"><b class="money" data-until="2">$850.00</b><b class="money rise" data-from="3">$0.00</b></span></div>
+              <div class="swap mt">
+                <div class="row" data-until="1"><span class="fbtn" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-file-x"></use></svg>Write off $850.00</span></div>
+                <div class="stepup rise" data-at="2">
+                  <p class="stepup-h"><svg class="icon" aria-hidden="true"><use href="#i-lock-keyhole"></use></svg>Confirm it's you, Sam</p>
+                  <p class="sm">Writing off $850.00 takes it off the books.</p>
+                  <div class="stepup-opts"><span class="stepup-opt on"><svg class="icon" aria-hidden="true"><use href="#i-fingerprint"></use></svg>Passkey</span><span class="stepup-opt"><svg class="icon" aria-hidden="true"><use href="#i-key-round"></use></svg>Password</span><span class="stepup-opt"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>Emailed code</span></div>
+                </div>
+                <div class="stack rise" data-from="3">
+                  <span class="stamp-by"><svg class="icon" aria-hidden="true"><use href="#i-shield-check"></use></svg>Confirmed by Sam Okafor with a passkey · Nov 21, 4:12 PM</span>
+                  <table class="tbl">
+                    <thead><tr><th>JE-1043 · write-off</th><th class="r">Debit</th><th class="r">Credit</th></tr></thead>
+                    <tbody>
+                      <tr><td>Bad debt</td><td class="r money">850.00</td><td></td></tr>
+                      <tr><td>Accounts receivable</td><td></td><td class="r money">850.00</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-lock-keyhole"></use></svg>Asks who you are first</p>
+              <ul class="log">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-ban"></use></svg><span>Void an invoice</span><span class="chip lilac">Step-up</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-file-x"></use></svg><span>Write off a debt</span><span class="chip lilac">Step-up</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-undo-2"></use></svg><span>Refund a payment</span><span class="chip lilac">Step-up</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg><span>Close a period</span><span class="chip lilac">Step-up</span></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg><span>Reopen a period</span><span class="chip lilac">Step-up</span></li>
+              </ul>
+              <p class="sm muted mt">A written-off invoice is final: it takes no payment and no void afterwards.</p>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>Sam confirms with a passkey. The write-off posts as JE-1043, and the receipt says who confirmed it.</span></p>
+      </div>
+    </section>
+
+    <!-- E06 · Bills and vendors -->
+    <section class="ep" id="e06" data-field="lilac" aria-labelledby="e06-h">
+      <header class="tc">
+        <h2 id="e06-h"><span class="sxe">S01E06</span><span class="tt">The One Where the Bill Isn't an Expense</span></h2>
+        <p class="tc-lede">Vendors get a W-9 lifecycle you can follow, and their full tax id is never stored, only its kind and last four digits. A bill books what you owe; paying it moves cash and never doubles as an expense, so spend is counted once.</p>
+      </header>
+      <div class="demo" data-demo>
+        <div class="beats">
+          <button class="icon-btn beat-play" type="button"></button>
+          <ol aria-label="Episode beats">
+            <li><button class="beat" type="button" data-go="1" data-cap="Kestrel Photo's W-9: requested Oct 2, received Oct 6. Only the kind of number and its last four are kept."><span class="n">1</span>The W-9</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Sam pays Kestrel's $3,200.00 bill from the bank on Nov 21."><span class="n">2</span>Pay the bill</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="November spend is still $4,340.00. The payment moved cash; no expense was created."><span class="n">3</span>Counted once</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs"><span>Vendors</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Kestrel Photo</b></span>
+            <span class="bar-end"><span class="tag">Demo data</span><span class="who"><span class="ph-hide sm">Sam Okafor</span><span class="av sky">SO</span></span></span>
+          </div>
+          <div class="win-body two">
+            <div>
+              <div class="w-h">
+                <div><p class="w-title">Kestrel Photo</p><p class="w-sub">Ana Ruiz · photography contractor</p></div>
+                <span class="chip ok">W-9 received</span>
+              </div>
+              <ul class="log">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg><span>W-9 requested</span><time>Oct 2</time></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-inbox"></use></svg><span>W-9 received</span><time>Oct 6</time></li>
+              </ul>
+              <dl class="kv mt">
+                <dt>Tax id</dt><dd>SSN · ending 4417</dd>
+                <dt>Full number</dt><dd>Never stored. There's no field for it.</dd>
+              </dl>
+              <p class="w-sec mt"><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg>Bill · Northwind shoot</p>
+              <div class="row between sm"><span>Received Nov 4 · due Nov 30</span><b class="money">$3,200.00</b></div>
+              <div class="swap mt-s">
+                <div class="row between" data-until="1"><span class="chip due">Owed</span><span class="fbtn go" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-landmark"></use></svg>Pay from bank</span></div>
+                <div class="row rise" data-from="2"><span class="chip ok"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Paid Nov 21 · from bank</span></div>
+              </div>
+            </div>
+            <div>
+              <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-wallet"></use></svg>November spend</p>
+              <table class="tbl">
+                <tbody>
+                  <tr><td>Bills<span class="sm">Kestrel Photo</span></td><td class="r money">$3,200.00</td></tr>
+                  <tr><td>Expenses<span class="sm">Software, travel, a hard drive</span></td><td class="r money">$1,140.00</td></tr>
+                </tbody>
+                <tfoot><tr><td>Spend</td><td class="r money">$4,340.00</td></tr></tfoot>
+              </table>
+              <div class="swap mt">
+                <p class="note" data-until="1"><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg><span>The bill was booked when Kestrel's invoice arrived on Nov 4.</span></p>
+                <p class="note sky rise" data-at="2"><svg class="icon" aria-hidden="true"><use href="#i-landmark"></use></svg><span>Cash out: $3,200.00 to Kestrel Photo. The amount owed to Kestrel drops to $0.00.</span></p>
+                <p class="note mint rise" data-from="3"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg><span><b>Expenses still $1,140.00.</b> Paying the bill didn't add one, so the shoot is counted once.</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>November spend is still $4,340.00. The payment moved cash; no expense was created.</span></p>
+      </div>
+    </section>
+
+    <!-- E07 · Milestones -->
+    <section class="ep" id="e07" data-field="sky" aria-labelledby="e07-h">
+      <header class="tc">
+        <h2 id="e07-h"><span class="sxe">S01E07</span><span class="tt">The One With the High Five</span></h2>
+        <p class="tc-lede">Turn milestones on and the studio's good weeks get noticed, with reactions from the team. Real badges only: first week submitted, 12 weeks on schedule, a month of timesheets.</p>
+        <p class="tc-wink">High five.</p>
+      </header>
+      <div class="demo" data-demo>
+        <div class="beats">
+          <button class="icon-btn beat-play" type="button"></button>
+          <ol aria-label="Episode beats">
+            <li><button class="beat" type="button" data-go="1" data-cap="11 weeks in a row submitted on schedule. The week of Nov 3 would make 12."><span class="n">1</span>11 in a row</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Both weeks are in on time. 12 weeks on schedule: earned."><span class="n">2</span>12 weeks</button></li>
+            <li><button class="beat" type="button" data-go="3" data-cap="Sam, Theo and Priya react."><span class="n">3</span>Reactions</button></li>
+          </ol>
+        </div>
+        <div class="win">
+          <div class="win-bar">
+            <span class="org"><span class="org-mark" style="background:var(--sky)">LS</span><span class="org-name">Lumen Studio</span></span>
+            <span class="crumbs"><span>Home</span><svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg><b>Milestones</b></span>
+            <span class="bar-end"><span class="tag">Demo data</span><span class="who"><span class="ph-hide sm">Maya Ortiz</span><span class="av peach">MO</span></span></span>
+          </div>
+          <div class="win-body">
+            <div class="swap">
+              <p class="note sky" data-until="1"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"></use></svg><span>Weeks on schedule: <b>11 of 12</b>. The week of Nov 3 is due Friday.</span></p>
+              <div class="celebrate rise" data-from="2">
+                <span class="badge-ic" style="background:var(--tomato)"><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg></span>
+                <span><span class="big">High five, Lumen.</span><br><span class="sm">12 weeks on schedule. Every week since August, in on time.</span></span>
+              </div>
+            </div>
+            <div class="swap mt">
+              <p class="sm muted" data-until="2">Reactions appear here.</p>
+              <div class="reacts rise" data-from="3">
+                <span class="react"><span class="av sky">SO</span>Sam <svg class="icon" aria-hidden="true"><use href="#i-hand"></use></svg></span>
+                <span class="react"><span class="av mint">TB</span>Theo <svg class="icon" aria-hidden="true"><use href="#i-party-popper"></use></svg></span>
+                <span class="react"><span class="av lilac">PN</span>Priya <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg></span>
+              </div>
+            </div>
+            <div class="badge-grid mt">
+              <div class="badge got"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg></span><span>First week submitted<small>Earned</small></span></div>
+              <div class="badge got"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg></span><span>A month of timesheets<small>Earned</small></span></div>
+              <div class="swap">
+                <div class="badge" data-until="1"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"></use></svg></span><span>12 weeks on schedule<small>11 of 12</small></span></div>
+                <div class="badge new rise" data-from="2"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-calendar-check"></use></svg></span><span>12 weeks on schedule<small>Earned today</small></span></div>
+              </div>
+              <div class="badge got"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-signature"></use></svg></span><span>First estimate accepted<small>Earned</small></span></div>
+              <div class="badge got"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-banknote"></use></svg></span><span>First payment<small>Earned</small></span></div>
+              <div class="badge got"><span class="badge-ic"><svg class="icon" aria-hidden="true"><use href="#i-coins"></use></svg></span><span>10 payments<small>Earned</small></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="beat-cap"><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span>Sam, Theo and Priya react.</span></p>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<section class="special" aria-labelledby="sp-h">
+  <div class="wrap special-grid">
+    <div>
+      <h2 id="sp-h"><span class="sxe">Special</span>The one without the handoffs.</h2>
+      <p class="special-lede">Most studios run the money path through three tools and a spreadsheet that one person understands. Every handoff is a figure typed again, by somebody with better things to do.</p>
+    </div>
+    <div class="ways">
+      <div class="way">
+        <h3><svg class="icon" aria-hidden="true"><use href="#i-split"></use></svg>Three tools and a spreadsheet</h3>
+        <p class="path broken"><span class="chip">Proposal</span><span class="gap-note">retype</span><span class="chip">Timesheet</span><span class="gap-note">export</span><span class="chip">Invoice</span><span class="gap-note">import</span><span class="chip">Books</span></p>
+        <p>Hours are copied onto invoices by hand, rates drift, and the accountant gets a zip file at month end.</p>
+      </div>
+      <div class="way">
+        <h3><svg class="icon" aria-hidden="true"><use href="#i-link-2"></use></svg>One ledger</h3>
+        <p class="path"><span class="chip peach">Proposal</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span class="chip sky">Approved hours</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span class="chip mint">Invoice</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span class="chip paid">Paid</span><svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg><span class="chip lilac">Books</span></p>
+        <p>The option Northwind picked is the fee line, the approved weeks are the hours, the payment is the posting, and Jules reads the same books everyone else does.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="finale" id="finale" aria-labelledby="fin-h">
+  <div class="wrap">
+    <div class="finale-box">
+      <div>
+        <h2 id="fin-h"><span class="sxe">Season finale</span>It's going to be legendary. Bring the whole studio.</h2>
+        <p>Ledgendary is in an invite-only alpha. Join the waitlist and we'll email you when your studio's invite is ready.</p>
+      </div>
+      <form class="wl" novalidate>
+        <div class="wl-row">
+          <label class="vh" for="wl-fin">Work email</label>
+          <input id="wl-fin" type="email" name="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="wl-fin-note">
+          <button class="btn" type="submit">Join the waitlist</button>
+        </div>
+        <p class="wl-note" id="wl-fin-note" aria-live="polite">Invite-only alpha. One email when your invite is ready.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Ledgendary</a>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="solo.html">Solo</a>
+      <a href="team.html">Team</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="#finale">Join the waitlist</a>
+    </nav>
+    <small>Every product window on this page shows demo data.</small>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

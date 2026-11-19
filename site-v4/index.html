@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgendary · Pick your season</title>
+<meta name="description" content="Ledgendary takes an agency's money from the first proposal to cash in the bank, on one ledger. Pick the season for your size: solo, team or enterprise. Invite-only alpha.">
+<link rel="preload" href="fonts/Gabarito-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--sprite:start--><!-- Icons: lucide-static 0.460.0, ISC licence --><svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14" /> <path d="m12 5 7 7-7 7" /></symbol><symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-circle-alert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></symbol><symbol id="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="4" width="4" height="16" rx="1" /> <rect x="6" y="4" width="4" height="16" rx="1" /></symbol><symbol id="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="6 3 20 12 6 21 6 3" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /></symbol></svg><!--sprite:end-->
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html" aria-label="Ledgendary home"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Ledgendary</a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="solo.html">Solo</a>
+      <a href="team.html">Team</a>
+      <a href="enterprise.html">Enterprise</a>
+    </nav>
+    <a class="btn btn-sm" href="#finale">Join the waitlist</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <h1 id="hero-h"><span class="l">Win the work.</span> <span class="l">Get paid. Keep the books.</span></h1>
+      <div class="hero-lower" style="margin-top:28px">
+        <p class="hero-sub">One ledger from the first proposal to the money in the bank. Same story at every size, so <strong>pick your season.</strong></p>
+        <p class="season-line" style="margin-top:0"><b>Three seasons</b><span class="dot" aria-hidden="true"></span>25 episodes<span class="dot" aria-hidden="true"></span>Demo data throughout</p>
+      </div>
+      <div class="list-eps">
+        <a class="season-card" href="solo.html" style="background:var(--peach)">
+          <h2>Solo</h2>
+          <p>One person. Books like an empire. Proposals with options, invoices that pay themselves, and an accountant who changes nothing.</p>
+          <span class="go">8 episodes <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span>
+        </a>
+        <a class="season-card" href="team.html" style="background:var(--sky)">
+          <h2>Team</h2>
+          <p>Your whole studio, on one ledger. Seats that see what they need, weeks that lock, hours that become the invoice.</p>
+          <span class="go">7 episodes <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span>
+        </a>
+        <a class="season-card" href="enterprise.html" style="background:var(--lilac)">
+          <h2>Enterprise</h2>
+          <p>Books you can prove. Nothing posted is ever edited, and the chain is signed by someone who isn't us.</p>
+          <span class="go">10 episodes <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="finale" id="finale" aria-labelledby="fin-h">
+    <div class="wrap">
+      <div class="finale-box">
+        <div>
+          <h2 id="fin-h"><span class="sxe">Coming soon</span>Suit up. The alpha is invite only.</h2>
+          <p>Join the waitlist and we'll email you when your invite is ready.</p>
+        </div>
+        <form class="wl" novalidate>
+          <div class="wl-row">
+            <label class="vh" for="wl-fin">Work email</label>
+            <input id="wl-fin" type="email" name="email" autocomplete="email" placeholder="you@studio.com" aria-describedby="wl-fin-note">
+            <button class="btn" type="submit">Join the waitlist</button>
+          </div>
+          <p class="wl-note" id="wl-fin-note" aria-live="polite">Invite-only alpha. One email when your invite is ready.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Ledgendary</a>
+    <nav aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="solo.html">Solo</a>
+      <a href="team.html">Team</a>
+      <a href="enterprise.html">Enterprise</a>
+      <a href="#finale">Join the waitlist</a>
+    </nav>
+    <small>Every product window on this site shows demo data.</small>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
