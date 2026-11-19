@@ -195,7 +195,7 @@ components:
     padding: "16px"
 ---
 
-<!-- Scope: this file records the v3 home in site-v3/ only. It is one of competing alternates (v1 lives in site/, v2 in site-v2/, each in its own world) and makes no claim on the project as a whole. Derived from the shipped site-v3/styles.css, site-v3/index.html and site-v3/app.js as finished on 2026-11-18 after the finish review and its fix round. The stylesheet layers a finish-round block over earlier declarations; every value here is the final cascaded one. Where the direction contract (.impeccable/surfaces/site-v3-index-html.md) and the build diverge, the build is recorded and the divergence noted. -->
+<!-- Scope: this file records the v3 look in site-v3/ only: the home (index.html) and the three audience pages (solo.html, team.html, enterprise.html). It is one of competing alternates (v1 lives in site/, v2 in site-v2/, each in its own world) and makes no claim on the project as a whole. Derived from the shipped site-v3/styles.css, site-v3/audiences.css, the four HTML pages, site-v3/app.js and site-v3/audiences.js at 5a2fceb (audience pages after their review rounds). audiences.css loads after styles.css and extends it; its review blocks are scoped to the audience pages (`.aud`) and win over earlier declarations. The stylesheet layers a finish-round block over earlier declarations; every value here is the final cascaded one. Where the direction contract (.impeccable/surfaces/site-v3-index-html.md) and the build diverge, the build is recorded and the divergence noted. -->
 
 # Design System: Ledgendary marketing home (v3)
 
@@ -209,10 +209,13 @@ The page is a date. The first chapter pins a product canvas under a horizontal r
 
 Type is one variable family, Bricolage Grotesque, used on its width axis: statements condensed (75 to 82%) and heavy (740 to 760), dates condensed and light (300), everything read at full width and 400 to 650. Numbers in columns and money are tabular.
 
+The audience pages (solo, team, enterprise) carry the same idea per audience: each hero pins its own rail over any number of days (enterprise jumps nine years to 2036 across a hatched gap) with a product frame whose panes follow the date, then feature sections in which a copy column sits beside one window, a seat switcher, an as-of scrubber over a month, and a comparison table. Inside every audience window the content is rows and plain blocks under hairlines, never boxes inside the box.
+
 **Key Characteristics:**
 - Evening ground everywhere; depth from tonal steps of one green and 1px inset lines, not from light sections or glow.
 - Coral is now and paid: the scrubbers, today, Paid, the received figure and the primary button. Ink on coral.
 - Mint is a quiet second signal for done (signed, approved, success), as text or a 12% tint, never a fill under text.
+- Refusal salmon (`err`) is the product's no: text and icons only.
 - Bricolage Grotesque on its width axis: condensed heavy statements, condensed light dates, full-width text.
 - Every product surface carries "Demo data" and the same job: Lumen Studio, Northwind Co, P-0018, INV-0042, $42,000.
 
@@ -225,7 +228,7 @@ A single green-black hue stepped into grounds and lines, warm off-white for read
 - **Coral Hi** (`coral-hi`): the coral button's hover only.
 
 ### Secondary
-- **Done Mint** (`mint` on `mint-bg`): signed, approved and on-track states inside product surfaces (done tool button, ok pill, job dot, success check in the waitlist message, trial-balance total, the "who sees it" yes row). Text or a 12% tint; never a solid fill.
+- **Done Mint** (`mint` on `mint-bg`): signed, approved and on-track states inside product surfaces (done tool button, ok pill, job dot, success check in the waitlist message, trial-balance total, the "who sees it" yes row). Text or a 12% tint; a solid mint fill appears only on marks with no text on them (job dots, switch knobs, the twelve-week streak cells), never under text.
 
 ### Neutral
 - **Evening Ground** (`ground`): every section ground, the nav, the browser chrome colour. `ink` is the same value used as text on coral and off-white.
@@ -235,10 +238,12 @@ A single green-black hue stepped into grounds and lines, warm off-white for read
 - **Warm Off-white** (`text`): headings and primary text; the focus outline; small selected-state fills only (pressed tool button, recommended option letter, workspace mark, chosen radio, the hours bar).
 - **Text 2** (`text-2`): nav links, secondary emphasis, the resting date numeral.
 - **Muted / Muted 2** (`mut`, `mut-2`): ledes, meta, labels, captions; inactive and future states (future event chips, zero figures, placeholders, struck calendar fields).
-- **Error** (`err`): the invalid waitlist field's 2px ring and message.
+- **Refusal Salmon** (`err`): what the system said no to. The invalid waitlist field's 2px ring and message; on audience pages the refusal heading icon, the "Refused" status text and icons of refused checks, a refused locked-week message icon, and the heading of a failed anchor check.
 
 ### Named Rules
 **The Evening Ground Rule.** Every section sits on `ground`. Surfaces step up through `inset`, `panel` and `panel-2`; off-white is never a surface or section ground, only text and fills no larger than a chip or a progress bar.
+
+**The Salmon Says No Rule.** A refusal or an invalid entry is told in `err`, as text, an icon or a 2px ring, on a calm `panel-2` or ground; never as a fill, never as a border on a row, and never for anything that is merely pending or overdue. Coral says paid, mint says done, salmon says refused.
 
 **The Coral Is Now and Paid Rule.** Coral marks the current date and settled money, plus the one primary action. It is a fill carrying `ink`, or the scrubber's own marker and fill line; never coral text on the dark ground and never a decorative coral border.
 
@@ -273,20 +278,26 @@ One centred container of 1312px with a fluid gutter (clamp 16 to 64px) under a s
 
 The hero is a grid: headline left, a 440px column with lede and waitlist right, bottom-aligned. Below it the story stage pins under the nav for the chapter's scroll length: a 300px left column (date readout over title, caption, received figure, hint) beside the rail, and the product frame (184px sidebar, flexible main, 236px activity) beneath the rail, capped at 580px tall. Scroll speed is weighted per day so the wait between Sent and Paid scrolls slowest.
 
-Breakpoints: 1360px collapses the app sidebar to a 56px icon rail, narrows the stage column to 260px and shortens event chip labels; 1100px drops the activity column and stacks the hero, section heads, books grid and closing call; 720px un-pins the frame into flowing screens, hides rail chips and intermediate dates, inlines captions, hides the received figure and tally, and stacks every grid.
+Audience heroes reuse the stage with a rail over any number of days; a skipped stretch is one hatched day-width band (135deg 14% `mut` stripes) with its label in `mut-2`. Feature sections are a split of copy (5fr) beside one window (7fr) at 64px, alternating sides, or a duo or trio of windows at 16px.
+
+Breakpoints: 1360px collapses the app sidebar to a 56px icon rail, narrows the stage column to 260px and shortens event chip labels; 1100px drops the activity column and stacks the hero, section heads, books grid and closing call; 720px un-pins the frame into flowing screens, hides rail chips and intermediate dates, inlines captions, hides the received figure and tally, and stacks every grid. On audience pages 720px also hides the nav links (the footer carries them, with the current page in off-white), reduces breadcrumbs to the current item, and stacks money tables (below).
+
+**The Money Column Stays Rule.** On a phone a table holding money never drops a column: each row becomes a wrapped line with the name left and the amount right, the amount labelled from its column head, and the remaining columns as small `mut` meta prefixed with their own label. A non-money column (a date, a team) may be hidden; a figure may not.
 
 ## Elevation & Depth
 
-Flat by tone. Depth is the green stepping up from `ground` through `inset`, `panel` and `panel-2`, outlined by 1px inset rings (`box-shadow: inset 0 0 0 1px`) rather than borders. Exactly three surfaces cast a shadow: the pinned product frame and the two large windows (books, playbook), each a single soft, deep, negatively spread drop. Coral controls on the rail are separated from the ground by a ground-coloured ring, not a glow. Nothing glows, nothing is frosted, nothing has a hard offset shadow.
+Flat by tone. Depth is the green stepping up from `ground` through `inset`, `panel` and `panel-2`, outlined by 1px inset rings (`box-shadow: inset 0 0 0 1px`) rather than borders. Only product windows cast a shadow: the pinned product frame and every standalone window (the home's books and playbook, each feature window on the audience pages), each a single soft, deep, negatively spread drop. Coral controls on the rail are separated from the ground by a ground-coloured ring, not a glow. Nothing glows, nothing is frosted, nothing has a hard offset shadow.
 
 ### Shadow Vocabulary
 - **Frame** (`box-shadow: inset 0 0 0 1px #24332c, 0 30px 60px -24px rgba(0, 0, 0, .7)`): the pinned product frame.
-- **Window** (`box-shadow: inset 0 0 0 1px #24332c, 0 30px 60px -30px rgba(0, 0, 0, .6)`): the books and playbook windows.
+- **Window** (`box-shadow: inset 0 0 0 1px #24332c, 0 30px 60px -30px rgba(0, 0, 0, .6)`): every standalone window.
 - **Ring** (`box-shadow: inset 0 0 0 1px` in `line` or `line-2`): every card, control, chip and tag.
 - **Knob** (`box-shadow: 0 0 0 4px #0e1613, 0 2px 8px rgba(0, 0, 0, .5)`): the scrubber knob; the as-of thumb and the rest marker use the ring without the drop.
 
 ### Named Rules
-**The Lines, Not Lifts Rule.** Containers are separated by tone and a 1px inset ring. A cast shadow belongs only to the three product windows; cards inside them and sections around them stay flat.
+**The Lines, Not Lifts Rule.** Containers are separated by tone and a 1px inset ring. A cast shadow belongs only to product windows; everything inside them and the sections around them stay flat.
+
+**The Rows, Not Boxes Rule.** Inside an audience-page window nothing is boxed: panels, journal entries, chain rows, payment strips, messages, stamps and outcome blocks lose their fill, ring and radius and become rows under a 1px `line` top hairline. Rings stay only on controls (tool buttons, option tabs, the seat switcher trough, the URL bar, reaction pills). A not-yet row is a hairline row with a `mut-2` note, not a dashed box.
 
 ## Shapes
 
@@ -315,6 +326,7 @@ Small app-native corners on a short ladder: 5 to 6px for hash chips, option lett
 - **Signature field:** `inset`, 9px, `line-2` ring; the name wipes in left to right (clip-path, 700ms).
 
 ### Navigation
+- Audience pages carry Home, Solo, Team, Enterprise; the current page (`aria-current`) is off-white with a 2px underline at a 0.4em offset, in the nav and the footer.
 - Sticky, on `ground`, gaining a `line` border on scroll. Brand mark (a short off-white rule crossed by a coral tick) and a 750 wordmark at 85% width; three links in `text-2` that turn off-white and underline on hover; small coral button pushed right. Links hide at 720px. The footer repeats the brand over a `line` top border with `mut` links.
 
 ### Focus
@@ -326,8 +338,20 @@ Small app-native corners on a short ladder: 5 to 6px for hash chips, option lett
 ### As-of control (signature)
 - In the books window's inset bar: 23 cells drawn as one gradient strip with 2px gaps, filled in a mid green up to the latest posted day, and a coral cell-wide thumb ringed in `inset`. Quick tool buttons jump to Nov 6, 17 and 18. Aging, P&L and the journal below re-derive for that day; journal entries land with a short rise.
 
+### Seat switcher
+- A tablist trough (`inset`, 14px, `line` ring, 6px padding) of five (or four) equal tabs, each a 30px avatar with the name at 600 and the seat in 12px; the selected tab steps up to `panel-2` with a `line-2` ring. The window under it re-renders for that seat and states what the seat cannot do in plain words. Under 1100px the seat line drops; on phones each tab stacks avatar over name, and the four-seat version goes two by two.
+
+### As-of scrubber (audience pages)
+- The home's as-of control over a month or any number of days: equal cells with 2px `inset` gaps in mid green (#43594e), a coral thumb one cell wide ringed in `inset`, dates beneath in `mut`, and quick tool buttons whose pressed state inverts to off-white. Receivables, cash lines and the latest posted entry re-derive for the chosen day.
+
+### Refusal block
+- A row set headed by an `err` icon and an off-white heading ("Three layers, three refusals"), each layer a hairline row with an icon, a bold name, the reason and "Refused" in `err` on the right; below it, plain rows saying what is unchanged, and a muted note naming the way out.
+
+### Step-up
+- Inside the window, below the amount: a 15px/650 heading with a key icon, one muted line, and password / passkey / code as tool buttons; confirmed, the heading turns mint and a hairline stamp records who confirmed and how.
+
 ### Journal entry
-- `inset`, 10px, `line` ring, 12 to 14px padding; a 650 entry id, a `hash` chip (`panel-2`, `line-2` ring, 5px, tabular) and tabular debit and credit lines; a chain row under a hairline. Unposted slots are a dashed `line-2` outline with a `mut-2` note.
+- `inset`, 10px, `line` ring, 12 to 14px padding; a 650 entry id, a `hash` chip (`panel-2`, `line-2` ring, 5px, tabular) and tabular debit and credit lines; a chain row under a hairline. Unposted slots are a dashed `line-2` outline with a `mut-2` note on the home; inside audience windows the entry is a hairline row (The Rows, Not Boxes Rule).
 
 ### Motion
 - One easing, `cubic-bezier(.16, 1, .3, 1)`. Hover and press 150ms; state colour 250 to 350ms; captions, panes, entries and activity rows land in 320 to 500ms with a 6 to 8px rise; the signature wipes in 700ms. Reduced motion un-pins the stage, shows the Earlier / Later stepper and drops every duration to near zero; without JavaScript the panes stack as dated static screens.
@@ -342,6 +366,8 @@ Small app-native corners on a short ladder: 5 to 6px for hash chips, option lett
 - **Do** set figures in columns, totals and money in tabular numerals.
 - **Do** make product state a function of the date, and give it a finished static form under reduced motion and without JavaScript.
 - **Do** tag every product surface "Demo data" and keep the one job's names and figures.
+- **Do** tell a refusal in `err` text and icons, and keep everything inside an audience window as hairline rows.
+- **Do** stack money tables on phones so every figure keeps its column and its label.
 
 ### Don't:
 - **Don't** add a light section, or use off-white as a surface or section ground.
@@ -350,3 +376,5 @@ Small app-native corners on a short ladder: 5 to 6px for hash chips, option lett
 - **Don't** add uppercase tracked labels or eyebrows above headings; labels are sentence case.
 - **Don't** let the hero's date numeral scale past 1.3x or compete with the H1.
 - **Don't** use a wink in a primary button label.
+- **Don't** fill or box a refusal, or use `err` for pending or overdue.
+- **Don't** drop a money column on a phone.

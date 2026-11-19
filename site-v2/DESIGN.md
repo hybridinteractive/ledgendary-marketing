@@ -231,7 +231,7 @@ components:
     height: "38px"
 ---
 
-<!-- Scope: this file records the v2 home in site-v2/ only. It is one of competing alternates (v1 lives in site/, v3 in site-v3/, each in its own world) and makes no claim on the project as a whole. Derived from the shipped site-v2/styles.css, site-v2/index.html and site-v2/app.js as finished on 2026-11-18 after the finish review and its fix round. Where the review screenshots in .impeccable/review/v2-*.png disagree with the CSS (they were captured before the final stylesheet), the CSS wins. -->
+<!-- Scope: this file records the v2 look in site-v2/ only: the home (index.html) and the three audience pages (solo.html, team.html, enterprise.html). It is one of competing alternates (v1 lives in site/, v3 in site-v3/, each in its own world) and makes no claim on the project as a whole. Derived from the shipped site-v2/styles.css, site-v2/audiences.css, the four HTML pages, site-v2/app.js and site-v2/audiences.js at a8ffa2c (audience pages after their finish review). audiences.css loads after styles.css and only extends it. Where the review screenshots in .impeccable/review/v2-*.png disagree with the CSS (they were captured before the final stylesheet), the CSS wins. -->
 
 # Design System: Ledgendary marketing home (v2)
 
@@ -245,8 +245,10 @@ Every claim is a working product surface (client portal, studio invoice, timeshe
 
 Type is one superfamily: Funnel Display set heavy (750 to 800) and tight (-0.025 to -0.04em) for statements, titles and money; Funnel Sans for everything read and every control. Money is tabular wherever it appears.
 
+The audience pages (solo, team, enterprise) keep the same grammar at feature scale: a field hero with its own playable card, one blue chapter in the middle (the books for solo, the step-up gate for team, the outside anchor for enterprise), white feature sections in which the demo controls sit on paper, a comparison table, and the field closing call. Inside windows they add a step-up confirm, a seat switcher, status checklists and a dashed next-entry placeholder on the chain.
+
 **Key Characteristics:**
-- Drenched: ultramarine is the ground of three chapters, not an accent; white sections alternate with it.
+- Drenched: ultramarine is the ground of three chapters per page (hero, one middle chapter, closing call), not an accent; white sections alternate with it.
 - One accent, acid lime, as fill with ink text; the lime focus outline on blue is the single line use.
 - Product surfaces are white on every ground, with soft navy shadows on the field and lighter blue-tinted shadows on white.
 - Funnel Display heavy and tight for display and figures; Funnel Sans for reading and UI.
@@ -278,13 +280,14 @@ A cool ultramarine-and-ink system with one acid accent; app semantics (green, re
 
 ### App semantics (inside product surfaces and validation only)
 - **Green** (`green`, `green-text` on `green-bg`): signed, accepted, on-estimate.
-- **Red** (`red`): a tampered amount, a broken hash, a refusal message.
+- **Red** (`red`, on `red-wash` #fff0f1): a tampered amount, a broken hash, a refusal message, a void pill, a failed check, the bad window footer.
+- **Ink as locked** (`ink` fill, white text): the posted, approved and closed lock pills and a check that refused (ink disc). Ink, not red, says "this is final"; red says "this is wrong".
 - **Tamper Pink / Switch On** (`tamper-pink`, `switch-on`): the broken-chain outline and dashed link; the tamper switch when on. Pink rather than red because they sit on blue.
 - **Error Halo** (`error-halo`): the invalid waitlist field's halo and dot on blue.
 - **Amber** (`amber`): an over-estimate warning in the time sidebar.
 
 ### Named Rules
-**The Field Owns Three Rule.** Ultramarine drenches exactly the hero (with nav), the books chapter and the closing call. Story, time, scale and playbook are white, separated by 1px `line` hairlines. A fourth blue chapter is a change to the world, not a section choice.
+**The Field Owns Three Rule.** Ultramarine drenches exactly three chapters per page: the hero (with nav), one middle chapter and the closing call. On the home the middle chapter is the books; on solo the books, on team the step-up gate, on enterprise the outside anchor. Every other section is white, separated by 1px `line` hairlines. A fourth blue chapter is a change to the world, not a section choice.
 
 **The Lime Is a Stamp Rule.** Lime is a fill with ink text on it, on any ground. Never lime text, lime borders or lime lines, and never white on lime. The single exception is the keyboard focus outline (and the waitlist input's focus halo) on blue grounds, where lime reads at about 6:1.
 
@@ -309,7 +312,8 @@ A cool ultramarine-and-ink system with one acid accent; app semantics (green, re
 - **Body** (400, 17px, 1.55; 16px under 640px).
 - **UI** (13 to 15px inside windows, 1.55); buttons 650 at 16px.
 - **Label** (600, 12px, `ink-3`, sentence case): table headers and field labels.
-- **Role tag** (700, 11px, 0.04em, uppercase): only the Client / Studio / Books tags in the hero step track, and the 12px group heads in the time sidebar. Never above a heading.
+- **Role tag** (700, 11px, 0.04em, uppercase): only the role tags in a hero step track (Client / Studio / Books on the home, the audience's own roles on audience pages), and the 12px group heads in the home's time sidebar. Never above a heading.
+- **Window label** (600, 12px, `ink-3`, sentence case): every label inside an audience-page window, including the sidebar group heads, which the audience pages set in sentence case with no tracking.
 - **Signature** (Funnel Display 600 to 650, 1.25 to 1.375rem): a typed or recorded signature.
 
 ### Named Rules
@@ -325,7 +329,9 @@ The hero is a headline across the top-left, then lede, waitlist and a five-step 
 
 The story is a 520vh scroll with a sticky 100vh stage: the $42,000 figure stays centred while five screens slide in from alternating sides (72px offset) and out the other way; step pills track progress at the top right. The books chapter lays four journal entries in a row joined by 34px link columns.
 
-Breakpoints: 1180px stacks the hero and moves the track beside the copy, wraps the chain to two per row, stacks the time sidebar; 900px hides nav links, collapses every section grid to one column, and turns the story into stacked screens under a sticky ink pill carrying the lime figure; 640px stacks the waitlist form, hides the hero track and the studio rail, turns option cards into compact rows, verticalises the chain, and reflows the timesheet into per-person day grids.
+Audience feature sections are a duo: a sticky copy column (4.4fr) beside the window (7.6fr), with clamp(32px, 5vw, 80px) between; the middle blue chapter uses the same duo. Demo controls (prompt chip, ghost buttons) sit above a window on paper with a soft blue shadow and `line-2` ring instead of the field's.
+
+Breakpoints: 1180px stacks the hero and moves the track beside the copy, wraps the chain to two per row, stacks the time sidebar; 900px hides nav links, collapses every section grid to one column, and turns the story into stacked screens under a sticky ink pill carrying the lime figure; 640px stacks the waitlist form, hides the hero track and the studio rail, turns option cards into compact rows, verticalises the chain, and reflows the timesheet into per-person day grids. On audience pages 900px also stacks duos, window splits and seats, and 640px puts the seat switcher on its own full-width row, reduces breadcrumbs to the current item, verticalises the chain strip, stacks the comparison table into labelled rows and swaps the Merkle drawing for its phone version. Nav links are hidden under 900px on every page; the footer carries them.
 
 ## Elevation & Depth
 
@@ -375,6 +381,8 @@ Friendly app-native corners on a fixed ladder: 4 to 6px for marks, hash chips, t
 ### Navigation
 - On the field: lime brand mark and Funnel Display 800 wordmark, three links in `on-blue-2` at 550 (white and underlined on hover), small lime button pushed right. Not sticky. Links hide under 900px. Footer repeats the brand in ink on white with `ink-2` links that turn blue on hover.
 
+- **Current page:** on audience pages the current link (`aria-current`) is white with a 2px underline; Home, Solo, Team and Enterprise are the links.
+
 ### Focus
 - 3px solid outline, 3px offset, 6px radius. Blue (`blue`) on white and inside every white surface, including surfaces sitting on the field; lime on blue grounds. Option cards ring through `:has(input:focus-visible)`.
 
@@ -386,6 +394,18 @@ Friendly app-native corners on a fixed ladder: 4 to 6px for marks, hash chips, t
 
 ### Journal chain (signature)
 - White entries on the books field with tabular lines, a lime hash chip and the previous hash, joined by white link discs on a 55% white line; the next entry is a dashed outline placeholder. Tampering rings the entry in pink, turns the amount and hash red, breaks the link (dashed pink, red broken-link disc) and shows a white refusal panel in red; reversing fills the placeholder with a new entry instead.
+
+### Seat switcher
+- The segmented control (`seg-fill` trough, 9px, 3px inset) with an avatar and first name per option, labelled "Sitting as" or "Viewing as" in a bar under the window bar; the chosen option is white with the current-item shadow. Switching re-renders the project table and the "can" list beside it (lime disc for allowed, blue key disc for allowed-after-step-up, grey disc and muted text for not allowed) with a pop.
+
+### Step-up confirm
+- Not a modal: an opaque `panel` zone that takes the place of the window footer in the same grid cell, reserved at its tallest state. A Funnel Display 750 heading led by a blue key icon ("Confirm it's you, Sam") with the reason inline in Funnel Sans, then an ink "Use passkey" button and two tool buttons (password, emailed code); a chosen way takes the blue tool-button selected state. Confirmed, the footer docks in ink with a lime "Reversed today" chip. The blue chapter beside it lists the gated actions as 12% white pills.
+
+### Status checklist
+- Rows of a 30px disc, a two-line text and a status: grey disc pending, lime disc with ink check passed, ink disc refused, red disc wrong. Used for the three refusal layers, balance checkpoints, periods and the "can" list.
+
+### Chain strip
+- On a blue chapter, white entries (12px, field-small shadow) in a row joined by 2px 55% white links; the last is the next entry, drawn as a transparent 1.5px dashed 55% white outline with white title and `on-blue-2` note, saying what it will link to. Vertical on phones.
 
 ### Playbook list
 - Two-column list under a 2px ink rule; each row a 36px `blue-wash` glyph tile with a blue icon or small CSS-drawn motion glyph that animates only while the list is on screen; hover turns the tile lime.
@@ -399,6 +419,8 @@ Friendly app-native corners on a fixed ladder: 4 to 6px for marks, hash chips, t
 - **Do** set display, titles, prices and totals in Funnel Display 750 to 800 with negative tracking; keep reading text in Funnel Sans.
 - **Do** set every money figure in tabular numerals.
 - **Do** put every product claim in a white window with the "Demo data" tag and the same job's figures (Northwind Co, option B, $42,000).
+- **Do** gate money actions with the in-window step-up zone, never a modal over the page.
+- **Do** draw the next chain entry as a dashed outline before it exists.
 - **Do** let the visitor's click drive state, answer within 200 to 500ms on the shared easing, and give every interactive beat a finished static state under reduced motion.
 
 ### Don't:
@@ -406,5 +428,5 @@ Friendly app-native corners on a fixed ladder: 4 to 6px for marks, hash chips, t
 - **Don't** use green, red, pink or amber outside product surfaces, the tamper console and validation.
 - **Don't** add a fourth blue chapter or tint white sections blue.
 - **Don't** put shadows on section grounds or headings, or use hard offset shadows; panels on the field are inset.
-- **Don't** add uppercase tracked labels or eyebrows above headings; uppercase is limited to the step track's role tags and the time sidebar's group heads.
+- **Don't** add uppercase tracked labels or eyebrows above headings; uppercase is limited to the hero step track's role tags and the home time sidebar's group heads. Labels inside audience windows are sentence case.
 - **Don't** use a wink in a primary button label.

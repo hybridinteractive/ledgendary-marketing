@@ -1,8 +1,8 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-18T23:30:00Z",
+  "generatedAt": "2026-11-19T00:00:00Z",
   "title": "Design System: Ledgendary marketing home (v3)",
-  "scope": "site-v3/ only (v3 alternate). Not a project-wide system; site/ (v1) and site-v2/ are competing alternates in their own worlds. Derived from site-v3/styles.css, site-v3/index.html, site-v3/app.js as finished 2026-11-18 after the finish review and fix round. Values are the final cascaded ones (the stylesheet layers a finish-round block over earlier declarations).",
+  "scope": "site-v3/ only (v3 alternate): the home and the solo, team and enterprise audience pages. Not a project-wide system; site/ (v1) and site-v2/ are competing alternates in their own worlds. Derived from site-v3/styles.css, site-v3/audiences.css, the four HTML pages, site-v3/app.js and site-v3/audiences.js at 5a2fceb.",
   "extensions": {
     "colorMeta": {
       "ground": {
@@ -122,8 +122,9 @@
       },
       "err": {
         "role": "semantic",
-        "displayName": "Error",
-        "canonical": "#ffb4a3"
+        "displayName": "Refusal Salmon",
+        "canonical": "#ffb4a3",
+        "purpose": "Refusals and invalid entries, as text, icons or a 2px ring only."
       }
     },
     "typographyMeta": {
@@ -198,7 +199,7 @@
       {
         "name": "window",
         "value": "inset 0 0 0 1px #24332c, 0 30px 60px -30px rgba(0, 0, 0, .6)",
-        "purpose": "Books and playbook windows."
+        "purpose": "Every standalone window: the home books and playbook, and each feature window on the audience pages."
       },
       {
         "name": "ring",
@@ -287,7 +288,7 @@
       {
         "name": "phone",
         "value": "720px",
-        "purpose": "Frame un-pinned and flowing; rail chips and mid dates hidden; captions inline; figure and tally hidden; grids single column; nav 56px."
+        "purpose": "Frame un-pinned and flowing; rail chips and mid dates hidden; captions inline; figure and tally hidden; grids single column; nav 56px. Audience pages: nav links hidden (footer carries them), breadcrumbs reduced to the current item, money tables stack into labelled rows and never drop a figure, seat tabs stack avatar over name."
       }
     ]
   },
@@ -371,15 +372,40 @@
       "description": "The chapter's climax: a light zero that a coral fill wipes over as Nov 18 lands, scrub-linked.",
       "html": "<div class=\"ds-g\"><p class=\"ds-k\">Received on Site build</p><p class=\"ds-fig\"><span class=\"ds-zero\">$0</span><span class=\"ds-paid\" style=\"--c:.7\">$42,000</span></p></div>",
       "css": ":root{--ground:#0e1613;--inset:#121b17;--panel:#16211c;--panel-2:#1b2822;--line:#24332c;--line-2:#33463d;--text:#f3efe6;--text-2:#d3d6cd;--mut:#a9b8b0;--mut-2:#8a9c93;--coral:#ff6b4a;--coral-hi:#ff825f;--ink:#0e1613;--mint:#9fdcb9;--mint-bg:rgba(159,220,185,.12);--err:#ffb4a3;} .ds-g{background:#0e1613;color:#f3efe6;padding:24px;font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;} .ds-k{margin:0;font-size:13px;color:#a9b8b0;font-weight:550;} .ds-fig{position:relative;display:inline-block;margin:6px 0 0;font-size:3.5rem;line-height:1;font-weight:760;font-stretch:75%;letter-spacing:-.02em;font-variant-numeric:tabular-nums;} .ds-zero{display:inline-block;padding:4px 10px 6px 0;color:#8a9c93;font-weight:300;} .ds-paid{position:absolute;left:0;top:0;padding:4px 12px 6px;border-radius:10px;background:#ff6b4a;color:#0e1613;white-space:nowrap;clip-path:inset(0 calc((1 - var(--c,0)) * 100%) 0 0 round 10px);}"
+    },
+    {
+      "name": "Seat Switcher",
+      "kind": "chip",
+      "refersTo": "",
+      "description": "Tablist of seats over one window; the selected seat steps up to panel-2.",
+      "html": "<div class=\"ds-seg\" role=\"tablist\"><button role=\"tab\" aria-selected=\"false\"><i>MO</i><span><b>Maya</b><small>Owner</small></span></button><button role=\"tab\" aria-selected=\"true\"><i>SO</i><span><b>Sam</b><small>Administrator</small></span></button><button role=\"tab\" aria-selected=\"false\"><i>TB</i><span><b>Theo</b><small>Member</small></span></button><button role=\"tab\" aria-selected=\"false\"><i>JC</i><span><b>Jules</b><small>Accountant</small></span></button></div>",
+      "css": ".ds-seg { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; padding: 6px; border-radius: 14px; background: #121b17; box-shadow: inset 0 0 0 1px #24332c; font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; } .ds-seg button { display: flex; align-items: center; gap: 10px; min-height: 52px; padding: 8px 12px; border: 0; border-radius: 10px; background: transparent; color: #d3d6cd; text-align: left; cursor: pointer; font: inherit; transition: background-color .25s cubic-bezier(.16,1,.3,1); } .ds-seg button:hover { background: #16211c; } .ds-seg button[aria-selected=true] { background: #1b2822; color: #f3efe6; box-shadow: inset 0 0 0 1px #33463d; } .ds-seg button:focus-visible { outline: 2px solid #f3efe6; outline-offset: 3px; border-radius: 6px; } .ds-seg i { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: #1b2822; box-shadow: inset 0 0 0 1px #33463d; font-style: normal; font-size: 11px; font-weight: 650; color: #f3efe6; flex: none; } .ds-seg b { display: block; font-weight: 600; font-size: 14.5px; } .ds-seg small { display: block; font-size: 12px; color: #a9b8b0; }"
+    },
+    {
+      "name": "Refusal Rows",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A refusal inside an audience window: err icon and status text on hairline rows, no box.",
+      "html": "<div class=\"ds-rf\"><p class=\"ds-rf-h\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#ffb4a3\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m4.9 4.9 14.2 14.2\"/></svg>Three layers, three refusals</p><ul><li><span><b>The app</b> has no save for a posted entry</span><em>Refused</em></li><li><span><b>The model guard</b> refuses a write to a posted entry</span><em>Refused</em></li><li><span><b>A database trigger</b> refuses the update</span><em>Refused</em></li></ul></div>",
+      "css": ".ds-rf { padding: 16px 22px; background: #16211c; color: #d3d6cd; font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; font-size: 13.5px; } .ds-rf-h { display: flex; align-items: center; gap: 8px; margin: 0 0 6px; font-size: 12.5px; font-weight: 600; color: #f3efe6; } .ds-rf ul { list-style: none; margin: 0; padding: 0; } .ds-rf li { display: flex; justify-content: space-between; gap: 12px; align-items: center; min-height: 38px; padding: 7px 0; border-top: 1px solid #24332c; } .ds-rf li:first-child { border-top: 0; } .ds-rf b { color: #f3efe6; font-weight: 600; } .ds-rf em { font-style: normal; font-size: 13px; color: #ffb4a3; white-space: nowrap; }"
+    },
+    {
+      "name": "Phone Money Table",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "How a money table reads at 720px and below: every figure kept, labelled from its column.",
+      "html": "<div class=\"ds-pm\"><div class=\"ds-pm-r\"><b>Fixed fee</b><span class=\"ds-pm-a\"><small>Amount</small>$6,500.00</span><span class=\"ds-pm-m\"><i>Qty</i> 1 &middot; <i>Rate</i> $6,500.00</span></div><div class=\"ds-pm-r\"><b>Design hours</b><span class=\"ds-pm-a\"><small>Amount</small>$3,000.00</span><span class=\"ds-pm-m\"><i>Qty</i> 20 h &middot; <i>Rate</i> $150.00</span></div></div>",
+      "css": ".ds-pm { max-width: 360px; padding: 8px 16px; background: #16211c; color: #f3efe6; font-family: 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; font-size: 13px; } .ds-pm-r { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; row-gap: 2px; padding: 8px 0; border-bottom: 1px solid #24332c; } .ds-pm-r b { flex: 1 1 0; min-width: 0; font-weight: 600; } .ds-pm-a { text-align: right; font-variant-numeric: tabular-nums; font-weight: 650; } .ds-pm-a small { display: block; font-size: 11px; color: #8a9c93; font-weight: 500; } .ds-pm-m { flex-basis: 100%; font-size: 12px; color: #a9b8b0; font-variant-numeric: tabular-nums; } .ds-pm-m i { font-style: normal; color: #8a9c93; }"
     }
   ],
   "narrative": {
     "northStar": "Scroll Is Time",
-    "overview": "One evening, one ground. A deep green-black field runs edge to edge under every chapter; there are no light sections. The product is drawn in its own dark theme on that field: tonal steps of the same green (inset, panel, raised panel) separated by crisp 1px lines, with no glow, no neon edge and no glass. Warm off-white carries the text. One accent, signal coral, marks two things only: *now* (the scrubber, the current-date marker, today's column, the as-of thumb) and *settled* (Paid, the received figure, the primary button). Ink sits on coral, always.\n\nThe page is a date. The first chapter pins a product canvas under a horizontal rail from Oct 27 to Nov 18, and the canvas state is a pure function of that date: proposal, portal, timesheet and invoice panes swap as scroll moves the marker, the activity column fills, the tally and the received figure follow. A large light date numeral in the hero is the image; it settles into the chapter's readout as the stage pins. Later chapters repeat the idea at smaller scale: five seats read on Nov 18, a books window with its own date control reconstructs receivables, P&L and the journal as of any day, and the closing call ends on a rested rail at Nov 18, paid.\n\nType is one variable family, Bricolage Grotesque, used on its width axis: statements condensed (75 to 82%) and heavy (740 to 760), dates condensed and light (300), everything read at full width and 400 to 650. Numbers in columns and money are tabular.",
+    "overview": "One evening, one ground. A deep green-black field runs edge to edge under every chapter; there are no light sections. The product is drawn in its own dark theme on that field: tonal steps of the same green (inset, panel, raised panel) separated by crisp 1px lines, with no glow, no neon edge and no glass. Warm off-white carries the text. One accent, signal coral, marks two things only: *now* (the scrubber, the current-date marker, today's column, the as-of thumb) and *settled* (Paid, the received figure, the primary button). Ink sits on coral, always.\n\nThe page is a date. The first chapter pins a product canvas under a horizontal rail from Oct 27 to Nov 18, and the canvas state is a pure function of that date: proposal, portal, timesheet and invoice panes swap as scroll moves the marker, the activity column fills, the tally and the received figure follow. A large light date numeral in the hero is the image; it settles into the chapter's readout as the stage pins. Later chapters repeat the idea at smaller scale: five seats read on Nov 18, a books window with its own date control reconstructs receivables, P&L and the journal as of any day, and the closing call ends on a rested rail at Nov 18, paid.\n\nType is one variable family, Bricolage Grotesque, used on its width axis: statements condensed (75 to 82%) and heavy (740 to 760), dates condensed and light (300), everything read at full width and 400 to 650. Numbers in columns and money are tabular.\n\nThe audience pages (solo, team, enterprise) carry the same idea per audience: each hero pins its own rail over any number of days (enterprise jumps nine years to 2036 across a hatched gap) with a product frame whose panes follow the date, then feature sections in which a copy column sits beside one window, a seat switcher, an as-of scrubber over a month, and a comparison table. Inside every audience window the content is rows and plain blocks under hairlines, never boxes inside the box.",
     "keyCharacteristics": [
       "Evening ground everywhere; depth from tonal steps of one green and 1px inset lines, not from light sections or glow.",
       "Coral is now and paid: the scrubbers, today, Paid, the received figure and the primary button. Ink on coral.",
       "Mint is a quiet second signal for done (signed, approved, success), as text or a 12% tint, never a fill under text.",
+      "Refusal salmon (`err`) is the product's no: text and icons only.",
       "Bricolage Grotesque on its width axis: condensed heavy statements, condensed light dates, full-width text.",
       "Every product surface carries \"Demo data\" and the same job: Lumen Studio, Northwind Co, P-0018, INV-0042, $42,000."
     ],
@@ -387,6 +413,11 @@
       {
         "name": "The Evening Ground Rule",
         "body": "Every section sits on `ground`. Surfaces step up through `inset`, `panel` and `panel-2`; off-white is never a surface or section ground, only text and fills no larger than a chip or a progress bar.",
+        "section": "colors"
+      },
+      {
+        "name": "The Salmon Says No Rule",
+        "body": "A refusal or an invalid entry is told in `err`, as text, an icon or a 2px ring, on a calm `panel-2` or ground; never as a fill, never as a border on a row, and never for anything that is merely pending or overdue. Coral says paid, mint says done, salmon says refused.",
         "section": "colors"
       },
       {
@@ -405,8 +436,18 @@
         "section": "typography"
       },
       {
+        "name": "The Money Column Stays Rule",
+        "body": "On a phone a table holding money never drops a column: each row becomes a wrapped line with the name left and the amount right, the amount labelled from its column head, and the remaining columns as small `mut` meta prefixed with their own label. A non-money column (a date, a team) may be hidden; a figure may not.",
+        "section": "layout"
+      },
+      {
         "name": "The Lines, Not Lifts Rule",
-        "body": "Containers are separated by tone and a 1px inset ring. A cast shadow belongs only to the three product windows; cards inside them and sections around them stay flat.",
+        "body": "Containers are separated by tone and a 1px inset ring. A cast shadow belongs only to product windows; everything inside them and the sections around them stay flat.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Rows, Not Boxes Rule",
+        "body": "Inside an audience-page window nothing is boxed: panels, journal entries, chain rows, payment strips, messages, stamps and outcome blocks lose their fill, ring and radius and become rows under a 1px `line` top hairline. Rings stay only on controls (tool buttons, option tabs, the seat switcher trough, the URL bar, reaction pills). A not-yet row is a hairline row with a `mut-2` note, not a dashed box.",
         "section": "elevation"
       }
     ],
@@ -417,7 +458,9 @@
       "Do set statements condensed and heavy and dates condensed and light in Bricolage Grotesque; keep reading text at full width.",
       "Do set figures in columns, totals and money in tabular numerals.",
       "Do make product state a function of the date, and give it a finished static form under reduced motion and without JavaScript.",
-      "Do tag every product surface \"Demo data\" and keep the one job's names and figures."
+      "Do tag every product surface \"Demo data\" and keep the one job's names and figures.",
+      "Do tell a refusal in `err` text and icons, and keep everything inside an audience window as hairline rows.",
+      "Do stack money tables on phones so every figure keeps its column and its label."
     ],
     "donts": [
       "Don't add a light section, or use off-white as a surface or section ground.",
@@ -425,7 +468,9 @@
       "Don't add glow, neon edges, glass or hard offset shadows; cast shadows stay on the three product windows.",
       "Don't add uppercase tracked labels or eyebrows above headings; labels are sentence case.",
       "Don't let the hero's date numeral scale past 1.3x or compete with the H1.",
-      "Don't use a wink in a primary button label."
+      "Don't use a wink in a primary button label.",
+      "Don't fill or box a refusal, or use `err` for pending or overdue.",
+      "Don't drop a money column on a phone."
     ]
   }
 }

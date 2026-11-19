@@ -193,7 +193,7 @@ components:
     height: "34px"
 ---
 
-<!-- Scope: this file records the v1 home in site/ only. It is one of competing alternates (v2 lives in site-v2/ in a different world) and makes no claim on the project as a whole. Derived from the shipped site/styles.css, site/index.html and site/app.js at fcc4957. -->
+<!-- Scope: this file records the v1 look in site/ only: the home (index.html) and the three audience pages (solo.html, team.html, enterprise.html). It is one of competing alternates (v2 lives in site-v2/, v3 in site-v3/, each in its own world) and makes no claim on the project as a whole. Derived from the shipped site/styles.css, site/audiences.css, the four HTML pages, site/app.js and site/audiences.js at b597534. audiences.css loads after styles.css and only extends it. -->
 
 # Design System: Ledgendary marketing home (v1)
 
@@ -207,11 +207,13 @@ Type is one variable family, Mona Sans, used at two widths: wide, heavy and tigh
 
 Motion is narrative rather than decorative: rows rise in, a cursor moves and presses, a highlighter sweeps under a word, a gold flash marks the money landing, a journal line draws between entries. All of it collapses under reduced motion without hiding content.
 
+The audience pages (solo, team, enterprise) are the same world at feature scale: each opens on a hero window playing the audience's own moment, then alternates white and mist sections in which a copy column sits beside one product window per feature, reuses the home's sticky story chapter, and closes on a comparison table and the waitlist. Every refusal the product makes is drawn as an ink panel inside the light window, so "no" reads with the same weight as the books chapter.
+
 **Key Characteristics:**
 - One accent, gold, used as fill on light grounds; app semantics (green paid, blue selection, red error) live only inside product UI and form validation.
 - Two type registers from one family: wide display (wdth 112 to 125, weight 800) and normal-width reading text (wdth 100).
 - Product windows as the universal container, with labelled demo data.
-- Flat light sections separated by mist bands and 1px hairlines; one ink chapter.
+- Flat light sections separated by mist bands and 1px hairlines; one ink chapter per page, plus ink refusal panels inside windows.
 - Proportional figures by default; tabular figures only in columns.
 
 ## Colors
@@ -234,14 +236,16 @@ A cool neutral daylight palette with a single warm gold, plus app-semantic tints
 ### App semantics (inside product UI only)
 - **Paid Green** (`green` on `green-bg`): paid, signed, done.
 - **Selection Blue** (`blue`, `blue-text` on `blue-bg`): chosen option, viewing mode, demo cursor, caret.
-- **Error Red** (`red`): invalid waitlist field and its message, nothing else.
+- **Error Red** (`red`): invalid waitlist field and its message, nothing else. Refusals are ink and gold, not red.
 - **Neutral Grey** (`grey-bg`): neutral status pills and activity icons.
 
 ### The ink chapter
-- **Dark panels** (`d-panel`, `d-panel-2`) on the `ink` ground, separated by `d-line`, with `d-text` and `d-mut` for type. Used only for the books section and the docked books bar and mini journal lines inside the light windows.
+- **Dark panels** (`d-panel`, `d-panel-2`) on the `ink` ground, separated by `d-line`, with `d-text` and `d-mut` for type. Used for the ink chapter (the books on the home and solo pages, the tamper-evidence chapter on enterprise), and inside light windows only for the docked books bar, posted journal lines, the ink journal pane and refusal panels.
 
 ### Named Rules
-**The Highlighter Rule.** On light grounds gold is a fill (highlighter, button, chip, flash, dot), never a text or line colour: gold text on white is illegible. On the ink chapter gold may also colour a few marks (the chain line, fact icons, a refusal's key phrase) because there it is legible.
+**The Highlighter Rule.** On light grounds gold is a fill (highlighter, button, chip, flash, dot, and the 3px current-page band under a nav link), never a text or hairline colour: gold text on white is illegible. On ink grounds (the ink chapter and the ink panels inside windows) gold may also colour a few marks (the chain line, fact icons, a refusal's key phrase, a broken hash) because there it is legible.
+
+**The Refusal Is Ink Rule.** Whenever the product says no (an edit to a posted entry, a closed period, a locked week, a broken chain), the answer is an ink panel (`ink` ground, 12px corners on its own, 10px as an action row) inside the light window: `d-text` heading led by a gold ban icon, the reason as a gold key phrase, any layers as `d-panel-2` rows with a gold numbered square and a gold "Refused" chip carrying ink text, muted `d-mut` copy, and the way out as a gold button. Refusals never use red; red stays with form validation.
 
 **The Semantics Stay Inside Rule.** Green, blue and grey tints appear only inside product windows; red appears only for form validation. Marketing copy, headings and page chrome use ink, mist and gold alone.
 
@@ -276,7 +280,9 @@ The hero is left-aligned: headline, then a two-column row of lede and inline wai
 
 Two sticky patterns carry the interaction: the story window pins beside scrolling step text (top max(88px, 50vh - 240px)) and morphs between screens; the playbook preview pins at 100px beside its list.
 
-Breakpoints: 1320px narrows the hero window's rails; 1100px drops its sidebar; 860px collapses every grid to one column, stacks the form, hides nav links, inlines a window into each story step, and turns chip and role rows into horizontal scrollers.
+Audience pages reuse the container and section rhythm (128px, tighter 112px for paired sections). A feature section is a two-column split: copy (max 14ch heading, 44ch lede, a short icon point list) beside one product window, at 0.85fr/1.25fr and alternating sides; a pair grid holds two windows side by side at 24px. Story chapters pin the home's story window beside scrolling steps. Hero windows are sized to their tallest scene so no state leaves an empty floor.
+
+Breakpoints: 1320px narrows the hero window's rails; 1100px drops its sidebar; 860px collapses every grid to one column, stacks the form, hides nav links, inlines a window into each story step, and turns chip and role rows into horizontal scrollers. On audience pages at 860px the chip rows wrap instead of scrolling, seat tabs wrap two by two, the nav links drop to a second scrolling row under the bar, and a step-up confirm replaces the window's content rather than floating over it.
 
 ## Elevation & Depth
 
@@ -284,7 +290,7 @@ Mostly flat: sections are separated by tone (white, mist, ink) and hairlines. El
 
 ### Shadow Vocabulary
 - **Window** (`box-shadow: 0 1px 2px rgba(13,14,18,0.06), 0 12px 32px -8px rgba(13,14,18,0.14), 0 40px 80px -24px rgba(13,14,18,0.18)`): every product window.
-- **Pop** (`box-shadow: 0 2px 4px rgba(13,14,18,0.06), 0 16px 36px -10px rgba(13,14,18,0.22)`): a surface above a window (the client sheet, the derived calendar draft).
+- **Pop** (`box-shadow: 0 2px 4px rgba(13,14,18,0.06), 0 16px 36px -10px rgba(13,14,18,0.22)`): a surface above a window (the client sheet, the derived calendar draft, the step-up confirm card, an earned badge).
 - **Gold bevel** (`inset 0 -2px 0 rgba(13,14,18,0.12), 0 1px 2px rgba(13,14,18,0.1)`; hover adds `0 6px 16px -6px rgba(176,124,0,0.55)`): the gold button only.
 - **Current item** (`0 1px 2px rgba(13,14,18,0.08), 0 0 0 1px line`): the active sidebar or rail item, lifted white on mist.
 
@@ -318,13 +324,33 @@ Gently rounded, app-native corners on a fixed ladder: 4px (hash chips, checkboxe
 - **Focus:** ink border plus 4px gold halo. **Error:** red border, red halo, red message below. Success replaces the field row with an ink line led by a gold check disc, holding the same height.
 
 ### Navigation
-- **Style:** sticky 64px bar, 86% white with blur and saturate, wordmark at 800/wdth 116, links 15px/520 ink-2 to ink on hover, small gold button right. Gains a hairline once scrolled and turns ink (86% ink, d-mut links, gold focus) over the books chapter. Under 860px links hide and only wordmark and button remain.
+- **Style:** sticky 64px bar, 86% white with blur and saturate, wordmark at 800/wdth 116, links 15px/520 ink-2 to ink on hover, small gold button right. Gains a hairline once scrolled and turns ink (86% ink, d-mut links, gold focus) over an ink chapter.
+- **Links:** the home carries Product, The books, Solo, Team, Enterprise; audience pages carry Home, Solo, Team, Enterprise. The current page (`aria-current`) is ink at 650 with a 3px gold band under it (`d-text` over an ink chapter).
+- **Phone:** under 860px the home hides its links (the footer repeats them); audience pages keep theirs as a second 38px row under the bar that scrolls sideways.
+
+### Refusal panel (signature)
+- See The Refusal Is Ink Rule. Enters with a 460ms clip-path sheet rise; the refused target shakes once. In a story window it is an ink action row (`d-text` text, gold key phrase, gold button). On the enterprise tamper demo the broken entry takes a gold ring and its new hash becomes a gold outline chip.
+
+### Step-up confirm
+- Over a money action (void, write-off, refund, period close) a centred white card (12px, `line` border, pop shadow, max 360px) sits on a 78% mist scrim inside the window: a 40px gold disc with a key icon, a 16px/750 heading, one line of why, and passkey / password / code as UI buttons. On a phone it becomes the window's whole content, borderless.
+
+### Seat tabs
+- The role tabs from the home switch one window between owner, administrator, member and accountant; the window re-renders its project list, money actions and a seat note, and a seat that may not act shows a lock icon with a plain reason in place of the buttons.
+
+### Story chapters
+- Audience pages reuse the home's sticky story window and step list (wide 800 step headings, scrolling copy beside the pinned window); a progress track of dots joined by 2px lines turns ink as steps pass, and note cards (white, `line` border, 10px) carry a seat's comment.
+
+### Comparison table
+- A 2px ink top rule, three columns (row name, the usual way in ink-3, Ledgendary's way in ink at 550) on `line-2` hairlines; the last column takes a soft-gold sweep as it scrolls in. No rival names.
+
+### Badges and high fives
+- An earned badge is a white card with pop shadow and a 44px gold disc that pops in; an unearned one is quiet panel with a mist disc. The high-five toggle is a pill that fills gold when pressed.
 
 ### Status pills
 - 22px pills at 12px/600: green paid, blue sent/viewing, grey neutral.
 
 ### Journal chain (signature)
-- Dark entries (`d-panel`, 12px corners, d-line border) stacked with a gold dot per entry and a 2px gold line drawn between them; each entry shows lines with tabular amounts and a mono hash chip. An edit attempt shakes the target and opens a refusal panel (warm dark `#241d10` with gold key phrase); a reversal posts a new entry rather than changing the old one.
+- Dark entries (`d-panel`, 12px corners, d-line border) stacked with a gold dot per entry and a 2px gold line drawn between them; each entry shows lines with tabular amounts and a mono hash chip. An edit attempt shakes the target and opens a refusal panel (`d-panel-2` with a `d-line` border and a gold key phrase); a reversal posts a new entry rather than changing the old one.
 
 ### Highlighter (signature)
 - A gold band at 42% height behind one word of a display heading, sweeping in from 0% over 900ms. One per heading, on the payoff word.
@@ -339,6 +365,8 @@ Gently rounded, app-native corners on a fixed ladder: 4px (hash chips, checkboxe
 - **Do** keep the focus ring as 2px ink outline with gold halo on light, gold outline on the ink chapter.
 - **Do** use soft layered ink-tinted shadows for windows and popped surfaces only.
 - **Do** make every motion beat collapse under reduced motion with its content fully visible.
+- **Do** draw every refusal as an ink panel with a gold key phrase, gold "Refused" chips and a gold way out.
+- **Do** mark the current page in the nav with ink 650 text over a 3px gold band.
 
 ### Don't:
 - **Don't** set gold text or gold lines on white or mist.
@@ -347,3 +375,4 @@ Gently rounded, app-native corners on a fixed ladder: 4px (hash chips, checkboxe
 - **Don't** use hard offset shadows or shadows on section bands.
 - **Don't** add uppercase tracked labels or eyebrows above headings; the build has none.
 - **Don't** use tabular figures in prose or headline figures (the dotted zero).
+- **Don't** colour a refusal red; red belongs to form validation.
