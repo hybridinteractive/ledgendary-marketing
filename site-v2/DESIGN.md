@@ -312,7 +312,7 @@ A cool ultramarine-and-ink system with one acid accent; app semantics (green, re
 - **Body** (400, 17px, 1.55; 16px under 640px).
 - **UI** (13 to 15px inside windows, 1.55); buttons 650 at 16px.
 - **Label** (600, 12px, `ink-3`, sentence case): table headers and field labels.
-- **Role tag** (700, 11px, 0.04em, uppercase): only the role tags in a hero step track (Client / Studio / Books on the home, the audience's own roles on audience pages), and the 12px group heads in the home's time sidebar. Never above a heading.
+- **Role tag** (700, 11px, 0.04em, uppercase): only the role tags in a hero step track (Client / Studio / Books on the home, the audience's own roles on audience pages). The home time sidebar's group heads are 12px/600 sentence case, like every other window label. Never above a heading.
 - **Window label** (600, 12px, `ink-3`, sentence case): every label inside an audience-page window, including the sidebar group heads, which the audience pages set in sentence case with no tracking.
 - **Signature** (Funnel Display 600 to 650, 1.25 to 1.375rem): a typed or recorded signature.
 
@@ -428,5 +428,5 @@ Friendly app-native corners on a fixed ladder: 4 to 6px for marks, hash chips, t
 - **Don't** use green, red, pink or amber outside product surfaces, the tamper console and validation.
 - **Don't** add a fourth blue chapter or tint white sections blue.
 - **Don't** put shadows on section grounds or headings, or use hard offset shadows; panels on the field are inset.
-- **Don't** add uppercase tracked labels or eyebrows above headings; uppercase is limited to the hero step track's role tags and the home time sidebar's group heads. Labels inside audience windows are sentence case.
+- **Don't** add uppercase tracked labels or eyebrows above headings; uppercase is limited to the hero step track's role tags. Labels inside audience windows are sentence case.
 - **Don't** use a wink in a primary button label.

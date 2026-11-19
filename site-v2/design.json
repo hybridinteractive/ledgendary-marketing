@@ -51,7 +51,7 @@
       "ui": { "displayName": "UI", "purpose": "Text inside product windows, 13 to 15px." },
       "button": { "displayName": "Button", "purpose": "Every button label." },
       "label": { "displayName": "Label", "purpose": "Table headers and field labels; sentence case." },
-      "role-tag": { "displayName": "Role tag", "purpose": "Client / Studio / Books tags in the hero step track and time sidebar group heads only; uppercase, never above a heading." }
+      "role-tag": { "displayName": "Role tag", "purpose": "Client / Studio / Books tags in the hero step track only; uppercase, never above a heading." }
     },
     "fonts": [
       { "family": "Funnel Display", "source": "site-v2/fonts/FunnelDisplay-wght.woff2 (OFL)", "weight": "300 800", "display": "swap", "preload": true },
@@ -219,7 +219,7 @@
       "Don't use green, red, pink or amber outside product surfaces, the tamper console and validation.",
       "Don't add a fourth blue chapter or tint white sections blue.",
       "Don't put shadows on section grounds or headings, or use hard offset shadows; panels on the field are inset.",
-      "Don't add uppercase tracked labels or eyebrows above headings; uppercase is limited to the hero step track's role tags and the home time sidebar's group heads. Labels inside audience windows are sentence case.",
+      "Don't add uppercase tracked labels or eyebrows above headings; uppercase is limited to the hero step track's role tags. Labels inside audience windows are sentence case.",
       "Don't use a wink in a primary button label."
     ]
   }
