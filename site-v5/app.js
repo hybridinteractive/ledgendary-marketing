@@ -15,7 +15,7 @@
   /* ---------- Stacked tables: label each cell from its column head ---------- */
   doc.querySelectorAll("table.stack, table.hours.stack").forEach(function (t) {
     var heads = Array.prototype.map.call(t.querySelectorAll("thead th"), function (th) { return th.getAttribute("data-short") || th.textContent.trim(); });
-    t.querySelectorAll("tbody tr, tfoot tr").forEach(function (tr) {
+    t.querySelectorAll(t.classList.contains("hours") ? "tbody tr, tfoot tr" : "tbody tr").forEach(function (tr) {
       Array.prototype.forEach.call(tr.children, function (td, i) {
         if (!td.hasAttribute("data-label") && heads[i] && !td.classList.contains("nolabel")) td.setAttribute("data-label", heads[i]);
       });
@@ -265,7 +265,7 @@
     var e = 1 - Math.pow(1 - p, 3);
     var start = parseFloat(m.getAttribute("data-zoom") || "3");
     var view = m.querySelector(".macro-view");
-    var fitS = Math.min(1, view.clientHeight / screen.offsetHeight);
+    var fitS = Math.min(1, view.clientHeight / screen.offsetHeight, view.clientWidth / screen.offsetWidth);
     var s = start + (fitS - start) * e;
     var ox = screen.offsetWidth / 2, oy = 0;
     if (focus) {
@@ -277,7 +277,7 @@
     // Translate so the focus sits at the view's centre when close, and the screen sits top-centred when full.
     var vw = view.clientWidth;
     var cx = vw / 2, cy = view.clientHeight / 2;
-    var baseX = (vw - screen.offsetWidth) / 2;
+    var baseX = screen.offsetLeft;
     var tx0 = cx - (baseX + ox * start), ty0 = cy - oy * start;
     // Keep the close-up filling the frame: no ground showing past the screen's edges.
     var W = screen.offsetWidth * start, H = screen.offsetHeight * start, vh2 = view.clientHeight;
@@ -304,7 +304,7 @@
   if ("IntersectionObserver" in window && macros.length) {
     var io = new IntersectionObserver(function (es) {
       es.forEach(function (en) {
-        if (en.isIntersecting) { visible.add(en.target); en.target.classList.add("is-live"); }
+        if (en.isIntersecting) { visible.add(en.target); en.target.classList.add("is-live"); macroOne(en.target); }
         else { visible.delete(en.target); en.target.classList.remove("is-live"); }
       });
     });
