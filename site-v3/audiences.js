@@ -128,14 +128,18 @@
     return s;
   }
   /* Phone: the grid shows three weekdays around today. */
-  function windowCols(tbl, today) {
-    var hi = Math.min(4, Math.max(2, today)), lo = hi - 2;
-    $$('[data-c]', tbl).forEach(function (n) { var c = +n.dataset.c; toggle(n, 'is-off-m', c < lo || c > hi); });
-  }
   var MON = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+  var phoneQ = window.matchMedia ? matchMedia('(max-width: 720px)') : null;
+  function windowCols(tbl, today) {
+    var hi = Math.min(4, Math.max(2, today)), lo = hi - 2, phone = !!(phoneQ && phoneQ.matches);
+    $$('[data-c]', tbl).forEach(function (n) { var c = +n.dataset.c; toggle(n, 'is-off-m', c < lo || c > hi); });
+    var head = $('thead th:last-child', tbl);
+    setText(head, phone ? MON[lo] + '–' + MON[hi] : 'Week');
+    return function (c) { return !phone || (c >= lo && c <= hi); };
+  }
   HOOKS.soloGrid = function (tbl, t) {
     var w = soloWeek(t), first = 5 + 7 * w, today = Math.floor(t) - SOLO.weeks[w];
-    windowCols(tbl, today);
+    var shown = windowCols(tbl, today);
     $$('thead th[data-c]', tbl).forEach(function (th, c) {
       var html = MON[c] + ' <b>' + (first + c) + '</b>';
       if (th.dataset.k !== html) { th.dataset.k = html; th.innerHTML = html; }
@@ -146,7 +150,7 @@
       var tr = $('tr[data-r="' + row + '"]', tbl), rt = 0;
       for (var c = 0; c < 5; c++) {
         var m = soloCell(row, w, c, t);
-        rt += m; dayTot[c] += m;
+        if (shown(c)) { rt += m; } dayTot[c] += m;
         var td = $('td[data-c="' + c + '"]', tr);
         setText(td, m ? fmtH(m) : '–');
         toggle(td, 'is-empty', !m);
@@ -160,7 +164,7 @@
       setText(td, dayTot[c] ? fmtH(dayTot[c]) : '–');
       toggle(td, 'is-empty', !dayTot[c]);
       toggle(td, 'is-today', c === today);
-      wk += dayTot[c];
+      if (shown(c)) { wk += dayTot[c]; }
     }
     setText($('.tot', sum), fmtH(wk));
   };
@@ -185,13 +189,13 @@
   function teamSite(t) { var s = 0; for (var c = 0; c < 5; c++) { s += teamCell('site', c, t) + partial(TEAM.maya[c], c, t); } return s; }
   HOOKS.teamGrid = function (tbl, t) {
     var today = Math.floor(t), dayTot = [0, 0, 0, 0, 0];
-    windowCols(tbl, today);
+    var shown = windowCols(tbl, today);
     $$('thead th[data-c]', tbl).forEach(function (th, c) { toggle(th, 'is-today', c === today); });
     ['site', 'internal'].forEach(function (row) {
       var tr = $('tr[data-r="' + row + '"]', tbl), rt = 0;
       for (var c = 0; c < 5; c++) {
         var m = teamCell(row, c, t);
-        rt += m; dayTot[c] += m;
+        if (shown(c)) { rt += m; } dayTot[c] += m;
         var td = $('td[data-c="' + c + '"]', tr);
         setText(td, m ? fmtH(m) : '–');
         toggle(td, 'is-empty', !m);
@@ -205,7 +209,7 @@
       setText(td, dayTot[c] ? fmtH(dayTot[c]) : '–');
       toggle(td, 'is-empty', !dayTot[c]);
       toggle(td, 'is-today', c === today);
-      wk += dayTot[c];
+      if (shown(c)) { wk += dayTot[c]; }
     }
     setText($('.tot', sum), fmtH(wk));
   };
@@ -388,6 +392,11 @@
         });
       }
       if (kind === 'asof') { syncAsof(v); }
+      if (root.dataset.after) {
+        var nx = JSON.parse(root.dataset.after)[v];
+        clearTimeout(root._after);
+        if (nx) { root._after = setTimeout(function () { if (val === v) { set(nx[0]); } }, reduced ? 0 : nx[1]); }
+      }
       if (live && !quiet) { var t = pick(JSON.parse(live.dataset.say), v); setText(live, t ? t[1] : ''); }
     }
 
@@ -458,10 +467,17 @@
     }
   });
 
-  /* Comparison tables: each cell carries its column name for the stacked phone layout. */
-  $$('table.cmp').forEach(function (t) {
-    var heads = $$('thead th', t).map(function (th) { return th.textContent; });
-    $$('tbody tr', t).forEach(function (tr) { $$('td', tr).forEach(function (td) { td.setAttribute('data-k', heads[td.cellIndex] || ''); }); });
+  /* Comparison and stacked tables: each cell carries its column name for the phone layout. */
+  $$('table.cmp, table.stack-m').forEach(function (t) {
+    var heads = [];
+    $$('thead th', t).forEach(function (th) { for (var i = 0; i < th.colSpan; i++) { heads.push(th.textContent.trim()); } });
+    $$('tbody tr, tfoot tr', t).forEach(function (tr) {
+      var col = 0;
+      Array.prototype.forEach.call(tr.cells, function (cell) {
+        if (cell.tagName === 'TD' && !cell.hasAttribute('data-k')) { cell.setAttribute('data-k', heads[col] || ''); }
+        col += cell.colSpan;
+      });
+    });
   });
 
   /* ---------- Waitlist ---------- */

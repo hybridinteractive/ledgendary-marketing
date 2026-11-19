@@ -257,7 +257,7 @@
                   </div>
                   <span class="pill" data-pill='[[0,"draft","file-pen-line","Draft"],[7.45,"sent","send","Sent"]]' data-land></span>
                 </div>
-                <table class="tbl unb">
+                <table class="tbl unb stack-m">
                   <caption class="sr-only">Unbilled approved time on Site build</caption>
                   <thead><tr><th scope="col">Approved time</th><th scope="col" class="num">Hours</th><th scope="col" class="num">At $150/h</th></tr></thead>
                   <tbody>
@@ -266,7 +266,7 @@
                   </tbody>
                   <tfoot><tr><th scope="row">Time to bill</th><td class="num">80 h 0 m</td><td class="num">$12,000.00</td></tr></tfoot>
                 </table>
-                <table class="tbl lines">
+                <table class="tbl lines stack-m">
                   <caption class="sr-only">Invoice lines</caption>
                   <thead><tr><th scope="col">Line</th><th scope="col" class="num">Amount</th></tr></thead>
                   <tbody>
@@ -512,7 +512,7 @@
       <h2 id="po-h" class="h2">Clients pick, sign and pay.</h2>
       <p class="lede">True story, minus the parts we don't keep. In the client portal Dana picks an option, signs and pays. The signature keeps her name and the moment. Her network address and browser are kept only as keyed fingerprints, never raw.</p>
     </div>
-    <div class="duo" data-tl="demo">
+    <div class="duo" data-tl="demo" data-after='{"3":[4,1600]}'>
       <div class="bwin">
         <div class="portal-bar"><span><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Client portal · what Dana sees</span><span class="demo">Demo data</span></div>
         <div class="win-pad">
@@ -526,6 +526,17 @@
             <p class="sig-field" data-on="1"><span class="sig-name">Dana Whitfield</span><span class="sig-ph">Type your full name</span></p>
             <button type="button" class="btn-ui" data-set="1" data-dis="1" data-tones='[[0,"ready"],[1,"done"]]'><svg class="ic" aria-hidden="true"><use href="#i-signature"/></svg><span data-txt='[[0,"Sign as Dana"],[1,"Signed"]]'>Sign as Dana</span></button>
           </div>
+          <div class="po-pay">
+            <div class="po-pay-row">
+              <p class="po-pay-t"><b>INV-0042</b><span data-txt='[[0,"Sent Nov 16 · due Dec 1"],[3,"Paying by card, Visa ending 1881"],[4,"Paid by card, Visa ending 1881 · Nov 18"]]'>Sent Nov 16 · due Dec 1</span></p>
+              <p class="po-pay-amt"><span class="po-amt" data-on="4">$42,000.00</span></p>
+            </div>
+            <div class="po-pay-act">
+              <button type="button" class="btn-ui" data-set="3" data-dis="=0 3 4"><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg>Pay as Dana</button>
+              <p class="act-note" data-txt='[[0,"Signing comes first. Paying comes after."],[1,"Card or bank, from the same link."],[3,"Wait for it…"],[4,"Paid. JE-1042 posts, chained to JE-1041."]]' aria-live="polite">Signing comes first. Paying comes after.</p>
+              <span class="pill" data-tone="paid" data-show="4" data-land><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg>Paid</span>
+            </div>
+          </div>
         </div>
       </div>
       <div class="bwin">
@@ -538,10 +549,10 @@
             <div><dt>Browser</dt><dd class="fp" data-txt='[[0,"–"],[1,"Fingerprint 2f4d…e613"]]'>–</dd></div>
             <div class="kv-no"><dt>Raw address and browser</dt><dd>Never stored</dd></div>
           </dl>
-          <p class="act-note">Later, Dana pays INV-0042 by card in the same portal. A payment the card provider reports twice is applied once.</p>
+          <p class="act-note">Dana pays INV-0042 by card from the same link. A payment the card provider reports twice is applied once.</p>
         </div>
       </div>
-      <p class="sr-only" data-live data-say='[[0,""],[1,"Signed. The record keeps Dana’s name, the moment and two fingerprints."]]' aria-live="polite"></p>
+      <p class="sr-only" data-live data-say='[[0,""],[1,"Signed. The record keeps Dana’s name, the moment and two fingerprints."],[3,"Paying. Wait for it."],[4,"Paid, $42,000.00."]]' aria-live="polite"></p>
     </div>
   </div>
 </section>

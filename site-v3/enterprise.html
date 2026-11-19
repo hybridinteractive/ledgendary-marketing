@@ -190,6 +190,7 @@
                 <div class="rowset">
                   <p class="panel-h"><svg class="ic" aria-hidden="true"><use href="#i-database"/></svg>One transaction, all or nothing</p>
                   <ul class="rows checks">
+                    <li data-on="0.2"><svg class="ic" aria-hidden="true"><use href="#i-list-ordered"/></svg><span class="r-m">Numbered: INV-08812 from the one counter</span><span class="r-s" data-txt='[[0,"Waiting"],[0.2,"No gap"]]'>No gap</span></li>
                     <li data-on="0.3"><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg><span class="r-m">Built: debits 18,400.00 equal credits 18,400.00</span><span class="r-s" data-txt='[[0,"Waiting"],[0.3,"Balanced"]]'>Balanced</span></li>
                     <li data-on="0.35"><svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg><span class="r-m">Posted: checked again as it is written</span><span class="r-s" data-txt='[[0,"Waiting"],[0.35,"Balanced"]]'>Balanced</span></li>
                     <li data-on="0.4"><svg class="ic" aria-hidden="true"><use href="#i-link-2"/></svg><span class="r-m">Chain row #b7e2, carrying #41d0, in the same transaction</span><span class="r-s" data-txt='[[0,"Waiting"],[0.4,"Written"]]'>Written</span></li>
@@ -472,7 +473,7 @@
         </div>
       </div>
       <div class="win-pad">
-        <table class="tbl cur">
+        <table class="tbl cur stack-m">
           <caption class="sr-only">Receivables aging per currency</caption>
           <thead><tr><th scope="col">Currency</th><th scope="col" class="num b">Current</th><th scope="col" class="num b">1–30 days</th><th scope="col" class="num b">31–60</th><th scope="col" class="num b">61+</th><th scope="col" class="num">Total owed</th></tr></thead>
           <tbody>
@@ -482,7 +483,6 @@
           </tbody>
         </table>
         <p class="cur-note"><svg class="ic" aria-hidden="true"><use href="#i-ban"/></svg>No total across currencies. Dollars plus euros plus pounds is a number that is true of nothing.</p>
-        <p class="cur-hidden">Aging buckets are hidden on this screen width; each total includes all four.</p>
       </div>
     </div>
   </div>

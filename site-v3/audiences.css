@@ -527,3 +527,55 @@ button.btn-ui[disabled][data-tone="done"] { background: var(--mint-bg); color: v
   .aud-team .rail-dates li.last { display: block; left: auto; right: 0; }
   .aud .je-slots { grid-template-columns: 1fr 1fr; gap: 12px; }
 }
+
+/* ===== Phones never drop a money column: rows stack, every value keeps its label ===== */
+@media (max-width: 720px) {
+  .aud .stack-m thead { display: none; }
+  .aud .stack-m tr { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 12px; row-gap: 2px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+  .aud .stack-m tfoot tr { border-bottom: 0; }
+  .aud .stack-m th, .aud .stack-m td { display: block !important; padding: 0 !important; border: 0 !important; text-align: left; white-space: normal; }
+  .aud .stack-m tr > :first-child { flex: 1 1 0; min-width: 0; }
+  .aud .stack-m tr > :last-child { flex: 0 0 auto; order: 1; text-align: right; white-space: nowrap; }
+  .aud .stack-m tr > :not(:first-child):not(:last-child) { order: 2; font-size: 12px; color: var(--mut); white-space: nowrap; }
+  .aud .stack-m tr > :not(:first-child):not(:last-child)::before { content: attr(data-k) " "; color: var(--mut-2); }
+  .aud .stack-m tr > :first-child + * { margin-left: 0; }
+  .aud .stack-m tr::after { content: ""; order: 1; flex-basis: 100%; height: 0; }
+  .aud .stack-m td:last-child::before { content: attr(data-k); display: block; font-size: 11px; color: var(--mut-2); font-weight: 500; }
+  .aud .stack-m td.num { font-variant-numeric: tabular-nums; }
+  .aud .stack-m .opt-k { margin-right: 8px; }
+  .aud .cur .b { display: block !important; }
+}
+
+/* Enterprise playbook cards sized to their own content */
+.trio { align-items: start; }
+.trio .win-pad { flex: none; }
+.tri-t { min-height: 0; }
+.trio .win-pad > .btn-ui, .tri-btns { margin-top: 0; }
+
+/* Team step-up: reserve the tallest state only */
+.su-slot { min-height: 0; }
+.su-ask, .su-done { min-height: 112px; }
+
+/* Solo late fee: payable line */
+.aud .pay-plain { font-weight: 500; }
+.aud .pay-plain[data-tone="seen"] .ic { color: var(--text-2); }
+
+/* Team portal: Dana pays, coral on the paid figure */
+.po-pay { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); display: grid; gap: 10px; }
+.po-pay-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.po-pay-t b { display: block; font-weight: 650; }
+.po-pay-t span { font-size: 13px; color: var(--mut); }
+.po-amt { display: inline-block; padding: 2px 0; font-size: 20px; font-weight: 750; font-variant-numeric: tabular-nums; transition: background-color .35s var(--ease), color .35s var(--ease), padding .35s var(--ease); border-radius: 8px; }
+.po-amt.is-on { padding: 2px 10px; background: var(--coral); color: var(--ink); }
+.po-pay-act { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; min-height: 30px; }
+.po-pay-act .pill { margin-left: auto; }
+
+/* Solo phone: client activity reads as two-line rows */
+@media (max-width: 720px) {
+  .aud .vs { grid-template-columns: minmax(0, 1fr); row-gap: 1px; padding: 8px 0; }
+  .aud .vs .ic { display: none; }
+  .aud .vs-t { white-space: normal; }
+  .aud .vs-d { font-size: 12px; color: var(--mut); }
+  .aud-ent [data-pane="edit"] .rowset:not(.refuse), .aud-team [data-pane="invoice"] .unb { display: none; }
+  .aud-ent [data-pane="post"] .rows.checks li:first-child { display: none; }
+}
