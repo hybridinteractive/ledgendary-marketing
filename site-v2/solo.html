@@ -264,7 +264,7 @@
             <div class="pi-full">
               <div>
                 <p class="wh">INV-0012 <span class="pill">Draft</span></p>
-                <p class="wmeta">Northwind Co · Issued Nov 16, 2026 · Due Dec 1, 2026</p>
+                <p class="wmeta">Northwind Co · not sent yet · Net 15</p>
               </div>
               <p class="prov"><svg class="ic" aria-hidden="true"><use href="#i-file-check"/></svg><span>From P-0007, option <span data-k="opt">B</span>, signed by Dana Whitfield on Oct 28</span></p>
               <table class="lines">
@@ -306,7 +306,7 @@
           <span class="crumbs"><span class="cr-path">Northwind Co <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> Brand refresh <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></span> <b>Week of Nov 9</b></span>
           <span class="demo">Demo data</span>
         </div>
-        <div class="tg-wrap">
+        <div class="tg-wrap is-strip">
           <div class="tg-main">
             <table class="tg tg-solo">
               <caption class="sr-only">Maya's hours on Brand refresh, week of Nov 9, 2026</caption>
@@ -339,21 +339,27 @@
               </p>
             </div>
           </div>
-          <aside class="time-side" aria-label="Unbilled time and the invoice line">
-            <p class="side-h">Unbilled time</p>
-            <dl class="side-kv">
-              <div><dt>Nov 2–6</dt><dd>10 h 0 m</dd></div>
-              <div><dt>Nov 9–13</dt><dd data-x="unb-wk">9 h 0 m</dd></div>
-              <div class="sum"><dt>Total</dt><dd data-x="unb">19 h 0 m</dd></div>
-            </dl>
-            <p class="side-h">Invoice line, INV-0012</p>
-            <div class="side-line">
-              <p>Design time, Nov 2–13</p>
-              <p class="side-calc"><span data-x="qty">19 h 0 m</span> × $150.00</p>
-              <p class="side-amt" data-x="amt">$2,850.00</p>
+          <aside class="time-side tg-strip" aria-label="Unbilled time and the invoice line">
+            <div>
+              <p class="side-h">Unbilled time</p>
+              <dl class="side-kv">
+                <div><dt>Nov 2–6</dt><dd>10 h 0 m</dd></div>
+                <div><dt>Nov 9–13</dt><dd data-x="unb-wk">9 h 0 m</dd></div>
+                <div class="sum"><dt>Total</dt><dd data-x="unb">19 h 0 m</dd></div>
+              </dl>
             </div>
-            <div class="side-total"><span>Invoice total</span><b data-x="itotal">$9,350.00</b></div>
-            <p class="side-foot">Fixed fee $6,500.00 from option B, plus the time.</p>
+            <div>
+              <p class="side-h">Invoice line, INV-0012</p>
+              <div class="side-line">
+                <p>Design time, Nov 2–13</p>
+                <p class="side-calc"><span data-x="qty">19 h 0 m</span> × $150.00</p>
+                <p class="side-amt" data-x="amt">$2,850.00</p>
+              </div>
+            </div>
+            <div class="tg-strip-total">
+              <div class="side-total"><span>Invoice total</span><b data-x="itotal">$9,350.00</b></div>
+              <p class="side-foot">Fixed fee $6,500.00 from option B, plus the time.</p>
+            </div>
           </aside>
         </div>
       </div>
@@ -507,6 +513,7 @@
           <article class="cnode"><b>JE-0215 · Late fee</b><span class="cn-m">INV-0010 · Accounts receivable / Late fee income · $120.00</span><footer><span class="hash">#3b70</span><span>prev #c9d4</span></footer></article>
           <article class="cnode"><b>JE-0216 · Bank transfer</b><span class="cn-m">INV-0010 · Bank / Accounts receivable · $2,520.00</span><footer><span class="hash">#5e02</span><span>prev #3b70</span></footer></article>
           <article class="cnode"><b>JE-0217 · Card payment</b><span class="cn-m">INV-0012 · Bank / Accounts receivable · $9,500.00</span><footer><span class="hash">#a41c</span><span>prev #5e02</span></footer></article>
+          <article class="cnode cnode-next" aria-label="The next entry"><b>Next entry</b><span class="cn-m">Links to #a41c. Change JE-0217 and this link breaks, which is how a changed number shows.</span></article>
         </div>
         <p class="sec-cap"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg><span>Posted entries are never edited. A correction is a new entry that reverses the old one, so your accountant sees both.</span></p>
       </div>

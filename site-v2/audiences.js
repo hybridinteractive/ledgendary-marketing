@@ -53,10 +53,11 @@
         b.disabled = !on;
         b.classList.toggle('is-armed', on && b.classList.contains('btn'));
       });
+      const ti = p.i < n && cfg.acts[p.i].t != null ? cfg.acts[p.i].t : p.i;
       track.forEach((li, j) => {
-        li.classList.toggle('is-done', j < p.i || p.i >= n);
-        li.classList.toggle('is-now', j === p.i && p.i < n);
-        if (j === p.i && p.i < n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
+        li.classList.toggle('is-done', j < ti || p.i >= n);
+        li.classList.toggle('is-now', j === ti && p.i < n);
+        if (j === ti && p.i < n) li.setAttribute('aria-current', 'step'); else li.removeAttribute('aria-current');
       });
       if (cfg.mark) cfg.mark(p);
     };
@@ -459,7 +460,7 @@
       list.classList.toggle('is-on', on);
       cele.classList.toggle('is-on', on);
       up.hidden = !on;
-      msg.textContent = on ? 'Two badges earned already. One more on-time payment for the next.' : 'Turn milestones on to see what you\'ve already earned.';
+      msg.textContent = on ? 'Four earned so far: first client and first invoice sent came before these two. One more on-time payment for the next.' : 'Turn milestones on to see what you\'ve already earned.';
     };
     sw.addEventListener('click', () => set(sw.getAttribute('aria-checked') !== 'true'));
     if (reduced()) set(true);
@@ -482,8 +483,10 @@
       ["You're Sam, admin", 'Priya submitted her week. Approve it.'],
       ['Approved and locked', "Now Theo's."],
       ['Week approved', 'Bill the approved time.'],
+      ['Billed', 'INV-0042 drafted at the agreed rate.'],
       ["Now you're Theo", 'Try to change Wednesday.'],
-      ['Locked.', 'The playbook: approve, bill, lock.'],
+      ['Locked', 'Hours stay as billed. Add a note.'],
+      ['Noted.', 'The playbook: approve, bill, lock.'],
     ],
     restartSay: "Started over. You're Sam: approve Priya's week.",
     acts: [
@@ -514,19 +517,42 @@
           const r = p.root;
           x(r, 'pane-unb').hidden = true;
           const inv = x(r, 'pane-inv'); inv.hidden = false;
-          x(r, 'who').textContent = 'TB'; x(r, 'who').className = 'av av-tb';
           if (!reduced()) { inv.classList.remove('is-in'); void inv.offsetWidth; inv.classList.add('is-in'); }
           flash(x(r, 'inv-total'));
         },
         say: 'Billed. INV-0042 drafted: $30,000.00 fixed fee plus 80 hours at $150.00, $42,000.00.',
       },
       {
-        key: 'edit',
+        key: 'theo',
+        auto: 1800,
+        t: 3,
         run: (p) => {
           const r = p.root;
-          x(r, 'lockzone').innerHTML = `<p class="refuse">${icon('lock')}<span>Locked: approved, and on INV-0042. <span>Hours, project, date and billable stay as billed. A note is still open.</span></span></p>`;
+          x(r, 'samview').hidden = true;
+          x(r, 'theoview').hidden = false;
+          x(r, 'crmid').textContent = 'My week';
+          x(r, 'who').textContent = 'TB'; x(r, 'who').className = 'av av-tb';
         },
-        say: 'Refused. The entry is approved and invoiced on INV-0042. Hours stay as billed; a note is still open.',
+        say: "Now you're Theo, looking at your own week. It's approved and locked.",
+      },
+      {
+        key: 'edit',
+        t: 3,
+        run: (p) => {
+          x(p.root, 'theo-out').innerHTML = `<p class="refuse">${icon('lock')}<span>Locked: approved, and on an invoice. <span>Hours, project, date and billable stay as billed. Add a note instead.</span></span></p>`;
+        },
+        say: 'Refused. Wednesday is approved and invoiced. Hours stay as billed; add a note instead.',
+      },
+      {
+        key: 'note',
+        t: 3,
+        run: (p) => {
+          const r = p.root;
+          const inp = x(r, 'note-in');
+          if (!inp.value.trim()) inp.value = 'Includes the Nov 11 client review.';
+          x(r, 'theo-out').innerHTML = `<p class="note-line">${icon('circle-check')}<span>Note saved on Wednesday. The 3 h 45 m didn't move.</span></p>`;
+        },
+        say: 'Note saved. The hours did not change.',
       },
     ],
     reset: (p) => {
@@ -541,7 +567,11 @@
       x(r, 'ready').textContent = '41 h 45 m';
       x(r, 'pane-unb').hidden = false;
       x(r, 'pane-inv').hidden = true;
-      x(r, 'lockzone').innerHTML = `<p class="note-line">${icon('clock')}<span style="flex:1">Theo · Wed Nov 11 · 3 h 45 m · on INV-0042</span><button class="tbtn" type="button" data-act="edit">${icon('pen-line')}Change hours</button></p>`;
+      x(r, 'samview').hidden = false;
+      x(r, 'theoview').hidden = true;
+      x(r, 'crmid').textContent = 'Approvals';
+      x(r, 'theo-out').innerHTML = `<p class="ph">${icon('lock')}Wednesday is on an invoice. Try changing it.</p>`;
+      x(r, 'note-in').value = '';
     },
   });
 
@@ -550,7 +580,7 @@
     const win = $('[data-seats]');
     if (!win) return;
     const P = [
-      ['Northwind Co', 'Site build', ['TB', 'PN'], 'Invoiced'],
+      ['Northwind Co', 'Site build', ['TB', 'PN'], 'Paid'],
       ['Orchard & Pine', 'Rebrand', ['TB'], 'In progress'],
       ['Kestrel Labs', 'Product launch', ['PN'], 'In progress'],
       ['Bramble Foods', 'Packaging', ['PN'], 'Proposal sent'],
@@ -558,10 +588,10 @@
     const AV = { TB: 'av-tb', PN: 'av-pn' };
     const ok = 'ok', no = 'no', step = 'step';
     const SEATS = {
-      owner: { name: 'Maya Ortiz', av: ['MO', 'av-mo'], seat: 'Owner', line: 'Owns Lumen Studio and sets who sits where.', projects: [0, 1, 2, 3], note: 'Every project.', can: [ok, ok, ok, step, ok, ok] },
-      admin: { name: 'Sam Okafor', av: ['SO', 'av-so'], seat: 'Administrator', line: 'Handles the money and approves weeks.', projects: [0, 1, 2, 3], note: 'Every project.', can: [ok, ok, ok, step, ok, no] },
-      member: { name: 'Theo Brandt', av: ['TB', 'av-tb'], seat: 'Member', line: 'Logs time on the projects he\'s on.', projects: [0, 1], note: 'The two projects Theo is on. The others aren\'t listed for him.', can: [ok, no, no, no, no, no] },
-      acct: { name: 'Jules Carter', av: ['JC', 'av-jc'], seat: 'Accountant · read only', line: 'Reads every entry and report.', projects: [0, 1, 2, 3], note: 'Every project, read only.', can: [no, no, no, no, ok, no] },
+      owner: { name: 'Maya Ortiz', av: ['MO', 'av-mo'], seat: 'Owner', line: 'Owns Lumen Studio.', projects: [0, 1, 2, 3], note: 'Every project.', can: [ok, ok, ok, step, ok] },
+      admin: { name: 'Sam Okafor', av: ['SO', 'av-so'], seat: 'Administrator', line: 'Handles the money and approves weeks.', projects: [0, 1, 2, 3], note: 'Every project.', can: [ok, ok, ok, step, ok] },
+      member: { name: 'Theo Brandt', av: ['TB', 'av-tb'], seat: 'Member', line: 'Logs time on the projects he\'s on.', projects: [0, 1], note: 'The two projects Theo is on. The others aren\'t listed for him, and approvals and money stay with Sam and Maya.', can: [ok, no, no, no, no] },
+      acct: { name: 'Jules Carter', av: ['JC', 'av-jc'], seat: 'Accountant · read only', line: 'Reads every entry and report.', projects: [0, 1, 2, 3], note: 'Every project, read only.', can: [no, no, no, no, ok] },
     };
     const CAN = [
       ['Log time', ''],
@@ -569,7 +599,6 @@
       ['Send invoices, record payments', ''],
       ['Void, write off, refund', 'Asks who you are again first'],
       ['Read the books and reports', ''],
-      ['Invite people and set seats', ''],
     ];
     const rows = $('[data-seat-rows]', win);
     const render = (k, anim) => {
@@ -689,7 +718,7 @@
           $('[data-act="void"]', r).hidden = true;
           const f = x(r, 'foot');
           f.className = 'wfoot is-posted';
-          f.innerHTML = `${icon('circle-check')}<span><b class="posted">Reversed today</b> Confirmed by Sam, Nov 18. JE-1038 stays on the record; October stays closed.</span>`;
+          f.innerHTML = `${icon('circle-check')}<span><b class="posted">Reversed today</b> Confirmed by Sam with a passkey, Nov 18.<br>JE-1038 stays on the record, and the reversing entry is dated today, so October stays closed.</span>`;
         },
         say: 'Confirmed. INV-0040 voided with a reversing entry dated today. October stays closed.',
       },
@@ -744,6 +773,7 @@
           x(r, 'inv-s').textContent = 'Paid Nov 18 · Visa ending 1881 · $42,000.00';
           x(r, 'inv-r').innerHTML = '<span class="pill pill-paid">Paid</span>';
           $('[data-act="pay"]', r).hidden = true;
+          x(r, 'receipt').hidden = false;
         },
         say: 'Paid. $42,000.00 by card on INV-0042.',
       },
@@ -757,6 +787,7 @@
       x(r, 'inv-r').innerHTML = '';
       $('[data-act="sign"]', r).hidden = false;
       $('[data-act="pay"]', r).hidden = true;
+      x(r, 'receipt').hidden = true;
       x(r, 'rec').innerHTML = `<p class="ph">${icon('signature')}No signature yet.</p>`;
     },
   });
@@ -822,7 +853,7 @@
       const n = Number(b.dataset.n) + (on ? 1 : 0);
       $('[data-c]', b).textContent = String(n);
       if (on && !reduced()) { b.classList.remove('is-pop'); void b.offsetWidth; b.classList.add('is-pop'); }
-      who.textContent = on ? `You ${NAMES[b.dataset.r]}. Up there with Maya, Priya and Jules.` : 'Reaction removed.';
+      who.textContent = on ? `You ${NAMES[b.dataset.r]}. Up there with Maya, Priya and Theo.` : 'Reaction removed.';
     }));
   })();
 })();
@@ -853,7 +884,7 @@
       v.innerHTML = `${icon(ic)}<span>${html}</span>`;
       if (!reduced()) { v.classList.remove('is-in'); void v.offsetWidth; v.classList.add('is-in'); }
     };
-    const show = (k) => ['edit', 'db', 'rehash', 'reverse'].forEach((a) => { $(`[data-act="${a}"]`, root).hidden = a !== k; });
+    const show = (k) => { $$('[data-act]', root).forEach((b) => { b.hidden = b.dataset.act !== k; }); x(root, 'stamp').hidden = k !== 'stamp'; };
     const hashes = (h17, h18, p18, h19, p19, bad) => {
       x(root, 'h17').textContent = h17; x(root, 'c17').textContent = h17;
       x(root, 'h17').classList.toggle('is-bad', bad); x(root, 'c17').classList.toggle('is-bad', bad);
@@ -869,6 +900,7 @@
         ['Refused, three times', 'Fine. Go around the app.'],
         ['Caught', 'So rewrite the whole chain.'],
         ['Caught again', 'Now do it properly. Reverse it.'],
+        ['Hold on', "Reversing takes money off the books. Confirm it's you."],
         ['Reversed', 'Reverse, never edit. Both entries stand.'],
       ],
       restartSay: 'Started over. Try to change JE-20417.',
@@ -894,7 +926,7 @@
             hashes('#f31a', '#0c5f', '#b7e2', '#e6a3', '#0c5f', true);
             x(root, 'p18').classList.add('is-bad');
             x(root, 'n17').classList.add('is-break');
-            setCk('chain', 'bad', 'pill-bad', 'Broken at JE-20418');
+            setCk('chain', 'bad', 'pill-bad', 'Broken');
             verdict('is-bad', 'link-2-off', 'Caught. JE-20417 now hashes to #f31a, but JE-20418 still points to #b7e2. The chain breaks right there.');
             show('rehash');
           },
@@ -908,7 +940,7 @@
             x(root, 'p18').classList.remove('is-bad');
             x(root, 'n17').classList.remove('is-break');
             ['c18', 'c19'].forEach((k) => { x(root, k).classList.add('is-new'); flash(x(root, k)); });
-            setCk('chain', 'ok', 'pill-warn', 'Whole, rewritten');
+            setCk('chain', 'ok', 'pill-warn', 'Rewritten');
             setCk('root', 'bad', 'pill-bad', "Doesn't match");
             x(root, 'anchor').lastElementChild.innerHTML = 'Your rewritten chain reduces to root <b>8d04…7b19</b>. Batch 0418\'s signed root is <b>3f9a…c21e</b>.';
             verdict('is-bad', 'stamp', "Caught again. The timestamp authority signed 3f9a…c21e on Nov 17. Nobody can make it have signed 8d04…7b19 instead, not even with the whole database.");
@@ -927,13 +959,22 @@
             ['app', 'guard', 'trig'].forEach((k) => setCk(k, 'ok', 'pill-ok', 'Held'));
             setCk('chain', 'ok', 'pill-ok', 'Whole');
             setCk('root', 'ok', 'pill-ok', 'Matches');
-            const rev = x(root, 'rev');
-            rev.className = 'je-box is-in';
-            rev.innerHTML = `<header><b>JE-20431</b><span>Nov 18, 2026 · Reversal of JE-20417</span><span class="pill pill-ok" style="margin-left:auto">Posted</span></header><dl class="je-lines"><div><dt>Dr Revenue</dt><dd>18,400.00</dd></div><div><dt class="cr">Cr Accounts receivable</dt><dd>18,400.00</dd></div></dl><footer><span class="hash">#c2f8</span><span>prev #7a10 · goes into the next batch</span></footer>`;
-            verdict('is-good', 'circle-check', 'Reversed, not edited. JE-20417 stands as posted, JE-20431 corrects it, and the auditor sees both.');
-            show(null);
+            verdict('', 'key-round', 'Put back as posted. Reversing JE-20417 takes $18,400.00 off the books, so confirm who you are first.');
+            show('confirm');
           },
-          say: 'Put back, then reversed properly: JE-20431 reverses JE-20417, both on the record, chain whole, root matches.',
+          say: 'Put back as posted. Reversing takes 18,400 dollars off the books: confirm it is you with a passkey, password or emailed code.',
+        },
+        {
+          key: 'confirm',
+          t: 3,
+          run: () => {
+            const rev = x(root, 'rev');
+            rev.className = 'je-box rev-box is-in';
+            rev.innerHTML = `<header><b>JE-20431</b><span class="pill pill-ok">Posted</span><span>Nov 18 · reverses JE-20417</span></header><dl class="je-lines"><div><dt>Dr Revenue / Cr Accounts receivable</dt><dd>18,400.00</dd></div></dl><footer><span class="hash">#c2f8</span><span>prev #7a10 · goes into the next batch</span></footer>`;
+            verdict('is-good', 'circle-check', 'Reversed, not edited, and confirmed first. JE-20417 stands as posted, JE-20431 reverses it, and the auditor sees both.');
+            show('stamp');
+          },
+          say: 'Confirmed. JE-20431 reverses JE-20417; both stay on the record, the chain is whole and the root matches.',
         },
       ],
       reset: () => {
@@ -947,7 +988,7 @@
         ['app', 'guard', 'trig'].forEach((k) => setCk(k, null, '', 'Not tried'));
         setCk('chain', null, 'pill-ok', 'Whole');
         setCk('root', null, 'pill-ok', 'Matches');
-        const rev = x(root, 'rev'); rev.className = 'ph'; rev.innerHTML = REV_PH;
+        const rev = x(root, 'rev'); rev.className = 'ph rev-box'; rev.innerHTML = REV_PH;
         const v = x(root, 'verdict'); v.className = 'verdict';
         v.innerHTML = `${icon('scan-search')}<span>JE-20417 is posted. Try to change it and watch what answers.</span>`;
         show('edit');
@@ -1093,7 +1134,7 @@
       mar: {
         cap: 'Receivables aging as of Mar 31, 2026, by currency',
         rows: [['USD', [24860000, 9640000, 4120000, 2640000]], ['EUR', [12050000, 4275000, 1800000, 700000]], ['GBP', [6190000, 2230000, 820000, 400000]]],
-        trace: '<b>INV-07311</b> · Calder Group · £14,200.00, issued Mar 12, due Apr 11. On Mar 31 it was owed and current, inside GBP\'s £61,900.00. Rebuilt from what was posted by that date; later documents aren\'t here.',
+        trace: '<b>INV-07311</b> · Calder Group · £14,200.00, issued Mar 12, due Apr 11. On Mar 31 it was owed and current, part of GBP\'s £96,400.00 total. Rebuilt from what was posted by that date; later documents aren\'t here.',
       },
       now: {
         cap: 'Receivables aging as of Nov 18, 2026, by currency',

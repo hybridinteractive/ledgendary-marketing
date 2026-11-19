@@ -194,22 +194,26 @@
                   <li><b>JE-20419</b><span class="hash" data-x="c19">#e6a3</span><span class="pv" data-x="p19">prev #0c5f</span></li>
                 </ol>
                 <p class="anchor" data-x="anchor"><svg class="ic" aria-hidden="true"><use href="#i-stamp"/></svg><span><b>Batch 0418</b> · 12,906 entries · root <b>3f9a…c21e</b> · signed by the timestamp authority Nov 17, 02:00 UTC · evidence locked until Nov 2036</span></p>
-                <div class="ph" data-x="rev"><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg><span>A correction is a new entry that reverses this one. Never an edit.</span></div>
+                <div class="ph rev-box" data-x="rev"><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg><span>A correction is a new entry that reverses this one. Never an edit.</span></div>
               </div>
               <div class="tp-checks">
                 <div class="tp-move">
                   <button class="btn btn-ink btn-sm" type="button" data-act="edit"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg>Save $1,840.00</button>
                   <button class="btn btn-ink btn-sm" type="button" data-act="db" hidden><svg class="ic" aria-hidden="true"><use href="#i-database"/></svg>Drop the trigger, update the row</button>
                   <button class="btn btn-ink btn-sm" type="button" data-act="rehash" hidden><svg class="ic" aria-hidden="true"><use href="#i-refresh-cw"/></svg>Rehash every entry after it</button>
+                  <button class="btn btn-ink btn-sm" type="button" data-act="confirm" hidden><svg class="ic" aria-hidden="true"><use href="#i-fingerprint"/></svg>Passkey</button>
+                  <button class="tbtn" type="button" data-act="confirm" hidden><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Password</button>
+                  <button class="tbtn" type="button" data-act="confirm" hidden><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Emailed code</button>
+                  <p class="stamp-line" data-x="stamp" hidden><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Confirmed with a passkey · Nov 18, 10:02 AM</p>
                   <button class="btn btn-ink btn-sm" type="button" data-act="reverse" hidden><svg class="ic" aria-hidden="true"><use href="#i-undo-2"/></svg>Put it back, then reverse JE-20417</button>
                 </div>
                 <p class="wlabel" style="padding-top:10px">What catches it</p>
                 <ol class="ck" data-x="checks">
-                  <li data-k="app"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-ban"/></svg></span><span class="ck-t"><b>No edit path</b>The app has no way to save a change to a posted entry.</span><span class="pill" data-p>Not tried</span></li>
-                  <li data-k="guard"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-shield-check"/></svg></span><span class="ck-t"><b>Model guard</b>A posted entry refuses the write.</span><span class="pill" data-p>Not tried</span></li>
+                  <li data-k="app"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-ban"/></svg></span><span class="ck-t"><b>No edit path</b>The app can't save a change to it.</span><span class="pill" data-p>Not tried</span></li>
+                  <li data-k="guard"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-shield-check"/></svg></span><span class="ck-t"><b>Model guard</b>The entry refuses the write.</span><span class="pill" data-p>Not tried</span></li>
                   <li data-k="trig"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-database"/></svg></span><span class="ck-t"><b>Database trigger</b>The table refuses the update.</span><span class="pill" data-p>Not tried</span></li>
-                  <li data-k="chain"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-link"/></svg></span><span class="ck-t"><b>Chain check</b>Each entry carries the hash of the one before.</span><span class="pill pill-ok" data-p>Whole</span></li>
-                  <li data-k="root"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-stamp"/></svg></span><span class="ck-t"><b>Signed root, Batch 0418</b>Signed by a timestamp authority, not by us.</span><span class="pill pill-ok" data-p>Matches</span></li>
+                  <li data-k="chain"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-link"/></svg></span><span class="ck-t"><b>Chain check</b>Each entry holds the one before's hash.</span><span class="pill pill-ok" data-p>Whole</span></li>
+                  <li data-k="root"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-stamp"/></svg></span><span class="ck-t"><b>Signed root, Batch 0418</b>Signed by a third party, not us.</span><span class="pill pill-ok" data-p>Matches</span></li>
                 </ol>
                 <p class="verdict" data-x="verdict"><svg class="ic" aria-hidden="true"><use href="#i-scan-search"/></svg><span>JE-20417 is posted. Try to change it and watch what answers.</span></p>
               </div>
@@ -255,11 +259,11 @@
             </tbody>
             <tfoot><tr><td data-x="diff" class="is-off">Off by €10.00</td><td class="num">€12,000.00</td><td class="num" data-x="crt">€11,990.00</td></tr></tfoot>
           </table>
-          <div class="cpts">
-            <div class="cpt" data-x="c1"><b><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-file-pen-line"/></svg></span>When it's built</b><span data-t>Not built yet.</span></div>
-            <div class="cpt" data-x="c2"><b><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-send"/></svg></span>When it posts</b><span data-t>Not posted yet.</span></div>
-            <div class="cpt" data-x="c3"><b><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-moon"/></svg></span>Every night</b><span data-t>Last night, Nov 18, 01:00 UTC: every entry in balance.</span></div>
-          </div>
+          <ol class="ck cpt-rows">
+            <li data-x="c1"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-file-pen-line"/></svg></span><span class="ck-t"><b>When it's built</b><span data-t>Not built yet.</span></span></li>
+            <li data-x="c2"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-send"/></svg></span><span class="ck-t"><b>When it posts</b><span data-t>Not posted yet.</span></span></li>
+            <li data-x="c3"><span class="ck-i" aria-hidden="true"><svg class="ic"><use href="#i-moon"/></svg></span><span class="ck-t"><b>Every night</b><span data-t>Last night, Nov 18, 01:00 UTC: every entry in balance.</span></span></li>
+          </ol>
           <div class="su-ways" style="margin-top:16px">
             <button class="btn btn-ink btn-sm" type="button" data-act="build"><svg class="ic" aria-hidden="true"><use href="#i-file-pen-line"/></svg>Build the entry</button>
             <button class="btn btn-ink btn-sm" type="button" data-act="fix" hidden><svg class="ic" aria-hidden="true"><use href="#i-scale"/></svg>Make the credit €12,000.00</button>
@@ -311,8 +315,7 @@
           <div class="su-zone">
           <p class="wfoot" data-x="foot"><svg class="ic" aria-hidden="true"><use href="#i-calendar"/></svg><span>October holds 1,184 posted entries across three offices.</span></p>
           <div class="stepup" data-x="su" hidden role="group" aria-labelledby="close-su-h">
-            <h3 id="close-su-h"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Confirm it's you</h3>
-            <p>Closing October locks every entry dated in it. Before it does, confirm who you are again.</p>
+            <h3 id="close-su-h"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Confirm it's you <span class="su-why">Closing October locks every entry dated in it.</span></h3>
             <div class="su-ways">
               <button class="btn btn-ink btn-sm" type="button" data-act="confirm"><svg class="ic" aria-hidden="true"><use href="#i-fingerprint"/></svg>Use passkey</button>
               <button class="tbtn" type="button" data-act="confirm"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Password</button>
@@ -342,7 +345,7 @@
           <span class="demo">Demo data</span>
         </div>
         <div class="mk-svg">
-          <svg viewBox="0 0 640 262" role="img" aria-label="A Merkle tree: entry hashes pair up level by level into one root, 3f9a…c21e">
+          <svg class="mk-lg" viewBox="0 0 640 262" role="img" aria-label="A Merkle tree: entry hashes pair up level by level into one root, 3f9a…c21e">
 <path class="edge" data-lvl="0" data-i="0" d="M48 200 C48 183 87 183 87 166"/>
 <path class="edge" data-lvl="0" data-i="1" d="M126 200 C126 183 87 183 87 166"/>
 <path class="edge" data-lvl="0" data-i="2" d="M204 200 C204 183 243 183 243 166"/>
@@ -374,6 +377,26 @@
 <g class="node root" data-lvl="3" data-i="0"><rect x="231" y="8" width="180" height="30" rx="8"/><text x="321" y="27" text-anchor="middle" class="lbl-b" data-root-t>root 3f9a…c21e</text></g>
 <text x="320" y="252" text-anchor="middle">8 of 12,906 entries shown. Every one is a leaf.</text>
           </svg>
+          <svg class="mk-sm" viewBox="0 0 340 262" role="img" aria-label="A Merkle tree: entry hashes pair up into one root, 3f9a…c21e">
+<path class="edge" data-lvl="0" d="M44 200 C44 183 84 183 84 166"/>
+<path class="edge" data-lvl="0" d="M124 200 C124 183 84 183 84 166"/>
+<path class="edge" data-lvl="0" d="M204 200 C204 183 244 183 244 166"/>
+<path class="edge" data-lvl="0" d="M284 200 C284 183 244 183 244 166"/>
+<path class="edge" data-lvl="1" d="M84 136 C84 119 164 119 164 102"/>
+<path class="edge" data-lvl="1" d="M244 136 C244 119 164 119 164 102"/>
+<path class="edge" data-lvl="2" d="M164 72 C164 55 232 55 232 38"/>
+<path class="edge is-rest" data-lvl="2" d="M300 72 C300 55 232 55 232 38"/>
+<g class="node" data-lvl="0"><rect x="11" y="200" width="66" height="30" rx="8"/><text x="44" y="219" text-anchor="middle">#41d0</text></g>
+<g class="node" data-lvl="0"><rect x="91" y="200" width="66" height="30" rx="8"/><text x="124" y="219" text-anchor="middle">#b7e2</text></g>
+<g class="node" data-lvl="0"><rect x="171" y="200" width="66" height="30" rx="8"/><text x="204" y="219" text-anchor="middle">#0c5f</text></g>
+<g class="node" data-lvl="0"><rect x="251" y="200" width="66" height="30" rx="8"/><text x="284" y="219" text-anchor="middle">#e6a3</text></g>
+<g class="node" data-lvl="1"><rect x="51" y="136" width="66" height="30" rx="8"/><text x="84" y="155" text-anchor="middle">#7e31</text></g>
+<g class="node" data-lvl="1"><rect x="211" y="136" width="66" height="30" rx="8"/><text x="244" y="155" text-anchor="middle">#d905</text></g>
+<g class="node" data-lvl="2"><rect x="131" y="72" width="66" height="30" rx="8"/><text x="164" y="91" text-anchor="middle">#a6e9</text></g>
+<g class="node is-rest" data-lvl="2"><rect x="267" y="72" width="66" height="30" rx="8"/><text x="300" y="91" text-anchor="middle">#3c57</text></g>
+<g class="node root" data-lvl="3"><rect x="144" y="8" width="176" height="30" rx="8"/><text x="232" y="27" text-anchor="middle" class="lbl-b">root 3f9a…c21e</text></g>
+<text x="170" y="252" text-anchor="middle">4 of 12,906 entries shown.</text>
+          </svg>
         </div>
       </div>
       <div class="ev">
@@ -393,7 +416,7 @@
       </div>
     </div>
 
-    <p class="year"><b>Kids, in the year 2036…</b><span>your auditor asks about one invoice from last March. The receipt says what the books were, signed the night they were anchored, and it's still there because nobody could delete it.</span></p>
+    <p class="year"><b>Kids, in the year 2036…</b><span>your auditor asks about one invoice from last March. The receipt says what the books were, signed by the timestamp authority when they were anchored, and it's still there because nobody could delete it.</span></p>
   </div>
 </section>
 

@@ -173,10 +173,12 @@
           <div class="app">
             <div class="app-bar">
               <span class="ws-mark" aria-hidden="true">LS</span>
-              <span class="crumbs"><span class="cr-path">Time <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> Approvals <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></span> <b>Week of Nov 9</b></span>
+              <span class="crumbs"><span class="cr-path">Time <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg> <span data-x="crmid">Approvals</span> <svg class="ic" aria-hidden="true"><use href="#i-chevron-right"/></svg></span> <b>Week of Nov 9</b></span>
               <span class="demo">Demo data</span>
               <span class="av av-so" aria-hidden="true" data-x="who">SO</span>
             </div>
+            <div class="tstack">
+            <div class="tview" data-x="samview">
             <div class="wb" style="padding-bottom:12px">
               <table class="appr">
                 <caption class="sr-only">Submitted weeks for Site build, week of Nov 9, 2026</caption>
@@ -200,10 +202,25 @@
                 <div class="dock-row"><span>Full build, fixed fee</span><span>$30,000.00</span></div>
                 <div class="dock-row"><span>Time, 80 h 0 m × $150.00</span><span>$12,000.00</span></div>
                 <div class="dock-row sum"><span>Total due</span><b class="total" data-x="inv-total">$42,000.00</b></div>
-                <div data-x="lockzone">
-                  <p class="note-line" data-x="theo-row"><svg class="ic" aria-hidden="true"><use href="#i-clock"/></svg><span style="flex:1">Theo · Wed Nov 11 · 3 h 45 m · on INV-0042</span><button class="tbtn" type="button" data-act="edit"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg>Change hours</button></p>
+              </div>
+            </div>
+            </div>
+            <div class="tview" data-x="theoview" hidden>
+              <div class="wb">
+                <p class="wh">My week <span class="pill pill-lock"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Approved</span></p>
+                <p class="wmeta">Theo Brandt · Week of Nov 9 · submitted Nov 13, approved Nov 18</p>
+                <table class="tg tg-theo">
+                  <caption class="sr-only">Theo's hours, week of Nov 9, 2026</caption>
+                  <thead><tr><th scope="col">Project</th><th scope="col">Mon 9</th><th scope="col">Tue 10</th><th scope="col">Wed 11</th><th scope="col">Thu 12</th><th scope="col">Fri 13</th><th scope="col" class="num">Total</th></tr></thead>
+                  <tbody><tr><th scope="row">Site build</th><td data-day="Mon 9"><span class="t">4 h 30 m</span></td><td data-day="Tue 10"><span class="t">6 h 0 m</span></td><td data-day="Wed 11"><button class="t t-lock" type="button" data-act="edit" aria-label="Wednesday, 3 h 45 m, locked. Try to change it"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>3 h 45 m</button></td><td data-day="Thu 12"><span class="t">2 h 0 m</span></td><td data-day="Fri 13"><span class="t">1 h 30 m</span></td><td class="num" data-day="Total">17 h 45 m</td></tr></tbody>
+                </table>
+                <div class="theo-out" data-x="theo-out" aria-live="polite"></div>
+                <div class="note-field">
+                  <label for="theo-note">Note on Wednesday</label>
+                  <div class="note-row"><input id="theo-note" type="text" autocomplete="off" placeholder="Add a note" data-x="note-in"><button class="tbtn" type="button" data-act="note"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg>Save note</button></div>
                 </div>
               </div>
+            </div>
             </div>
           </div>
         </div>
@@ -347,8 +364,7 @@
           <div class="su-zone">
           <p class="wfoot" data-x="foot"><svg class="ic" aria-hidden="true"><use href="#i-book-open"/></svg><span>Books · JE-1038 posted this on Oct 28. October is closed.</span></p>
           <div class="stepup" data-x="su" hidden role="group" aria-labelledby="su-h">
-            <h3 id="su-h"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Confirm it's you, Sam</h3>
-            <p>Voiding takes $4,625.00 off the books. Before it does, confirm who you are again.</p>
+            <h3 id="su-h"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Confirm it's you, Sam <span class="su-why">Voiding takes $4,625.00 off the books.</span></h3>
             <div class="su-ways">
               <button class="btn btn-ink btn-sm" type="button" data-act="confirm"><svg class="ic" aria-hidden="true"><use href="#i-fingerprint"/></svg>Use passkey</button>
               <button class="tbtn" type="button" data-act="confirm"><svg class="ic" aria-hidden="true"><use href="#i-key-round"/></svg>Password</button>
@@ -384,13 +400,16 @@
         <section aria-label="Client portal, Northwind Co">
           <div class="portal-bar"><span class="ws"><span class="ws-mark ws-client" aria-hidden="true">NW</span>Northwind Co</span><span class="portal-path">Client portal · Lumen Studio</span><span class="demo">Demo data</span></div>
           <div class="wb">
-            <ul class="prt-docs">
+            <p class="wh">Site build for Northwind Co</p>
+            <p class="wmeta">From Lumen Studio · three options: A est. $28,000, B est. $42,000, C $30,000 + $4,500/mo</p>
+            <ul class="prt-docs" style="margin-top:8px">
               <li><b>P-0018 · Site build, option B</b><small>$30,000 fixed + est. 80 h at $150 · est. $42,000</small><span class="r"><span class="pill" data-x="p-st">Awaiting you</span></span></li>
               <li data-x="inv-li"><b data-x="inv-t" class="cap-note" style="font-weight:500">Invoices show up here when Lumen sends them.</b><small data-x="inv-s">&nbsp;</small><span class="r" data-x="inv-r"></span></li>
             </ul>
             <div class="prt-sign">
               <button class="btn btn-ink btn-sm" type="button" data-act="sign"><svg class="ic" aria-hidden="true"><use href="#i-pen-line"/></svg>Accept and sign as Dana</button>
               <button class="btn btn-ink btn-sm" type="button" data-act="pay" hidden><svg class="ic" aria-hidden="true"><use href="#i-credit-card"/></svg>Pay $42,000.00 by card</button>
+              <p class="note-line" data-x="receipt" hidden><svg class="ic" aria-hidden="true"><use href="#i-mail-check"/></svg>Receipt sent to Dana. Lumen sees the payment on INV-0042.</p>
             </div>
           </div>
         </section>
@@ -480,7 +499,7 @@
           <button type="button" aria-pressed="false" data-r="party" data-n="2"><svg class="ic" aria-hidden="true"><use href="#i-party-popper"/></svg><span class="sr-only">Party</span><span data-c>2</span></button>
           <button type="button" aria-pressed="false" data-r="heart" data-n="1"><svg class="ic" aria-hidden="true"><use href="#i-heart"/></svg><span class="sr-only">Heart</span><span data-c>1</span></button>
         </div>
-        <p class="react-who" aria-live="polite" data-react-who>Maya, Priya and Jules high-fived. You're Sam: add yours.</p>
+        <p class="react-who" aria-live="polite" data-react-who>Maya, Priya and Theo high-fived. You're Sam: add yours.</p>
         <ul class="badges is-on" style="margin-top:10px;border-top:1px solid var(--line)" aria-label="Earlier milestones">
           <li class="is-earned"><span class="bdg" aria-hidden="true"><svg class="ic"><use href="#i-send"/></svg></span><p><b>First week submitted</b><span>Priya Nair, the week of Aug 24</span></p><span class="when">Aug 28</span></li>
           <li class="is-earned"><span class="bdg" aria-hidden="true"><svg class="ic"><use href="#i-calendar"/></svg></span><p><b>A month of timesheets</b><span>Every week of September in</span></p><span class="when">Oct 2</span></li>
