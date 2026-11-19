@@ -33,8 +33,8 @@
 <!-- ============ Hero ============ -->
 <section class="hero" aria-labelledby="h1">
   <div class="wrap hero-grid">
+    <h1 class="h1 hero-h1" id="h1">One person.<br>Books like an empire.</h1>
     <div class="hero-copy">
-      <h1 class="h1" id="h1">One person.<br>Books like an empire.</h1>
       <p class="lead">Win the work, get paid, and keep books an accountant would sign, without becoming an accountant. We'll make a claim. Then we'll show you the receipt.</p>
       <form class="waitlist" novalidate>
         <label for="wl-hero">Your work email</label>
@@ -44,12 +44,25 @@
         </div>
         <p class="form-msg" id="wl-hero-msg" aria-live="polite" data-idle="Invite-only alpha. One email when your seat is ready.">Invite-only alpha. One email when your seat is ready.</p>
       </form>
+      <nav class="toc" aria-label="Claims on this page">
+        <p class="toc-h">The receipts on this page</p>
+        <ol>
+          <li><a href="#s-story">Proposal to invoice <span>2 receipts</span></a></li>
+          <li><a href="#s-paid">Card or bank <span>2 receipts</span></a></li>
+          <li><a href="#s-books">Every figure, chained <span>close-up</span></a></li>
+          <li><a href="#s-time">Time that bills itself <span>3 receipts</span></a></li>
+          <li><a href="#s-sched">One invoice per period <span>2 receipts</span></a></li>
+          <li><a href="#s-spend">Spend counted once <span>2 receipts</span></a></li>
+          <li><a href="#s-acct">Your accountant, read only <span>3 receipts</span></a></li>
+          <li><a href="#s-mile">Milestones <span>1 receipt</span></a></li>
+        </ol>
+      </nav>
     </div>
 
     <div class="hero-proof" id="g-hero">
       <ul class="claims">
         <li class="claim">
-          <p class="claim-text" id="c-h1">Ferro paid late, so a late fee posted as its own entry. The invoice Ferro agreed to was never rewritten.</p>
+          <p class="claim-text" id="c-h1">Ferro is late, so a late fee posted as its own entry. The invoice Ferro agreed to was never rewritten.</p>
           <div class="claim-row">
             <button class="prove" type="button" aria-expanded="false" aria-describedby="c-h1" data-target="#h-fee" data-cap="JE-0214, the late fee" data-cap-sub="Its own entry, beside the original. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button>
           </div>
@@ -69,14 +82,11 @@
           <div class="win-body">
             <p class="w-title">Ferro <span class="chip is-ink">Overdue · 19 days</span></p>
             <p class="w-sub">Issued Oct 1 · Due Oct 31 · Reminders sent Oct 28, Oct 31 and Nov 7</p>
-            <table class="tbl">
-              <thead><tr><th>Line</th><th class="num">Amount</th></tr></thead>
-              <tbody>
-                <tr><td>Brand illustrations, set of 12</td><td class="num">$2,400.00</td></tr>
-                <tr><td>Late fee, 5% at 7 days overdue</td><td class="num">$120.00</td></tr>
-              </tbody>
-              <tfoot><tr><td>Balance due</td><td class="num">$2,520.00</td></tr></tfoot>
-            </table>
+            <dl class="kv">
+              <dt>Brand illustrations, set of 12</dt><dd>$2,400.00</dd>
+              <dt>Late fee, 5% at 7 days overdue</dt><dd>$120.00</dd>
+              <dt><b>Balance due</b></dt><dd><b>$2,520.00</b></dd>
+            </dl>
             <p class="w-h">Journal for this invoice</p>
             <table class="tbl">
               <thead><tr><th>Entry</th><th>Date</th><th>What posted</th><th class="num">Amount</th></tr></thead>
@@ -115,10 +125,10 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-s2">The hours you logged land on the invoice at the rate you agreed.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s2" data-target="#s-hours" data-cap="20 h × $150" data-cap-sub="From the week of Nov 3. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s2" data-target="#s-hours" data-cap="20&nbsp;h × $150" data-cap-sub="From the week of Nov 3. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the time line on <span class="nowrap">INV-0012</span>.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> 20 h at $150 is $3,000.00, pulled from the week of Nov 3. $6,500.00 plus $3,000.00 is the $9,500.00 Dana agreed to.</p>
+            <p class="r-proof">20&nbsp;h at $150 is $3,000.00, pulled from the week of Nov 3. $6,500.00 plus $3,000.00 is the $9,500.00 Dana agreed to.</p>
           </div>
         </li>
       </ul>
@@ -136,7 +146,7 @@
               <thead><tr><th>Option</th><th>What it covers</th><th class="num">Price</th></tr></thead>
               <tbody>
                 <tr><td class="nowrap">A</td><td>Logo and palette</td><td class="num">$6,000.00</td></tr>
-                <tr class="is-hl"><td class="nowrap">B <span class="chip is-fill">Chosen</span></td><td>Full refresh: fixed fee $6,500 plus est. 20 h at $150</td><td class="num">$9,500.00</td></tr>
+                <tr class="is-hl"><td class="nowrap">B <span class="chip is-fill">Chosen</span></td><td>Full refresh: fixed fee $6,500 plus est. 20&nbsp;h at $150</td><td class="num">$9,500.00</td></tr>
                 <tr><td class="nowrap">C</td><td>Option B plus monthly care</td><td class="num">$9,500.00 + $800/mo</td></tr>
               </tbody>
             </table>
@@ -145,7 +155,7 @@
               <thead><tr><th>Line</th><th>Source</th><th class="num">Amount</th></tr></thead>
               <tbody>
                 <tr><td>Brand refresh, fixed fee</td><td class="muted" id="s-fixed">P-0007, option B</td><td class="num">$6,500.00</td></tr>
-                <tr><td id="s-hours">Design time, 20 h × $150</td><td class="muted">Week of Nov 3</td><td class="num">$3,000.00</td></tr>
+                <tr><td>Design time, <span id="s-hours">20&nbsp;h × $150</span></td><td class="muted">Week of Nov 3</td><td class="num">$3,000.00</td></tr>
               </tbody>
               <tfoot><tr><td colspan="2">Total</td><td class="num">$9,500.00</td></tr></tfoot>
             </table>
@@ -182,7 +192,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p2" data-target="#p-paidchip" data-go-demo="paid" data-cap="Paid, Nov 14" data-cap-sub="Turned by the payment itself. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: what happened after Dana paid.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Dana paid $9,500.00 by card on Nov 14 and <span class="nowrap">INV-0012</span> turned Paid by itself. In Maya's books it is <span class="nowrap">JE-0219</span>, further down this page.</p>
+            <p class="r-proof">Dana paid $9,500.00 by card on Nov 14 and <span class="nowrap">INV-0012</span> turned Paid by itself. In Maya's books it is <span class="nowrap">JE-0219</span>, further down this page.</p>
           </div>
         </li>
       </ul>
@@ -201,13 +211,13 @@
             <p class="w-sub">From Maya Ortiz Studio to Northwind Co · Sent Nov 12</p>
             <dl class="kv">
               <dt>Brand refresh, fixed fee</dt><dd>$6,500.00</dd>
-              <dt>Design time, 20 h × $150</dt><dd>$3,000.00</dd>
+              <dt>Design time, 20&nbsp;h × $150</dt><dd>$3,000.00</dd>
               <dt><b>Total</b></dt><dd><b>$9,500.00</b></dd>
             </dl>
             <div class="panel swap">
               <div data-show="a">
-                <p class="w-h" style="margin-top:0">Pay $9,500.00</p>
-                <div class="reacts" id="p-methods" style="width:max-content">
+                <p class="w-h" style="margin-top:0">Pay $9,500.00 · <span id="p-methods">card or bank</span></p>
+                <div class="reacts">
                   <button class="ui-btn is-primary" type="button" data-go="wait" data-then="paid" data-after="1500" data-say="Wait for it…" data-then-say="Paid. $9,500.00 by card, Nov 14."><svg class="i" aria-hidden="true"><use href="#i-credit-card"/></svg>Pay by card</button>
                   <button class="ui-btn" type="button" data-go="waitb" data-then="paidb" data-after="1500" data-say="Wait for it…" data-then-say="Paid. $9,500.00 by bank transfer, Nov 14."><svg class="i" aria-hidden="true"><use href="#i-landmark"/></svg>Pay by bank</button>
                 </div>
@@ -258,14 +268,14 @@
         <h2 class="h2" id="s-books">Every figure came from somewhere.</h2>
         <div class="macro-cap">
           <p class="cap-close">Close-up: <span class="nowrap">JE-0219</span>, Dana's payment, chained to the entry before it.</p>
-          <p class="cap-full off">The whole Books screen: November, nine entries in a row, each one balanced and chained.</p>
+          <p class="cap-full off">The whole Books screen: thirteen entries in a row since Oct 1, each one balanced and chained to the one before.</p>
         </div>
       </div>
       <div class="macro-view">
         <div class="macro-screen">
           <div class="win">
             <div class="win-bar">
-              <div class="crumbs">Maya Ortiz Studio <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Journal, November</b></div>
+              <div class="crumbs">Maya Ortiz Studio <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Journal, Oct 1 to Nov 19</b></div>
               <span class="demo-tag">Demo data</span>
               <span class="av" title="Signed in as Maya Ortiz">MO<span class="sr">Signed in as Maya Ortiz</span></span>
             </div>
@@ -282,10 +292,14 @@
               </div>
               <div class="win-main">
                 <p class="w-title">Journal <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-scale"/></svg>Every entry balanced</span> <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-link"/></svg>Chain intact</span></p>
-                <p class="w-sub">Nov 1 to Nov 19 · 9 entries · posted entries can be reversed, never edited</p>
+                <p class="w-sub">Oct 1 to Nov 19 · 13 entries · posted entries can be reversed, never edited</p>
                 <table class="tbl stack">
                   <thead><tr><th>Entry</th><th>Date</th><th>What posted</th><th>Source</th><th class="num">Amount</th><th>Hash</th><th data-short="Prev">Previous</th></tr></thead>
                   <tbody>
+                    <tr><td class="mono">JE-0207</td><td class="nowrap">Oct 1</td><td>Invoice sent, Ferro</td><td class="mono">INV-0010</td><td class="num">$2,400.00</td><td class="hash">#3b19</td><td class="hash muted">#c8e2</td></tr>
+                    <tr><td class="mono">JE-0208</td><td class="nowrap">Oct 6</td><td>Expense, Figma</td><td class="muted">Expense</td><td class="num">$45.00</td><td class="hash">#f05a</td><td class="hash muted">#3b19</td></tr>
+                    <tr><td class="mono">JE-0209</td><td class="nowrap">Oct 24</td><td>Expense, stock photos</td><td class="muted">Expense</td><td class="num">$60.00</td><td class="hash">#6d40</td><td class="hash muted">#f05a</td></tr>
+                    <tr><td class="mono">JE-0210</td><td class="nowrap">Oct 28</td><td>Bill recorded, Inkwell Print</td><td class="mono">BILL-0003</td><td class="num">$640.00</td><td class="hash">#93fe</td><td class="hash muted">#6d40</td></tr>
                     <tr><td class="mono">JE-0211</td><td class="nowrap">Nov 1</td><td>Invoice sent, Halcyon retainer</td><td class="mono">INV-0011</td><td class="num">$800.00</td><td class="hash">#51d2</td><td class="hash muted">#93fe</td></tr>
                     <tr><td class="mono">JE-0212</td><td class="nowrap">Nov 3</td><td>Payment received, bank</td><td class="mono">INV-0011</td><td class="num">$800.00</td><td class="hash">#e83a</td><td class="hash muted">#51d2</td></tr>
                     <tr><td class="mono">JE-0213</td><td class="nowrap">Nov 4</td><td>Expense, Figma</td><td class="muted">Expense</td><td class="num">$45.00</td><td class="hash">#0c6f</td><td class="hash muted">#e83a</td></tr>
@@ -320,7 +334,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-t1" data-target="#t-private" data-go-demo="a" data-cap="Only you" data-cap-sub="The draft's own label. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the draft waiting on Friday.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> "Northwind review call, 2 h" sits outside the week's total until Maya accepts it. Nobody else in her books can see it.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> "Northwind review call, 2&nbsp;h" sits outside the week's total until Maya accepts it. Nobody else in her books can see it.</p>
           </div>
         </li>
         <li class="claim">
@@ -328,15 +342,15 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-t2" data-target="#t-kept" data-go-demo="a" data-cap="Title and duration" data-cap-sub="What capture keeps. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: what the draft kept from the calendar.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> No attendees, no description, no meeting link. They never reach the app, so there is nothing to delete later.</p>
+            <p class="r-proof">No attendees, no description, no meeting link. They never reach the app, so there is nothing to delete later.</p>
           </div>
         </li>
         <li class="claim">
           <p class="claim-text" id="c-t3">Accept the draft and the unbilled hours move with it.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-t3" data-target="#t-unbilled" data-go-demo="ok" data-cap="20 h unbilled" data-cap-sub="After Maya accepts. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-t3" data-target="#t-unbilled" data-go-demo="ok" data-cap="20&nbsp;h unbilled" data-cap-sub="After Maya accepts. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the unbilled line under the grid.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> 18 h becomes 20 h, and 20 h × $150 is the $3,000.00 that later lands on <span class="nowrap">INV-0012</span>.</p>
+            <p class="r-proof">18&nbsp;h becomes 20&nbsp;h, and 20&nbsp;h × $150 is the $3,000.00 that later lands on <span class="nowrap">INV-0012</span>.</p>
           </div>
         </li>
       </ul>
@@ -351,7 +365,7 @@
             <table class="hours stack">
               <thead><tr><th>Project</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Total</th></tr></thead>
               <tbody>
-                <tr><td>Northwind Co · Brand refresh</td><td>4 h 30 m</td><td>6 h</td><td>3 h 30 m</td><td>4 h</td><td><span class="swap"><span data-show="a no">0 h</span><span data-show="ok">2 h</span></span></td><td><span class="swap"><b data-show="a no">18 h</b><b data-show="ok">20 h</b></span></td></tr>
+                <tr><td>Northwind Co · Brand refresh</td><td>4&nbsp;h&nbsp;30&nbsp;m</td><td>6&nbsp;h</td><td>3&nbsp;h&nbsp;30&nbsp;m</td><td>4&nbsp;h</td><td><span class="swap"><span data-show="a no">0&nbsp;h</span><span data-show="ok">2&nbsp;h</span></span></td><td><span class="swap"><b data-show="a no">18&nbsp;h</b><b data-show="ok">20&nbsp;h</b></span></td></tr>
               </tbody>
             </table>
             <p class="w-h">From your calendar</p>
@@ -359,29 +373,29 @@
               <div class="draft" data-show="a">
                 <svg class="i" aria-hidden="true"><use href="#i-calendar-clock"/></svg>
                 <div>
-                  <p class="d-t">Northwind review call · Fri · 2 h</p>
-                  <p class="d-s"><span id="t-private"><svg class="i i-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-eye-off"/></svg> Only you can see this draft</span> · <span id="t-kept">Kept: title and duration</span></p>
+                  <p class="d-t">Northwind review call · Fri · 2&nbsp;h</p>
+                  <p class="d-s"><svg class="i i-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-eye-off"/></svg> <span id="t-private">Only you</span> can see this draft · Kept: <span id="t-kept">title and duration</span></p>
                 </div>
                 <div class="reacts">
-                  <button class="ui-btn is-primary" type="button" data-go="ok" data-say="Accepted. Friday now shows 2 h and the week 20 h."><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Accept</button>
+                  <button class="ui-btn is-primary" type="button" data-go="ok" data-say="Accepted. Friday now shows 2&nbsp;h and the week 20&nbsp;h."><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Accept</button>
                   <button class="ui-btn" type="button" data-go="no" data-say="Declined. Nothing from the event was kept."><svg class="i" aria-hidden="true"><use href="#i-x"/></svg>Decline</button>
                 </div>
               </div>
               <div class="draft" data-show="ok">
                 <svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>
-                <div><p class="d-t">Accepted: Northwind review call, Fri, 2 h</p><p class="d-s">Now an ordinary entry in your week.</p></div>
+                <div><p class="d-t">Accepted: Northwind review call, Fri, 2&nbsp;h</p><p class="d-s">Now an ordinary entry in your week.</p></div>
                 <button class="ui-btn" type="button" data-go="a" data-say="Back to the waiting draft."><svg class="i" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Replay</button>
               </div>
               <div class="draft" data-show="no">
                 <svg class="i" aria-hidden="true"><use href="#i-x"/></svg>
-                <div><p class="d-t">Declined. Nothing from the event was kept.</p><p class="d-s">The week stays at 18 h.</p></div>
+                <div><p class="d-t">Declined. Nothing from the event was kept.</p><p class="d-s">The week stays at 18&nbsp;h.</p></div>
                 <button class="ui-btn" type="button" data-go="a" data-say="Back to the waiting draft."><svg class="i" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Replay</button>
               </div>
             </div>
             <div class="panel">
               <dl class="kv">
                 <dt>Unbilled, Northwind Co</dt>
-                <dd><span class="swap"><span data-show="a no">18 h × $150 = $2,700.00</span><span data-show="ok" id="t-unbilled">20 h × $150 = $3,000.00</span></span></dd>
+                <dd><span class="swap"><span data-show="a no">18&nbsp;h × $150 = $2,700.00</span><span data-show="ok">20&nbsp;h × $150 = <span id="t-unbilled">$3,000.00</span></span></span></dd>
               </dl>
             </div>
             <p class="sr demo-live" aria-live="polite"></p>
@@ -418,7 +432,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r2" data-target="#r-rem" data-cap="Your reminder rule" data-cap-sub="Three nudges, then a fee. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the reminder rule in Schedules.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> 3 days before, on the due date, 7 days after. Ferro's reminders went out Oct 28, Oct 31 and Nov 7, exactly as set.</p>
+            <p class="r-proof">3 days before, on the due date, 7 days after. Ferro's reminders went out Oct 28, Oct 31 and Nov 7, exactly as set.</p>
           </div>
         </li>
       </ul>
@@ -480,7 +494,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-e2" data-target="#e-cash" data-cap="Northwind Co, cash in" data-cap-sub="November, cash basis. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: November's cash by client.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Northwind's $9,500.00 is Dana's card payment, Halcyon's $800.00 is the bank transfer, and Ferro shows $0.00 because Ferro hasn't paid.</p>
+            <p class="r-proof">Northwind's $9,500.00 is Dana's card payment, Halcyon's $800.00 is the bank transfer, and Ferro shows $0.00 because Ferro hasn't paid.</p>
           </div>
         </li>
       </ul>
@@ -496,7 +510,7 @@
               <thead><tr><th>Item</th><th>Kind</th><th>Date</th><th class="num">Amount</th></tr></thead>
               <tbody>
                 <tr><td>Figma</td><td>Expense</td><td class="nowrap">Nov 4</td><td class="num">$45.00</td></tr>
-                <tr><td>Inkwell Print · BILL-0003</td><td id="e-bill">Bill paid, not an expense</td><td class="nowrap">Nov 10</td><td class="num">$640.00</td></tr>
+                <tr><td>Inkwell Print · BILL-0003</td><td>Bill paid, <span id="e-bill">not an expense</span></td><td class="nowrap">Nov 10</td><td class="num">$640.00</td></tr>
                 <tr><td>Domain renewal</td><td>Expense</td><td class="nowrap">Nov 11</td><td class="num">$24.00</td></tr>
                 <tr><td>Train to Northwind</td><td>Expense</td><td class="nowrap">Nov 13</td><td class="num">$86.00</td></tr>
               </tbody>
@@ -532,7 +546,7 @@
       <h2 class="h2" id="s-acct">Books your accountant reads, and can't touch.</h2>
       <p class="lead">Invite your accountant with read-only access. They can read the books as of any date, and every entry is chained to the one before it, so what they read is what happened.</p>
     </div>
-    <div class="proof is-flip" id="g-acct">
+    <div class="proof is-wide" id="g-acct">
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-a1">Your accountant reads everything and changes nothing.</p>
@@ -547,15 +561,15 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a2" data-target="#a-asof" data-go-demo="oct" data-cap="As of Oct 31" data-cap-sub="Only what existed that day. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: receivables on Oct 31.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> On Oct 31 Ferro owed $2,400.00, due that day. The late fee came on Nov 7, so the Oct 31 view doesn't show it.</p>
+            <p class="r-proof">On Oct 31 Ferro owed $2,400.00, due that day. The late fee came on Nov 7, so the Oct 31 view doesn't show it.</p>
           </div>
         </li>
         <li class="claim">
           <p class="claim-text" id="c-a3">Every entry is chained to the one before it.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a3" data-target="#a-chain" data-cap="#4be1 ← #a07c" data-cap-sub="JE-0219 points at JE-0218. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a3" data-target="#a-chain" data-go-demo="today" data-cap="#4be1 ← #a07c" data-cap-sub="JE-0219 points at JE-0218. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the latest link in the chain.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> <span class="nowrap">JE-0219</span> carries #4be1 and points at #a07c, <span class="nowrap">JE-0218</span>'s hash. Change an old entry and every link after it disagrees.</p>
+            <p class="r-proof"><span class="nowrap">JE-0219</span> carries #4be1 and points at #a07c, <span class="nowrap">JE-0218</span>'s hash. Change an old entry and every link after it disagrees.</p>
           </div>
         </li>
       </ul>
@@ -585,7 +599,10 @@
                 <tfoot><tr><td colspan="3">Total owed</td><td class="num">$2,400.00</td></tr></tfoot>
               </table>
             </div>
-            <p class="panel" style="margin-bottom:0"><svg class="i i-sm link-ico" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-link"/></svg> Latest entry <span class="mono">JE-0219</span> · <span id="a-chain">hash <span class="hash">#4be1</span> · previous <span class="hash">#a07c</span></span> (<span class="mono">JE-0218</span>)</p>
+            <div class="panel swap" style="margin-bottom:0">
+              <p data-show="today" style="margin:0"><svg class="i i-sm link-ico" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-link"/></svg> Today, latest entry <span class="mono">JE-0219</span> · hash <span class="hash">#4be1</span> · <span id="a-chain">previous <span class="hash">#a07c</span></span> (<span class="mono">JE-0218</span>)</p>
+              <p data-show="oct" style="margin:0"><svg class="i i-sm link-ico" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-link"/></svg> On Oct 31, latest entry <span class="mono">JE-0210</span> · hash <span class="hash">#93fe</span> · previous <span class="hash">#6d40</span> (<span class="mono">JE-0209</span>)</p>
+            </div>
             <p class="sr demo-live" aria-live="polite"></p>
           </div>
         </div>
@@ -628,7 +645,7 @@
               <span class="badge-ico"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
               <div>
                 <p class="w-title" style="margin:0">First retainer</p>
-                <p class="w-sub" style="margin:2px 0 0">Earned Nov 1 · <span id="m-why">INV-0011 to Halcyon</span>, $800.00 monthly</p>
+                <p class="w-sub" style="margin:2px 0 0">Earned Nov 1 · <span id="m-why">INV-0011</span> to Halcyon, $800.00 monthly</p>
               </div>
             </div>
             <div class="demo-ctl">

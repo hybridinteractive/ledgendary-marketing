@@ -33,8 +33,8 @@
 <!-- ============ Hero ============ -->
 <section class="hero" aria-labelledby="h1">
   <div class="wrap hero-grid">
+    <h1 class="h1 hero-h1" id="h1">Your whole studio,<br>on one ledger.</h1>
     <div class="hero-copy">
-      <h1 class="h1" id="h1">Your whole studio, on one ledger.</h1>
       <p class="lead">Everyone sees what their seat needs and nothing they shouldn't. The proposal, the hours, the invoice and the payment are one product, so nobody re-keys a thing. Don't take our word for it. Press Prove it.</p>
       <form class="waitlist" novalidate>
         <label for="wl-hero">Your work email</label>
@@ -44,6 +44,18 @@
         </div>
         <p class="form-msg" id="wl-hero-msg" aria-live="polite" data-idle="Invite-only alpha. One email when your studio's seat is ready.">Invite-only alpha. One email when your studio's seat is ready.</p>
       </form>
+      <nav class="toc" aria-label="Claims on this page">
+        <p class="toc-h">The receipts on this page</p>
+        <ol>
+          <li><a href="#s-seats">Four seats, one job <span>3 receipts</span></a></li>
+          <li><a href="#s-time">Weeks that lock <span>3 receipts</span></a></li>
+          <li><a href="#s-inv">Hours to invoice <span>close-up</span></a></li>
+          <li><a href="#s-portal">Pick, sign, pay <span>3 receipts</span></a></li>
+          <li><a href="#s-step">Confirm who you are <span>2 receipts</span></a></li>
+          <li><a href="#s-bills">Vendors and W-9s <span>3 receipts</span></a></li>
+          <li><a href="#s-mile">High fives <span>1 receipt</span></a></li>
+        </ol>
+      </nav>
     </div>
 
     <div class="hero-proof" id="g-hero">
@@ -55,7 +67,7 @@
           </div>
           <div class="receipt">
             <p class="r-pre">Receipt: the draft in Maya's own week.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Maya is signed in, and the draft says "Only you can see this". It stays out of every total until she accepts or declines it.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Maya is signed in, and the draft says "Only you can see this". It stays out of every total until she accepts it or submits her week.</p>
           </div>
         </li>
       </ul>
@@ -71,17 +83,17 @@
             <table class="hours">
               <thead><tr><th>Project</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Total</th></tr></thead>
               <tbody>
-                <tr><td>Northwind · Site build</td><td>3 h</td><td>2 h 30 m</td><td>1 h 45 m</td><td>7 h 15 m</td></tr>
-                <tr><td>Lumen · Studio admin</td><td>1 h</td><td>1 h 30 m</td><td>30 m</td><td>3 h</td></tr>
+                <tr><td>Northwind · Site build</td><td>3&nbsp;h</td><td>2&nbsp;h&nbsp;30&nbsp;m</td><td>1&nbsp;h&nbsp;45&nbsp;m</td><td>7&nbsp;h&nbsp;15&nbsp;m</td></tr>
+                <tr><td>Lumen · Studio admin</td><td>1&nbsp;h</td><td>1&nbsp;h&nbsp;30&nbsp;m</td><td>30&nbsp;m</td><td>3&nbsp;h</td></tr>
               </tbody>
-              <tfoot><tr><td>Week so far</td><td>4 h</td><td>4 h</td><td>2 h 15 m</td><td>10 h 15 m</td></tr></tfoot>
+              <tfoot><tr><td>Week so far</td><td>4&nbsp;h</td><td>4&nbsp;h</td><td>2&nbsp;h&nbsp;15&nbsp;m</td><td>10&nbsp;h&nbsp;15&nbsp;m</td></tr></tfoot>
             </table>
             <p class="w-h">From your calendar</p>
             <div class="draft">
               <svg class="i" aria-hidden="true"><use href="#i-calendar-clock"/></svg>
               <div>
-                <p class="d-t">Northwind check-in · Tue · 45 m</p>
-                <p class="d-s"><span id="h-only">Only you can see this</span> · title and duration only</p>
+                <p class="d-t">Northwind check-in · Tue · 45&nbsp;m</p>
+                <p class="d-s"><span id="h-only">Only you</span> can see this · title and duration only</p>
               </div>
               <span class="chip">Not in totals</span>
             </div>
@@ -118,7 +130,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s2" data-target="#s-mine" data-go-demo="mem" data-cap="Theo's two projects" data-cap-sub="His seat, his work. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the job as Theo sees it.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Theo's project list has two names on it, the two he works on. His screen shows his hours, not the budget or the invoice.</p>
+            <p class="r-proof">Theo's project list has two names on it, the two he works on. His screen shows his hours, not the budget or the invoice.</p>
           </div>
         </li>
         <li class="claim">
@@ -126,7 +138,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s3" data-target="#s-ro" data-go-demo="acc" data-cap="Read only" data-cap-sub="Jules's seat. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the job as Jules sees it.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Jules sees the invoice and both journal entries, and there isn't a single button on the screen to press.</p>
+            <p class="r-proof">Jules sees the invoice and both journal entries, and there isn't a single button on the screen to press.</p>
           </div>
         </li>
       </ul>
@@ -149,14 +161,14 @@
               <button type="button" data-go="mem" aria-pressed="false" data-say="Viewing as Theo Brandt, member.">Theo · member</button>
               <button type="button" data-go="acc" aria-pressed="false" data-say="Viewing as Jules Carter, accountant, read only.">Jules · accountant</button>
             </div>
-            <div class="swap" style="margin-top:14px">
+            <div class="swap is-tabs" style="margin-top:14px">
               <div data-show="own adm">
                 <p class="w-title">Northwind · Site build <span class="chip">Option B</span></p>
                 <p class="w-sub">Your projects: 6 · Northwind, Halcyon, Ferro, Alder, Kite, Lumen internal</p>
                 <dl class="kv">
                   <dt>Agreed</dt><dd>$30,000.00 fixed + time at $150/h</dd>
-                  <dt>Estimate</dt><dd>80 h · $42,000.00</dd>
-                  <dt>Approved time</dt><dd>Theo 41 h 45 m · Priya 38 h 15 m · 80 h</dd>
+                  <dt>Estimate</dt><dd>80&nbsp;h · $42,000.00</dd>
+                  <dt>Approved time</dt><dd>Theo 41&nbsp;h&nbsp;45&nbsp;m · Priya 38&nbsp;h&nbsp;15&nbsp;m · 80&nbsp;h</dd>
                 </dl>
                 <table class="tbl" style="margin-top:12px">
                   <thead><tr><th>Invoice</th><th>Status</th><th class="num">Amount</th></tr></thead>
@@ -166,15 +178,15 @@
               </div>
               <div data-show="mem">
                 <p class="w-title">Northwind · Site build</p>
-                <p class="w-sub"><span id="s-mine">Your projects: 2 · Northwind, Kite</span></p>
+                <p class="w-sub">Your projects: 2 · <span id="s-mine">Northwind, Kite</span></p>
                 <dl class="kv">
-                  <dt>Your time, week of Nov 3</dt><dd>41 h 45 m · approved</dd>
-                  <dt>Your time, week of Nov 17</dt><dd>12 h 30 m so far</dd>
+                  <dt>Your time, week of Nov 3</dt><dd>41&nbsp;h&nbsp;45&nbsp;m · approved</dd>
+                  <dt>Your time, week of Nov 17</dt><dd>12&nbsp;h&nbsp;30&nbsp;m so far</dd>
                   <dt>Due this week</dt><dd>Homepage build, checkout states</dd>
                 </dl>
                 <table class="tbl" style="margin-top:12px">
                   <thead><tr><th>Task, week of Nov 3</th><th class="num">Logged</th></tr></thead>
-                  <tbody><tr><td>Homepage build</td><td class="num">22 h 30 m</td></tr><tr><td>Checkout states</td><td class="num">19 h 15 m</td></tr></tbody>
+                  <tbody><tr><td>Homepage build</td><td class="num">22&nbsp;h&nbsp;30&nbsp;m</td></tr><tr><td>Checkout states</td><td class="num">19&nbsp;h&nbsp;15&nbsp;m</td></tr></tbody>
                 </table>
                 <div class="demo-ctl"><span class="ui-btn"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Log time</span></div>
               </div>
@@ -213,7 +225,7 @@
       <h2 class="h2" id="s-time">Haaaave you met your team's timesheets?</h2>
       <p class="lead">Everyone logs a weekly grid and submits it. An owner or administrator approves it, and an approved week locks. Once an entry is on an invoice it takes a note and nothing else.</p>
     </div>
-    <div class="proof is-flip" id="g-time">
+    <div class="proof is-wide" id="g-time">
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-t1">People submit their own week. An owner or administrator approves it.</p>
@@ -228,7 +240,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-t2" data-target="#t-lock" data-go-demo="ok" data-cap="Approved and locked" data-cap-sub="Sam's stamp. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: Theo's week after Sam approved it.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> "Approved by Sam Okafor, Nov 10 · Locked". Nobody edits those 41 h 45 m now, Theo included.</p>
+            <p class="r-proof">"Approved by Sam Okafor, Nov 10 · Locked". Nobody edits those 41&nbsp;h&nbsp;45&nbsp;m now, Theo included.</p>
           </div>
         </li>
         <li class="claim">
@@ -236,7 +248,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-t3" data-target="#t-note" data-go-demo="inv" data-cap="Note only" data-cap-sub="After INV-0042 went out. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: Theo's Wednesday entry after Nov 12.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Wednesday's 8 h 15 m is on <span class="nowrap">INV-0042</span>. Minutes, project, date and billable are fixed. The note is the only field that still opens.</p>
+            <p class="r-proof">Wednesday's 8&nbsp;h&nbsp;15&nbsp;m is on <span class="nowrap">INV-0042</span>. Minutes, project, date and billable are fixed. The note is the only field that still opens.</p>
           </div>
         </li>
       </ul>
@@ -251,18 +263,18 @@
             <table class="hours stack">
               <thead><tr><th>Person</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Total</th></tr></thead>
               <tbody>
-                <tr><td>Theo Brandt</td><td>8 h 30 m</td><td>9 h</td><td>8 h 15 m</td><td>8 h 45 m</td><td>7 h 15 m</td><td><b>41 h 45 m</b></td></tr>
-                <tr><td>Priya Nair</td><td>7 h 45 m</td><td>8 h</td><td>7 h 30 m</td><td>8 h</td><td>7 h</td><td><b>38 h 15 m</b></td></tr>
+                <tr><td>Theo Brandt</td><td>8&nbsp;h&nbsp;30&nbsp;m</td><td>9&nbsp;h</td><td>8&nbsp;h&nbsp;15&nbsp;m</td><td>8&nbsp;h&nbsp;45&nbsp;m</td><td>7&nbsp;h&nbsp;15&nbsp;m</td><td><b>41&nbsp;h&nbsp;45&nbsp;m</b></td></tr>
+                <tr><td>Priya Nair</td><td>7&nbsp;h&nbsp;45&nbsp;m</td><td>8&nbsp;h</td><td>7&nbsp;h&nbsp;30&nbsp;m</td><td>8&nbsp;h</td><td>7&nbsp;h</td><td><b>38&nbsp;h&nbsp;15&nbsp;m</b></td></tr>
               </tbody>
-              <tfoot><tr><td>Northwind · Site build</td><td>16 h 15 m</td><td>17 h</td><td>15 h 45 m</td><td>16 h 45 m</td><td>14 h 15 m</td><td>80 h</td></tr></tfoot>
+              <tfoot><tr><td>Northwind · Site build</td><td>16&nbsp;h&nbsp;15&nbsp;m</td><td>17&nbsp;h</td><td>15&nbsp;h&nbsp;45&nbsp;m</td><td>16&nbsp;h&nbsp;45&nbsp;m</td><td>14&nbsp;h&nbsp;15&nbsp;m</td><td>80&nbsp;h</td></tr></tfoot>
             </table>
             <div class="panel swap">
               <div data-show="a" class="demo-ctl" style="border:0;margin:0;padding:0">
-                <span id="t-sub" class="chip"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg>Both submitted Nov 7</span>
+                <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-send"/></svg>Both <span id="t-sub">submitted Nov 7</span></span>
                 <button class="ui-btn is-primary" type="button" data-go="ok" data-say="Approved. Both weeks are locked."><svg class="i" aria-hidden="true"><use href="#i-check-check"/></svg>Approve both weeks</button>
               </div>
               <div data-show="ok" class="demo-ctl" style="border:0;margin:0;padding:0">
-                <span id="t-lock" class="confirmed"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Approved by Sam Okafor, Nov 10 · Locked</span>
+                <span class="confirmed"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Approved by Sam Okafor, Nov 10 · <span id="t-lock">Locked</span></span>
                 <button class="ui-btn" type="button" data-go="inv" data-say="Nov 12: INV-0042 sent. Invoiced entries take a note only.">Skip to Nov 12, after INV-0042</button>
               </div>
               <div data-show="inv" class="demo-ctl" style="border:0;margin:0;padding:0">
@@ -270,11 +282,11 @@
                 <button class="ui-btn" type="button" data-go="a" data-say="Back to Nov 10, before approval."><svg class="i" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Replay</button>
               </div>
             </div>
-            <p class="w-h">Theo Brandt · Wed Nov 5 · 8 h 15 m</p>
+            <p class="w-h">Theo Brandt · Wed Nov 5 · 8&nbsp;h&nbsp;15&nbsp;m</p>
             <div class="swap">
               <dl class="kv" data-show="a"><dt>Status</dt><dd>Submitted, waiting for approval</dd><dt>Project</dt><dd>Northwind · Site build · billable</dd><dt>Note</dt><dd>Checkout states, review fixes</dd></dl>
               <dl class="kv" data-show="ok"><dt>Status</dt><dd>Approved · locked</dd><dt>Project</dt><dd>Northwind · Site build · billable</dd><dt>Note</dt><dd>Checkout states, review fixes</dd></dl>
-              <dl class="kv" data-show="inv"><dt>Status</dt><dd>Invoiced on INV-0042</dd><dt>Minutes, project, date, billable</dt><dd>Fixed</dd><dt>Note</dt><dd><span id="t-note">Editable: the only field left</span></dd></dl>
+              <dl class="kv" data-show="inv"><dt>Status</dt><dd>Invoiced on INV-0042</dd><dt>Minutes, project, date, billable</dt><dd>Fixed</dd><dt>Note</dt><dd><span id="t-note">Editable</span>, the only field left</dd></dl>
             </div>
             <p class="sr demo-live" aria-live="polite"></p>
           </div>
@@ -295,7 +307,7 @@
       <div class="macro-head">
         <h2 class="h2" id="s-inv">Month end without a spreadsheet.</h2>
         <div class="macro-cap">
-          <p class="cap-close">Close-up: $6,262.50. Theo's approved 41 h 45 m at $150.</p>
+          <p class="cap-close">Close-up: $6,262.50. Theo's approved 41&nbsp;h&nbsp;45&nbsp;m at $150.</p>
           <p class="cap-full off">The whole invoice: the option Northwind signed, plus every approved hour at the agreed rate. $42,000.00, nobody typed it.</p>
         </div>
       </div>
@@ -325,13 +337,21 @@
                   <thead><tr><th>Line</th><th>Source</th><th>Qty</th><th class="num">Rate</th><th class="num">Amount</th></tr></thead>
                   <tbody>
                     <tr><td>Site build, fixed fee</td><td class="muted">P-0031, option B</td><td>1</td><td class="num">$30,000.00</td><td class="num">$30,000.00</td></tr>
-                    <tr class="is-hl"><td>Theo Brandt, design and build</td><td class="muted">Week of Nov 3, approved</td><td class="nowrap">41 h 45 m</td><td class="num">$150.00</td><td class="num" data-macro-focus>$6,262.50</td></tr>
-                    <tr><td>Priya Nair, design and build</td><td class="muted">Week of Nov 3, approved</td><td class="nowrap">38 h 15 m</td><td class="num">$150.00</td><td class="num">$5,737.50</td></tr>
+                    <tr class="is-hl"><td>Theo Brandt, design and build</td><td class="muted">Week of Nov 3, approved</td><td class="nowrap">41&nbsp;h&nbsp;45&nbsp;m</td><td class="num">$150.00</td><td class="num" data-macro-focus>$6,262.50</td></tr>
+                    <tr><td>Priya Nair, design and build</td><td class="muted">Week of Nov 3, approved</td><td class="nowrap">38&nbsp;h&nbsp;15&nbsp;m</td><td class="num">$150.00</td><td class="num">$5,737.50</td></tr>
                   </tbody>
-                  <tfoot><tr><td colspan="4">Total · estimate was $42,000.00 for 80 h</td><td class="num">$42,000.00</td></tr></tfoot>
+                  <tfoot><tr><td colspan="4">Total · estimate was $42,000.00 for 80&nbsp;h</td><td class="num">$42,000.00</td></tr></tfoot>
                 </table>
-                <p class="w-h">Posted</p>
+                <p class="w-h">Posted and paid</p>
                 <p style="margin:0" class="muted"><span class="mono">JE-1041</span> · Nov 12 · invoice sent · $42,000.00 · balanced</p>
+                <table class="tbl" style="margin-top:10px">
+                  <thead><tr><th>When</th><th>Activity</th><th class="num">Amount</th></tr></thead>
+                  <tbody>
+                    <tr><td class="nowrap">Nov 12</td><td>Sent to Dana Whitfield</td><td class="num">$42,000.00</td></tr>
+                    <tr><td class="nowrap">Nov 13</td><td>Viewed in the client portal</td><td class="num">–</td></tr>
+                    <tr><td class="nowrap">Nov 18</td><td>Paid by bank · posted as JE-1042</td><td class="num">$42,000.00</td></tr>
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
@@ -363,7 +383,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p2" data-target="#p-fp" data-cap="Fingerprint only" data-cap-sub="No raw address or browser. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: what the signature kept about Dana's device.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Dana's network address and browser are stored only as a keyed fingerprint. The raw values are never kept.</p>
+            <p class="r-proof">Dana's network address and browser are stored only as a keyed fingerprint. The raw values are never kept.</p>
           </div>
         </li>
         <li class="claim">
@@ -371,7 +391,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p3" data-target="#p-paid" data-go-demo="paid" data-cap="Paid, Nov 18" data-cap-sub="By bank, in the portal. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: <span class="nowrap">INV-0042</span> after Dana paid.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> $42,000.00 by bank on Nov 18. <span class="nowrap">INV-0042</span> says Paid, and Lumen's books have it as <span class="nowrap">JE-1042</span>.</p>
+            <p class="r-proof">$42,000.00 by bank on Nov 18. <span class="nowrap">INV-0042</span> says Paid, and Lumen's books have it as <span class="nowrap">JE-1042</span>.</p>
           </div>
         </li>
       </ul>
@@ -386,8 +406,8 @@
             <p class="w-title">P-0031 · Site build <span class="chip">Option B chosen</span></p>
             <div class="sig">
               <span class="sig-name">Dana Whitfield</span>
-              <span class="muted" style="font-size:12.5px"><span id="p-who">Signed Oct 30, 10:14 by Dana Whitfield</span> · option B, $30,000 + time</span>
-              <span class="muted" style="font-size:12.5px"><svg class="i i-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-fingerprint"/></svg> <span id="p-fp">Address and browser: keyed fingerprint only</span></span>
+              <span class="muted" style="font-size:12.5px">Signed <span id="p-who">Oct 30, 10:14</span> by Dana Whitfield · option B, $30,000 + time</span>
+              <span class="muted" style="font-size:12.5px"><svg class="i i-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-fingerprint"/></svg> Address and browser: <span id="p-fp">keyed fingerprint</span> only</span>
             </div>
             <div class="panel">
               <div class="swap">
@@ -437,7 +457,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v2" data-target="#v-rev" data-go-demo="done" data-cap="JE-1043 reverses JE-1037" data-cap-sub="Confirmed by Sam. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: <span class="nowrap">INV-0040</span> after the void.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> <span class="nowrap">JE-1037</span> still says what it said on Nov 4. <span class="nowrap">JE-1043</span> reverses it on Nov 19, stamped "Confirmed by Sam Okafor".</p>
+            <p class="r-proof"><span class="nowrap">JE-1037</span> still says what it said on Nov 4. <span class="nowrap">JE-1043</span> reverses it on Nov 19, stamped "Confirmed by Sam Okafor".</p>
           </div>
         </li>
       </ul>
@@ -467,7 +487,7 @@
                 <span class="muted" style="font-size:12px">Asks first: void, write-off, refund, period close and reopen</span>
               </div>
               <div data-show="ask" class="stepup">
-                <p class="s-t" id="v-ask"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Confirm it's you, Sam</p>
+                <p class="s-t"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg><span id="v-ask">Confirm it's you</span>, Sam</p>
                 <div class="s-opts">
                   <button class="ui-btn is-primary" type="button" data-go="done" data-say="Confirmed with a passkey. INV-0040 voided. JE-1043 reverses JE-1037."><svg class="i" aria-hidden="true"><use href="#i-fingerprint"/></svg>Use passkey</button>
                   <button class="ui-btn" type="button" data-go="done" data-say="Confirmed. INV-0040 voided. JE-1043 reverses JE-1037."><svg class="i" aria-hidden="true"><use href="#i-key-round"/></svg>Password</button>
@@ -513,7 +533,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-b2" data-target="#b-w9" data-cap="Requested, received, on file" data-cap-sub="Each step dated. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: Kestrel's W-9 history.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> Requested Oct 2, received Oct 9, on file Oct 10. "We asked and they haven't sent it" is a state you can see.</p>
+            <p class="r-proof">Requested Oct 2, received Oct 9, on file Oct 10. "We asked and they haven't sent it" is a state you can see.</p>
           </div>
         </li>
         <li class="claim">
@@ -521,7 +541,7 @@
           <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-b3" data-target="#b-pay" data-cap="BILL-0017, paid" data-cap-sub="Cash out, no expense. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: <span class="nowrap">BILL-0017</span>'s payment.</p>
-            <p class="r-proof"><span class="stamp">True story.</span> $2,800.00 paid to Kestrel on Nov 14. It shows once, under bills, and November's expenses don't include it.</p>
+            <p class="r-proof">$2,800.00 paid to Kestrel on Nov 14. It shows once, under bills, and November's expenses don't include it.</p>
           </div>
         </li>
       </ul>
@@ -536,12 +556,12 @@
             <p class="w-title">Kestrel Photo <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-file-check"/></svg>W-9 on file</span></p>
             <dl class="kv">
               <dt>Tax id</dt><dd><span id="b-tin">EIN · ends 4821</span></dd>
-              <dt>W-9</dt><dd><span id="b-w9">Requested Oct 2 · Received Oct 9 · On file Oct 10</span></dd>
+              <dt>W-9</dt><dd>Requested Oct 2 · Received Oct 9 · <span id="b-w9">On file Oct 10</span></dd>
             </dl>
             <table class="tbl" style="margin-top:12px">
               <thead><tr><th>Bill</th><th>Status</th><th class="num">Amount</th></tr></thead>
               <tbody>
-                <tr><td class="mono">BILL-0017</td><td><span id="b-pay">Paid Nov 14 · not an expense</span></td><td class="num">$2,800.00</td></tr>
+                <tr><td class="mono">BILL-0017</td><td>Paid Nov 14 · <span id="b-pay">not an expense</span></td><td class="num">$2,800.00</td></tr>
               </tbody>
             </table>
             <p class="w-h">November spend, counted once</p>
@@ -593,7 +613,7 @@
               <span class="badge-ico"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
               <div>
                 <p class="w-title" style="margin:0">12 weeks on schedule</p>
-                <p class="w-sub" style="margin:2px 0 0"><span id="m-why">Every week submitted on time</span>, Aug 25 to Nov 16</p>
+                <p class="w-sub" style="margin:2px 0 0">Every week <span id="m-why">submitted on time</span>, Aug 25 to Nov 16</p>
               </div>
             </div>
             <div class="demo-ctl">

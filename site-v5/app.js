@@ -136,10 +136,23 @@
     var cy = (tr.top - wr.top + tr.height / 2) / sx;
     var d = loupe.offsetWidth;
     var s = parseFloat(stage.getAttribute("data-scale") || SCALE);
-    // Keep the magnified target inside the circle when it is wide.
-    var fit = (d - 24) / (tr.width / sx);
-    if (fit < s) s = Math.max(1.12, fit);
+    // The whole target always fits: the scale comes down until the target's own box sits inside
+    // the circle, and everything outside that box fades out, so no fragment of a neighbour shows.
+    var tw = tr.width / sx + 8, th = tr.height / sx + 6;
+    var fit = Math.min((d * 0.86) / tw, (d * 0.6) / th);
+    if (fit < s) s = Math.max(1, fit);
+    // Hard-ish edges just outside the target's own text box, fading inward by a couple of pixels,
+    // so neighbouring glyphs never leak in as fragments.
+    var hx = tr.width / sx / 2 + 2, hy = tr.height / sx / 2 + 1;
+    var x0 = cx - hx, x1 = cx + hx, y0 = cy - hy, y1 = cy + hy;
+    var mask = "linear-gradient(to right, transparent " + x0 + "px, #000 " + (x0 + 3) + "px, #000 " + (x1 - 3) + "px, transparent " + x1 + "px), " +
+      "linear-gradient(to bottom, transparent " + y0 + "px, #000 " + (y0 + 2) + "px, #000 " + (y1 - 2) + "px, transparent " + y1 + "px)";
+    lens.style.width = win.offsetWidth + "px";
+    lens.style.height = win.offsetHeight + "px";
+    lens.style.webkitMaskImage = mask;
+    lens.style.maskImage = mask;
     lens.style.transform = "translate(" + (d / 2 - cx * s) + "px," + (d / 2 - cy * s) + "px) scale(" + s + ")";
+    stage.setAttribute("data-fit", s < 1.15 ? "tight" : "ok");
     loupe.classList.add("is-on");
     var cap = stage.querySelector(".lens-cap");
     if (cap && stage._cap) cap.innerHTML = stage._cap;
@@ -211,7 +224,6 @@
   doc.addEventListener("click", function (e) {
     var btn = e.target.closest(".prove");
     if (!btn) return;
-    if (btn.getAttribute("aria-expanded") === "true") { closeClaim(btn); return; }
     prove(btn);
   });
 
@@ -222,8 +234,14 @@
     var stage = stageOf(first);
     stage.setAttribute("data-aim", first.getAttribute("data-target"));
     stage._cap = '<strong>' + (first.getAttribute("data-cap") || "Magnified") + '</strong>' + (first.getAttribute("data-cap-sub") || "Demo data, magnified 2.3×");
-    if (g.classList.contains("hero-proof")) prove(first, true);
-    else requestAnimationFrame(function () { aim(stage); });
+    if (g.classList.contains("hero-proof")) { prove(first, true); return; }
+    // Open the first receipt quietly, so the column is never a list of closed rows; it isn't counted.
+    first.setAttribute("aria-expanded", "true");
+    first.closest(".claim").classList.add("is-open");
+    var go = first.getAttribute("data-go-demo");
+    var demo = stage.querySelector("[data-demo]");
+    if (go && demo && demo.getAttribute("data-state") !== go) setState(demo, go);
+    requestAnimationFrame(function () { aim(stage); });
   });
 
   function aimAll() {
@@ -265,7 +283,11 @@
     var e = 1 - Math.pow(1 - p, 3);
     var start = parseFloat(m.getAttribute("data-zoom") || "3");
     var view = m.querySelector(".macro-view");
-    var fitS = Math.min(1, view.clientHeight / screen.offsetHeight, view.clientWidth / screen.offsetWidth);
+    var phone = window.innerWidth <= 760;
+    // On a phone the whole screen at its own size is too small to read, so the zoom ends on the
+    // phone's own layout at 1×, from the top of the screen. On wider screens it ends on the whole screen.
+    var fitS = phone ? 1 : Math.min(1.15, view.clientHeight / screen.offsetHeight, view.clientWidth / screen.offsetWidth);
+    if (phone) start = Math.min(start, 2.2);
     var s = start + (fitS - start) * e;
     var ox = screen.offsetWidth / 2, oy = 0;
     if (focus) {
@@ -283,7 +305,7 @@
     var W = screen.offsetWidth * start, H = screen.offsetHeight * start, vh2 = view.clientHeight;
     tx0 = Math.min(-baseX, Math.max(vw - baseX - W, tx0));
     ty0 = Math.min(0, Math.max(vh2 - H, ty0));
-    var tx1 = (vw - screen.offsetWidth * fitS) / 2 - baseX, ty1 = Math.max(0, (view.clientHeight - screen.offsetHeight * fitS) / 2);
+    var tx1 = (vw - screen.offsetWidth * fitS) / 2 - baseX, ty1 = 0;
     var tx = tx0 + (tx1 - tx0) * e, ty = ty0 + (ty1 - ty0) * e;
     screen.style.transformOrigin = "0 0";
     screen.style.transform = "translate(" + (baseX + tx - baseX) + "px," + ty + "px) scale(" + s + ")";
