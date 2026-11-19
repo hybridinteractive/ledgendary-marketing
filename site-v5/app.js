@@ -163,8 +163,13 @@
     return !t || !!t.closest(".off");
   }
 
+  // Document ids and durations stay on one line in the caption.
+  function keepWhole(t) {
+    return t.replace(/\b([A-Z]{1,4}-\d{3,6})\b/g, '<span class="nowrap">$1</span>').replace(/(\d) (h|m)\b/g, "$1\u00a0$2");
+  }
+
   function capFor(btn) {
-    return '<strong>' + (btn.getAttribute("data-cap") || "Magnified") + '</strong>' + (btn.getAttribute("data-cap-sub") || "Demo data, magnified");
+    return '<strong>' + keepWhole(btn.getAttribute("data-cap") || "Magnified") + '</strong>' + keepWhole(btn.getAttribute("data-cap-sub") || "Demo data, magnified");
   }
 
   /* When a demo changes state, the loupe follows: if its detail is no longer on screen,
@@ -204,7 +209,7 @@
       if (demo) setState(demo, go);
     }
     stage.setAttribute("data-aim", btn.getAttribute("data-target"));
-    stage._cap = '<strong>' + (btn.getAttribute("data-cap") || "Magnified") + '</strong>' + (btn.getAttribute("data-cap-sub") || "Demo data, magnified 2.3×");
+    stage._cap = capFor(btn);
     aim(stage);
     var id = btn.getAttribute("data-receipt") || btn.getAttribute("data-target");
     opened.add(group.id + id);
@@ -233,7 +238,7 @@
     if (!first) return;
     var stage = stageOf(first);
     stage.setAttribute("data-aim", first.getAttribute("data-target"));
-    stage._cap = '<strong>' + (first.getAttribute("data-cap") || "Magnified") + '</strong>' + (first.getAttribute("data-cap-sub") || "Demo data, magnified 2.3×");
+    stage._cap = capFor(first);
     if (g.classList.contains("hero-proof")) { prove(first, true); return; }
     // Open the first receipt quietly, so the column is never a list of closed rows; it isn't counted.
     first.setAttribute("aria-expanded", "true");
