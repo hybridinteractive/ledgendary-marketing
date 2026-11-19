@@ -1,0 +1,438 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-19T12:00:00Z",
+  "title": "Design System: Ledgendary audience pages (v4 \"Episodes\")",
+  "scope": "site-v4/ only (look v4 alternate). Not a project-wide system; site/, site-v2/, site-v3/ and later looks are competing alternates in their own worlds. Derived from site-v4/styles.css, the four HTML pages and app.js as finished 2026-11-19 after the finish review and two fix rounds. Values are the final cascaded ones (the stylesheet appends late override blocks for the finale and frame labels).",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "White Ground",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#121212",
+          "#333333",
+          "#4a4a4a",
+          "#6b6b6b",
+          "#e4e4e4",
+          "#f2f2f2",
+          "#f7f7f5",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#121212"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "#333333"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "canonical": "#4a4a4a"
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#e4e4e4"
+      },
+      "hair-2": {
+        "role": "neutral",
+        "displayName": "Hover Grey",
+        "canonical": "#f2f2f2"
+      },
+      "wash": {
+        "role": "neutral",
+        "displayName": "Warm Wash",
+        "canonical": "#f7f7f5"
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "#6b6b6b"
+      },
+      "tomato": {
+        "role": "primary",
+        "displayName": "Tomato",
+        "canonical": "#ff4a1c",
+        "tonalRamp": [
+          "#3d0e03",
+          "#661806",
+          "#99240a",
+          "#cc300e",
+          "#ff4a1c",
+          "#ff7a59",
+          "#ffb39f",
+          "#ffe6df"
+        ]
+      },
+      "peach": {
+        "role": "secondary",
+        "displayName": "Peach (proposals and clients)",
+        "canonical": "#ffd0b5",
+        "tonalRamp": [
+          "#3d2414",
+          "#6b3f24",
+          "#a3633a",
+          "#d98a5c",
+          "#ffb48a",
+          "#ffd0b5",
+          "#ffe2d1",
+          "#fff0e7"
+        ]
+      },
+      "sky": {
+        "role": "secondary",
+        "displayName": "Sky (time and people)",
+        "canonical": "#bfe2ff",
+        "tonalRamp": [
+          "#0f2a40",
+          "#1c4a70",
+          "#2e6ea3",
+          "#4d93d1",
+          "#8cc4f5",
+          "#bfe2ff",
+          "#d6edff",
+          "#e8f4ff"
+        ]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Mint (getting paid)",
+        "canonical": "#b8f0d4",
+        "tonalRamp": [
+          "#0f3323",
+          "#1b5a3e",
+          "#2a8a5f",
+          "#47b886",
+          "#82deb2",
+          "#b8f0d4",
+          "#d1f7e4",
+          "#e6faf0"
+        ]
+      },
+      "lilac": {
+        "role": "secondary",
+        "displayName": "Lilac (the books and trust)",
+        "canonical": "#dacbff",
+        "tonalRamp": [
+          "#25164d",
+          "#3f2a80",
+          "#5d44b3",
+          "#8069e0",
+          "#b19ef5",
+          "#dacbff",
+          "#e8dfff",
+          "#f1ebff"
+        ]
+      },
+      "peach-soft": {
+        "role": "secondary",
+        "displayName": "Peach Soft",
+        "canonical": "#fff0e7"
+      },
+      "sky-soft": {
+        "role": "secondary",
+        "displayName": "Sky Soft",
+        "canonical": "#e8f4ff"
+      },
+      "mint-soft": {
+        "role": "secondary",
+        "displayName": "Mint Soft",
+        "canonical": "#e6faf0"
+      },
+      "lilac-soft": {
+        "role": "secondary",
+        "displayName": "Lilac Soft",
+        "canonical": "#f1ebff"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The audience headline in the hero, two stacked lines."
+      },
+      "title-card-big": {
+        "displayName": "Big Title Card",
+        "purpose": "One episode per page; words set in one by one."
+      },
+      "title-card": {
+        "displayName": "Title Card",
+        "purpose": "Every other episode heading, code and title on one line."
+      },
+      "episode-code": {
+        "displayName": "Episode Code",
+        "purpose": "'S01E04 ·' inside the title card heading, tabular."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "The special and the finale headings."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Title card ledes and the special lede; the hero subline runs 1.25rem/1.42 in ink-2."
+      },
+      "wink": {
+        "displayName": "Wink",
+        "purpose": "Italic heavy aside under a title card; 1.375rem on the big card."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running copy; 1rem on phones."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Big numbers in recap and finale frames."
+      },
+      "window-title": {
+        "displayName": "Window Title",
+        "purpose": "Document titles inside product windows."
+      },
+      "ui": {
+        "displayName": "UI",
+        "purpose": "Text inside product windows."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary button label; 0.9375rem small."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Chips, tags, index pins, table heads; sentence case."
+      }
+    },
+    "shadows": [
+      {
+        "name": "window",
+        "value": "0 22px 44px -26px rgba(18, 18, 18, 0.42), 0 3px 8px -4px rgba(18, 18, 18, 0.16)",
+        "purpose": "Product windows, the current recap frame, hovered season rows."
+      },
+      {
+        "name": "small",
+        "value": "0 10px 22px -14px rgba(18, 18, 18, 0.38), 0 2px 4px -2px rgba(18, 18, 18, 0.12)",
+        "purpose": "The waitlist field; the current recap frame on phones."
+      },
+      {
+        "name": "button",
+        "value": "0 8px 18px -10px rgba(18, 18, 18, 0.5)",
+        "purpose": "Standalone primary button at rest."
+      },
+      {
+        "name": "button-hover",
+        "value": "0 12px 22px -12px rgba(18, 18, 18, 0.55)",
+        "purpose": "Primary button hover, with a 1px rise."
+      },
+      {
+        "name": "focus-ring-field",
+        "value": "0 0 0 4px #dacbff",
+        "purpose": "Waitlist field focus-within (peach #ffd0b5 on error), layered over the small shadow."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Every entering and state transition."
+      },
+      {
+        "name": "ease-in",
+        "value": "cubic-bezier(0.7, 0, 0.84, 0)",
+        "purpose": "States leaving (200ms fade)."
+      },
+      {
+        "name": "hover",
+        "value": "150ms",
+        "purpose": "Hover and press on buttons, links, icon buttons."
+      },
+      {
+        "name": "state-swap",
+        "value": "450ms in, 200ms out",
+        "purpose": "Window states swapping in place with a 6px rise and 3px blur."
+      },
+      {
+        "name": "title-wipe",
+        "value": "800ms clip-path",
+        "purpose": "Ordinary title cards wipe in left to right."
+      },
+      {
+        "name": "title-words",
+        "value": "700ms per word, 120ms + 55ms stagger",
+        "purpose": "The big title card sets word by word from a 0.45em rise and 6px blur."
+      },
+      {
+        "name": "stamp",
+        "value": "550ms",
+        "purpose": "Paid stamp lands from -12deg, 1.5x scale and blur."
+      },
+      {
+        "name": "recap-frame",
+        "value": "2600ms",
+        "purpose": "Each 'Previously on…' frame's play time."
+      },
+      {
+        "name": "beat",
+        "value": "2300ms default",
+        "purpose": "Episode beats auto-advance while on screen."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop-narrow",
+        "value": "1200px"
+      },
+      {
+        "name": "no-index",
+        "value": "1023px"
+      },
+      {
+        "name": "tablet",
+        "value": "820px"
+      },
+      {
+        "name": "phone",
+        "value": "640px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action (Join the waitlist): ink on tomato, ink-outlined pill with a soft lift.",
+      "html": "<div class=\"ds-g\"><button class=\"ds-btn\">Join the waitlist</button><button class=\"ds-btn ds-btn-sm\">Join the waitlist</button><button class=\"ds-btn\" disabled>Join the waitlist</button></div>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;border:var(--line);background:var(--tomato);color:var(--ink);font:800 1rem/1 var(--font);letter-spacing:-0.005em;box-shadow:0 8px 18px -10px rgba(18,18,18,.5);cursor:pointer;transition:transform .15s var(--ease),box-shadow .15s var(--ease);}.ds-btn:hover{transform:translateY(-1px);box-shadow:0 12px 22px -12px rgba(18,18,18,.55);}.ds-btn:active{transform:translateY(1px);box-shadow:0 4px 10px -6px rgba(18,18,18,.5);}.ds-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-btn-sm{min-height:40px;padding:0 16px;font-size:.9375rem;}.ds-btn[disabled]{background:var(--hair-2);box-shadow:none;transform:none;cursor:not-allowed;}"
+    },
+    {
+      "name": "Icon Button",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "40px ink-outlined circle for play, pause and replay on the recap and episode beats.",
+      "html": "<div class=\"ds-g\"><button class=\"ds-ib\" aria-label=\"Pause\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"14\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/><rect x=\"6\" y=\"4\" width=\"4\" height=\"16\" rx=\"1\"/></svg></button><button class=\"ds-ib\" aria-label=\"Play\"><svg viewBox=\"0 0 24 24\" width=\"18\" height=\"18\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><polygon points=\"6 3 20 12 6 21 6 3\"/></svg></button></div>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-ib{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:999px;border:var(--line);background:#fff;color:var(--ink);cursor:pointer;transition:background-color .15s var(--ease),transform .15s var(--ease);}.ds-ib:hover{background:var(--hair-2);}.ds-ib:active{transform:scale(.95);}.ds-ib:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}"
+    },
+    {
+      "name": "Waitlist Field",
+      "kind": "input",
+      "refersTo": "waitlist-field",
+      "description": "White pill holding the email input and the primary button; lilac ring on focus, peach ring on error.",
+      "html": "<form class=\"ds-wl\" onsubmit=\"return false\"><div class=\"ds-wl-row\"><input type=\"email\" placeholder=\"you@studio.com\" aria-label=\"Work email\"><button class=\"ds-wl-btn\">Join the waitlist</button></div><p class=\"ds-wl-note\">Invite-only alpha. One email when your invite is ready.</p></form>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-wl{font-family:var(--font);max-width:520px;color:var(--ink);}.ds-wl-row{display:flex;gap:8px;padding:6px;border:var(--line);border-radius:999px;background:#fff;box-shadow:var(--shadow-sm);transition:box-shadow .2s var(--ease);}.ds-wl-row:focus-within{box-shadow:0 0 0 4px var(--lilac),var(--shadow-sm);}.ds-wl-row input{flex:1;min-width:0;border:0;background:transparent;padding:0 14px;font:400 1.0625rem var(--font);color:var(--ink);outline:none;}.ds-wl-row input::placeholder{color:#6b6b6b;}.ds-wl-btn{min-height:48px;padding:0 22px;border-radius:999px;border:var(--line);background:var(--tomato);color:var(--ink);font:800 1rem var(--font);cursor:pointer;}.ds-wl-btn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-wl-note{margin:12px 0 0;font-size:.9375rem;color:var(--muted);}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Four-field brand mark, 900 wordmark, pill links that invert to ink for the current page, small primary button.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\"><span class=\"ds-mark\"><i></i><i></i><i></i><i></i></span>Ledgendary</a><span class=\"ds-links\"><a href=\"#\">Home</a><a href=\"#\" aria-current=\"page\">Solo</a><a href=\"#\">Team</a><a href=\"#\">Enterprise</a></span><a class=\"ds-nbtn\" href=\"#\">Join the waitlist</a></nav>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-nav{display:flex;align-items:center;gap:28px;height:72px;padding:0 24px;background:rgba(255,255,255,.94);border-bottom:1.5px solid var(--ink);font-family:var(--font);color:var(--ink);}.ds-brand{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:1.375rem;letter-spacing:-0.03em;text-decoration:none;color:inherit;}.ds-mark{width:30px;height:30px;border:var(--line);border-radius:9px;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;}.ds-mark i:nth-child(1){background:var(--peach);}.ds-mark i:nth-child(2){background:var(--sky);}.ds-mark i:nth-child(3){background:var(--mint);}.ds-mark i:nth-child(4){background:var(--lilac);}.ds-links{display:flex;gap:4px;margin-left:auto;}.ds-links a{text-decoration:none;color:inherit;font-weight:600;padding:8px 14px;border-radius:999px;transition:background-color .15s var(--ease);}.ds-links a:hover{background:var(--hair-2);}.ds-links a[aria-current=page]{background:var(--ink);color:#fff;}.ds-links a:focus-visible,.ds-nbtn:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-nbtn{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:999px;border:var(--line);background:var(--tomato);color:var(--ink);font-weight:800;font-size:.9375rem;text-decoration:none;}"
+    },
+    {
+      "name": "Status Chips and Demo Tag",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Ink-ringed pills tinted by role; tomato only for Paid; dashed ring means not real yet (Draft, Demo data).",
+      "html": "<div class=\"ds-g\"><span class=\"ds-chip ds-sent\">Sent</span><span class=\"ds-chip ds-ok\">Accepted</span><span class=\"ds-chip ds-due\">Due</span><span class=\"ds-chip ds-lock\">Locked</span><span class=\"ds-chip ds-paid\">Paid</span><span class=\"ds-chip ds-ink\">Posted</span><span class=\"ds-chip ds-draft\">Draft · not issued</span><span class=\"ds-chip ds-draft\">Demo data</span></div>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-chip{display:inline-flex;align-items:center;gap:5px;padding:2px 9px;border-radius:999px;border:1.5px solid var(--ink);font:700 .75rem/1.5 var(--font);background:#fff;color:var(--ink);white-space:nowrap;}.ds-sent{background:var(--sky);}.ds-ok{background:var(--mint);}.ds-due{background:var(--peach);}.ds-lock{background:var(--lilac);}.ds-paid{background:var(--tomato);}.ds-ink{background:var(--ink);color:#fff;}.ds-draft{border-style:dashed;}"
+    },
+    {
+      "name": "Episode Title Card",
+      "kind": "custom",
+      "refersTo": "episode-field",
+      "description": "A colour field with 32px corners; the episode code at 500 and the title at 900 on one heading line, lede and italic wink below.",
+      "html": "<section class=\"ds-ep\"><h2 class=\"ds-tc\"><span class=\"ds-sxe\">S01E04 ·</span> The Late Fee Incident</h2><p class=\"ds-lede\">A late fee is a new posting on the books, never an edit of the old one.</p><p class=\"ds-wink\">Wait for it…</p></section>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-ep{background:var(--mint);border-radius:32px;padding:52px 52px 44px;font-family:var(--font);color:var(--ink);}.ds-tc{margin:0;font-size:clamp(2.125rem,4.1vw,3.5rem);line-height:.98;font-weight:900;letter-spacing:-0.035em;text-wrap:balance;max-width:820px;}.ds-sxe{font-weight:500;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;}.ds-lede{margin:18px 0 0;font-size:1.1875rem;line-height:1.5;max-width:60ch;}.ds-wink{margin:12px 0 0;font-weight:700;font-style:italic;font-size:1.0625rem;}"
+    },
+    {
+      "name": "Episode Beats",
+      "kind": "custom",
+      "refersTo": "beat",
+      "description": "Numbered pill steps for a demo; done numbers fill ink, the current beat inverts to ink.",
+      "html": "<ol class=\"ds-beats\"><li><button class=\"ds-beat ds-done\"><span class=\"ds-n\">1</span>Send</button></li><li><button class=\"ds-beat ds-done\"><span class=\"ds-n\">2</span>Dana pays</button></li><li><button class=\"ds-beat\" aria-pressed=\"true\"><span class=\"ds-n\">3</span>Paid</button></li></ol>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-beats{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:12px;background:var(--mint);border-radius:16px;}.ds-beat{display:inline-flex;align-items:center;gap:7px;min-height:36px;padding:0 14px 0 6px;border-radius:999px;border:1.5px solid var(--ink);background:rgba(255,255,255,.55);color:var(--ink);font:600 .9375rem var(--font);cursor:pointer;transition:background-color .2s var(--ease),color .2s var(--ease);}.ds-beat:hover{background:#fff;}.ds-beat:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-n{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:.75rem;font-weight:800;background:#fff;border:1.5px solid var(--ink);}.ds-done .ds-n{background:var(--ink);color:#fff;}.ds-beat[aria-pressed=true]{background:var(--ink);color:#fff;}.ds-beat[aria-pressed=true] .ds-n{background:#fff;color:var(--ink);border-color:#fff;}"
+    },
+    {
+      "name": "Product Window",
+      "kind": "card",
+      "refersTo": "product-window",
+      "description": "White, 18px, ink outline and soft window shadow; a bar with org, breadcrumb and Demo data tag; app-native content with a tomato Paid stamp.",
+      "html": "<div class=\"ds-win\"><div class=\"ds-bar\"><b>Maya Ortiz Studio</b><span class=\"ds-crumb\">Invoices › <b>INV-0012</b></span><span class=\"ds-tag\">Demo data</span></div><div class=\"ds-body\"><div class=\"ds-h\"><div><p class=\"ds-t\">INV-0012 · Northwind Co</p><p class=\"ds-s\">Issued Nov 14 · due Nov 28</p></div><span class=\"ds-stamp\">Paid</span></div><table class=\"ds-tbl\"><thead><tr><th>Line</th><th class=\"r\">Amount</th></tr></thead><tbody><tr><td>Brand refresh, fixed fee</td><td class=\"r\">$6,500.00</td></tr><tr><td>Design time, 20 h at $150</td><td class=\"r\">$3,000.00</td></tr></tbody><tfoot><tr><td>Total</td><td class=\"r\">$9,500.00</td></tr></tfoot></table><p class=\"ds-note\">Paid Nov 20, eight days early. The reminders aren't needed.</p></div></div>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-win{font-family:var(--font);color:var(--ink);background:#fff;border:var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden;max-width:560px;}.ds-bar{display:flex;align-items:center;gap:12px;padding:10px 14px;min-height:52px;border-bottom:var(--line);font-size:.875rem;}.ds-crumb{color:var(--muted);}.ds-crumb b{color:var(--ink);font-weight:600;}.ds-tag{margin-left:auto;padding:2px 9px;border-radius:999px;border:1.5px dashed var(--ink);font-size:.75rem;font-weight:700;}.ds-body{padding:20px;}.ds-h{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px;}.ds-t{margin:0;font-weight:800;font-size:1.25rem;letter-spacing:-0.02em;}.ds-s{margin:2px 0 0;color:var(--muted);font-size:.875rem;}.ds-stamp{display:inline-flex;padding:6px 16px 6px 12px;background:var(--tomato);color:var(--ink);border:var(--line);border-radius:12px;font-weight:900;font-size:1.5rem;letter-spacing:-0.02em;transform:rotate(-2deg);}.ds-tbl{width:100%;border-collapse:collapse;font-size:.875rem;font-variant-numeric:tabular-nums;}.ds-tbl th{text-align:left;font-weight:600;color:var(--muted);font-size:.8125rem;padding:0 0 8px;border-bottom:var(--line);}.ds-tbl td{padding:9px 0;border-bottom:1px solid var(--hair);}.ds-tbl tfoot td{border-top:var(--line);border-bottom:0;font-weight:800;}.ds-tbl .r{text-align:right;}.ds-note{margin:14px 0 0;padding:10px 12px;border-radius:10px;background:var(--mint-soft);font-size:.875rem;}"
+    },
+    {
+      "name": "Recap Frame",
+      "kind": "custom",
+      "refersTo": "recap-frame",
+      "description": "One of five 'Previously on…' frames: white, ink outline, a numbered tile in its field; the current one rises with the window shadow.",
+      "html": "<div class=\"ds-g\"><div class=\"ds-fr\"><p class=\"ds-fl\"><span class=\"ds-ix\" style=\"background:var(--mint)\">3</span>Invoice sent</p><span class=\"ds-big\">$9,500.00</span><span class=\"ds-sub\">To Northwind Co, card or bank</span></div><div class=\"ds-fr ds-on\"><p class=\"ds-fl\"><span class=\"ds-ix\" style=\"background:var(--tomato)\">5</span>Paid</p><span class=\"ds-stamp\">Paid</span><span class=\"ds-sub\">By card · $9,500.00</span></div></div>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-fr{width:220px;min-height:150px;background:#fff;border:var(--line);border-radius:16px;padding:14px 14px 16px;display:flex;flex-direction:column;gap:10px;transition:transform .45s var(--ease),box-shadow .45s var(--ease);}.ds-on{transform:translateY(-6px);box-shadow:var(--shadow);}.ds-fl{margin:0;display:flex;align-items:center;gap:8px;font-weight:800;font-size:.9375rem;letter-spacing:-0.01em;}.ds-ix{display:inline-grid;place-items:center;min-width:26px;height:22px;padding:0 6px;border-radius:6px;font-size:.75rem;font-weight:800;border:1.5px solid var(--ink);}.ds-big{font-weight:900;font-size:1.5rem;letter-spacing:-0.03em;line-height:1.1;font-variant-numeric:tabular-nums;}.ds-sub{font-size:.875rem;color:var(--ink-2);margin-top:auto;}.ds-stamp{align-self:flex-start;padding:6px 14px 6px 10px;background:var(--tomato);color:var(--ink);border:var(--line);border-radius:10px;font-weight:900;font-size:1.25rem;letter-spacing:-0.02em;transform:rotate(-3deg);}"
+    },
+    {
+      "name": "Season Index",
+      "kind": "nav",
+      "refersTo": "index-pin",
+      "description": "Sticky desktop episode list: a spine that fills with progress, code pins that take their field once seen and invert to ink when current.",
+      "html": "<nav class=\"ds-idx\"><p class=\"ds-it\">Season 1</p><ol><li><a href=\"#\" class=\"ds-seen\" style=\"--f:var(--peach)\"><span class=\"ds-pin\">E01</span>The Option B Decision</a></li><li><a href=\"#\" class=\"ds-seen\" style=\"--f:var(--sky)\"><span class=\"ds-pin\">E02</span>The Billable Week</a></li><li><a href=\"#\" aria-current=\"true\"><span class=\"ds-pin\">E03</span>The Invoice That Paid Itself</a></li><li><a href=\"#\"><span class=\"ds-pin\">E04</span>The Late Fee Incident</a></li></ol></nav>",
+      "css": ":host,:root{--ground:#ffffff;--ink:#121212;--ink-2:#333333;--muted:#4a4a4a;--hair:#e4e4e4;--hair-2:#f2f2f2;--wash:#f7f7f5;--mint:#b8f0d4;--sky:#bfe2ff;--peach:#ffd0b5;--lilac:#dacbff;--mint-soft:#e6faf0;--sky-soft:#e8f4ff;--peach-soft:#fff0e7;--lilac-soft:#f1ebff;--tomato:#ff4a1c;--font:Gabarito,ui-sans-serif,system-ui,sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);--line:1.5px solid #121212;--shadow:0 22px 44px -26px rgba(18,18,18,.42),0 3px 8px -4px rgba(18,18,18,.16);--shadow-sm:0 10px 22px -14px rgba(18,18,18,.38),0 2px 4px -2px rgba(18,18,18,.12);}.ds-g{font-family:var(--font);color:var(--ink);display:flex;flex-wrap:wrap;gap:12px;align-items:center;}.ds-idx{font-family:var(--font);color:var(--ink);width:228px;}.ds-it{margin:0 0 12px;font-weight:900;font-size:1.0625rem;letter-spacing:-0.015em;}.ds-idx ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px;position:relative;}.ds-idx ol::before{content:'';position:absolute;left:15px;top:14px;bottom:14px;width:2px;background:var(--hair);}.ds-idx a{position:relative;display:grid;grid-template-columns:32px 1fr;gap:8px;align-items:center;padding:6px 8px 6px 0;text-decoration:none;font-size:.875rem;line-height:1.25;color:var(--ink-2);border-radius:10px;}.ds-idx a:hover{color:var(--ink);text-decoration:underline;text-decoration-thickness:1.5px;}.ds-idx a:focus-visible{outline:3px solid var(--ink);outline-offset:3px;}.ds-pin{position:relative;z-index:1;width:32px;height:26px;display:grid;place-items:center;border-radius:8px;background:#fff;border:1.5px solid var(--hair);font-size:.6875rem;font-weight:800;}.ds-seen .ds-pin{border-color:var(--ink);background:var(--f);}.ds-idx a[aria-current=true]{color:var(--ink);font-weight:700;}.ds-idx a[aria-current=true] .ds-pin{background:var(--ink);border-color:var(--ink);color:#fff;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Season Guide",
+    "overview": "A white page that reads like a season of a sitcom, told in type and product. Every signature feature is an episode: a soft colour field with large rounded corners carrying a heavy, tight title card (\"S01E04 · The Late Fee Incident\") and, beneath it, a white product window outlined in ink that plays the feature in beats. The episode code sits on the same heading line as the title at a lighter weight, so the title card is one statement rather than a label over a heading. There is no TV imagery anywhere: no screens, no remotes, no frames styled as television. The streaming-title craft lives entirely in type and timing.\n\nFour pastel fields carry meaning, not decoration: peach for proposals and clients, sky for time and people, mint for getting paid, lilac for the books and trust. They tint the episode fields, the index pins once seen, avatars, chips and the soft notes inside windows. One hot colour, tomato, is reserved for the action and for Paid, and it always carries ink text. Ink (near-black) draws everything structural at 1.5px: window outlines, chip rings, the window bar's rule, table head rules, the nav's scrolled rule.\n\nThe hero opens on white with a huge two-line audience headline, a subline, the waitlist field and a quiet \"Season 1 · 8 episodes\" line, then a \"Previously on…\" strip of five live frames that autoplay with a segmented progress bar and pause. On desktop a sticky season index runs beside the episodes, tracking progress and jumping between them. The page closes on a \"No handoffs\" special and a finale box that repeats the waitlist beside a recap of the season.",
+    "keyCharacteristics": [
+      "White ground; colour arrives as large rounded episode fields, one role per field.",
+      "Ink at 1.5px draws every outline; product windows are white, ink-outlined and softly lifted.",
+      "Tomato only for the action and Paid, always under ink text.",
+      "Gabarito alone, 400 to 900; display at 900 and tight, the episode code at 500 on the same line.",
+      "Every product surface carries a dashed \"Demo data\" tag and plays its feature in numbered beats."
+    ],
+    "rules": [
+      {
+        "name": "The One Field, One Role Rule",
+        "body": "Peach is proposals and clients, sky is time and people, mint is getting paid, lilac is the books and trust. An episode takes the field of its subject, and every tint inside it follows the same mapping.",
+        "section": "colors"
+      },
+      {
+        "name": "The Tomato Is Action and Paid Rule",
+        "body": "Tomato fills the one action a visitor or a demo user takes and the moment money lands. It carries ink, never white, and it is never a field, a border or text.",
+        "section": "colors"
+      },
+      {
+        "name": "The Code On The Line Rule",
+        "body": "The episode code and the episode title are one heading: code at 500, title at 900, separated by a middle dot. Nothing sits above a title card.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Columns Rule",
+        "body": "Money, durations, figures, table cells, hashes, chain rows, timestamps and episode codes carry tabular numerals; running copy does not.",
+        "section": "typography"
+      },
+      {
+        "name": "The Ink Line Rule",
+        "body": "Structure is a 1.5px ink line; 1px `hair` only divides rows. Fields carry no outline at all: their colour is the edge.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do give every episode one field from its subject: peach proposals and clients, sky time and people, mint getting paid, lilac books and trust.",
+      "Do draw structure with a 1.5px ink line and keep product windows white with the soft window shadow.",
+      "Do set the episode code and title on one heading line, code at 500 and title at 900.",
+      "Do use tomato only for the action and for Paid, always with ink text.",
+      "Do tag every product surface with the dashed \"Demo data\" tag and play it in numbered, pausable beats.",
+      "Do set money, durations and figures in tabular numerals.",
+      "Do give every animated piece a finished resting state under reduced motion and without JavaScript."
+    ],
+    "donts": [
+      "Don't use TV imagery (screens, remotes, broadcast frames) or name a show; the season is told in type.",
+      "Don't put a label or kicker above a title card; the code belongs on the title's line.",
+      "Don't put white text on tomato, or use tomato as text, border or field.",
+      "Don't lay a field colour on its own field; inside a field use white windows and the soft twins inside them.",
+      "Don't use hard offset shadows, glow or glass; lift is soft and reserved for windows, the current frame and the primary button.",
+      "Don't add a second display family or a system display face; Gabarito carries everything."
+    ]
+  }
+}
