@@ -20,6 +20,96 @@
         ],
         "createdAt": "2026-11-18T21:04:56.540Z",
         "reason": "Direction contract for v1 names Mona Sans; upheld by the finish review 2026-11-18"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "files": [
+          "site/solo.html"
+        ],
+        "createdAt": "2026-11-18T23:23:52.700Z",
+        "reason": "v1 look's contract font (site/DESIGN.md), upheld by the v1 finish review 2026-11-18"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "files": [
+          "site/team.html"
+        ],
+        "createdAt": "2026-11-18T23:23:52.722Z",
+        "reason": "v1 look's contract font (site/DESIGN.md), upheld by the v1 finish review 2026-11-18"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "files": [
+          "site/enterprise.html"
+        ],
+        "createdAt": "2026-11-18T23:23:52.743Z",
+        "reason": "v1 look's contract font (site/DESIGN.md), upheld by the v1 finish review 2026-11-18"
+      },
+      {
+        "rule": "overused-font",
+        "value": "mona sans",
+        "files": [
+          "site/audiences.css"
+        ],
+        "createdAt": "2026-11-18T23:23:52.764Z",
+        "reason": "v1 look's contract font (site/DESIGN.md), upheld by the v1 finish review 2026-11-18"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/solo.html"
+        ],
+        "createdAt": "2026-11-19T00:12:48.139Z",
+        "reason": "Judged false positive by the finish reviewer for this look's audience pages 2026-11-19 (hairline rows, centred bars, children carry padding)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/team.html"
+        ],
+        "createdAt": "2026-11-19T00:12:48.195Z",
+        "reason": "Judged false positive by the finish reviewer for this look's audience pages 2026-11-19 (hairline rows, centred bars, children carry padding)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site/enterprise.html"
+        ],
+        "createdAt": "2026-11-19T00:12:48.237Z",
+        "reason": "Judged false positive by the finish reviewer for this look's audience pages 2026-11-19 (hairline rows, centred bars, children carry padding)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site-v2/solo.html"
+        ],
+        "createdAt": "2026-11-19T00:12:48.284Z",
+        "reason": "Judged false positive by the finish reviewer for this look's audience pages 2026-11-19 (hairline rows, centred bars, children carry padding)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site-v2/team.html"
+        ],
+        "createdAt": "2026-11-19T00:12:48.327Z",
+        "reason": "Judged false positive by the finish reviewer for this look's audience pages 2026-11-19 (hairline rows, centred bars, children carry padding)"
+      },
+      {
+        "rule": "cramped-padding",
+        "value": "*",
+        "files": [
+          "site-v2/enterprise.html"
+        ],
+        "createdAt": "2026-11-19T00:12:48.379Z",
+        "reason": "Judged false positive by the finish reviewer for this look's audience pages 2026-11-19 (hairline rows, centred bars, children carry padding)"
       }
     ]
   }
