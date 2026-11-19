@@ -1,7 +1,7 @@
 /* Ledgendary v2, audience pages (solo, team, enterprise). Loads after styles.css and reuses its tokens and components. */
 
 /* ------------------------------------------------------------ page frame */
-.nav-links a[aria-current="page"] { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; }
+@media (min-width: 901px) { .nav-links a[aria-current="page"] { color: #fff; text-decoration: underline; text-decoration-thickness: 2px; } }
 .sec { background: var(--paper); border-top: 1px solid var(--line); padding: clamp(80px, 11vw, 150px) 0; }
 .hero + .sec { border-top: 0; }
 .chapter { padding: clamp(80px, 11vw, 150px) 0; overflow: clip; }

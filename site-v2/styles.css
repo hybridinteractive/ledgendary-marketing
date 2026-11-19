@@ -170,6 +170,7 @@ b, strong { font-weight: 650; }
 .nav-links a { text-decoration: none; color: var(--on-blue-2); transition: color var(--t-fast) var(--ease); }
 .nav-links a:hover { color: #fff; text-decoration: underline; }
 .nav .btn { margin-left: auto; }
+.nav-links .nav-sm { display: none; }
 
 /* ------------------------------------------------------------ hero */
 .hero { padding: clamp(20px, 3vh, 40px) 0 clamp(56px, 8vh, 96px); overflow: clip; }
@@ -450,7 +451,7 @@ b, strong { font-weight: 650; }
 .draft-row.is-accepted { border-style: solid; border-color: #b9e8cf; background: #effaf4; }
 .draft-row.is-accepted .ic { color: #0b8a5a; }
 .time-side { border-left: 1px solid var(--line); background: #fbfbfe; padding: 18px 20px; display: flex; flex-direction: column; gap: 10px; }
-.side-h { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--ink-3); }
+.side-h { font-size: 0.75rem; font-weight: 600; color: var(--ink-3); }
 .side-h + .side-kv, .side-h + .side-line { margin-top: -2px; }
 .side-kv { display: grid; gap: 4px; font-size: 0.875rem; font-variant-numeric: tabular-nums; }
 .side-kv div { display: flex; justify-content: space-between; }
@@ -633,7 +634,14 @@ b, strong { font-weight: 650; }
 }
 
 @media (max-width: 900px) {
-  .nav-links { display: none; }
+  .nav-in { flex-wrap: wrap; row-gap: 12px; }
+  .nav nav { order: 3; flex: 1 1 100%; min-width: 0; }
+  .nav-links { gap: 4px; margin-left: -10px; font-size: 0.9375rem; }
+  .nav-links .nav-desk { display: none; }
+  .nav-links .nav-sm { display: list-item; }
+  .nav-links a { display: block; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+  .nav-links a:hover { text-decoration: none; background: rgba(255, 255, 255, 0.1); }
+  .nav-links a[aria-current="page"] { color: #fff; text-decoration: none; background: rgba(255, 255, 255, 0.16); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.22); }
   .hero-copy { display: block; }
   .hero-copy .track { display: none; }
   .sec-head, .books-head, .privacy, .join-grid, .scale-grid { grid-template-columns: minmax(0, 1fr); }
