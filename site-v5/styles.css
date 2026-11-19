@@ -153,7 +153,7 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .proof.is-flip { grid-template-columns: minmax(0, 1fr) minmax(0, 320px); }
 .proof.is-wide { grid-template-columns: minmax(0, 1fr); gap: 28px; }
 .proof.is-wide .claims { grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: start; }
-.proof.is-wide .claims:has(> li:nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (min-width: 1181px) { .proof.is-wide .claims:has(> li:nth-child(4)) { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
 .proof.is-flip .claims { order: 2; }
 .claims { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
 .claim { border-radius: 12px; padding: 14px 16px; border: 1px solid transparent; transition: background-color 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s var(--ease); }
