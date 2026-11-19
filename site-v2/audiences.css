@@ -636,3 +636,5 @@
 }
 
 .aud .side-h { text-transform: none; letter-spacing: 0; font-weight: 600; }
+
+.aud .celebrate .up { white-space: nowrap; flex: none; }
