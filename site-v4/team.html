@@ -33,7 +33,7 @@
     <div class="hero-lower">
       <div>
         <p class="hero-sub">Everyone sees what their seat needs and <strong>nothing they shouldn't.</strong> Proposal to paid is one product, so nobody re-keys a figure between tools.</p>
-        <p class="season-line"><b>Season 1</b><span class="dot" aria-hidden="true"></span>7 episodes<span class="dot" aria-hidden="true"></span>Starring Lumen Studio</p>
+        <p class="season-line"><b>Season 1</b><span class="dot" aria-hidden="true"></span><span>7 episodes</span></p>
       </div>
       <form class="wl" novalidate>
         <div class="wl-row">
@@ -109,13 +109,13 @@
     <p class="index-sub">Lumen Studio, five seats, one Northwind job.</p>
     <ol>
       <li class="index-fill" aria-hidden="true"></li>
-      <li><a href="#e01" data-field="sky"><span class="index-pin">E01</span><span class="index-t">Four seats</span></a></li>
-      <li><a href="#e02" data-field="sky"><span class="index-pin">E02</span><span class="index-t">The week gets locked</span></a></li>
-      <li><a href="#e03" data-field="peach"><span class="index-pin">E03</span><span class="index-t">Northwind says yes</span></a></li>
-      <li><a href="#e04" data-field="mint"><span class="index-pin">E04</span><span class="index-t">Hours become the invoice</span></a></li>
-      <li><a href="#e05" data-field="sky"><span class="index-pin">E05</span><span class="index-t">Money asks who you are</span></a></li>
-      <li><a href="#e06" data-field="lilac"><span class="index-pin">E06</span><span class="index-t">The bill isn't an expense</span></a></li>
-      <li><a href="#e07" data-field="sky"><span class="index-pin">E07</span><span class="index-t">High five</span></a></li>
+      <li><a href="#e01" data-field="sky"><span class="index-pin">E01</span><span class="index-t">The Four Seats</span></a></li>
+      <li><a href="#e02" data-field="sky"><span class="index-pin">E02</span><span class="index-t">The Locked Week</span></a></li>
+      <li><a href="#e03" data-field="peach"><span class="index-pin">E03</span><span class="index-t">The Signature</span></a></li>
+      <li><a href="#e04" data-field="mint"><span class="index-pin">E04</span><span class="index-t">The Invoice Built From Hours</span></a></li>
+      <li><a href="#e05" data-field="lilac"><span class="index-pin">E05</span><span class="index-t">The Second Check</span></a></li>
+      <li><a href="#e06" data-field="lilac"><span class="index-pin">E06</span><span class="index-t">The W-9 Lifecycle</span></a></li>
+      <li><a href="#e07" data-field="sky"><span class="index-pin">E07</span><span class="index-t">The High Five</span></a></li>
     </ol>
   </nav>
 
@@ -124,9 +124,8 @@
     <!-- E01 · Seats -->
     <section class="ep" id="e01" data-field="sky" aria-labelledby="e01-h">
       <header class="tc">
-        <h2 id="e01-h"><span class="sxe">S01E01</span><span class="tt">The One With Four Seats</span></h2>
+        <h2 id="e01-h"><span class="sxe">S01E01 ·</span> <span class="tt">The Four Seats</span></h2>
         <p class="tc-lede">Owner, administrator, member, accountant. Each seat opens the same studio and sees what it needs. Members see only the projects they're on, and the accountant reads everything and changes nothing.</p>
-        <p class="tc-wink">The playbook: everyone sees their seat, and nothing else.</p>
       </header>
       <div class="demo" data-demo="choice" data-start="1">
         <div class="beats">
@@ -170,6 +169,15 @@
                 <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-house"></use></svg>Home</span>
                 <span class="sn on"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg>Projects · 2</span>
                 <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>Time</span>
+                <div class="side-sec">
+                  <p class="sh" style="padding:0 10px 4px">Your projects</p>
+                  <p>Northwind Co · Site build</p>
+                  <p>Harbor Coffee · Menu refresh</p>
+                </div>
+                <div class="side-sec">
+                  <p class="sh" style="padding:0 10px 4px">This week</p>
+                  <p><span class="dur">41 h 45 m</span> · submitted</p>
+                </div>
               </div>
               <div data-at="4">
                 <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-house"></use></svg>Home</span>
@@ -177,10 +185,15 @@
                 <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg>Bills</span>
                 <span class="sn on"><svg class="icon" aria-hidden="true"><use href="#i-chart-column"></use></svg>Reports</span>
                 <span class="sn"><svg class="icon" aria-hidden="true"><use href="#i-book-open"></use></svg>Journal</span>
+                <div class="side-sec">
+                  <p class="sh" style="padding:0 10px 4px">Access</p>
+                  <p>Read only, every report and entry</p>
+                </div>
               </div>
             </div>
             <div class="win-main swap">
               <div data-at="1 2" data-default>
+                <div class="row seat-sum ph-only" aria-hidden="true"><span class="chip">Projects 6</span><span class="chip">Approvals 2</span><span class="chip">Invoices</span><span class="chip">Bills</span><span class="chip">Reports</span><span class="chip">People</span></div>
                 <div class="w-h">
                   <div><p class="w-title">Northwind Co · Site build</p><p class="w-sub">Option B: $30,000 + time · est. <span class="dur">80 h</span> · est. total $42,000.00</p></div>
                   <span class="chip ok">Active</span>
@@ -197,6 +210,7 @@
                 <div class="row between sm"><span>Logged against the estimate</span><b><span class="dur">80 h</span> of <span class="dur">80 h</span></b></div>
               </div>
               <div data-at="3">
+                <div class="row seat-sum ph-only" aria-hidden="true"><span class="chip sky">Projects 2</span><span class="chip sky">Time</span><span class="chip draft">No approvals</span><span class="chip draft">No invoices</span></div>
                 <div class="w-h">
                   <div><p class="w-title">Northwind Co · Site build</p><p class="w-sub">You're on this project</p></div>
                   <span class="chip ok">Active</span>
@@ -213,6 +227,7 @@
                 <p class="note sky mt"><svg class="icon" aria-hidden="true"><use href="#i-folder"></use></svg><span>Theo sees the two projects he's on. The studio has six.</span></p>
               </div>
               <div data-at="4">
+                <div class="row seat-sum ph-only" aria-hidden="true"><span class="chip lilac">Invoices</span><span class="chip lilac">Bills</span><span class="chip lilac">Reports</span><span class="chip lilac">Journal</span><span class="chip draft">Read only</span></div>
                 <div class="w-h">
                   <div><p class="w-title">Receivables</p><p class="w-sub">As of Nov 7, 2026</p></div>
                   <span class="chip lilac"><svg class="icon" aria-hidden="true"><use href="#i-eye"></use></svg>Read only</span>
@@ -237,17 +252,19 @@
 
     <!-- E02 · Timesheets -->
     <section class="ep" id="e02" data-field="sky" aria-labelledby="e02-h">
-      <header class="tc">
-        <h2 id="e02-h"><span class="sxe">S01E02</span><span class="tt">The One Where the Week Gets Locked</span></h2>
-        <p class="tc-lede">People log a weekly grid. A calendar event can become a private draft that only its owner sees, not even the studio's owner. The person submits the week, an owner or administrator approves it, and an approved week locks.</p>
+      <header class="tc big">
+        <h2 id="e02-h"><span class="sxe">S01E02 ·</span> <span class="tt">The Locked Week</span></h2>
+        <div class="tc-body">
+        <p class="tc-lede">People log a weekly grid. A calendar event can become a private draft that only its owner sees, not even the studio's owner, until they accept it or submit the week it sits in. An owner or administrator approves the week, and an approved week locks.</p>
         <p class="tc-wink">Haaaave you met your team's timesheets?</p>
+        </div>
       </header>
       <div class="demo" data-demo>
         <div class="beats">
           <button class="icon-btn beat-play" type="button"></button>
           <ol aria-label="Episode beats">
-            <li><button class="beat" type="button" data-go="1" data-cap="Theo's week: 41 h 45 m on Site build, and a private calendar draft that only Theo can see."><span class="n">1</span>Theo's week</button></li>
-            <li><button class="beat" type="button" data-go="2" data-cap="Theo submits 41 h 45 m. He leaves the draft alone, so it stays private and out of the total."><span class="n">2</span>Submit</button></li>
+            <li><button class="beat" type="button" data-go="1" data-cap="Theo's week of Nov 3: 41 h 45 m on Site build. A private draft from his calendar sits in next week, and only Theo can see it."><span class="n">1</span>Theo's week</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Theo submits the week of Nov 3. Submitting publishes the drafts in that week; his one draft is in next week, so it stays his alone."><span class="n">2</span>Submit</button></li>
             <li><button class="beat" type="button" data-go="3" data-cap="Sam, administrator, opens approvals: two weeks, 80 h, and nothing private in sight."><span class="n">3</span>Sam reviews</button></li>
             <li><button class="beat" type="button" data-go="4" data-cap="Sam approves both weeks. Approved weeks lock."><span class="n">4</span>Approved, locked</button></li>
           </ol>
@@ -282,14 +299,14 @@
               <div class="total-line"><span>Week total</span><span class="dur">41 h 45 m</span></div>
               </div>
               <div>
+              <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>Next week · Nov 10, not submitted</p>
               <div class="draft-row">
                 <svg class="icon" aria-hidden="true"><use href="#i-eye-off"></use></svg>
-                <span class="grow"><b>Dentist</b><br><span class="meta">From Theo's calendar · Thu 4:00 PM · <span class="dur">1 h</span> · private draft, only Theo sees it</span></span>
-                <span class="swap"><span class="fbtn" data-until="1">Accept</span><span class="chip draft rise" data-from="2">Left private</span></span>
+                <span class="grow"><b>Dentist</b><br><span class="meta">From Theo's calendar · Mon Nov 10, 9:00 AM · <span class="dur">1 h</span> · private draft, only Theo sees it</span></span>
               </div>
               <div class="swap mt">
                 <div class="row between" data-until="1"><span class="sm muted">Submitting sends the week to an owner or administrator.</span><span class="fbtn go" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg>Submit week</span></div>
-                <p class="note sky rise" data-from="2"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span><b>Submitted Nov 7.</b> The draft stays private and isn't part of the week.</span></p>
+                <p class="note sky rise" data-from="2"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><span><b>Submitted Nov 7.</b> Submitting publishes a week's drafts; this week had none. The Nov 10 draft stays Theo's alone.</span></p>
               </div>
               <p class="sm muted mt ph-hide">Calendar capture keeps a title and a duration. Attendees, descriptions and links never come across.</p>
               </div>
@@ -339,16 +356,15 @@
     <!-- E03 · Portal -->
     <section class="ep" id="e03" data-field="peach" aria-labelledby="e03-h">
       <header class="tc">
-        <h2 id="e03-h"><span class="sxe">S01E03</span><span class="tt">The One Where Northwind Says Yes</span></h2>
+        <h2 id="e03-h"><span class="sxe">S01E03 ·</span> <span class="tt">The Signature</span></h2>
         <p class="tc-lede">In the client portal, clients pick an option, sign and pay. The signature keeps their name and the moment. Their address and browser are kept only as a keyed fingerprint, never the raw values.</p>
-        <p class="tc-wink">Kids, this is the story of how Northwind said yes.</p>
       </header>
       <div class="demo" data-demo>
         <div class="beats">
           <button class="icon-btn beat-play" type="button"></button>
           <ol aria-label="Episode beats">
             <li><button class="beat" type="button" data-go="1" data-cap="Dana Whitfield opens P-0019 in the portal: three options for the Northwind site."><span class="n">1</span>Three options</button></li>
-            <li><button class="beat" type="button" data-go="2" data-cap="Dana picks option B and signs."><span class="n">2</span>Pick and sign</button></li>
+            <li><button class="beat" type="button" data-go="2" data-cap="Kids, this is the story of how Northwind said yes: Dana picks option B and signs."><span class="n">2</span>Pick and sign</button></li>
             <li><button class="beat" type="button" data-go="3" data-cap="What Lumen keeps: Dana's name, the moment, and a keyed fingerprint instead of her address and browser."><span class="n">3</span>What's kept</button></li>
           </ol>
         </div>
@@ -390,8 +406,11 @@
               </div>
             </div>
             <div class="swap mt">
-              <div class="row between" data-until="1"><span class="sm muted">Pick one option, then sign to accept it.</span><span class="fbtn go" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-signature"></use></svg>Sign and accept</span></div>
-              <div class="row rise" data-at="2"><span class="sig">Dana Whitfield</span><span class="sm"><b>Signed</b> · Oct 27, 10:12 AM</span></div>
+              <div class="stack" data-until="1">
+                <dl class="kv"><dt>From</dt><dd>Sam Okafor, Lumen Studio</dd><dt>Valid until</dt><dd>Nov 10, 2026</dd><dt>Signing keeps</dt><dd>Your name and the moment</dd></dl>
+                <div class="row between"><span class="sm muted">Pick one option, then sign to accept it.</span><span class="fbtn go" data-press="2"><svg class="icon" aria-hidden="true"><use href="#i-signature"></use></svg>Sign and accept</span></div>
+              </div>
+              <div class="stack rise" data-at="2"><div class="row"><span class="sig">Dana Whitfield</span><span class="sm"><b>Signed</b> · Oct 27, 10:12 AM</span></div><dl class="kv"><dt>Accepted</dt><dd>Option B · <span class="money">$30,000</span> + time</dd><dt>Estimate</dt><dd><span class="dur">80 h</span> at $150, est. <span class="money">$42,000</span></dd></dl></div>
               <div class="rise" data-from="3">
                 <p class="w-sec"><svg class="icon" aria-hidden="true"><use href="#i-fingerprint"></use></svg>Signature record</p>
                 <dl class="kv">
@@ -410,7 +429,7 @@
     <!-- E04 · Hours to invoice -->
     <section class="ep" id="e04" data-field="mint" aria-labelledby="e04-h">
       <header class="tc">
-        <h2 id="e04-h"><span class="sxe">S01E04</span><span class="tt">The One Where the Hours Become the Invoice</span></h2>
+        <h2 id="e04-h"><span class="sxe">S01E04 ·</span> <span class="tt">The Invoice Built From Hours</span></h2>
         <p class="tc-lede">Approved hours flow onto the invoice, priced at the agreed rate, next to the fixed fee the client picked. Once an entry is invoiced it takes a note and nothing else, so the invoice and the timesheet never disagree.</p>
         <p class="tc-wink">True story: month end without a spreadsheet.</p>
       </header>
@@ -486,12 +505,19 @@
                 <div><p class="w-title">Mon, Nov 3 · Site build</p><p class="w-sub">Theo Brandt · invoiced on INV-0042</p></div>
                 <span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Invoiced</span>
               </div>
+              <div class="two">
               <dl class="kv">
                 <dt>Hours</dt><dd class="row"><span class="dur">8 h 30 m</span><span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></dd>
                 <dt>Project</dt><dd class="row">Northwind Co · Site build<span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></dd>
                 <dt>Billable</dt><dd class="row">Yes<span class="chip lock"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg>Locked</span></dd>
                 <dt>Note</dt><dd>Homepage build and the staging review with Dana.</dd>
               </dl>
+              <ul class="log">
+                <li><svg class="icon" aria-hidden="true"><use href="#i-clipboard-check"></use></svg><span>Week approved by Sam Okafor</span><time>Nov 10</time></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-receipt"></use></svg><span>Invoiced on INV-0042</span><time>Nov 10</time></li>
+                <li><svg class="icon" aria-hidden="true"><use href="#i-pen-line"></use></svg><span>Note added by Theo</span><time>Nov 21</time></li>
+              </ul>
+              </div>
               <p class="note mint mt"><svg class="icon" aria-hidden="true"><use href="#i-pen-line"></use></svg><span>Invoiced entries take a note and nothing else. The hours stay what the invoice was built from.</span></p>
             </div>
           </div>
@@ -501,9 +527,9 @@
     </section>
 
     <!-- E05 · Step-up -->
-    <section class="ep" id="e05" data-field="sky" aria-labelledby="e05-h">
+    <section class="ep" id="e05" data-field="lilac" aria-labelledby="e05-h">
       <header class="tc">
-        <h2 id="e05-h"><span class="sxe">S01E05</span><span class="tt">The One Where Money Asks Who You Are</span></h2>
+        <h2 id="e05-h"><span class="sxe">S01E05 ·</span> <span class="tt">The Second Check</span></h2>
         <p class="tc-lede">Voids, write-offs, refunds, and closing or reopening a period all take money off the books or freeze them, so each one asks the person to confirm who they are again first: a password, a passkey or an emailed code.</p>
         <p class="tc-wink">Suit up: anything that takes money off the books checks it's really you.</p>
       </header>
@@ -568,7 +594,7 @@
     <!-- E06 · Bills and vendors -->
     <section class="ep" id="e06" data-field="lilac" aria-labelledby="e06-h">
       <header class="tc">
-        <h2 id="e06-h"><span class="sxe">S01E06</span><span class="tt">The One Where the Bill Isn't an Expense</span></h2>
+        <h2 id="e06-h"><span class="sxe">S01E06 ·</span> <span class="tt">The W-9 Lifecycle</span></h2>
         <p class="tc-lede">Vendors get a W-9 lifecycle you can follow, and their full tax id is never stored, only its kind and last four digits. A bill books what you owe; paying it moves cash and never doubles as an expense, so spend is counted once.</p>
       </header>
       <div class="demo" data-demo>
@@ -631,9 +657,8 @@
     <!-- E07 · Milestones -->
     <section class="ep" id="e07" data-field="sky" aria-labelledby="e07-h">
       <header class="tc">
-        <h2 id="e07-h"><span class="sxe">S01E07</span><span class="tt">The One With the High Five</span></h2>
+        <h2 id="e07-h"><span class="sxe">S01E07 ·</span> <span class="tt">The High Five</span></h2>
         <p class="tc-lede">Turn milestones on and the studio's good weeks get noticed, with reactions from the team. Real badges only: first week submitted, 12 weeks on schedule, a month of timesheets.</p>
-        <p class="tc-wink">High five.</p>
       </header>
       <div class="demo" data-demo>
         <div class="beats">
@@ -689,7 +714,7 @@
 <section class="special" aria-labelledby="sp-h">
   <div class="wrap special-grid">
     <div>
-      <h2 id="sp-h"><span class="sxe">Special</span>The one without the handoffs.</h2>
+      <h2 id="sp-h">No handoffs. One ledger.</h2>
       <p class="special-lede">Most studios run the money path through three tools and a spreadsheet that one person understands. Every handoff is a figure typed again, by somebody with better things to do.</p>
     </div>
     <div class="ways">
@@ -711,7 +736,7 @@
   <div class="wrap">
     <div class="finale-box">
       <div>
-        <h2 id="fin-h"><span class="sxe">Season finale</span>It's going to be legendary. Bring the whole studio.</h2>
+        <h2 id="fin-h">It's going to be legendary. Bring the whole studio.</h2>
         <p>Ledgendary is in an invite-only alpha. Join the waitlist and we'll email you when your studio's invite is ready.</p>
       </div>
       <form class="wl" novalidate>
@@ -722,6 +747,7 @@
         </div>
         <p class="wl-note" id="wl-fin-note" aria-live="polite">Invite-only alpha. One email when your invite is ready.</p>
       </form>
+      <div class="finale-frames" aria-label="The season in five frames"><div class="frame" data-field="sky"><p class="frame-label"><span class="ix">1</span>Seats</p><div class="frame-body"><span class="frame-big">4 seats</span><span>Each sees what it needs</span></div></div><div class="frame" data-field="sky"><p class="frame-label"><span class="ix">2</span>Approved</p><div class="frame-body"><span class="frame-big dur">80 h</span><span>Two weeks, locked</span></div></div><div class="frame" data-field="mint"><p class="frame-label"><span class="ix">3</span>Invoiced</p><div class="frame-body"><span class="frame-big money">$42,000.00</span><span>Fee plus approved hours</span></div></div><div class="frame" data-field="tomato"><p class="frame-label"><span class="ix">4</span>Paid</p><div class="frame-body"><span class="frame-big money">$42,000.00</span><span>By bank, JE-1042</span></div></div><div class="frame" data-field="lilac"><p class="frame-label"><span class="ix">5</span>Checked</p><div class="frame-body"><span class="frame-big">Step-up</span><span>On every money-off action</span></div></div><p class="vh">Demo data</p></div>
     </div>
   </div>
 </section>

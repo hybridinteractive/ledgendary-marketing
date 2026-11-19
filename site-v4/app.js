@@ -121,7 +121,7 @@
   /* ---------------------------------------------------------------
      Title cards: split words, reveal as they enter
      --------------------------------------------------------------- */
-  document.querySelectorAll('.tc h2 .tt').forEach(function (t) {
+  document.querySelectorAll('.tc.big h2 .tt').forEach(function (t) {
     var words = t.textContent.trim().split(/\s+/);
     var code = t.parentNode.querySelector('.sxe');
     t.parentNode.setAttribute('aria-label', (code ? code.textContent + ': ' : '') + t.textContent.trim());
