@@ -1239,3 +1239,6 @@ span.swap { display: inline-grid; }
 .side-sec p { font-size: 0.8125rem; padding: 3px 10px; color: var(--ink-2); }
 .frame-label { color: var(--ink); }
 .finale .finale-frames .frame-label { color: var(--ink); margin-top: 0; max-width: none; font-size: 0.9375rem; }
+.w-h > .swap > * { justify-self: end; }
+.finale-h { grid-column: 1 / -1; margin-bottom: -18px; padding-top: 8px; border-top: 1px solid var(--hair); }
+.finale .wl-note { font-size: 0.9375rem; margin-top: 12px; max-width: none; }
