@@ -199,7 +199,7 @@ button.btn-ui[disabled] { cursor: default; color: var(--mut-2); background: tran
 .cashline dd { font-weight: 700; font-size: 18px; font-variant-numeric: tabular-nums; }
 .je-n { color: var(--text); }
 .b-facts { margin-top: 16px; }
-.asof-cells { background: repeating-linear-gradient(to right, transparent 0 calc(100% / var(--n, 23) - 2px), var(--inset) calc(100% / var(--n, 23) - 2px) calc(100% / var(--n, 23))), #43594e; }
+.asof-cells { background: repeating-linear-gradient(to right, transparent 0 calc(100% / var(--n, 23) - 2px), var(--inset) calc(100% / var(--n, 23) - 2px) calc(100% / var(--n, 23))), linear-gradient(to right, #43594e 0 var(--ap, 100%), var(--line) var(--ap, 100%)); }
 .asof-thumb { width: calc(100% / var(--n, 23) - 2px); }
 .asof-ctl .asof-dates li { left: calc(var(--d) / var(--n, 23) * 100%); }
 .asof-ctl .asof-dates li.end { left: auto; right: 0; }

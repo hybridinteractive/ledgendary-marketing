@@ -18,6 +18,17 @@
   })(document.body);
   function setAttr(el, k, v) { if (el && el.getAttribute(k) !== String(v)) { el.setAttribute(k, v); } }
   function toggle(el, c, on) { if (el && el.classList.contains(c) !== !!on) { el.classList.toggle(c, !!on); } }
+  /* Phones stack money tables: every cell carries its column name (colspans counted). */
+  function labelStack(t) {
+    if (!t) { return; }
+    var heads = [];
+    Array.prototype.forEach.call(t.querySelectorAll('thead th'), function (th) { for (var i = 0; i < th.colSpan; i++) { heads.push(th.textContent.trim()); } });
+    Array.prototype.forEach.call(t.querySelectorAll('tbody tr, tfoot tr'), function (tr) {
+      var col = 0;
+      Array.prototype.forEach.call(tr.cells, function (cell) { if (cell.tagName === 'TD') { cell.setAttribute('data-k', heads[col] || ''); } col += cell.colSpan; });
+    });
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('table.stack-m'), labelStack);
   function land(el, c) { c = c || 'is-land'; el.classList.remove(c); void el.offsetWidth; el.classList.add(c); }
 
   /* ---------- Dates: day 0 is Tue Oct 27, day 22 is Wed Nov 18 ---------- */
@@ -494,7 +505,7 @@
       total = 0;
       note = 'Settled Nov 18 by card. JE-1042 closed the receivable; nothing was deleted.';
     }
-    if (b.ag.dataset.k !== ag) { b.ag.dataset.k = ag; b.ag.innerHTML = ag; }
+    if (b.ag.dataset.k !== ag) { b.ag.dataset.k = ag; b.ag.innerHTML = ag; labelStack(b.ag.parentNode); }
     setText(b.agTotal, usd(total));
     setText(b.agNote, note);
 
