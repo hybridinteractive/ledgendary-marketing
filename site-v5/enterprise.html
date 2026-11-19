@@ -1,0 +1,806 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgendary Enterprise</title>
+<meta name="description" content="Ledgendary for large agencies: posted entries that are reversed, never edited; a hash chain anchored by a third-party timestamp authority; closed periods that stay closed; reports as of any date. Every claim comes with its receipt.">
+<link rel="preload" href="fonts/Geologica-VF.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<!-- sprite:start --><!-- lucide-static 0.460.0, ISC licence --><svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true"><symbol id="i-anchor" viewBox="0 0 24 24"><path d="M12 22V8" /> <path d="M5 12H2a10 10 0 0 0 20 0h-3" /> <circle cx="12" cy="5" r="3" /></symbol><symbol id="i-ban" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m4.9 4.9 14.2 14.2" /></symbol><symbol id="i-book-open" viewBox="0 0 24 24"><path d="M12 7v14" /> <path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z" /></symbol><symbol id="i-building-2" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" /> <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" /> <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" /> <path d="M10 6h4" /> <path d="M10 10h4" /> <path d="M10 14h4" /> <path d="M10 18h4" /></symbol><symbol id="i-calendar-check" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="m9 16 2 2 4-4" /></symbol><symbol id="i-calendar-x" viewBox="0 0 24 24"><path d="M8 2v4" /> <path d="M16 2v4" /> <rect width="18" height="18" x="3" y="4" rx="2" /> <path d="M3 10h18" /> <path d="m14 14-4 4" /> <path d="m10 14 4 4" /></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" /></symbol><symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6" /></symbol><symbol id="i-circle-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <line x1="12" x2="12" y1="8" y2="12" /> <line x1="12" x2="12.01" y1="16" y2="16" /></symbol><symbol id="i-circle-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6" /> <path d="M18.09 10.37A6 6 0 1 1 10.34 18" /> <path d="M7 6h1v4" /> <path d="m16.71 13.88.7.71-2.82 2.82" /></symbol><symbol id="i-database" viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="9" ry="3" /> <path d="M3 5V19A9 3 0 0 0 21 19V5" /> <path d="M3 12A9 3 0 0 0 21 12" /></symbol><symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0" /> <circle cx="12" cy="12" r="3" /></symbol><symbol id="i-file-pen-line" viewBox="0 0 24 24"><path d="m18 5-2.414-2.414A2 2 0 0 0 14.172 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" /> <path d="M21.378 12.626a1 1 0 0 0-3.004-3.004l-4.01 4.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" /> <path d="M8 18h1" /></symbol><symbol id="i-fingerprint" viewBox="0 0 24 24"><path d="M12 10a2 2 0 0 0-2 2c0 1.02-.1 2.51-.26 4" /> <path d="M14 13.12c0 2.38 0 6.38-1 8.88" /> <path d="M17.29 21.02c.12-.6.43-2.3.5-3.02" /> <path d="M2 12a10 10 0 0 1 18-6" /> <path d="M2 16h.01" /> <path d="M21.8 16c.2-2 .131-5.354 0-6" /> <path d="M5 19.5C5.5 18 6 15 6 12a6 6 0 0 1 .34-2" /> <path d="M8.65 22c.21-.66.45-1.32.57-2" /> <path d="M9 6.8a6 6 0 0 1 9 5.2v2" /></symbol><symbol id="i-history" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /> <path d="M12 7v5l4 2" /></symbol><symbol id="i-key-round" viewBox="0 0 24 24"><path d="M2.586 17.414A2 2 0 0 0 2 18.828V21a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h1a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1h.172a2 2 0 0 0 1.414-.586l.814-.814a6.5 6.5 0 1 0-4-4z" /> <circle cx="16.5" cy="7.5" r=".5" fill="currentColor" /></symbol><symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" /> <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" /></symbol><symbol id="i-lock" viewBox="0 0 24 24"><rect width="18" height="11" x="3" y="11" rx="2" ry="2" /> <path d="M7 11V7a5 5 0 0 1 10 0v4" /></symbol><symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2" /> <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" /></symbol><symbol id="i-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4" /> <path d="M3 11v-1a4 4 0 0 1 4-4h14" /> <path d="m7 22-4-4 4-4" /> <path d="M21 13v1a4 4 0 0 1-4 4H3" /></symbol><symbol id="i-rotate-ccw" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /> <path d="M3 3v5h5" /></symbol><symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /> <path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z" /> <path d="M7 21h10" /> <path d="M12 3v18" /> <path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2" /></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /></symbol><symbol id="i-shield-check" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" /> <path d="m9 12 2 2 4-4" /></symbol><symbol id="i-zoom-in" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /> <line x1="21" x2="16.65" y1="21" y2="16.65" /> <line x1="11" x2="11" y1="8" y2="14" /> <line x1="8" x2="14" y1="11" y2="11" /></symbol></svg><!-- sprite:end -->
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="index.html"><span class="brand-mark"><svg class="i" aria-hidden="true"><use href="#i-check"/></svg></span>Ledgendary</a>
+    <nav aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="solo.html">Solo</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="enterprise.html" aria-current="page">Enterprise</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="#join">Join the waitlist</a>
+  </div>
+</header>
+<p class="sr" id="proof-live" aria-live="polite"></p>
+
+<main id="main">
+
+<!-- ============ Hero ============ -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1 class="h1" id="h1">Books you can prove.</h1>
+      <p class="hero-sub" data-wait-beat>Legen— <span class="beat-mid">wait for it</span> <span class="beat-late">—dary.</span></p>
+      <p class="lead">For agencies with hundreds of people, several offices and three currencies. Posted entries are reversed, never edited. Every posting is chained, and the chain is signed by someone who isn't us. Each claim below comes with its receipt.</p>
+      <form class="waitlist" novalidate>
+        <label for="wl-hero">Your work email</label>
+        <div class="waitlist-row">
+          <input class="field" id="wl-hero" type="email" name="email" autocomplete="email" placeholder="you@agency.com" aria-describedby="wl-hero-msg">
+          <button class="btn" type="submit">Join the waitlist</button>
+        </div>
+        <p class="form-msg" id="wl-hero-msg" aria-live="polite" data-idle="Invite-only alpha. One email when your organisation's seat is ready.">Invite-only alpha. One email when your organisation's seat is ready.</p>
+      </form>
+    </div>
+
+    <div class="hero-proof" id="g-hero">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-h1">Last March's books were signed by someone who isn't us. Nobody can get that signature again for a different root.</p>
+          <div class="claim-row">
+            <button class="prove" type="button" aria-expanded="false" aria-describedby="c-h1" data-target="#h-sig" data-cap="Signed Mar 16, 02:00:07 UTC" data-cap-sub="By the timestamp authority. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button>
+          </div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the signature on Batch 0006.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> A third-party timestamp authority signed root 71be…09d4 on Mar 16, 2026, and the evidence is locked until Mar 16, 2036.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win">
+          <div class="win-bar">
+            <div class="crumbs">Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> Anchoring <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Batch 0006</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Ines Duarte, administrator">ID<span class="sr">Signed in as Ines Duarte, administrator</span></span>
+          </div>
+          <div class="win-body">
+            <p class="w-title">Batch 0006 · March <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>Root matches</span></p>
+            <p class="w-sub">Meridian &amp; Vale · 10,288 entries reduced to one Merkle root</p>
+            <dl class="kv">
+              <dt>Merkle root</dt><dd class="hash">71be…09d4</dd>
+              <dt>Signed by</dt><dd>Timestamp authority</dd>
+              <dt>Signed at</dt><dd><span id="h-sig" class="nowrap">Mar 16, 2026, 02:00:07 UTC</span></dd>
+              <dt>Token serial</dt><dd class="hash">4f1c…e0a9</dd>
+              <dt>Evidence</dt><dd>Locked storage until Mar 16, 2036</dd>
+              <dt>Deletable before then</dt><dd>By nobody, us included</dd>
+            </dl>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Reverse, never edit ============ -->
+<section class="sec" aria-labelledby="s-rev">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-rev">Posted means posted. Reverse it, never edit it.</h2>
+      <p class="lead">INV-09531 went to Atelier Lune for €18,400.00. The quote said €16,400.00. Try to fix the entry and three layers say no. Void the invoice and the books show exactly what happened, in order.</p>
+    </div>
+    <div class="proof" id="g-rev">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-r1">A posted entry can't be edited. Three layers refuse, one behind the other.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r1" data-target="#r-no" data-go-demo="no" data-cap="Refused" data-cap-sub="The edit, not the person. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: what happens when Ines presses Edit amount.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> There is no edit path. If there were, the model guard would refuse it, and behind that a database trigger would too.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-r2">The correction is a reversal, confirmed by a named person, plus a new invoice.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r2" data-target="#r-rev" data-go-demo="done" data-cap="JE-148219 reverses JE-148213" data-cap-sub="Confirmed by Ines Duarte. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the entries after the void.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> JE-148213 still reads €18,400.00. JE-148219 reverses it, confirmed by Ines with a passkey, and INV-09533 posts €16,400.00 as JE-148220.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win" data-demo data-state="a">
+          <div class="win-bar">
+            <div class="crumbs">Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> Journal <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>JE-148213</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Ines Duarte, administrator">ID<span class="sr">Signed in as Ines Duarte, administrator</span></span>
+          </div>
+          <div class="win-body">
+            <p class="w-title">JE-148213 · Invoice sent · INV-09531 <span class="chip">Lisbon · EUR</span></p>
+            <p class="w-sub">Atelier Lune · posted Nov 18, 15:02 · balanced</p>
+            <table class="tbl">
+              <thead><tr><th>Account</th><th class="num">Debit</th><th class="num">Credit</th></tr></thead>
+              <tbody>
+                <tr><td>Accounts receivable</td><td class="num">€18,400.00</td><td class="num"></td></tr>
+                <tr><td>Revenue, Lisbon studio</td><td class="num"></td><td class="num">€18,400.00</td></tr>
+              </tbody>
+            </table>
+            <div class="panel swap">
+              <div data-show="a" class="reacts">
+                <button class="ui-btn" type="button" data-go="no" data-say="Refused. Posted entries can't be edited."><svg class="i" aria-hidden="true"><use href="#i-file-pen-line"/></svg>Edit amount</button>
+                <button class="ui-btn" type="button" data-go="ask" data-say="Confirm it's you before voiding INV-09531."><svg class="i" aria-hidden="true"><use href="#i-ban"/></svg>Void INV-09531</button>
+              </div>
+              <div data-show="no" class="refusal">
+                <svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>
+                <div>
+                  <p class="r-t" id="r-no">Posted entries can't be edited.</p>
+                  <ul class="layers">
+                    <li><svg class="i i-sm" aria-hidden="true"><use href="#i-ban"/></svg>No edit path exists in the app</li>
+                    <li><svg class="i i-sm" aria-hidden="true"><use href="#i-shield"/></svg>The model guard refuses the write</li>
+                    <li><svg class="i i-sm" aria-hidden="true"><use href="#i-database"/></svg>A database trigger refuses the update</li>
+                  </ul>
+                  <div class="reacts" style="margin-top:10px"><button class="ui-btn" type="button" data-go="ask" data-say="Confirm it's you before voiding INV-09531."><svg class="i" aria-hidden="true"><use href="#i-ban"/></svg>Void INV-09531 instead</button></div>
+                </div>
+              </div>
+              <div data-show="ask" class="stepup">
+                <p class="s-t"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Confirm it's you, Ines</p>
+                <p class="muted" style="margin:0;font-size:12.5px">Voiding takes €18,400.00 off the books.</p>
+                <div class="s-opts">
+                  <button class="ui-btn is-primary" type="button" data-go="done" data-say="Confirmed with a passkey. JE-148219 reverses JE-148213. INV-09533 posted as JE-148220."><svg class="i" aria-hidden="true"><use href="#i-fingerprint"/></svg>Use passkey</button>
+                  <button class="ui-btn" type="button" data-go="done" data-say="Confirmed. JE-148219 reverses JE-148213. INV-09533 posted as JE-148220."><svg class="i" aria-hidden="true"><use href="#i-key-round"/></svg>Password</button>
+                  <button class="ui-btn" type="button" data-go="done" data-say="Confirmed. JE-148219 reverses JE-148213. INV-09533 posted as JE-148220."><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Email a code</button>
+                </div>
+              </div>
+              <div data-show="done">
+                <table class="tbl">
+                  <tbody>
+                    <tr><td class="mono">JE-148219</td><td><span id="r-rev">Reverses JE-148213</span> · Nov 19, 10:03</td><td class="num">−€18,400.00</td></tr>
+                    <tr><td class="mono">JE-148220</td><td>INV-09533 sent · Nov 19, 10:05</td><td class="num">€16,400.00</td></tr>
+                  </tbody>
+                </table>
+                <div class="reacts" style="margin-top:8px"><span class="confirmed"><svg class="i" aria-hidden="true"><use href="#i-shield-check"/></svg>Confirmed by Ines Duarte · passkey</span><button class="ui-btn" type="button" data-go="a" data-say="Back to before the void."><svg class="i" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Replay</button></div>
+              </div>
+            </div>
+            <p class="sr demo-live" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Chain and balance ============ -->
+<section class="sec" aria-labelledby="s-chain">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-chain">Chained as it posts. Balanced three times.</h2>
+      <p class="lead">Every posting and reversal is hash-chained in the same transaction that writes it. If the chain can't record it, the posting doesn't happen. And every entry balances when it's built, again when it posts, and again every night.</p>
+    </div>
+    <div class="proof is-flip" id="g-chain">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-c1">Each entry carries the previous entry's hash.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c1" data-target="#c-link" data-cap="#3e88 ← #d27b" data-cap-sub="JE-148220 points at JE-148219. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the newest link.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> JE-148220's previous hash is #d27b, the hash of JE-148219, the reversal. Rewrite any row above and every link after it disagrees.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-c2">No chain row, no posting. They commit together or not at all.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c2" data-target="#c-tx" data-cap="One transaction" data-cap-sub="Posting and chain row. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: how JE-148220 was written.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> The entry and its chain row were written in one transaction. There is no state where one exists without the other.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-c3">Every entry balances when built, when posted, and every night.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c3" data-target="#c-night" data-cap="Last night's check" data-cap-sub="148,216 entries. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the check that ran last night.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Last night's check covered all 148,216 entries posted through JE-148216. Every one balanced. Today's four were checked twice already.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win">
+          <div class="win-bar">
+            <div class="crumbs">Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Chain</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Hana Sato, accountant">HS<span class="sr">Signed in as Hana Sato, accountant, read only</span></span>
+          </div>
+          <div class="win-body">
+            <p class="w-title">Latest postings <span class="chip is-ink"><svg class="i" aria-hidden="true"><use href="#i-eye"/></svg>Read only</span></p>
+            <p class="w-sub"><span id="c-tx">Each entry posted and chained in one transaction</span></p>
+            <table class="tbl stack">
+              <thead><tr><th>Entry</th><th>When</th><th>What posted</th><th class="num">Amount</th><th>Hash</th><th data-short="Prev">Previous</th></tr></thead>
+              <tbody>
+                <tr><td class="mono">JE-148213</td><td class="nowrap">Nov 18, 15:02</td><td>Invoice sent, INV-09531</td><td class="num">€18,400.00</td><td class="hash">#9c07</td><td class="hash muted">#51aa</td></tr>
+                <tr><td class="mono">JE-148214</td><td class="nowrap">Nov 18, 15:40</td><td>Payment, INV-09498</td><td class="num">$24,500.00</td><td class="hash">#e2d4</td><td class="hash muted">#9c07</td></tr>
+                <tr><td class="mono">JE-148215</td><td class="nowrap">Nov 18, 16:05</td><td>Expense, London</td><td class="num">£86.00</td><td class="hash">#7f31</td><td class="hash muted">#e2d4</td></tr>
+                <tr><td class="mono">JE-148216</td><td class="nowrap">Nov 18, 17:20</td><td>Invoice sent, INV-09532</td><td class="num">£9,800.00</td><td class="hash">#b8a0</td><td class="hash muted">#7f31</td></tr>
+                <tr><td class="mono">JE-148217</td><td class="nowrap">Nov 19, 09:12</td><td>Bill paid, BILL-03307</td><td class="num">€2,150.00</td><td class="hash">#04ce</td><td class="hash muted">#b8a0</td></tr>
+                <tr><td class="mono">JE-148218</td><td class="nowrap">Nov 19, 09:40</td><td>Refund, INV-09451</td><td class="num">$1,200.00</td><td class="hash">#6a5f</td><td class="hash muted">#04ce</td></tr>
+                <tr><td class="mono">JE-148219</td><td class="nowrap">Nov 19, 10:03</td><td>Reverses JE-148213</td><td class="num">−€18,400.00</td><td class="hash">#d27b</td><td class="hash muted">#6a5f</td></tr>
+                <tr class="is-hl"><td class="mono">JE-148220</td><td class="nowrap">Nov 19, 10:05</td><td>Invoice sent, INV-09533</td><td class="num">€16,400.00</td><td class="hash">#3e88</td><td class="hash muted"><span id="c-link">#d27b</span></td></tr>
+              </tbody>
+            </table>
+            <p class="panel" style="margin-bottom:0"><svg class="i i-sm" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-scale"/></svg> <span id="c-night">Nightly check, Nov 19: 148,216 entries, every one balanced</span></p>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Macro: anchoring ============ -->
+<section class="sec macro" aria-labelledby="s-anchor" data-zoom="2.6">
+  <div class="macro-track">
+    <div class="macro-pin wrap">
+      <div class="macro-head">
+        <h2 class="h2" id="s-anchor">True story. Signed by someone who isn't us.</h2>
+        <div class="macro-cap">
+          <p class="cap-close">Close-up: Batch 0014's root, signed by the timestamp authority on Nov 17 at 02:00 UTC.</p>
+          <p class="cap-full off">The whole Anchoring screen: each batch, its Merkle root, the outside signature and evidence locked for ten years.</p>
+        </div>
+      </div>
+      <div class="macro-view">
+        <div class="macro-screen">
+          <div class="win">
+            <div class="win-bar">
+              <div class="crumbs">Meridian &amp; Vale <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Anchoring</b></div>
+              <span class="demo-tag">Demo data</span>
+              <span class="av" title="Signed in as Ines Duarte, administrator">ID<span class="sr">Signed in as Ines Duarte, administrator</span></span>
+            </div>
+            <div class="win-split">
+              <div class="win-side">
+                <ul>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-book-open"/></svg>Journal</li>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-link"/></svg>Chain</li>
+                  <li class="on"><svg class="i i-sm" aria-hidden="true"><use href="#i-anchor"/></svg>Anchoring</li>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-calendar-check"/></svg>Periods</li>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-scale"/></svg>Reports</li>
+                </ul>
+                <p class="side-h">Offices</p>
+                <ul>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-building-2"/></svg>New York · USD</li>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-building-2"/></svg>Lisbon · EUR</li>
+                  <li><svg class="i i-sm" aria-hidden="true"><use href="#i-building-2"/></svg>London · GBP</li>
+                </ul>
+              </div>
+              <div class="win-main">
+                <p class="w-title">Anchor batches <span class="chip"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>All roots match</span></p>
+                <p class="w-sub">Each batch: the organisation's unanchored entries, reduced to a Merkle root and signed by a third-party timestamp authority</p>
+                <table class="tbl stack">
+                  <thead><tr><th>Batch</th><th class="num">Entries</th><th>Root</th><th>Signed by the timestamp authority</th><th>Evidence locked until</th></tr></thead>
+                  <tbody>
+                    <tr class="is-hl"><td class="mono">0014</td><td class="num">12,906</td><td class="hash">3f9a…c21e</td><td data-macro-focus>Nov 17, 02:00 UTC</td><td>Nov 2036</td></tr>
+                    <tr><td class="mono">0013</td><td class="num">11,456</td><td class="hash">a81d…5b02</td><td>Oct 14, 02:00 UTC</td><td>Oct 2036</td></tr>
+                    <tr><td class="mono">0012</td><td class="num">12,031</td><td class="hash">0e6c…f7a3</td><td>Sep 15, 02:00 UTC</td><td>Sep 2036</td></tr>
+                    <tr><td class="mono">0011</td><td class="num">9,977</td><td class="hash">c4b0…1d88</td><td>Aug 13, 02:00 UTC</td><td>Aug 2036</td></tr>
+                    <tr><td class="mono">0010</td><td class="num">11,840</td><td class="hash">5d27…e94f</td><td>Jul 16, 02:00 UTC</td><td>Jul 2036</td></tr>
+                    <tr><td class="mono">0009</td><td class="num">10,615</td><td class="hash">b392…07c1</td><td>Jun 15, 02:00 UTC</td><td>Jun 2036</td></tr>
+                    <tr><td class="mono">0008</td><td class="num">11,372</td><td class="hash">6fe0…a215</td><td>May 18, 02:00 UTC</td><td>May 2036</td></tr>
+                    <tr><td class="mono">0007</td><td class="num">10,904</td><td class="hash">2c9b…d460</td><td>Apr 14, 02:00 UTC</td><td>Apr 2036</td></tr>
+                    <tr><td class="mono">0006</td><td class="num">10,288</td><td class="hash">71be…09d4</td><td>Mar 16, 02:00 UTC</td><td>Mar 2036</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Rewrite simulation ============ -->
+<section class="sec" aria-labelledby="s-rewrite">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-rewrite">Someone could rewrite a chain. Nobody can make last March sign it.</h2>
+      <p class="lead">With full database access, a person could rewrite rows and recompute every hash. What they couldn't do is get a third-party timestamp authority to have signed their new root on Mar 16. The old root is signed, and the evidence sits in storage nobody can delete before its retention date, us included.</p>
+    </div>
+    <div class="proof" id="g-rewrite">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-w1">The evidence can't be deleted before its date. Not by you, not by us.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-w1" data-target="#w-lock" data-go-demo="a" data-cap="Locked until 2036" data-cap-sub="Retention set on the storage itself. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: where March's evidence lives.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Batch 0006's signed token sits in storage locked until Mar 16, 2036. Delete requests before then are refused, including ours.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-w2">Rewrite one March entry and the root stops matching what was signed.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-w2" data-target="#w-miss" data-go-demo="tamper" data-cap="Root doesn't match" data-cap-sub="Simulated rewrite. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: verifying March after a simulated rewrite.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> The rows recompute to c5d2…7e10. The authority signed 71be…09d4 on Mar 16. A fresh signature would carry today's date, not March's.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win" data-demo data-state="a">
+          <div class="win-bar">
+            <div class="crumbs">Anchoring <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Verify Batch 0006</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Ines Duarte, administrator">ID<span class="sr">Signed in as Ines Duarte, administrator</span></span>
+          </div>
+          <div class="win-body">
+            <div class="seg" role="group" aria-label="Rows to verify">
+              <button type="button" data-go="a" aria-pressed="true" data-say="Verifying today's rows. The root matches the signed root.">Today's rows</button>
+              <button type="button" data-go="tamper" aria-pressed="false" data-say="Simulation: one March entry rewritten. The recomputed root does not match the signed root.">Simulate a rewrite</button>
+            </div>
+            <dl class="kv" style="margin-top:12px">
+              <dt>Signed root, Mar 16</dt><dd class="hash">71be…09d4</dd>
+              <dt>Recomputed from rows</dt><dd><span class="swap"><span class="hash" data-show="a">71be…09d4</span><span class="hash" data-show="tamper">c5d2…7e10</span></span></dd>
+              <dt>Evidence</dt><dd><span id="w-lock">Locked until Mar 16, 2036</span></dd>
+            </dl>
+            <div class="panel swap">
+              <p data-show="a" style="margin:0"><span class="chip"><svg class="i" aria-hidden="true"><use href="#i-circle-check"/></svg>Matches</span> These are the rows the authority's signature covers.</p>
+              <div data-show="tamper" class="refusal">
+                <svg class="i" aria-hidden="true"><use href="#i-circle-alert"/></svg>
+                <div>
+                  <p class="r-t" id="w-miss">Root doesn't match the signed root</p>
+                  <p class="muted" style="font-size:12.5px">Simulated: JE-051877 changed from $4,200.00 to $2,400.00. Re-signing can't backdate to Mar 16.</p>
+                </div>
+              </div>
+            </div>
+            <p class="sr demo-live" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Period close ============ -->
+<section class="sec" aria-labelledby="s-close">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-close">Closed means closed.</h2>
+      <p class="lead">Closing a period asks the person to confirm who they are. After that, an edit to a document dated inside it is refused, not quietly restated somewhere else.</p>
+    </div>
+    <div class="proof is-flip" id="g-close">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-p1">Closing October took a confirmed identity, and says whose.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p1" data-target="#p-who" data-go-demo="a" data-cap="Confirmed by Oliver Grant" data-cap-sub="Closed Nov 5. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: October's row.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Oliver Grant closed October on Nov 5 and confirmed it with his password first.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-p2">An edit to a closed month is refused. Nothing gets restated.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p2" data-target="#p-no" data-go-demo="no" data-cap="October is closed" data-cap-sub="The edit, refused. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: saving a change to an Oct 22 expense.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> The £34.00 taxi from Oct 22 stays £34.00. October's figures are the ones Oliver closed.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win" data-demo data-state="a">
+          <div class="win-bar">
+            <div class="crumbs">Books <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Periods</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Oliver Grant, administrator">OG<span class="sr">Signed in as Oliver Grant, administrator</span></span>
+          </div>
+          <div class="win-body">
+            <table class="tbl stack">
+              <thead><tr><th>Period</th><th>Status</th><th>Closed by</th></tr></thead>
+              <tbody>
+                <tr><td>September</td><td><span class="chip is-ink"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Closed</span></td><td>Oliver Grant · Oct 6 · confirmed with a passkey</td></tr>
+                <tr><td>October</td><td><span class="chip is-ink"><svg class="i" aria-hidden="true"><use href="#i-lock"/></svg>Closed</span></td><td><span id="p-who">Oliver Grant · Nov 5 · confirmed with a password</span></td></tr>
+                <tr><td>November</td><td><span class="chip">Open</span></td><td class="muted">Not closed</td></tr>
+              </tbody>
+            </table>
+            <p class="w-h">Expense · Oct 22 · Taxi to Halden &amp; Co · London</p>
+            <dl class="kv"><dt>Amount</dt><dd>£34.00 → £43.00</dd></dl>
+            <div class="panel swap">
+              <div data-show="a" class="reacts"><button class="ui-btn is-primary" type="button" data-go="no" data-say="Refused. October is closed. Nothing was restated."><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Save change</button></div>
+              <div data-show="no" class="refusal">
+                <svg class="i" aria-hidden="true"><use href="#i-calendar-check"/></svg>
+                <div>
+                  <p class="r-t" id="p-no">October is closed. The change wasn't saved.</p>
+                  <div class="reacts" style="margin-top:8px"><span class="muted" style="font-size:12.5px">Nothing was restated.</span><button class="ui-btn" type="button" data-go="a" data-say="Back to the unsaved change."><svg class="i" aria-hidden="true"><use href="#i-rotate-ccw"/></svg>Replay</button></div>
+                </div>
+              </div>
+            </div>
+            <p class="sr demo-live" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Reports ============ -->
+<section class="sec" aria-labelledby="s-rep">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-rep">Kids, in 2036 an auditor asked about one invoice from March 2026…</h2>
+      <p class="lead">Read any report as of any date and it rebuilds what was owed then, from the books, not from today's counters. And a report across currencies keeps each one apart. Adding dollars to euros gives a number about nothing.</p>
+    </div>
+    <div class="proof" id="g-rep">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-a1">As of Mar 31 shows what was owed on Mar 31, paid or not today.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a1" data-target="#a-mar" data-go-demo="mar" data-cap="INV-04117, owed then" data-cap-sub="Paid Apr 22. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: receivables as of Mar 31.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Brightwater's INV-04117 was paid on Apr 22, so today it's gone from the list. As of Mar 31 it's there, $12,000.00, because it was owed that day.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-a2">Several currencies, no blended total.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a2" data-target="#a-none" data-cap="No total across currencies" data-cap-sub="Each currency on its own. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the foot of the report.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Dollars, euros and pounds each get their own total. The line where a grand total would go says there isn't one.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win" data-demo data-state="now">
+          <div class="win-bar">
+            <div class="crumbs">Reports <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Receivables</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Hana Sato, accountant">HS<span class="sr">Signed in as Hana Sato, accountant, read only</span></span>
+          </div>
+          <div class="win-body">
+            <div class="demo-ctl" style="margin:0;padding:0;border:0">
+              <div class="seg" role="group" aria-label="Report date">
+                <button type="button" data-go="now" aria-pressed="true" data-say="Receivables today, Nov 19.">Today, Nov 19</button>
+                <button type="button" data-go="mar" aria-pressed="false" data-say="Receivables as of Mar 31, 2026.">As of Mar 31</button>
+              </div>
+              <span class="chip is-soft">4 clients</span>
+            </div>
+            <div class="swap" style="margin-top:10px">
+              <div data-show="now">
+                <table class="tbl stack">
+                  <thead><tr><th>Invoice</th><th>Client</th><th>Office</th><th class="num">Owed</th></tr></thead>
+                  <tbody>
+                    <tr><td class="mono">INV-09529</td><td>Oakline Foods</td><td>New York</td><td class="num">$12,900.00</td></tr>
+                    <tr><td class="mono">INV-09532</td><td>Halden &amp; Co</td><td>London</td><td class="num">£9,800.00</td></tr>
+                    <tr><td class="mono">INV-09533</td><td>Atelier Lune</td><td>Lisbon</td><td class="num">€16,400.00</td></tr>
+                  </tbody>
+                </table>
+                <dl class="kv panel"><dt>USD</dt><dd>$12,900.00</dd><dt>EUR</dt><dd>€16,400.00</dd><dt>GBP</dt><dd>£9,800.00</dd><dt>All currencies</dt><dd>No total across currencies</dd></dl>
+              </div>
+              <div data-show="mar">
+                <table class="tbl stack">
+                  <thead><tr><th>Invoice</th><th>Client</th><th>Office</th><th class="num">Owed</th></tr></thead>
+                  <tbody>
+                    <tr><td class="mono">INV-04117</td><td>Brightwater Inc</td><td>New York</td><td class="num"><span id="a-mar">$12,000.00</span></td></tr>
+                    <tr><td class="mono">INV-04152</td><td>Atelier Lune</td><td>Lisbon</td><td class="num">€8,750.00</td></tr>
+                    <tr><td class="mono">INV-04166</td><td>Oakline Foods</td><td>New York</td><td class="num">$4,500.00</td></tr>
+                    <tr><td class="mono">INV-04189</td><td>Halden &amp; Co</td><td>London</td><td class="num">£6,300.00</td></tr>
+                  </tbody>
+                </table>
+                <dl class="kv panel"><dt>USD</dt><dd>$16,500.00</dd><dt>EUR</dt><dd>€8,750.00</dd><dt>GBP</dt><dd>£6,300.00</dd><dt>All currencies</dt><dd><span id="a-none">No total across currencies</span></dd></dl>
+              </div>
+            </div>
+            <p class="sr demo-live" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Numbers, money once, not found ============ -->
+<section class="sec" aria-labelledby="s-once">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-once">No gaps. No doubles. No peeking.</h2>
+      <p class="lead">One counter numbers every document inside the transaction that creates it. A payment a provider reports twice lands once, and a refund is charged at the provider before it's recorded. And another organisation's records don't exist for you.</p>
+    </div>
+    <div class="proof is-flip" id="g-once">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-o1">One counter, inside the transaction. No gaps an auditor asks about.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o1" data-target="#o-void" data-go-demo="a" data-cap="INV-09531, still numbered" data-cap-sub="Voided, not skipped. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: invoice numbers on Nov 18 and 19.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> INV-09529 to INV-09533, five numbers, five documents. The voided one keeps its number, and a send that fails rolls its number back with it.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-o2">A payment reported twice is applied once.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o2" data-target="#o-dup" data-go-demo="pay" data-cap="Already recorded" data-cap-sub="Second notice, same payment. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the provider's two notices on Nov 18.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Brightwater's $24,500.00 arrived as two notices one second apart. The first posted JE-148214. The second matched the same payment and changed nothing.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-o3">A refund is charged at the provider first and recorded second.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o3" data-target="#o-ref" data-go-demo="pay" data-cap="Recorded second" data-cap-sub="After the provider confirmed. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the $1,200.00 refund to Brightwater.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Rhea confirmed it was her, the provider charged the refund at 09:39:58, and only then was it recorded as JE-148218 at 09:40:01.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-o4">A record that isn't yours answers "Not found."</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o4" data-target="#o-nf" data-go-demo="nf" data-cap="Not found." data-cap-sub="And nothing more. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: following a link to a record outside your organisation.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> The answer is the same one a link to nothing at all gets. No "access denied", no hint, nothing to probe.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win" data-demo data-state="a">
+          <div class="win-bar">
+            <div class="crumbs swap">
+              <span data-show="a">Invoices <svg class="i" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-chevron-right"/></svg> <b>Numbering</b></span>
+              <span data-show="pay">Payments <svg class="i" aria-hidden="true" style="display:inline;vertical-align:-2px"><use href="#i-chevron-right"/></svg> <b>Provider activity</b></span>
+              <span data-show="nf"><b>Invoices</b></span>
+            </div>
+            <span class="demo-tag">Demo data</span>
+            <span class="swap">
+              <span class="av" data-show="a nf" title="Signed in as Ines Duarte, administrator">ID<span class="sr">Signed in as Ines Duarte, administrator</span></span>
+              <span class="av" data-show="pay" title="Signed in as Rhea Kapoor, owner">RK<span class="sr">Signed in as Rhea Kapoor, owner</span></span>
+            </span>
+          </div>
+          <div class="win-body">
+            <div class="seg" role="group" aria-label="Screen">
+              <button type="button" data-go="a" aria-pressed="true" data-say="Showing invoice numbering.">Numbering</button>
+              <button type="button" data-go="pay" aria-pressed="false" data-say="Showing provider activity.">Provider activity</button>
+              <button type="button" data-go="nf" aria-pressed="false" data-say="Showing a link to a record outside your organisation.">A link that isn't yours</button>
+            </div>
+            <div class="swap" style="margin-top:12px">
+              <div data-show="a">
+                <table class="tbl stack">
+                  <thead><tr><th>Number</th><th>Client</th><th>Issued</th><th>Status</th><th class="num">Amount</th></tr></thead>
+                  <tbody>
+                    <tr><td class="mono">INV-09529</td><td>Oakline Foods</td><td class="nowrap">Nov 18</td><td>Sent</td><td class="num">$12,900.00</td></tr>
+                    <tr><td class="mono">INV-09530</td><td>Casa Verde</td><td class="nowrap">Nov 18</td><td>Sent</td><td class="num">€5,600.00</td></tr>
+                    <tr><td class="mono">INV-09531</td><td>Atelier Lune</td><td class="nowrap">Nov 18</td><td><span id="o-void">Void, number kept</span></td><td class="num">€18,400.00</td></tr>
+                    <tr><td class="mono">INV-09532</td><td>Halden &amp; Co</td><td class="nowrap">Nov 18</td><td>Sent</td><td class="num">£9,800.00</td></tr>
+                    <tr><td class="mono">INV-09533</td><td>Atelier Lune</td><td class="nowrap">Nov 19</td><td>Sent</td><td class="num">€16,400.00</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div data-show="pay">
+                <table class="tbl stack">
+                  <thead><tr><th>When</th><th>Provider notice</th><th>Result</th></tr></thead>
+                  <tbody>
+                    <tr><td class="nowrap">Nov 18, 15:40:02</td><td>Invoice paid · INV-09498 · $24,500.00</td><td>Applied · JE-148214</td></tr>
+                    <tr><td class="nowrap">Nov 18, 15:40:03</td><td>Payment succeeded · same payment</td><td><span id="o-dup">Already recorded</span></td></tr>
+                  </tbody>
+                </table>
+                <p class="w-h">Refund · INV-09451 · Brightwater Inc · $1,200.00</p>
+                <dl class="kv">
+                  <dt>Step-up</dt><dd>Rhea Kapoor · emailed code · 09:39:51</dd>
+                  <dt>Then: charged at the provider</dt><dd>Succeeded · 09:39:58</dd>
+                  <dt>Then: recorded</dt><dd><span id="o-ref">JE-148218 · 09:40:01</span></dd>
+                </dl>
+              </div>
+              <div data-show="nf">
+                <div class="url"><svg class="i i-sm" aria-hidden="true"><use href="#i-link"/></svg>ledgendary.app/invoices/inv_7Hq2c9</div>
+                <div class="notfound"><p id="o-nf">Not found.</p></div>
+              </div>
+            </div>
+            <p class="sr demo-live" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Privacy ============ -->
+<section class="sec" aria-labelledby="s-priv">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-priv">Private by construction, not by promise.</h2>
+      <p class="lead">What you don't keep can't leak. Tax ids keep their kind and last four. Signatures keep a keyed fingerprint of the device. Calendar capture keeps titles and durations. And a person's data-subject request anonymises them, while the financial records the law says to keep stay kept.</p>
+    </div>
+    <div class="proof" id="g-priv">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-v1">A full tax id is never stored, and there's no column for one.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v1" data-target="#v-tin" data-cap="EIN, ends 4821" data-cap-sub="Kind and last four. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: a vendor's tax id row.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> "EIN · ends 4821" is the whole record. The rest of the number was never written anywhere.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-v2">Calendar capture keeps a title and a duration. Nothing else gets in.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v2" data-target="#v-cal" data-cap="Title and duration" data-cap-sub="Reduced at the edge. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: the calendar row.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Attendees, descriptions and meeting links are dropped before anything is written, so there's nothing to clean up later.</p>
+          </div>
+        </li>
+        <li class="claim">
+          <p class="claim-text" id="c-v3">A data-subject request anonymises the person and keeps the books.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v3" data-target="#v-dsr" data-cap="Anonymised Nov 3" data-cap-sub="Invoices kept, as the law requires. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: a former client contact's record.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> The contact's name and email are gone since Nov 3. The invoices they received are still in the books, because tax law says they stay.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win">
+          <div class="win-bar">
+            <div class="crumbs">Settings <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>What we keep</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Ines Duarte, administrator">ID<span class="sr">Signed in as Ines Duarte, administrator</span></span>
+          </div>
+          <div class="win-body">
+            <table class="tbl stack">
+              <thead><tr><th>Data</th><th>Kept</th><th>Never kept</th></tr></thead>
+              <tbody>
+                <tr><td>Vendor tax id</td><td><span id="v-tin">EIN · ends 4821</span></td><td class="muted">The full number</td></tr>
+                <tr><td>E-signature</td><td>Name, moment, keyed fingerprint</td><td class="muted">Raw address or browser</td></tr>
+                <tr><td>Calendar capture</td><td><span id="v-cal">Title · duration</span></td><td class="muted">Attendees, description, links</td></tr>
+                <tr><td>Former client contact</td><td><span id="v-dsr">Anonymised Nov 3</span> · invoices retained</td><td class="muted">Name, email</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Step-up ============ -->
+<section class="sec" aria-labelledby="s-step">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-step">Suit up before money leaves the books.</h2>
+      <p class="lead">Voids, write-offs, refunds, and closing or reopening a period: each asks the person to confirm who they are again, by passkey, password or emailed code. Every one leaves a stamp with a name on it.</p>
+    </div>
+    <div class="proof is-flip" id="g-step">
+      <ul class="claims">
+        <li class="claim">
+          <p class="claim-text" id="c-s1">Every action that takes money off the books asks first, and records who confirmed.</p>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s1" data-target="#s-wo" data-cap="Write-off, confirmed" data-cap-sub="Oliver Grant, passkey. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="receipt">
+            <p class="r-pre">Receipt: confirmations this month.</p>
+            <p class="r-proof"><span class="stamp">True story.</span> Four gated actions in November: a void, a refund, a write-off and a period close. Each names the person and how they confirmed.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="stage">
+        <div class="win">
+          <div class="win-bar">
+            <div class="crumbs">Settings <svg class="i" aria-hidden="true"><use href="#i-chevron-right"/></svg> <b>Confirmations · November</b></div>
+            <span class="demo-tag">Demo data</span>
+            <span class="av" title="Signed in as Rhea Kapoor, owner">RK<span class="sr">Signed in as Rhea Kapoor, owner</span></span>
+          </div>
+          <div class="win-body">
+            <table class="tbl stack">
+              <thead><tr><th>When</th><th>Action</th><th class="num">Amount</th><th>Confirmed by</th></tr></thead>
+              <tbody>
+                <tr><td class="nowrap">Nov 19, 10:03</td><td>Void INV-09531</td><td class="num">€18,400.00</td><td>Ines Duarte · passkey</td></tr>
+                <tr><td class="nowrap">Nov 19, 09:39</td><td>Refund INV-09451</td><td class="num">$1,200.00</td><td>Rhea Kapoor · emailed code</td></tr>
+                <tr><td class="nowrap">Nov 12, 16:21</td><td>Write off INV-09210</td><td class="num">£450.00</td><td><span id="s-wo">Oliver Grant · passkey</span></td></tr>
+                <tr><td class="nowrap">Nov 5, 11:02</td><td>Close October</td><td class="num">–</td><td>Oliver Grant · password</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="lens-strip">
+          <div class="loupe" aria-hidden="true"><div class="loupe-lens"></div></div>
+          <p class="lens-cap"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Compare ============ -->
+<section class="sec" aria-labelledby="s-cmp">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 class="h2" id="s-cmp">The playbook auditors wish everyone ran.</h2>
+      <p class="lead">Books you keep versus books you can prove.</p>
+    </div>
+    <div class="compare">
+      <div class="is-theirs">
+        <h3 class="h3">Books you keep</h3>
+        <ol>
+          <li><svg class="i" aria-hidden="true"><use href="#i-file-pen-line"/></svg>A wrong entry gets edited, and the old figure is gone.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-history"/></svg>"Trust us, nobody changed it" is the audit trail.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-calendar-x"/></svg>A closed month quietly moves when someone fixes a typo.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-coins"/></svg>A report adds dollars to euros and calls it revenue.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-repeat"/></svg>A retried notice books the same payment twice.</li>
+        </ol>
+      </div>
+      <div class="is-ours">
+        <h3 class="h3">Books you can prove</h3>
+        <ol>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Posted entries are reversed, never edited.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>A chain anchored by a timestamp authority that isn't us.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Closed periods refuse the change.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>Each currency keeps its own total.</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg>One payment, one posting, however many notices.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Final ============ -->
+<section class="final" id="join" aria-labelledby="s-final">
+  <div class="wrap final-grid">
+    <div>
+      <h2 class="h2" id="s-final">Haaaave you met your auditor? They're going to love you.</h2>
+      <p class="lead" style="margin-top:18px">It's going to be legendary. Ledgendary is in an invite-only alpha; join the waitlist and we'll email you when your organisation's seat is ready.</p>
+      <div class="tally" data-tally>
+        <span>Receipts opened: <span class="tally-n">1 of 20</span></span>
+        <span class="tally-bar" aria-hidden="true"></span>
+        <span class="tally-done off">Every one. True story.</span>
+      </div>
+    </div>
+    <form class="waitlist" novalidate>
+      <label for="wl-final">Your work email</label>
+      <div class="waitlist-row">
+        <input class="field" id="wl-final" type="email" name="email" autocomplete="email" placeholder="you@agency.com" aria-describedby="wl-final-msg">
+        <button class="btn" type="submit">Join the waitlist</button>
+      </div>
+      <p class="form-msg" id="wl-final-msg" aria-live="polite" data-idle="No spam. One email when it's your turn.">No spam. One email when it's your turn.</p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p style="margin:0">Ledgendary · ledgendary.app · Every product panel on this page shows invented demo data.</p>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="solo.html">Solo</a></li>
+      <li><a href="team.html">Team</a></li>
+      <li><a href="enterprise.html" aria-current="page">Enterprise</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
