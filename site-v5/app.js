@@ -125,7 +125,9 @@
     lens.appendChild(cloneWin(win));
     var wr = win.getBoundingClientRect();
     var tr = target.getBoundingClientRect();
-    try {
+    var framed = target.closest(".chip, .confirmed, .stamp");
+    if (framed) tr = framed.getBoundingClientRect();
+    else try {
       var rg = doc.createRange();
       rg.selectNodeContents(target);
       var rr = rg.getBoundingClientRect();
@@ -143,10 +145,13 @@
     if (fit < s) s = Math.max(1, fit);
     // Hard-ish edges just outside the target's own text box, fading inward by a couple of pixels,
     // so neighbouring glyphs never leak in as fragments.
-    var hx = tr.width / sx / 2 + 2, hy = tr.height / sx / 2 + 1;
+    var hx = tr.width / sx / 2 + 3, hy = tr.height / sx / 2 + 2;
     var x0 = cx - hx, x1 = cx + hx, y0 = cy - hy, y1 = cy + hy;
-    var mask = "linear-gradient(to right, transparent " + x0 + "px, #000 " + (x0 + 3) + "px, #000 " + (x1 - 3) + "px, transparent " + x1 + "px), " +
-      "linear-gradient(to bottom, transparent " + y0 + "px, #000 " + (y0 + 2) + "px, #000 " + (y1 - 2) + "px, transparent " + y1 + "px)";
+    // The target is fully opaque; a faded sliver of its row (rules, the neighbouring cell) stays
+    // visible around it so the lens reads as a piece of the product, not a sticker.
+    var fx = 56 / s, fy = 30 / s;
+    var mask = "linear-gradient(to right, transparent " + (x0 - fx) + "px, rgba(0,0,0,.28) " + (x0 - fx * 0.35) + "px, #000 " + x0 + "px, #000 " + x1 + "px, rgba(0,0,0,.28) " + (x1 + fx * 0.35) + "px, transparent " + (x1 + fx) + "px), " +
+      "linear-gradient(to bottom, transparent " + (y0 - fy) + "px, rgba(0,0,0,.3) " + (y0 - fy * 0.4) + "px, #000 " + y0 + "px, #000 " + y1 + "px, rgba(0,0,0,.3) " + (y1 + fy * 0.4) + "px, transparent " + (y1 + fy) + "px)";
     lens.style.width = win.offsetWidth + "px";
     lens.style.height = win.offsetHeight + "px";
     lens.style.webkitMaskImage = mask;

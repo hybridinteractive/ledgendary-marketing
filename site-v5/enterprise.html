@@ -46,7 +46,7 @@
         <p class="form-msg" id="wl-hero-msg" aria-live="polite" data-idle="Invite-only alpha. One email when your organisation's seat is ready.">Invite-only alpha. One email when your organisation's seat is ready.</p>
       </form>
       <nav class="toc" aria-label="Claims on this page">
-        <p class="toc-h">The receipts on this page</p>
+        <p class="toc-h">The other receipts on this page</p>
         <ol>
           <li><a href="#s-rev">Reverse, never edit <span>2 receipts</span></a></li>
           <li><a href="#s-chain">Chained and balanced <span>3 receipts</span></a></li>
@@ -66,7 +66,7 @@
         <li class="claim">
           <p class="claim-text" id="c-h1">Last March's books were signed by someone who isn't us. Nobody can get that signature again for a different root.</p>
           <div class="claim-row">
-            <button class="prove" type="button" aria-expanded="false" aria-describedby="c-h1" data-target="#h-sig" data-cap="Signed Mar 16, 09:24:31 UTC" data-cap-sub="By the timestamp authority. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button>
+            <button class="prove" type="button" aria-expanded="false" aria-describedby="c-h1" data-target="#h-sig" data-cap="Not our clock, not our key" data-cap-sub="The timestamp authority signed root 71be…09d4. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button>
           </div>
           <div class="receipt">
             <p class="r-pre">Receipt: the signature on Batch 0006.</p>
@@ -115,7 +115,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-r1">A posted entry can't be edited. Three layers refuse, one behind the other.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r1" data-target="#r-no" data-go-demo="no" data-cap="Refused" data-cap-sub="The edit, not the person. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r1" data-target="#r-no" data-go-demo="no" data-cap="No path, model guard, trigger" data-cap-sub="Three layers, one behind the other. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: what happens when Ines presses Edit amount.</p>
             <p class="r-proof"><span class="stamp">True story.</span> There is no edit path. If there were, the model guard would refuse it, and behind that a database trigger would too.</p>
@@ -123,7 +123,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-r2">The correction is a reversal, confirmed by a named person, plus a new invoice.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r2" data-target="#r-rev" data-go-demo="done" data-cap="JE-148219 reverses JE-148213" data-cap-sub="Confirmed by Ines Duarte. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-r2" data-target="#r-rev" data-go-demo="done" data-cap="The original stays as posted" data-cap-sub="Confirmed by Ines Duarte with a passkey. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the entries after the void.</p>
             <p class="r-proof"><span class="nowrap">JE-148213</span> still reads €18,400.00. <span class="nowrap">JE-148219</span> reverses it, confirmed by Ines with a passkey, and <span class="nowrap">INV-09533</span> posts €16,400.00 as <span class="nowrap">JE-148220</span>.</p>
@@ -207,7 +207,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-c1">Each entry carries the previous entry's hash.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c1" data-target="#c-link" data-cap="#3e88 ← #d27b" data-cap-sub="JE-148220 points at JE-148219. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c1" data-target="#c-link" data-cap="JE-148219's own hash" data-cap-sub="Each entry carries the one before it. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the newest link.</p>
             <p class="r-proof"><span class="stamp">True story.</span> <span class="nowrap">JE-148220</span>'s previous hash is #d27b, the hash of <span class="nowrap">JE-148219</span>, the reversal. Rewrite any row above and every link after it disagrees.</p>
@@ -215,7 +215,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-c2">No chain row, no posting. They commit together or not at all.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c2" data-target="#c-tx" data-cap="One transaction" data-cap-sub="Posting and chain row. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c2" data-target="#c-tx" data-cap="Both or neither" data-cap-sub="The posting and its chain row commit together. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: how <span class="nowrap">JE-148220</span> was written.</p>
             <p class="r-proof">The entry and its chain row were written in one transaction. There is no state where one exists without the other.</p>
@@ -223,7 +223,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-c3">Every entry balances when built, when posted, and every night.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c3" data-target="#c-night" data-cap="Last night's check" data-cap-sub="148,216 entries. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-c3" data-target="#c-night" data-cap="Through JE-148216" data-cap-sub="Every one balanced, checked again last night. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the check that ran last night.</p>
             <p class="r-proof">Last night's check covered all 148,216 entries posted through <span class="nowrap">JE-148216</span>. Every one balanced. Today's four were checked twice already.</p>
@@ -343,7 +343,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-w1">The evidence can't be deleted before its date. Not by you, not by us.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-w1" data-target="#w-lock" data-go-demo="a" data-cap="Locked until 2036" data-cap-sub="Retention set on the storage itself. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-w1" data-target="#w-lock" data-go-demo="a" data-cap="Ten years, from Mar 16, 2026" data-cap-sub="Delete requests before then are refused, ours too. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: where March's evidence lives.</p>
             <p class="r-proof"><span class="stamp">True story.</span> Batch 0006's signed token sits in storage locked until Mar 16, 2036. Delete requests before then are refused, including ours.</p>
@@ -351,7 +351,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-w2">Rewrite one March entry and the root stops matching what was signed.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-w2" data-target="#w-miss" data-go-demo="tamper" data-cap="Root doesn't match" data-cap-sub="Simulated rewrite. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-w2" data-target="#w-miss" data-go-demo="tamper" data-cap="c5d2…7e10 against 71be…09d4" data-cap-sub="A simulated rewrite of one March entry. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: verifying March after a simulated rewrite.</p>
             <p class="r-proof">The rows recompute to c5d2…7e10. The authority signed 71be…09d4 on Mar 16. A fresh signature would carry today's date, not March's.</p>
@@ -408,7 +408,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-p1">Closing October took a confirmed identity, and says whose.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p1" data-target="#p-who" data-go-demo="a" data-cap="Confirmed by Oliver Grant" data-cap-sub="Closed Nov 5. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p1" data-target="#p-who" data-go-demo="a" data-cap="Oliver Grant, Nov 5" data-cap-sub="Closing a period asks who you are first. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: October's row.</p>
             <p class="r-proof"><span class="stamp">True story.</span> Oliver Grant closed October on Nov 5 and confirmed it with his password first.</p>
@@ -416,7 +416,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-p2">An edit to a closed month is refused. Nothing gets restated.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p2" data-target="#p-no" data-go-demo="no" data-cap="October is closed" data-cap-sub="The edit, refused. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-p2" data-target="#p-no" data-go-demo="no" data-cap="£34.00 stays £34.00" data-cap-sub="Nothing in October was restated. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: saving a change to an Oct 22 expense.</p>
             <p class="r-proof">The £34.00 taxi from Oct 22 stays £34.00. October's figures are the ones Oliver closed.</p>
@@ -474,7 +474,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-a1">As of Mar 31 shows what was owed on Mar 31, paid or not today.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a1" data-target="#a-mar" data-go-demo="mar" data-cap="INV-04117, owed then" data-cap-sub="Paid Apr 22. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a1" data-target="#a-mar" data-go-demo="mar" data-cap="Owed on Mar 31, paid Apr 22" data-cap-sub="Brightwater, INV-04117. Gone from today, there then. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: receivables as of Mar 31.</p>
             <p class="r-proof"><span class="stamp">True story.</span> Brightwater's <span class="nowrap">INV-04117</span> was paid on Apr 22, so today it's gone from the list. As of Mar 31 it's there, $12,000.00, because it was owed that day.</p>
@@ -482,7 +482,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-a2">Several currencies, no blended total.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a2" data-target="#a-none" data-cap="No total across currencies" data-cap-sub="Each currency on its own. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-a2" data-target="#a-none" data-cap="Dollars, euros, pounds apart" data-cap-sub="Each currency keeps its own total. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the foot of the report.</p>
             <p class="r-proof">Dollars, euros and pounds each get their own total. The line where a grand total would go says there isn't one.</p>
@@ -552,7 +552,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-o1">One counter, inside the transaction. No gaps an auditor asks about.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o1" data-target="#o-void" data-go-demo="a" data-cap="INV-09531, still numbered" data-cap-sub="Voided, not skipped. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o1" data-target="#o-void" data-go-demo="a" data-cap="Voided, never skipped" data-cap-sub="Five numbers, five documents. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: invoice numbers on Nov 18 and 19.</p>
             <p class="r-proof"><span class="stamp">True story.</span> <span class="nowrap">INV-09529</span> to <span class="nowrap">INV-09533</span>, five numbers, five documents. The voided one keeps its number, and a send that fails rolls its number back with it.</p>
@@ -560,7 +560,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-o2">A payment reported twice is applied once.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o2" data-target="#o-dup" data-go-demo="pay" data-cap="Already recorded" data-cap-sub="Second notice, same payment. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o2" data-target="#o-dup" data-go-demo="pay" data-cap="One payment, two notices" data-cap-sub="The second changed nothing; JE-148214 stands. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the provider's two notices on Nov 18.</p>
             <p class="r-proof">Brightwater's $24,500.00 arrived as two notices one second apart. The first posted <span class="nowrap">JE-148214</span>. The second matched the same payment and changed nothing.</p>
@@ -568,7 +568,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-o3">A refund is charged at the provider first and recorded second.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o3" data-target="#o-ref" data-go-demo="pay" data-cap="Recorded second" data-cap-sub="After the provider confirmed. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o3" data-target="#o-ref" data-go-demo="pay" data-cap="Provider first, at 09:39:58" data-cap-sub="Recorded three seconds later. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the $1,200.00 refund to Brightwater.</p>
             <p class="r-proof">Rhea confirmed it was her, the provider charged the refund at 09:39:58, and only then was it recorded as <span class="nowrap">JE-148218</span> at 09:40:01.</p>
@@ -576,7 +576,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-o4">A record that isn't yours answers "Not found."</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o4" data-target="#o-nf" data-go-demo="nf" data-cap="Not found." data-cap-sub="And nothing more. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-o4" data-target="#o-nf" data-go-demo="nf" data-cap="Never 'forbidden'" data-cap-sub="Another organisation's record answers 'not found' here. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: following a link to a record outside your organisation.</p>
             <p class="r-proof">The answer is the same one a link to nothing at all gets. No "access denied", no hint, nothing to probe.</p>
@@ -659,7 +659,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-v1">A full tax id is never stored, and there's no column for one.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v1" data-target="#v-tin" data-cap="EIN, ends 4821" data-cap-sub="Kind and last four. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v1" data-target="#v-tin" data-cap="The rest was never stored" data-cap-sub="No column exists for a full number. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: a vendor's tax id row.</p>
             <p class="r-proof"><span class="stamp">True story.</span> "EIN · ends 4821" is the whole record. The rest of the number was never written anywhere.</p>
@@ -667,7 +667,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-v2">Calendar capture keeps a title and a duration. Nothing else gets in.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v2" data-target="#v-cal" data-cap="Title and duration" data-cap-sub="Reduced at the edge. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v2" data-target="#v-cal" data-cap="Attendees never arrive" data-cap-sub="Reduced at the provider edge. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: the calendar row.</p>
             <p class="r-proof">Attendees, descriptions and meeting links are dropped before anything is written, so there's nothing to clean up later.</p>
@@ -675,7 +675,7 @@
         </li>
         <li class="claim">
           <p class="claim-text" id="c-v3">A data-subject request anonymises the person and keeps the books.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v3" data-target="#v-dsr" data-cap="Anonymised Nov 3" data-cap-sub="Invoices kept, as the law requires. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-v3" data-target="#v-dsr" data-cap="Person removed, books kept" data-cap-sub="Invoices stay, as the law requires. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: a former client contact's record.</p>
             <p class="r-proof">The contact's name and email are gone since Nov 3. The invoices they received are still in the books, because tax law says they stay.</p>
@@ -721,7 +721,7 @@
       <ul class="claims">
         <li class="claim">
           <p class="claim-text" id="c-s1">Every action that takes money off the books asks first, and records who confirmed.</p>
-          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s1" data-target="#s-wo" data-cap="Write-off, confirmed" data-cap-sub="Oliver Grant, passkey. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
+          <div class="claim-row"><button class="prove" type="button" aria-expanded="false" aria-describedby="c-s1" data-target="#s-wo" data-cap="Write-off of £450.00" data-cap-sub="Confirmed with a passkey, Nov 12. Demo data."><svg class="i" aria-hidden="true"><use href="#i-zoom-in"/></svg>Prove it</button></div>
           <div class="receipt">
             <p class="r-pre">Receipt: confirmations this month.</p>
             <p class="r-proof"><span class="stamp">True story.</span> Four gated actions in November: a void, a refund, a write-off and a period close. Each names the person and how they confirmed.</p>
