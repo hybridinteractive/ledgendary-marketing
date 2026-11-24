@@ -57,7 +57,7 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 <body>
 <main>
   <h1>Ledgendary mark</h1>
-  <p class="lede">Five LE marks made of three horizontal bars and nothing else. The flush left edge is the L, the long gold bottom bar is its foot, and the two gaps make the E. Bar length decides which letter reads first. The colours are unchanged: the tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). Each option is a full SVG kit with logomark, lettermark, gold container, negative space and lockups. The wordmark and tagline are separate files, so the mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
+  <p class="lede">Four LE marks made of three horizontal bars and nothing else. The flush left edge is the L, the long gold bottom bar is its foot, and the two gaps make the E. Bar length decides which letter reads first. The colours are unchanged: the tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). Each option is a full SVG kit with logomark, lettermark, gold container, negative space and lockups. The wordmark and tagline are separate files, so the mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
   <nav class="jump" id="jump" aria-label="Options"></nav>
   <div id="host"></div>
   <div class="notes">
@@ -77,11 +77,10 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 
 <script>
 const OPTS = [
-  ["A", "a", "Short bars", "The top two bars are no longer than they are thick, so they stack into a stem. With the long gold foot that's an L, and the two dark gaps turn it into an E. The left edge is square, so the stem reads as a straight vertical."],
-  ["B", "b", "Short bars, rounded", "A with round ends on both sides, closest to the original logo's soft bars. The stem is a little softer, so the E comes through more."],
-  ["C", "c", "Stepped", "The top bar is longer than the middle one, like a real E. The bars still stack on the left, so the L holds."],
-  ["D", "d", "Long E", "Longer top and middle bars at the original 55% and 80% white, so the E leads and the gold foot carries the L. This is the closest to the original proportions."],
-  ["E", "e", "Ledger lines", "The original logo's thinner bars and its 55% and 80% white, shortened so they line up into a stem. This changes your current logo the least."]
+  ["A", "a", "Long E, straight left", "The previous D: long top and middle bars at 55% and 80% white with a gold foot. The square left edge lines up into a crisp upright, so the L is sharper."],
+  ["B", "b", "Long E, rounded left", "The same bars with round ends on both sides, so every bar is a pill like the original logo. The L comes from alignment alone and the E leads."],
+  ["C", "c", "Ledger lines, straight left", "The previous E: the original thinner bars, shortened, with a square left edge. The short stack reads most as an L."],
+  ["D", "d", "Ledger lines, rounded left", "The previous E with full round ends on both sides, closest to your current logo."]
 ];
 // [file, label, note, background, img class]
 const KIT = [

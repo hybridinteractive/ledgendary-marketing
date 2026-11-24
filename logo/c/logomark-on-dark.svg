@@ -2,7 +2,7 @@
 <title>Ledgendary</title>
 <rect x="0" y="0" width="128" height="128" rx="32" fill="#0b0b0d"/>
 <rect x="2" y="2" width="124" height="124" rx="30" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="4"/>
-<path d="M24 20H56A12 12 0 0 1 56 44H24H24V20Z" fill="#ffffff"/>
-<path d="M24 52H44A12 12 0 0 1 44 76H24H24V52Z" fill="#ffffff"/>
-<path d="M24 84H92A12 12 0 0 1 92 108H24H24V84Z" fill="#ffc629"/>
+<path d="M24 24H50A10 10 0 0 1 50 44H24H24V24Z" fill="#ffffff" opacity="0.55"/>
+<path d="M24 54H50A10 10 0 0 1 50 74H24H24V54Z" fill="#ffffff" opacity="0.8"/>
+<path d="M24 84H94A10 10 0 0 1 94 104H24H24V84Z" fill="#ffc629"/>
 </svg>

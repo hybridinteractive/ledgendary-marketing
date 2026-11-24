@@ -45,11 +45,10 @@ def _three(top, mid, rl=0, t=6, g=2, soft=None):
 
 
 OPTIONS = {
-    "a": ("Short bars", _three(8, 8)),
-    "b": ("Short bars, rounded", _three(8, 8, rl=3)),
-    "c": ("Stepped", _three(11, 8)),
-    "d": ("Long E", _three(15, 11, soft=(0.55, 0.8))),
-    "e": ("Ledger lines", _three(9, 9, rl=2, t=5, g=2.5, soft=(0.55, 0.8))),
+    "a": ("Long E, straight left", _three(15, 11, soft=(0.55, 0.8))),
+    "b": ("Long E, rounded left", _three(15, 11, rl=3, soft=(0.55, 0.8))),
+    "c": ("Ledger lines, straight left", _three(9, 9, t=5, g=2.5, soft=(0.55, 0.8))),
+    "d": ("Ledger lines, rounded left", _three(9, 9, rl=2.5, t=5, g=2.5, soft=(0.55, 0.8))),
 }
 
 
