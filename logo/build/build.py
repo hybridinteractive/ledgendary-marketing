@@ -25,7 +25,7 @@ WHITE = "#ffffff"
 EDGE = "rgba(255,255,255,0.1)"
 
 WORDMARK = "Ledgendary"
-TAGLINE = "From proposal to paid, on one ledger."
+TAGLINE = "From proposal to— wait for it —paid."
 
 # Glyphs on a 32-unit tile: three horizontal bars and nothing else.
 # (x, y, w, h, role, left_radius). Roles: main, ("soft", opacity), gold.
