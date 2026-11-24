@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ledgendary mark</title>
+<link rel="icon" href="b/favicon.svg" type="image/svg+xml">
+<style>
+@font-face { font-family: "Mona Sans"; src: url("../site/fonts/MonaSansVF.woff2") format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
+:root { --page: #f6f7f9; --card: #ffffff; --ink: #121318; --ink-2: #565b68; --line: #e2e5ea; --light: #f6f7f9; --dark: #17171a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --page: #0b0b0d; --card: #131316; --ink: #ededef; --ink-2: #b0b0b7; --line: rgba(255,255,255,.09); }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.55 "Mona Sans", system-ui, sans-serif; }
+main { max-width: 1160px; margin: 0 auto; padding: 56px 16px 80px; }
+h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; font-stretch: 112%; letter-spacing: -.03em; line-height: 1.05; margin: 0 0 12px; }
+.lede { color: var(--ink-2); max-width: 68ch; margin: 0 0 20px; }
+.jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 40px; }
+.jump a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: .9375rem; display: inline-flex; gap: 8px; align-items: center; }
+.jump a img { width: 18px; height: 18px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-bottom: 20px; scroll-margin-top: 16px; }
+section > header { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; align-items: center; margin-bottom: 20px; }
+section > header img { width: 96px; height: 96px; }
+h2 { font-size: 1.375rem; font-weight: 750; font-stretch: 108%; letter-spacing: -.02em; margin: 0 0 4px; }
+h2 span { color: var(--ink-2); margin-right: 8px; }
+section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+.kit { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.kit a { display: grid; grid-template-rows: 120px auto; border-radius: 12px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid var(--line); }
+.kit a:hover { border-color: var(--ink-2); }
+.kit .pv { display: grid; place-items: center; padding: 18px; }
+.kit .pv.l { background: var(--light); }
+.kit .pv.d { background: var(--dark); }
+.kit .pv img { max-width: 100%; max-height: 72px; }
+.kit .pv img.sm { max-height: 56px; }
+.kit .pv img.wide { max-height: 44px; }
+.kit span { padding: 8px 12px; font-size: .8125rem; font-weight: 600; border-top: 1px solid var(--line); background: var(--card); }
+.kit span small { display: block; font-weight: 450; color: var(--ink-2); }
+.ctx { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.board { border-radius: 12px; padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
+.board.l { background: var(--light); border: 1px solid #e2e5ea; color: #121318; }
+.board.d { background: var(--dark); color: #ededef; }
+.sizes { display: flex; align-items: flex-end; gap: 14px; }
+.sizes figure { margin: 0; display: grid; justify-items: center; gap: 4px; font-size: .75rem; font-variant-numeric: tabular-nums; }
+.sizes figcaption { opacity: .7; }
+.tab { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #d7dae0; border-radius: 9px 9px 0 0; padding: 7px 14px 7px 10px; font: 13px/1 system-ui, sans-serif; color: #333; }
+.d .tab { background: #2b2b30; border-color: #3a3a40; color: #ddd; }
+.side { display: inline-flex; align-items: center; gap: 9px; background: #0b0b0d; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 9px 12px; font: 600 14px/1 "Mona Sans", sans-serif; color: #ededef; }
+.notes { margin-top: 32px; color: var(--ink-2); font-size: .9375rem; max-width: 72ch; }
+.notes p { margin: 0 0 10px; }
+@media (max-width: 760px) { .ctx { grid-template-columns: 1fr; } section > header { grid-template-columns: 64px 1fr; } section > header img { width: 64px; height: 64px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Ledgendary mark</h1>
+  <p class="lede">Five LE marks built from the ledger-line logo, with the same colours: the tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). Each option is a full SVG kit with logomark, lettermark, containers, negative space and lockups. The wordmark and tagline are separate files, so the mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
+  <nav class="jump" id="jump" aria-label="Options"></nav>
+  <div id="host"></div>
+  <div class="notes">
+    <p><strong>Files.</strong> Each option is in its own folder (<code>logo/a/</code>, <code>logo/b/</code> and so on), and the shared wordmark and tagline are in <code>logo/wordmark/</code>. Every SVG is self-contained: the text is outlined, so there are no fonts or external references. <code>logo/build/build.py</code> regenerates the whole kit.</p>
+    <p><strong>Construction.</strong> Marks use a 32-unit grid with 4-unit bars on even coordinates, so the 16px favicon renders on whole pixels. <code>logomark-on-dark</code> adds a 1px hairline (white at 10%) so the tile doesn't sink into dark panels. Negative space is one colour with the letters cut out, for stamps, embossing and single-ink print.</p>
+    <p><strong>Wordmark.</strong> Mona Sans 800, width 116%, tracking -3%, outlined. Tagline: Mona Sans 520, "From proposal to paid, on one ledger."</p>
+  </div>
+</main>
+
+<template id="tpl">
+  <section>
+    <header><img src="b/logomark.svg" alt=""><div><h2><span data-k></span><span data-n></span></h2><p data-d></p></div></header>
+    <div class="kit" data-kit></div>
+    <div class="ctx" data-ctx></div>
+  </section>
+</template>
+
+<script>
+const OPTS = [
+  ["A", "a", "L with the stripe", "A white L with a gold stripe through the middle, which turns it into an E. This is the closest to your description, but at small sizes it can read as a lowercase t or an Ł."],
+  ["A+", "a-plus", "L with the stripe and the ledger line", "A, plus the original mark's faint top line to complete the E. The L still reads first because the top line is only 40% white."],
+  ["B", "b", "LE ligature", "The L and the E stand on one shared gold baseline, like the total line under a column. This is the most literal LE, and it still reads at 16px."],
+  ["C", "c", "Ledger lines, joined", "The current mark with a stem added, keeping its three lines and their opacities. The gold bottom line becomes the L's foot. This option changes the logo you like the least."],
+  ["D", "d", "Double underline", "An L whose foot is a gold double underline, the mark accountants put under a final total. The rules are 1px at favicon size, so this is the weakest option at 16px."]
+];
+// [file, label, note, background, img class]
+const KIT = [
+  ["logomark", "Logomark", "Tile and letters. App icon, social, favicon.", "l", ""],
+  ["logomark-on-dark", "Logomark on dark", "With a hairline edge for dark panels.", "d", ""],
+  ["lettermark-on-light", "Lettermark", "Letters only, on light backgrounds.", "l", "sm"],
+  ["lettermark-on-dark", "Lettermark on dark", "Letters only, on dark backgrounds.", "d", "sm"],
+  ["lettermark-mono-ink", "Lettermark, one colour", "Ink, for one-colour print and stamps.", "l", "sm"],
+  ["lettermark-mono-white", "Lettermark, white", "One colour, reversed.", "d", "sm"],
+  ["container-circle", "Container, circle", "Avatars and social profiles.", "l", ""],
+  ["container-gold", "Container, gold", "Gold tile for loud placements.", "d", ""],
+  ["negative-space-ink", "Negative space, ink", "Letters cut out of the tile.", "l", ""],
+  ["negative-space-gold", "Negative space, gold", "One-colour knockout.", "d", ""],
+  ["negative-space-white", "Negative space, white", "Knockout on dark or photos.", "d", ""],
+  ["lockup-light", "Lockup", "Logomark and wordmark.", "l", "wide"],
+  ["lockup-dark", "Lockup on dark", "Logomark and wordmark.", "d", "wide"],
+  ["lockup-tagline-light", "Lockup with tagline", "For the site footer, decks and email.", "l", "wide"],
+  ["lockup-tagline-dark", "Lockup with tagline on dark", "", "d", "wide"]
+];
+const WORD = [
+  ["wordmark/wordmark-ink", "Wordmark", "Usable without the mark.", "l"],
+  ["wordmark/wordmark-white", "Wordmark, white", "", "d"],
+  ["wordmark/wordmark-gold", "Wordmark, gold", "Dark backgrounds only.", "d"],
+  ["wordmark/tagline-ink", "Tagline", "", "l"],
+  ["wordmark/tagline-white", "Tagline, white", "", "d"]
+];
+const tile = (src, label, note, bg, cls) =>
+  `<a href="${src}.svg"><div class="pv ${bg}"><img class="${cls || "wide"}" src="${src}.svg" alt=""></div><span>${label}<small>${note || "&nbsp;"}</small></span></a>`;
+const host = document.getElementById("host");
+const jump = document.getElementById("jump");
+const tpl = document.getElementById("tpl");
+
+// Shared wordmark first
+{
+  const node = tpl.content.cloneNode(true);
+  const sec = node.querySelector("section");
+  sec.id = "wordmark";
+  node.querySelector("header").outerHTML = `<header style="grid-template-columns:1fr"><div><h2>Wordmark and tagline</h2><p>Shared by every option and usable on their own, with no mark beside them.</p></div></header>`;
+  node.querySelector("[data-kit]").innerHTML = WORD.map(([f, l, n, b]) => tile(f, l, n, b, "wide")).join("");
+  node.querySelector("[data-ctx]").remove();
+  host.appendChild(node);
+  jump.insertAdjacentHTML("beforeend", `<a href="#wordmark">Wordmark</a>`);
+}
+
+for (const [k, dir, name, desc] of OPTS) {
+  const node = tpl.content.cloneNode(true);
+  node.querySelector("section").id = "opt-" + dir;
+  const img = node.querySelector("header img");
+  img.src = `${dir}/logomark.svg`;
+  node.querySelector("[data-k]").textContent = k;
+  node.querySelector("[data-n]").textContent = name;
+  node.querySelector("[data-d]").textContent = desc;
+  node.querySelector("[data-kit]").innerHTML = KIT.map(([f, l, n, b, c]) => tile(`${dir}/${f}`, l, n, b, c)).join("");
+  const ctx = (bg, mark) =>
+    `<div class="board ${bg}"><div class="sizes">${[16, 24, 32, 48].map(s => `<figure><img width="${s}" height="${s}" src="${dir}/${s === 16 ? "favicon" : mark}.svg" alt=""><figcaption>${s}</figcaption></figure>`).join("")}</div>` +
+    `<span class="tab"><img width="16" height="16" src="${dir}/favicon.svg" alt="">Ledgendary</span>` +
+    `<span class="side"><img width="22" height="22" src="${dir}/logomark-on-dark.svg" alt="">Lumen Studio</span></div>`;
+  node.querySelector("[data-ctx]").innerHTML = ctx("l", "logomark") + ctx("d", "logomark-on-dark");
+  host.appendChild(node);
+  jump.insertAdjacentHTML("beforeend", `<a href="#opt-${dir}"><img src="${dir}/favicon.svg" alt="">${k} · ${name}</a>`);
+}
+</script>
+</body>
+</html>
