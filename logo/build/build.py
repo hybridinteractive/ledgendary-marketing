@@ -48,7 +48,7 @@ OPTIONS = {
     "a": ("Short bars", _three(8, 8)),
     "b": ("Short bars, rounded", _three(8, 8, rl=3)),
     "c": ("Stepped", _three(11, 8)),
-    "d": ("Long E", _three(15, 11)),
+    "d": ("Long E", _three(15, 11, soft=(0.55, 0.8))),
     "e": ("Ledger lines", _three(9, 9, rl=2, t=5, g=2.5, soft=(0.55, 0.8))),
 }
 
@@ -141,11 +141,8 @@ def bars(glyph, colours, ox=0, oy=0, s=1.0):
     return "\n".join(out)
 
 
-def tile(ox=0, oy=0, s=1.0, fill=TILE, edge=False, circle=False):
-    if circle:
-        el = f'<circle cx="{fmt(ox + 16 * s)}" cy="{fmt(oy + 16 * s)}" r="{fmt(16 * s)}" fill="{fill}"/>'
-    else:
-        el = f'<rect x="{fmt(ox)}" y="{fmt(oy)}" width="{fmt(32 * s)}" height="{fmt(32 * s)}" rx="{fmt(8 * s)}" fill="{fill}"/>'
+def tile(ox=0, oy=0, s=1.0, fill=TILE, edge=False):
+    el = f'<rect x="{fmt(ox)}" y="{fmt(oy)}" width="{fmt(32 * s)}" height="{fmt(32 * s)}" rx="{fmt(8 * s)}" fill="{fill}"/>'
     if edge:
         el += (f'\n<rect x="{fmt(ox + .5 * s)}" y="{fmt(oy + .5 * s)}" width="{fmt(31 * s)}" '
                f'height="{fmt(31 * s)}" rx="{fmt(7.5 * s)}" fill="none" stroke="{EDGE}" stroke-width="{fmt(s)}"/>')
@@ -212,9 +209,7 @@ def build_option(key, label, glyph):
     for name, cols in (("lettermark-on-light", ON_LIGHT), ("lettermark-on-dark", ON_DARK),
                        ("lettermark-mono-ink", MONO_INK), ("lettermark-mono-white", MONO_WHITE)):
         write(out / f"{name}.svg", svg(gw, gh, bars(glyph, cols, -gx0 * S, -gy0 * S, S), t))
-    # Containers: circle (avatars, social) and gold tile
-    write(out / "container-circle.svg",
-          svg(32 * S, 32 * S, tile(s=S, circle=True) + "\n" + bars(glyph, ON_DARK, s=S), t))
+    # Container: gold tile
     write(out / "container-gold.svg",
           svg(32 * S, 32 * S, tile(s=S, fill=GOLD) + "\n" + bars(glyph, ON_GOLD, s=S), t))
     # Negative space: one colour, glyph cut out of the tile
