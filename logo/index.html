@@ -47,6 +47,8 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 .tab { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #d7dae0; border-radius: 9px 9px 0 0; padding: 7px 14px 7px 10px; font: 13px/1 system-ui, sans-serif; color: #333; }
 .d .tab { background: #2b2b30; border-color: #3a3a40; color: #ddd; }
 .side { display: inline-flex; align-items: center; gap: 9px; background: #0b0b0d; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 9px 12px; font: 600 14px/1 "Mona Sans", sans-serif; color: #ededef; }
+.cmp { display: flex; flex-wrap: wrap; gap: 28px; padding: 24px; background: #f6f7f9; border: 1px solid #e2e5ea; border-radius: 16px; margin-bottom: 20px; }
+.cmp a { display: grid; gap: 10px; justify-items: center; color: #121318; text-decoration: none; font-weight: 700; }
 .notes { margin-top: 32px; color: var(--ink-2); font-size: .9375rem; max-width: 72ch; }
 .notes p { margin: 0 0 10px; }
 @media (max-width: 760px) { .ctx { grid-template-columns: 1fr; } section > header { grid-template-columns: 64px 1fr; } section > header img { width: 64px; height: 64px; } }
@@ -55,7 +57,7 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 <body>
 <main>
   <h1>Ledgendary mark</h1>
-  <p class="lede">Five LE marks built from the ledger-line logo, with the same colours: the tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). Each option is a full SVG kit with logomark, lettermark, containers, negative space and lockups. The wordmark and tagline are separate files, so the mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
+  <p class="lede">Five LE marks made of three horizontal bars and nothing else. The flush left edge is the L, the long gold bottom bar is its foot, and the two gaps make the E. Bar length decides which letter reads first. The colours are unchanged: the tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). Each option is a full SVG kit with logomark, lettermark, containers, negative space and lockups. The wordmark and tagline are separate files, so the mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
   <nav class="jump" id="jump" aria-label="Options"></nav>
   <div id="host"></div>
   <div class="notes">
@@ -75,11 +77,11 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 
 <script>
 const OPTS = [
-  ["A", "a", "L with the stripe", "A white L with a gold stripe through the middle, which turns it into an E. This is the closest to your description, but at small sizes it can read as a lowercase t or an Ł."],
-  ["A+", "a-plus", "L with the stripe and the ledger line", "A, plus the original mark's faint top line to complete the E. The L still reads first because the top line is only 40% white."],
-  ["B", "b", "LE ligature", "The L and the E stand on one shared gold baseline, like the total line under a column. This is the most literal LE, and it still reads at 16px."],
-  ["C", "c", "Ledger lines, joined", "The current mark with a stem added, keeping its three lines and their opacities. The gold bottom line becomes the L's foot. This option changes the logo you like the least."],
-  ["D", "d", "Double underline", "An L whose foot is a gold double underline, the mark accountants put under a final total. The rules are 1px at favicon size, so this is the weakest option at 16px."]
+  ["A", "a", "Short bars", "The top two bars are no longer than they are thick, so they stack into a stem. With the long gold foot that's an L, and the two dark gaps turn it into an E. The left edge is square, so the stem reads as a straight vertical."],
+  ["B", "b", "Short bars, rounded", "A with round ends on both sides, closest to the original logo's soft bars. The stem is a little softer, so the E comes through more."],
+  ["C", "c", "Stepped", "The top bar is longer than the middle one, like a real E. The bars still stack on the left, so the L holds."],
+  ["D", "d", "Long E", "Longer top and middle bars, so the E leads and the gold foot carries the L. This is the closest to the original proportions."],
+  ["E", "e", "Ledger lines", "The original logo's thinner bars and its 55% and 80% white, shortened so they line up into a stem. This changes your current logo the least."]
 ];
 // [file, label, note, background, img class]
 const KIT = [
@@ -112,7 +114,14 @@ const host = document.getElementById("host");
 const jump = document.getElementById("jump");
 const tpl = document.getElementById("tpl");
 
-// Shared wordmark first
+// Side by side first: 120, 32 and 16 px
+{
+  const d = document.createElement("div");
+  d.className = "cmp";
+  d.innerHTML = OPTS.map(([k, dir]) => `<a href="#opt-${dir}"><b>${k}</b><img src="${dir}/logomark.svg" width="120" height="120" alt="Option ${k}"><img src="${dir}/favicon.svg" width="32" height="32" alt=""><img src="${dir}/favicon.svg" width="16" height="16" alt=""></a>`).join("");
+  host.appendChild(d);
+}
+// Shared wordmark next
 {
   const node = tpl.content.cloneNode(true);
   const sec = node.querySelector("section");

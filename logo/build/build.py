@@ -27,23 +27,29 @@ EDGE = "rgba(255,255,255,0.1)"
 WORDMARK = "Ledgendary"
 TAGLINE = "From proposal to paid, on one ledger."
 
-# Glyphs on a 32-unit tile: (x, y, w, h, role). Roles: main, soft (lower
-# opacity ledger line, with its opacity), gold.
+# Glyphs on a 32-unit tile: three horizontal bars and nothing else.
+# (x, y, w, h, role, left_radius). Roles: main, ("soft", opacity), gold.
+# The bars share a flush left edge, which is the L's stem; the long gold
+# bottom bar is the L's foot; the three bars together are the E. The gaps
+# between them are the E's counters. Lengths decide which letter leads.
+def _three(top, mid, rl=0, t=6, g=2, soft=None):
+    y0 = (32 - (3 * t + 2 * g)) / 2
+    x0 = 6
+    r1 = ("soft", soft[0]) if soft else "main"
+    r2 = ("soft", soft[1]) if soft else "main"
+    return [
+        (x0, y0, top, t, r1, rl),
+        (x0, y0 + t + g, mid, t, r2, rl),
+        (x0, y0 + 2 * (t + g), 20, t, "gold", rl),
+    ]
+
+
 OPTIONS = {
-    "a": ("L with the stripe", [
-        (8, 6, 4, 20, "main"), (8, 22, 16, 4, "main"), (8, 14, 12, 4, "gold")]),
-    "a-plus": ("L with the stripe and the ledger line", [
-        (8, 6, 14, 4, ("soft", 0.4)), (8, 6, 4, 20, "main"), (8, 22, 16, 4, "main"),
-        (8, 14, 12, 4, "gold")]),
-    "b": ("LE ligature", [
-        (6, 6, 4, 20, "main"), (14, 6, 4, 20, "main"), (14, 6, 12, 4, "main"),
-        (14, 14, 10, 4, ("soft", 0.8)), (6, 22, 20, 4, "gold")]),
-    "c": ("Ledger lines, joined", [
-        (8, 6, 4, 20, "main"), (8, 6, 14, 4, ("soft", 0.55)),
-        (8, 14, 10, 4, ("soft", 0.8)), (8, 22, 16, 4, "gold")]),
-    "d": ("Double underline", [
-        (8, 6, 4, 16, "main"), (8, 12, 10, 4, ("soft", 0.8)),
-        (8, 20, 16, 2, "gold"), (8, 24, 16, 2, "gold")]),
+    "a": ("Short bars", _three(8, 8)),
+    "b": ("Short bars, rounded", _three(8, 8, rl=3)),
+    "c": ("Stepped", _three(11, 8)),
+    "d": ("Long E", _three(15, 11)),
+    "e": ("Ledger lines", _three(9, 9, rl=2, t=5, g=2.5, soft=(0.55, 0.8))),
 }
 
 
@@ -117,17 +123,21 @@ def fmt(v):
 def bars(glyph, colours, ox=0, oy=0, s=1.0):
     """Draw glyph bars. colours maps role -> (fill, opacity) or None to skip."""
     out = []
-    for x, y, w, h, role in glyph:
+    for x, y, w, h, role, rl in glyph:
         key = role[0] if isinstance(role, tuple) else role
         fill, op = colours[key]
         if isinstance(role, tuple) and colours.get("keep_soft", True):
             op = op * role[1]
-        r = min(w, h) / 2
         attr = f' opacity="{fmt(op)}"' if op < 1 else ""
-        out.append(
-            f'<rect x="{fmt(ox + x * s)}" y="{fmt(oy + y * s)}" width="{fmt(w * s)}" '
-            f'height="{fmt(h * s)}" rx="{fmt(r * s)}" fill="{fill}"{attr}/>'
-        )
+        X, Y, W, H = ox + x * s, oy + y * s, w * s, h * s
+        a, b = rl * s, H / 2
+        d = (f"M{fmt(X + a)} {fmt(Y)}H{fmt(X + W - b)}A{fmt(b)} {fmt(b)} 0 0 1 {fmt(X + W - b)} {fmt(Y + H)}"
+             f"H{fmt(X + a)}")
+        if a:
+            d += f"A{fmt(a)} {fmt(a)} 0 0 1 {fmt(X)} {fmt(Y + H - a)}V{fmt(Y + a)}A{fmt(a)} {fmt(a)} 0 0 1 {fmt(X + a)} {fmt(Y)}"
+        else:
+            d += f"H{fmt(X)}V{fmt(Y)}"
+        out.append(f'<path d="{d}Z" fill="{fill}"{attr}/>')
     return "\n".join(out)
 
 
@@ -150,8 +160,8 @@ ON_GOLD = {"main": (TILE, 1), "soft": (TILE, 1), "gold": (TILE, 1), "keep_soft":
 
 
 def glyph_bounds(glyph):
-    xs = [x for x, *_ in glyph] + [x + w for x, _, w, *_ in glyph]
-    ys = [y for _, y, *_ in glyph] + [y + h for _, y, _, h, _ in glyph]
+    xs = [g[0] for g in glyph] + [g[0] + g[2] for g in glyph]
+    ys = [g[1] for g in glyph] + [g[1] + g[3] for g in glyph]
     return min(xs), min(ys), max(xs), max(ys)
 
 
