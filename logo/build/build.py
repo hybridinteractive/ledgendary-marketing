@@ -132,6 +132,9 @@ TAG_D, TAG_B, TAG_ACC = outline(TAGLINE, TAG_LOC, -0.005, accent="…")
 # =========================================================================
 
 def svg(w, h, body, title):
+    # Whole-number canvas, so a file placed on a pixel boundary stays on one.
+    import math
+    w, h = math.ceil(w - 1e-6), math.ceil(h - 1e-6)
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {fmt(w)} {fmt(h)}" '
         f'width="{fmt(w)}" height="{fmt(h)}" role="img" aria-label="{title}">\n'

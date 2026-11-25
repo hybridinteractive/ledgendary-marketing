@@ -365,6 +365,25 @@ document.getElementById("curves").innerHTML = CURVES.map(([name, [a, b, c, d], u
 const sizeTracks = () => document.querySelectorAll(".track").forEach(t => t.style.setProperty("--w", t.clientWidth + "px"));
 sizeTracks(); addEventListener("resize", sizeTracks);
 
+// Whole-pixel placement. Text above a preview (line heights such as 1.55 x 16 px)
+// leaves its top edge on a fraction of a pixel, and an SVG drawn there is
+// resampled, which makes equal gaps look unequal. Nudge each mark back onto the
+// device pixel grid. The same rule holds wherever the mark is used: place it on
+// whole pixels, at a size where the module is a whole number of pixels.
+function snapMarks() {
+  const d = window.devicePixelRatio || 1;
+  const frac = v => ((v * d) % 1 + 1) % 1 / d;
+  document.querySelectorAll(".kit img, .cmp img, .board img, .board svg, .demo svg.ldg-mark, .swatches .chip i").forEach(el => {
+    el.style.translate = "";
+    const r = el.getBoundingClientRect();
+    const fx = frac(r.left + scrollX), fy = frac(r.top + scrollY);
+    if (fx || fy) el.style.translate = `${-fx}px ${-fy}px`;
+  });
+}
+document.fonts.ready.then(snapMarks);
+addEventListener("load", snapMarks);
+addEventListener("resize", () => requestAnimationFrame(snapMarks));
+
 // Replay
 document.querySelectorAll("[data-replay]").forEach(btn => btn.addEventListener("click", () => {
   const svg = btn.closest(".demo").querySelector(".ldg-mark");
