@@ -326,6 +326,7 @@ Gently rounded, app-native corners on a fixed ladder: 4px (hash chips, checkboxe
 ### Navigation
 - **Style:** sticky 64px bar, 86% white with blur and saturate, wordmark at 800/wdth 116, links 15px/520 ink-2 to ink on hover, small gold button right. Gains a hairline once scrolled and turns ink (86% ink, d-mut links, gold focus) over an ink chapter.
 - **Links:** the home carries Product, The books, Solo, Team, Enterprise; audience pages carry Home, Solo, Team, Enterprise. The current page (`aria-current`) is ink at 650 with a 3px gold band under it (`d-text` over an ink chapter).
+- **Mark:** the settled LE mark from `logo/` at 32px (the kit allows multiples of 16 only), inline with `brand/motion.css` (a copy of `logo/motion/motion.css`), playing the kit's hover on hover and keyboard focus. Over an ink chapter it takes the kit's hairline edge; the tile never changes colour. The favicon is `brand/favicon.svg`, a copy of the kit's. Re-copy both when the kit changes.
 - **Phone:** under 860px the home hides its links (the footer repeats them); audience pages keep theirs as a second 38px row under the bar that scrolls sideways.
 
 ### Refusal panel (signature)

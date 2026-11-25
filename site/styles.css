@@ -204,11 +204,11 @@ button { font: inherit; color: inherit; }
 .nav.is-dark { background: rgba(13, 14, 18, 0.86); border-bottom-color: var(--d-line); color: var(--d-text); }
 .nav.is-dark .nav-links a { color: var(--d-mut); }
 .nav.is-dark .nav-links a:hover { color: var(--d-text); }
-.nav.is-dark .brand-mark rect:first-child { fill: #2a2d36; }
+.nav.is-dark .brand-mark { border-radius: 8px; outline: 1px solid rgba(255,255,255,.1); outline-offset: -1px; } /* the kit's "logomark on dark": a hairline edge, the tile unchanged */
 .nav.is-dark :focus-visible { outline-color: var(--gold); box-shadow: none; }
 .nav-in { display: flex; align-items: center; height: 64px; gap: 40px; }
 .brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-.brand-mark { width: 28px; height: 28px; }
+.brand-mark { width: 32px; height: 32px; flex: none; } /* the settled mark: multiples of 16 px only (logo kit) */
 .brand-word { font-weight: 800; font-stretch: 116%; font-size: 1.1875rem; letter-spacing: -0.03em; }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { text-decoration: none; font-size: 0.9375rem; font-weight: 520; color: var(--ink-2); transition: color 150ms; }
