@@ -175,6 +175,22 @@ def tile(ox=0, oy=0, s=1.0, fill=TILE, edge=False):
     return el
 
 
+# Optical correction for light on dark. Light shapes on a dark ground look
+# heavier than the same shapes reversed (irradiation), so the white, grey and
+# gold bars on the dark tile read as tighter than the ink bars on light. Every
+# light-on-dark drawing thins each bar by one sixteenth of the module, taken
+# off its bottom edge: 16 to 15 at the 128 master, the gaps 8 to 9, and every
+# edge still on a whole pixel at 128. Lengths, the flush left edge and the
+# round ends stay; dark-on-light files keep the master geometry.
+def optical(glyph):
+    out = []
+    for x, y, w, h, role, rl in glyph:
+        d = h / 16
+        nh = h - d
+        out.append((x, y, w, nh, role, min(rl, nh / 2)))
+    return out
+
+
 ON_DARK = {"main": (WHITE, 1), "soft": (WHITE, 1), "gold": (GOLD, 1)}
 ON_LIGHT = {"main": (TILE, 1), "soft": (TILE, 1), "gold": (GOLD, 1)}
 MONO_INK = {"main": (TILE, 1), "soft": (TILE, 1), "gold": (TILE, 1), "keep_soft": False}
@@ -226,22 +242,26 @@ def build_option(key, label, glyph):
     out = ROOT / key
     t = "Ledgendary"
     S = 4  # 32-unit tile drawn at 128
+    lit = optical(glyph)  # light on dark
     # Logomark: tile + glyph
-    write(out / "logomark.svg", svg(32 * S, 32 * S, tile(s=S) + "\n" + bars(glyph, ON_DARK, s=S), t))
+    write(out / "logomark.svg", svg(32 * S, 32 * S, tile(s=S) + "\n" + bars(lit, ON_DARK, s=S), t))
     write(out / "logomark-on-dark.svg",
-          svg(32 * S, 32 * S, tile(s=S, edge=True) + "\n" + bars(glyph, ON_DARK, s=S), t))
+          svg(32 * S, 32 * S, tile(s=S, edge=True) + "\n" + bars(lit, ON_DARK, s=S), t))
     # Lettermark: the glyph alone, cropped to its own bounds
     gx0, gy0, gx1, gy1 = glyph_bounds(glyph)
     gw, gh = (gx1 - gx0) * S, (gy1 - gy0) * S
     for name, cols in (("lettermark-on-light", ON_LIGHT), ("lettermark-on-dark", ON_DARK),
                        ("lettermark-mono-ink", MONO_INK), ("lettermark-mono-white", MONO_WHITE)):
-        write(out / f"{name}.svg", svg(gw, gh, bars(glyph, cols, -gx0 * S, -gy0 * S, S), t))
+        g = lit if cols in (ON_DARK, MONO_WHITE) else glyph
+        write(out / f"{name}.svg", svg(gw, gh, bars(g, cols, -gx0 * S, -gy0 * S, S), t))
     # Container: gold tile
     write(out / "container-gold.svg",
           svg(32 * S, 32 * S, tile(s=S, fill=GOLD) + "\n" + bars(glyph, ON_GOLD, s=S), t))
     # Negative space: one colour, glyph cut out of the tile
-    cut = bars(glyph, {"main": ("#000", 1), "soft": ("#000", 1), "gold": ("#000", 1), "keep_soft": False}, s=S)
+    black = {"main": ("#000", 1), "soft": ("#000", 1), "gold": ("#000", 1), "keep_soft": False}
     for name, fill in (("negative-space-ink", TILE), ("negative-space-gold", GOLD), ("negative-space-white", WHITE)):
+        # The ink tile's cut bars show a light ground through a dark tile.
+        cut = bars(lit if fill == TILE else glyph, black, s=S)
         body = (f'<defs><mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="{32 * S}" height="{32 * S}">'
                 f'<rect width="{32 * S}" height="{32 * S}" fill="#fff"/>\n{cut}</mask></defs>\n'
                 f'<rect width="{32 * S}" height="{32 * S}" rx="{8 * S}" fill="{fill}" mask="url(#cut)"/>')
@@ -258,7 +278,7 @@ def build_option(key, label, glyph):
     wx = m + gap - xmin * ws
     w = m + gap + word_w
     for theme, wfill, edge in (("light", TILE, False), ("dark", WHITE, True)):
-        body = tile(s=ms, edge=edge) + "\n" + bars(glyph, ON_DARK, s=ms) + "\n" + word(wx, baseline, size, wfill)
+        body = tile(s=ms, edge=edge) + "\n" + bars(optical(glyph), ON_DARK, s=ms) + "\n" + word(wx, baseline, size, wfill)
         write(out / f"lockup-{theme}.svg", svg(w, m, body, t))
     # Tagline lockup: larger mark, wordmark plus tagline beside it
     m2 = 64
@@ -279,15 +299,15 @@ def build_option(key, label, glyph):
     w2 = x0 + max(word_w2, tag_w)
     for theme, wfill, tfill, afill, edge in (("light", TILE, "#565b68", "#565b68", False),
                                              ("dark", WHITE, "#b0b0b7", GOLD, True)):
-        body = (tile(s=ms2, edge=edge) + "\n" + bars(glyph, ON_DARK, s=ms2) + "\n"
+        body = (tile(s=ms2, edge=edge) + "\n" + bars(optical(glyph), ON_DARK, s=ms2) + "\n"
                 + word(x0 - xmin * ws2, wb, size2, wfill) + "\n"
                 + word(x0 - txmin * tsc, tb, tsize, tfill, TAG_D) + "\n"
                 + word(x0 - txmin * tsc, tb, tsize, afill, TAG_ACC))
         write(out / f"lockup-tagline-{theme}.svg", svg(w2, m2, body, f"Ledgendary. {TAGLINE}"))
     # Favicon: 32 grid, no edge
-    write(out / "favicon.svg", svg(32, 32, tile() + "\n" + bars(FAVICON, ON_DARK), t))
+    write(out / "favicon.svg", svg(32, 32, tile() + "\n" + bars(optical(FAVICON), ON_DARK), t))
     tile24 = '<rect width="24" height="24" rx="6" fill="#0b0b0d"/>'
-    write(out / "logomark-24.svg", svg(24, 24, tile24 + "\n" + bars(GLYPH_24, ON_DARK), t))
+    write(out / "logomark-24.svg", svg(24, 24, tile24 + "\n" + bars(optical(GLYPH_24), ON_DARK), t))
 
 
 def build_motion():

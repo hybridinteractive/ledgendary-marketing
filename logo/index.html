@@ -176,6 +176,7 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
           <li><b>Inset</b><span>2t from all four edges of the tile.</span></li>
           <li><b>Ends</b><span>Fully round, radius ½t.</span></li>
           <li><b>Tile</b><span>16 units square, corner radius 2t (25%).</span></li>
+          <li><b>Optical</b><span>Light on dark, each bar is a sixteenth of t thinner, taken off its bottom edge (15 instead of 16 at 128 px, still on whole pixels), so the gaps read the same as the ink mark's on light. Dark-on-light files keep the master.</span></li>
         </ul>
         <table>
           <thead><tr><th>Size</th><th>Bar</th><th>Gap</th><th>Inset</th><th>Drawing</th></tr></thead>
@@ -236,7 +237,7 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
       <div class="demo dark">
         <div class="stage"><a href="#motion" aria-label="Ledgendary, hover to play" style="display:block;line-height:0"><svg class="ldg-mark" data-motion="hover" viewBox="0 0 16 16" role="img" aria-label="Ledgendary"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg></a></div>
         <h3>Hover</h3>
-        <p>The nav logo, on hover and keyboard focus. The greys step back one module and a beat later the gold foot steps forward one, so the L sharpens.</p>
+        <p>The nav logo, on hover and keyboard focus. The greys step back half a module and a beat later the gold foot steps forward half a module, so the L sharpens and the mark keeps its balance.</p>
         <span class="meta">in 3 beats · out 2 beats · motion/hover.svg</span>
         <div class="foot"><button type="button" data-play>Play</button></div>
       </div>
@@ -250,7 +251,7 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
       <div class="demo dark">
         <div class="stage"><svg class="ldg-mark" data-motion="paid" viewBox="0 0 16 16" role="img" aria-label="Ledgendary"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg></div>
         <h3>Paid</h3>
-        <p>The moment money lands. The greys step aside, the gold foot reaches one module further, holds, and everything returns.</p>
+        <p>The moment money lands. The greys step aside, the gold foot reaches half a module further, holds, and everything returns.</p>
         <span class="meta">8 beats · 1280 ms · motion/paid.svg</span>
         <div class="foot"><button type="button" data-play>Play</button></div>
       </div>

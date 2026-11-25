@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Ledgendary">
 <title>Ledgendary</title>
-<path d="M8 0H40A8 8 0 0 1 40 16H8A8 8 0 0 1 0 8V8A8 8 0 0 1 8 0Z" fill="#ffffff" opacity="0.55"/>
-<path d="M8 24H24A8 8 0 0 1 24 40H8A8 8 0 0 1 0 32V32A8 8 0 0 1 8 24Z" fill="#ffffff" opacity="0.8"/>
-<path d="M8 48H56A8 8 0 0 1 56 64H8A8 8 0 0 1 0 56V56A8 8 0 0 1 8 48Z" fill="#ffc629"/>
+<path d="M7.5 0H40.5A7.5 7.5 0 0 1 40.5 15H7.5A7.5 7.5 0 0 1 0 7.5V7.5A7.5 7.5 0 0 1 7.5 0Z" fill="#ffffff" opacity="0.55"/>
+<path d="M7.5 24H24.5A7.5 7.5 0 0 1 24.5 39H7.5A7.5 7.5 0 0 1 0 31.5V31.5A7.5 7.5 0 0 1 7.5 24Z" fill="#ffffff" opacity="0.8"/>
+<path d="M7.5 48H56.5A7.5 7.5 0 0 1 56.5 63H7.5A7.5 7.5 0 0 1 0 55.5V55.5A7.5 7.5 0 0 1 7.5 48Z" fill="#ffc629"/>
 </svg>
