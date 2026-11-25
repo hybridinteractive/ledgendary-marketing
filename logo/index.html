@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ledgendary mark</title>
-<link rel="icon" href="b/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="mark/favicon.svg" type="image/svg+xml">
 <style>
 @font-face { font-family: "Mona Sans"; src: url("../site/fonts/MonaSansVF.woff2") format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
 :root { --page: #f6f7f9; --card: #ffffff; --ink: #121318; --ink-2: #565b68; --line: #e2e5ea; --light: #f6f7f9; --dark: #17171a; }
@@ -47,8 +47,10 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 .tab { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #d7dae0; border-radius: 9px 9px 0 0; padding: 7px 14px 7px 10px; font: 13px/1 system-ui, sans-serif; color: #333; }
 .d .tab { background: #2b2b30; border-color: #3a3a40; color: #ddd; }
 .side { display: inline-flex; align-items: center; gap: 9px; background: #0b0b0d; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 9px 12px; font: 600 14px/1 "Mona Sans", sans-serif; color: #ededef; }
-.cmp { display: flex; flex-wrap: wrap; gap: 28px; padding: 24px; background: #f6f7f9; border: 1px solid #e2e5ea; border-radius: 16px; margin-bottom: 20px; }
-.cmp a { display: grid; gap: 10px; justify-items: center; color: #121318; text-decoration: none; font-weight: 700; }
+.cmp { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 36px; padding: 28px; border-radius: 16px; margin-bottom: 12px; }
+.cmp.l { background: #f6f7f9; border: 1px solid #e2e5ea; color: #565b68; }
+.cmp.d { background: #17171a; color: #b0b0b7; margin-bottom: 20px; }
+.cmp figure { margin: 0; display: grid; justify-items: center; gap: 8px; font-size: .8125rem; font-variant-numeric: tabular-nums; }
 .notes { margin-top: 32px; color: var(--ink-2); font-size: .9375rem; max-width: 72ch; }
 .notes p { margin: 0 0 10px; }
 @media (max-width: 760px) { .ctx { grid-template-columns: 1fr; } section > header { grid-template-columns: 64px 1fr; } section > header img { width: 64px; height: 64px; } }
@@ -57,19 +59,19 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 <body>
 <main>
   <h1>Ledgendary mark</h1>
-  <p class="lede">Four LE marks made of three horizontal bars and nothing else. The flush left edge is the L, the long gold bottom bar is its foot, and the two gaps make the E. Bar length decides which letter reads first. The colours are unchanged: the tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). Each option is a full SVG kit with logomark, lettermark, gold container, negative space and lockups. The wordmark and tagline are separate files, so the mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
+  <p class="lede">The final LE mark: three horizontal bars. The rounded left ends line up into the L, the long gold bottom bar is its foot, and the two gaps make the E. The tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). The mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
   <nav class="jump" id="jump" aria-label="Options"></nav>
   <div id="host"></div>
   <div class="notes">
-    <p><strong>Files.</strong> Each option is in its own folder (<code>logo/a/</code>, <code>logo/b/</code> and so on), and the shared wordmark and tagline are in <code>logo/wordmark/</code>. Every SVG is self-contained: the text is outlined, so there are no fonts or external references. <code>logo/build/build.py</code> regenerates the whole kit.</p>
-    <p><strong>Construction.</strong> Marks use a 32-unit grid with 4-unit bars on even coordinates, so the 16px favicon renders on whole pixels. <code>logomark-on-dark</code> adds a 1px hairline (white at 10%) so the tile doesn't sink into dark panels. Negative space is one colour with the letters cut out, for stamps, embossing and single-ink print.</p>
+    <p><strong>Files.</strong> The mark kit is in <code>logo/mark/</code>, and the wordmark and tagline are in <code>logo/wordmark/</code>. Every SVG is self-contained: the text is outlined, so there are no fonts or external references. <code>logo/build/build.py</code> regenerates the whole kit.</p>
+    <p><strong>Construction.</strong> The mark uses a 32-unit tile with one module, the bar thickness of 5: gaps of 2.5, bars of 15, 10 and 20, round ends, and a 6-unit inset on every side. The favicon keeps those proportions with a module of 4, so every edge lands on a whole pixel at 16 and 32 px. <code>logomark-on-dark</code> adds a 1px hairline (white at 10%) so the tile doesn't sink into dark panels. Negative space is one colour with the letters cut out, for stamps, embossing and single-ink print.</p>
     <p><strong>Wordmark.</strong> Mona Sans 800, width 116%, tracking -3%, outlined. Tagline: Mona Sans 520, "From proposal to… wait for it… paid." The wait sits right before the money lands, and the line still says what the product does without the wink.</p>
   </div>
 </main>
 
 <template id="tpl">
   <section>
-    <header><img src="b/logomark.svg" alt=""><div><h2><span data-k></span><span data-n></span></h2><p data-d></p></div></header>
+    <header><img src="mark/logomark.svg" alt=""><div><h2><span data-k></span><span data-n></span></h2><p data-d></p></div></header>
     <div class="kit" data-kit></div>
     <div class="ctx" data-ctx></div>
   </section>
@@ -77,10 +79,7 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 
 <script>
 const OPTS = [
-  ["A", "a", "Long E, straight left", "The previous D: long top and middle bars at 55% and 80% white with a gold foot. The square left edge lines up into a crisp upright, so the L is sharper."],
-  ["B", "b", "Long E, rounded left", "The same bars with round ends on both sides, so every bar is a pill like the original logo. The L comes from alignment alone and the E leads."],
-  ["C", "c", "Ledger lines, straight left", "The previous E: the original thinner bars, shortened, with a square left edge. The short stack reads most as an L."],
-  ["D", "d", "Ledger lines, rounded left", "The previous E with full round ends on both sides, closest to your current logo."]
+  ["", "mark", "The kit", "Three bars and one module. The bar thickness sets everything: the gaps are half of it, the bars are three, two and four times it long, every end is fully round, and the letters sit the same distance from every edge of the tile. The top bar is 55% white, the middle 80%, and the foot is gold. The favicon is redrawn on whole pixels so it stays sharp at 16 px."]
 ];
 // [file, label, note, background, img class]
 const KIT = [
@@ -112,19 +111,17 @@ const host = document.getElementById("host");
 const jump = document.getElementById("jump");
 const tpl = document.getElementById("tpl");
 
-// Side by side first: 120, 32 and 16 px
+// Sizes first, on light and dark
 {
-  const d = document.createElement("div");
-  d.className = "cmp";
-  d.innerHTML = OPTS.map(([k, dir]) => `<a href="#opt-${dir}"><b>${k}</b><img src="${dir}/logomark.svg" width="120" height="120" alt="Option ${k}"><img src="${dir}/favicon.svg" width="32" height="32" alt=""><img src="${dir}/favicon.svg" width="16" height="16" alt=""></a>`).join("");
-  host.appendChild(d);
+  const row = (bg) => `<div class="cmp ${bg}">` + [[160, "logomark"], [96, "logomark"], [64, "logomark"], [32, "favicon"], [16, "favicon"]].map(([px, f]) => `<figure><img src="mark/${bg === "d" && f === "logomark" ? "logomark-on-dark" : f}.svg" width="${px}" height="${px}" alt=""><figcaption>${px}</figcaption></figure>`).join("") + `</div>`;
+  host.insertAdjacentHTML("beforeend", row("l") + row("d"));
 }
 // Shared wordmark next
 {
   const node = tpl.content.cloneNode(true);
   const sec = node.querySelector("section");
   sec.id = "wordmark";
-  node.querySelector("header").outerHTML = `<header style="grid-template-columns:1fr"><div><h2>Wordmark and tagline</h2><p>Shared by every option and usable on their own, with no mark beside them.</p></div></header>`;
+  node.querySelector("header").outerHTML = `<header style="grid-template-columns:1fr"><div><h2>Wordmark and tagline</h2><p>Usable on their own, with no mark beside them.</p></div></header>`;
   node.querySelector("[data-kit]").innerHTML = WORD.map(([f, l, n, b]) => tile(f, l, n, b, "wide")).join("");
   node.querySelector("[data-ctx]").remove();
   host.appendChild(node);
@@ -146,7 +143,7 @@ for (const [k, dir, name, desc] of OPTS) {
     `<span class="side"><img width="22" height="22" src="${dir}/logomark-on-dark.svg" alt="">Lumen Studio</span></div>`;
   node.querySelector("[data-ctx]").innerHTML = ctx("l", "logomark") + ctx("d", "logomark-on-dark");
   host.appendChild(node);
-  jump.insertAdjacentHTML("beforeend", `<a href="#opt-${dir}"><img src="${dir}/favicon.svg" alt="">${k} · ${name}</a>`);
+  jump.insertAdjacentHTML("beforeend", `<a href="#opt-${dir}"><img src="${dir}/favicon.svg" alt="">${name}</a>`);
 }
 </script>
 </body>

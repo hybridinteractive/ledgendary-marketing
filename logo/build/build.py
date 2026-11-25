@@ -32,24 +32,29 @@ TAGLINE = "From proposal to… wait for it… paid."
 # The bars share a flush left edge, which is the L's stem; the long gold
 # bottom bar is the L's foot; the three bars together are the E. The gaps
 # between them are the E's counters. Lengths decide which letter leads.
-def _three(top, mid, rl=0, t=6, g=2, soft=None):
+def _three(top, mid, rl=0, t=6, g=2, soft=None, foot=20, x0=6):
     y0 = (32 - (3 * t + 2 * g)) / 2
-    x0 = 6
     r1 = ("soft", soft[0]) if soft else "main"
     r2 = ("soft", soft[1]) if soft else "main"
     return [
         (x0, y0, top, t, r1, rl),
         (x0, y0 + t + g, mid, t, r2, rl),
-        (x0, y0 + 2 * (t + g), 20, t, "gold", rl),
+        (x0, y0 + 2 * (t + g), foot, t, "gold", rl),
     ]
 
 
+# The final mark. One module, the bar thickness t = 5: gaps are t/2, the
+# bars are 2t, 3t and 4t long, every end is round (radius t/2), and the
+# glyph sits 6 units from every edge of the tile. Top 3t, middle 2t, foot 4t:
+# the steps between the bar ends equal the bar thickness, so the gaps and
+# the steps come from one number.
 OPTIONS = {
-    "a": ("Long E, straight left", _three(15, 11, soft=(0.55, 0.8))),
-    "b": ("Long E, rounded left", _three(15, 11, rl=3, soft=(0.55, 0.8))),
-    "c": ("Ledger lines, straight left", _three(9, 9, t=5, g=2.5, soft=(0.55, 0.8))),
-    "d": ("Ledger lines, rounded left", _three(9, 9, rl=2.5, t=5, g=2.5, soft=(0.55, 0.8))),
+    "mark": ("Ledgendary mark", _three(15, 10, rl=2.5, t=5, g=2.5, soft=(0.55, 0.8), foot=20)),
 }
+
+# Favicon: the same proportions redrawn so every edge lands on a whole pixel
+# at 16 px (and 32 px): t = 4, gaps 2, bars 12, 8 and 16, inset 8.
+FAVICON = _three(12, 8, rl=2, t=4, g=2, soft=(0.55, 0.8), foot=16, x0=8)
 
 
 # =========================================================================
@@ -255,7 +260,7 @@ def build_option(key, label, glyph):
                 + word(x0 - txmin * tsc, tb, tsize, tfill, TAG_D))
         write(out / f"lockup-tagline-{theme}.svg", svg(w2, m2, body, f"Ledgendary. {TAGLINE}"))
     # Favicon: 32 grid, no edge
-    write(out / "favicon.svg", svg(32, 32, tile() + "\n" + bars(glyph, ON_DARK), t))
+    write(out / "favicon.svg", svg(32, 32, tile() + "\n" + bars(FAVICON, ON_DARK), t))
 
 
 if __name__ == "__main__":

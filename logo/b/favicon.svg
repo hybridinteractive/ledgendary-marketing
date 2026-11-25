@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Ledgendary">
-<title>Ledgendary</title>
-<rect x="0" y="0" width="32" height="32" rx="8" fill="#0b0b0d"/>
-<path d="M9 5H18A3 3 0 0 1 18 11H9A3 3 0 0 1 6 8V8A3 3 0 0 1 9 5Z" fill="#ffffff" opacity="0.55"/>
-<path d="M9 13H14A3 3 0 0 1 14 19H9A3 3 0 0 1 6 16V16A3 3 0 0 1 9 13Z" fill="#ffffff" opacity="0.8"/>
-<path d="M9 21H23A3 3 0 0 1 23 27H9A3 3 0 0 1 6 24V24A3 3 0 0 1 9 21Z" fill="#ffc629"/>
-</svg>

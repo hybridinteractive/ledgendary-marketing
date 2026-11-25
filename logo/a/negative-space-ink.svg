@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Ledgendary">
-<title>Ledgendary</title>
-<defs><mask id="cut" maskUnits="userSpaceOnUse" x="0" y="0" width="128" height="128"><rect width="128" height="128" fill="#fff"/>
-<path d="M24 20H72A12 12 0 0 1 72 44H24H24V20Z" fill="#000"/>
-<path d="M24 52H56A12 12 0 0 1 56 76H24H24V52Z" fill="#000"/>
-<path d="M24 84H92A12 12 0 0 1 92 108H24H24V84Z" fill="#000"/></mask></defs>
-<rect width="128" height="128" rx="32" fill="#0b0b0d" mask="url(#cut)"/>
-</svg>
