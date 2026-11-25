@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="ldg-mark" data-motion="loader" viewBox="0 0 16 16" width="128" height="128" role="img" aria-label="Ledgendary">
+<title>Ledgendary</title>
+<style>
+:root {
+  --ldg-beat: 160ms;
+  --ldg-ease-enter: cubic-bezier(0.16, 1, 0.3, 1);
+  --ldg-ease-land: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ldg-ease-move: cubic-bezier(0.65, 0, 0.35, 1);
+  --ldg-ease-exit: cubic-bezier(0.7, 0, 0.84, 0);
+}
+.ldg-t, .ldg-m, .ldg-f { fill: none; stroke-width: 2; stroke-linecap: round; }
+.ldg-t { stroke: #ffffff; stroke-opacity: 0.55; stroke-dasharray: 4 40; }
+.ldg-m { stroke: #ffffff; stroke-opacity: 0.8; stroke-dasharray: 2 40; }
+.ldg-f { stroke: #ffc629; stroke-dasharray: 6 40; }
+@media (prefers-reduced-motion: no-preference) {
+  .ldg-mark[data-motion~="reveal"] .ldg-t { animation: ldg-grow calc(2 * var(--ldg-beat)) var(--ldg-ease-enter) calc(1 * var(--ldg-beat)) both; }
+  .ldg-mark[data-motion~="reveal"] .ldg-m { animation: ldg-grow calc(2 * var(--ldg-beat)) var(--ldg-ease-enter) calc(2 * var(--ldg-beat)) both; }
+  .ldg-mark[data-motion~="reveal"] .ldg-f { animation: ldg-grow calc(3 * var(--ldg-beat)) var(--ldg-ease-land) calc(7 * var(--ldg-beat)) both; }
+  .ldg-mark[data-motion~="loader"] .ldg-t { animation: ldg-loop-t calc(16 * var(--ldg-beat)) linear infinite; }
+  .ldg-mark[data-motion~="loader"] .ldg-m { animation: ldg-loop-m calc(16 * var(--ldg-beat)) linear infinite; }
+  .ldg-mark[data-motion~="loader"] .ldg-f { animation: ldg-loop-f calc(16 * var(--ldg-beat)) linear infinite; }
+  .ldg-mark[data-motion~="paid"] .ldg-t { animation: ldg-paid-t calc(8 * var(--ldg-beat)) linear both; }
+  .ldg-mark[data-motion~="paid"] .ldg-m { animation: ldg-paid-m calc(8 * var(--ldg-beat)) linear both; }
+  .ldg-mark[data-motion~="paid"] .ldg-f { animation: ldg-paid-f calc(8 * var(--ldg-beat)) linear both; }
+  .ldg-mark[data-motion~="hover"] :is(.ldg-t, .ldg-m, .ldg-f) {
+    transition: stroke-dasharray calc(2 * var(--ldg-beat)) var(--ldg-ease-move);
+  }
+  .ldg-mark[data-motion~="hover"]:is(:hover, .is-hover, a:hover *, a:focus-visible *, button:hover *, button:focus-visible *) .ldg-t {
+    stroke-dasharray: 2 40;
+    transition: stroke-dasharray calc(1 * var(--ldg-beat)) var(--ldg-ease-enter);
+  }
+  .ldg-mark[data-motion~="hover"]:is(:hover, .is-hover, a:hover *, a:focus-visible *, button:hover *, button:focus-visible *) .ldg-m {
+    stroke-dasharray: 0 40;
+    transition: stroke-dasharray calc(1 * var(--ldg-beat)) var(--ldg-ease-enter);
+  }
+  .ldg-mark[data-motion~="hover"]:is(:hover, .is-hover, a:hover *, a:focus-visible *, button:hover *, button:focus-visible *) .ldg-f {
+    stroke-dasharray: 8 40;
+    transition: stroke-dasharray calc(2 * var(--ldg-beat)) var(--ldg-ease-land) calc(1 * var(--ldg-beat));
+  }
+}
+@keyframes ldg-grow { from { stroke-dasharray: 0 40; } }
+@keyframes ldg-loop-t {
+  0%, 6.25% { stroke-dasharray: 0 40; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+  18.75%, 75% { stroke-dasharray: 4 40; animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0); }
+  87.5%, 100% { stroke-dasharray: 0 40; }
+}
+@keyframes ldg-loop-m {
+  0%, 12.5% { stroke-dasharray: 0 40; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+  25%, 75% { stroke-dasharray: 2 40; animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0); }
+  87.5%, 100% { stroke-dasharray: 0 40; }
+}
+@keyframes ldg-loop-f {
+  0%, 43.75% { stroke-dasharray: 0 40; animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+  62.5%, 75% { stroke-dasharray: 6 40; animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0); }
+  87.5%, 100% { stroke-dasharray: 0 40; }
+}
+@keyframes ldg-paid-t {
+  0%, 12.5% { stroke-dasharray: 4 40; animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0); }
+  37.5%, 62.5% { stroke-dasharray: 0 40; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+  87.5%, 100% { stroke-dasharray: 4 40; }
+}
+@keyframes ldg-paid-m {
+  0%, 12.5% { stroke-dasharray: 2 40; animation-timing-function: cubic-bezier(0.7, 0, 0.84, 0); }
+  37.5%, 75% { stroke-dasharray: 0 40; animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1); }
+  100% { stroke-dasharray: 2 40; }
+}
+@keyframes ldg-paid-f {
+  0%, 12.5% { stroke-dasharray: 6 40; animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); }
+  37.5%, 62.5% { stroke-dasharray: 8 40; animation-timing-function: cubic-bezier(0.65, 0, 0.35, 1); }
+  100% { stroke-dasharray: 6 40; }
+}
+</style>
+<rect width="16" height="16" rx="4" fill="#0b0b0d"/>
+<path class="ldg-t" d="M5 5H9"/>
+<path class="ldg-m" d="M5 8H7"/>
+<path class="ldg-f" d="M5 11H13"/>
+</svg>

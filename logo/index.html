@@ -6,9 +6,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ledgendary mark</title>
 <link rel="icon" href="mark/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="motion/motion.css">
 <style>
 @font-face { font-family: "Mona Sans"; src: url("../site/fonts/MonaSansVF.woff2") format("woff2"); font-weight: 200 900; font-stretch: 75% 125%; font-display: swap; }
-:root { --page: #f6f7f9; --card: #ffffff; --ink: #121318; --ink-2: #565b68; --line: #e2e5ea; --light: #f6f7f9; --dark: #17171a; }
+:root { --page: #f6f7f9; --card: #ffffff; --ink: #121318; --ink-2: #565b68; --line: #e2e5ea; --light: #f6f7f9; --dark: #17171a; --gold: #ffc629; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) { --page: #0b0b0d; --card: #131316; --ink: #ededef; --ink-2: #b0b0b7; --line: rgba(255,255,255,.09); }
 }
@@ -16,16 +17,73 @@
 body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.55 "Mona Sans", system-ui, sans-serif; }
 main { max-width: 1160px; margin: 0 auto; padding: 56px 16px 80px; }
 h1 { font-size: clamp(2rem, 4.5vw, 3rem); font-weight: 800; font-stretch: 112%; letter-spacing: -.03em; line-height: 1.05; margin: 0 0 12px; }
+h2 { font-size: 1.5rem; font-weight: 750; font-stretch: 108%; letter-spacing: -.02em; margin: 0 0 6px; }
+h3 { font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
+p { margin: 0 0 10px; }
 .lede { color: var(--ink-2); max-width: 68ch; margin: 0 0 20px; }
 .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 40px; }
-.jump a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: .9375rem; display: inline-flex; gap: 8px; align-items: center; }
-.jump a img { width: 18px; height: 18px; }
-section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 24px; margin-bottom: 20px; scroll-margin-top: 16px; }
-section > header { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 20px; align-items: center; margin-bottom: 20px; }
-section > header img { width: 96px; height: 96px; }
-h2 { font-size: 1.375rem; font-weight: 750; font-stretch: 108%; letter-spacing: -.02em; margin: 0 0 4px; }
-h2 span { color: var(--ink-2); margin-right: 8px; }
-section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
+.jump a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: .9375rem; }
+.jump a:hover { border-color: var(--ink-2); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+section { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px; margin-bottom: 20px; scroll-margin-top: 16px; }
+.sub { color: var(--ink-2); max-width: 72ch; margin-bottom: 22px; }
+.mut { color: var(--ink-2); }
+code, pre { font: 500 .8125rem/1.6 ui-monospace, "SF Mono", Menlo, monospace; }
+.dark { background: var(--dark); color: #ededef; border-radius: 12px; }
+.lightb { background: var(--light); color: #121318; border: 1px solid #e2e5ea; border-radius: 12px; }
+
+/* Construction */
+.con { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; align-items: start; }
+.con .dark { padding: 20px; display: grid; place-items: center; }
+.con svg.diagram { width: 100%; max-width: 440px; height: auto; }
+.spec { display: grid; gap: 10px; margin: 0 0 18px; padding: 0; list-style: none; }
+.spec li { display: grid; grid-template-columns: 112px 1fr; gap: 12px; }
+.spec b { font-weight: 700; }
+table { width: 100%; border-collapse: collapse; font-size: .875rem; font-variant-numeric: tabular-nums; }
+th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
+th { color: var(--ink-2); font-weight: 600; }
+
+/* Beats */
+.beats { padding: 32px 28px; }
+.beats svg { width: 100%; max-width: 560px; height: auto; display: block; }
+
+/* Sizes */
+.cmp { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 32px; padding: 26px; margin-bottom: 12px; }
+.cmp figure { margin: 0; display: grid; justify-items: center; gap: 8px; font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.cmp figcaption { opacity: .75; }
+
+/* Motion */
+.curves { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.curve { padding: 16px; }
+.curve svg { width: 100%; height: auto; display: block; margin-bottom: 10px; }
+.curve h3 { color: #fff; }
+.curve p { color: #b0b0b7; font-size: .875rem; margin: 0; }
+.curve code { color: var(--gold); font-size: .75rem; }
+.track { position: relative; height: 10px; margin: 12px 4px 14px; border-radius: 5px; background: rgba(255,255,255,.08); }
+.track i { position: absolute; left: 0; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); }
+@media (prefers-reduced-motion: no-preference) {
+  .track i { animation: ldg-track 2560ms infinite both; animation-timing-function: var(--c); }
+}
+@keyframes ldg-track { 0% { transform: translateX(0); } 50%, 100% { transform: translateX(calc(var(--w, 200px) - 10px)); } }
+.demos { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.demo { padding: 22px; display: grid; gap: 10px; justify-items: start; align-content: start; }
+.demo .stage { width: 100%; display: grid; place-items: center; padding: 10px 0; }
+.demo svg.ldg-mark { width: 128px; height: 128px; }
+.demo h3 { color: #fff; }
+.demo p { color: #b0b0b7; font-size: .875rem; margin: 0; }
+.demo button { font: 600 .875rem/1 "Mona Sans", sans-serif; color: #121318; background: var(--gold); border: 0; border-radius: 999px; padding: 9px 16px; cursor: pointer; }
+.demo .meta { font: 500 .75rem/1.5 ui-monospace, Menlo, monospace; color: #9c9ca5; }
+.timeline { display: grid; grid-template-columns: 96px repeat(10, 1fr); gap: 4px 0; font-size: .8125rem; align-items: center; padding: 18px; }
+.timeline .h { color: #9c9ca5; font: 500 .75rem ui-monospace, Menlo, monospace; text-align: center; border-left: 1px solid rgba(255,255,255,.08); }
+.timeline .lab { color: #b0b0b7; }
+.timeline .seg { height: 18px; border-radius: 9px; }
+.timeline .seg.g { background: rgba(255,255,255,.55); }
+.timeline .seg.g2 { background: rgba(255,255,255,.8); }
+.timeline .seg.w { background: repeating-linear-gradient(90deg, rgba(255,198,41,.35) 0 6px, transparent 6px 12px); }
+.timeline .seg.f { background: var(--gold); }
+pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
+
+/* Kit */
 .kit { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
 .kit a { display: grid; grid-template-rows: 120px auto; border-radius: 12px; overflow: hidden; text-decoration: none; color: var(--ink); border: 1px solid var(--line); }
 .kit a:hover { border-color: var(--ink-2); }
@@ -38,65 +96,200 @@ section p { margin: 0; color: var(--ink-2); max-width: 70ch; }
 .kit span { padding: 8px 12px; font-size: .8125rem; font-weight: 600; border-top: 1px solid var(--line); background: var(--card); }
 .kit span small { display: block; font-weight: 450; color: var(--ink-2); }
 .ctx { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-.board { border-radius: 12px; padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
-.board.l { background: var(--light); border: 1px solid #e2e5ea; color: #121318; }
-.board.d { background: var(--dark); color: #ededef; }
-.sizes { display: flex; align-items: flex-end; gap: 14px; }
-.sizes figure { margin: 0; display: grid; justify-items: center; gap: 4px; font-size: .75rem; font-variant-numeric: tabular-nums; }
-.sizes figcaption { opacity: .7; }
+.board { padding: 16px 18px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; }
 .tab { display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid #d7dae0; border-radius: 9px 9px 0 0; padding: 7px 14px 7px 10px; font: 13px/1 system-ui, sans-serif; color: #333; }
-.d .tab { background: #2b2b30; border-color: #3a3a40; color: #ddd; }
-.side { display: inline-flex; align-items: center; gap: 9px; background: #0b0b0d; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 9px 12px; font: 600 14px/1 "Mona Sans", sans-serif; color: #ededef; }
-.cmp { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 36px; padding: 28px; border-radius: 16px; margin-bottom: 12px; }
-.cmp.l { background: #f6f7f9; border: 1px solid #e2e5ea; color: #565b68; }
-.cmp.d { background: #17171a; color: #b0b0b7; margin-bottom: 20px; }
-.cmp figure { margin: 0; display: grid; justify-items: center; gap: 8px; font-size: .8125rem; font-variant-numeric: tabular-nums; }
+.dark .tab { background: #2b2b30; border-color: #3a3a40; color: #ddd; }
+.side { display: inline-flex; align-items: center; gap: 9px; background: #0b0b0d; border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 9px 12px; font: 600 14px/1 "Mona Sans", sans-serif; color: #ededef; text-decoration: none; }
 .notes { margin-top: 32px; color: var(--ink-2); font-size: .9375rem; max-width: 72ch; }
-.notes p { margin: 0 0 10px; }
-@media (max-width: 760px) { .ctx { grid-template-columns: 1fr; } section > header { grid-template-columns: 64px 1fr; } section > header img { width: 64px; height: 64px; } }
+@media (max-width: 820px) { .con, .ctx { grid-template-columns: 1fr; } .timeline { grid-template-columns: 72px repeat(10, 1fr); padding: 12px; } section { padding: 20px; } }
 </style>
 </head>
 <body>
 <main>
   <h1>Ledgendary mark</h1>
-  <p class="lede">The final LE mark: three horizontal bars. The rounded left ends line up into the L, the long gold bottom bar is its foot, and the two gaps make the E. The tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). The mark and the wordmark can each be used on their own. Click any tile to open the SVG.</p>
-  <nav class="jump" id="jump" aria-label="Options"></nav>
-  <div id="host"></div>
+  <p class="lede">The LE mark is three horizontal bars. Their rounded left ends line up into the L, the long gold bottom bar is its foot, and the two gaps make the E. The tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). The mark and the wordmark can each be used on their own.</p>
+  <nav class="jump" aria-label="Sections">
+    <a href="#construction">Construction</a><a href="#beats">Three beats</a><a href="#sizes">Sizes</a><a href="#motion">Motion</a><a href="#kit">Kit</a><a href="#wordmark">Wordmark</a>
+  </nav>
+
+  <section id="construction">
+    <h2>Construction</h2>
+    <p class="sub">One number builds the whole mark: the module <b>t</b>, the bar thickness, which is one eighth of the tile. Every edge sits on a 16-unit grid, so the same drawing lands on whole pixels at every size that's a multiple of 16.</p>
+    <div class="con">
+      <div class="dark">
+        <svg class="diagram" viewBox="-4.5 -1.5 22 19" role="img" aria-label="The mark on its 16-unit grid, with its measurements">
+          <defs>
+            <pattern id="grid" width="1" height="1" patternUnits="userSpaceOnUse"><path d="M1 0H0V1" fill="none" stroke="rgba(255,255,255,.1)" stroke-width=".04"/></pattern>
+          </defs>
+          <rect width="16" height="16" rx="4" fill="#0b0b0d"/>
+          <rect width="16" height="16" rx="4" fill="url(#grid)" stroke="rgba(255,255,255,.25)" stroke-width=".05"/>
+          <path d="M5 4H9A1 1 0 0 1 9 6H5A1 1 0 0 1 5 4Z" fill="#fff" fill-opacity=".55"/>
+          <path d="M5 7H7A1 1 0 0 1 7 9H5A1 1 0 0 1 5 7Z" fill="#fff" fill-opacity=".8"/>
+          <path d="M5 10H11A1 1 0 0 1 11 12H5A1 1 0 0 1 5 10Z" fill="#ffc629"/>
+          <g stroke="#ffc629" stroke-width=".07" fill="none">
+            <path d="M0 14H4M0 13.6V14.4M4 13.6V14.4"/>
+            <path d="M14 0V4M13.6 0H14.4M13.6 4H14.4"/>
+            <path d="M-1 4V6M-1.4 4H-.6M-1.4 6H-.6"/>
+            <path d="M-1 6V7M-1.4 7H-.6"/>
+            <path d="M12 13.6V14.4M12 14H16M16 13.6V14.4"/>
+          </g>
+          <g fill="rgba(255,255,255,.8)" font-family="Mona Sans, sans-serif" font-size=".72" font-weight="600">
+            <text x="2" y="15.3" text-anchor="middle">2t</text>
+            <text x="14.5" y="2.25">2t</text>
+            <text x="-1.6" y="5.25" text-anchor="end">t</text>
+            <text x="-1.6" y="6.85" text-anchor="end">½t</text>
+            <text x="14" y="15.3" text-anchor="middle">2t</text>
+            <text x="10.7" y="5.25">3t</text>
+            <text x="8.7" y="8.25">2t</text>
+            <text x="12.7" y="11.25">4t</text>
+          </g>
+        </svg>
+      </div>
+      <div>
+        <ul class="spec">
+          <li><b>Module</b><span>t = 2 units, one eighth of the tile.</span></li>
+          <li><b>Bars</b><span>t thick. Top 3t, middle 2t, foot 4t: each bar end steps out by exactly one t.</span></li>
+          <li><b>Gaps</b><span>½t, the same between every bar.</span></li>
+          <li><b>Inset</b><span>2t from all four edges of the tile.</span></li>
+          <li><b>Ends</b><span>Fully round, radius ½t.</span></li>
+          <li><b>Tile</b><span>16 units square, corner radius 2t (25%).</span></li>
+          <li><b>Colour</b><span>Top white at 55%, middle white at 80%, foot gold #ffc629, tile #0b0b0d.</span></li>
+        </ul>
+        <table>
+          <thead><tr><th>Size</th><th>Bar</th><th>Gap</th><th>Inset</th><th>Drawing</th></tr></thead>
+          <tbody>
+            <tr><td>16 px</td><td>2 px</td><td>1 px</td><td>4 px</td><td>Master</td></tr>
+            <tr><td>24 px</td><td>4 px</td><td>2 px</td><td>4 px</td><td>Own drawing (<code>logomark-24</code>)</td></tr>
+            <tr><td>32 px</td><td>4 px</td><td>2 px</td><td>8 px</td><td>Master</td></tr>
+            <tr><td>48 px</td><td>6 px</td><td>3 px</td><td>12 px</td><td>Master</td></tr>
+            <tr><td>64 px</td><td>8 px</td><td>4 px</td><td>16 px</td><td>Master</td></tr>
+            <tr><td>128 px</td><td>16 px</td><td>8 px</td><td>32 px</td><td>Master</td></tr>
+            <tr><td>512 px</td><td>64 px</td><td>32 px</td><td>128 px</td><td>Master</td></tr>
+          </tbody>
+        </table>
+        <p class="mut" style="margin-top:12px;font-size:.875rem">24 px isn't a multiple of 16, so it has its own drawing with the same bar proportions, slightly larger in the tile. That's the usual optical correction for small icons.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="beats">
+    <h2>Three beats</h2>
+    <p class="sub">The three bars are the three beats of the line the brand is named after. Nobody has to know, but it explains why the foot is gold and why it always arrives last.</p>
+    <div class="dark beats">
+      <svg viewBox="0 0 30 8.6" role="img" aria-label="Top bar: Legen… Middle bar: wait for it… Gold foot: …dary">
+        <path d="M1 .3H5A1 1 0 0 1 5 2.3H1A1 1 0 0 1 1 .3Z" fill="#fff" fill-opacity=".55"/>
+        <path d="M1 3.3H3A1 1 0 0 1 3 5.3H1A1 1 0 0 1 1 3.3Z" fill="#fff" fill-opacity=".8"/>
+        <path d="M1 6.3H7A1 1 0 0 1 7 8.3H1A1 1 0 0 1 1 6.3Z" fill="#ffc629"/>
+        <g font-family="Mona Sans, sans-serif" font-weight="750" font-size="1.55" letter-spacing="-.03">
+          <text x="11" y="1.85" fill="#fff" fill-opacity=".55">Legen…</text>
+          <text x="11" y="4.85" fill="#fff" fill-opacity=".8">wait for it…</text>
+          <text x="11" y="7.85" fill="#ffc629">…dary.</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <section id="sizes">
+    <h2>Sizes</h2>
+    <p class="sub">The mark at its standard sizes on light and dark. Every size uses whole pixels.</p>
+    <div id="ramps"></div>
+  </section>
+
+  <section id="motion">
+    <h2>Motion</h2>
+    <p class="sub">The mark moves by drawing its bars, never by scaling them, so the round ends stay round in every frame. A bar at length zero is a dot, so before a reveal the mark is three stacked dots, an ellipsis, and the gold dot waits before it lands. Timing uses one unit, the <b>beat</b> (160 ms). Every duration and delay is a whole number of beats, just as every measurement is a whole number of modules.</p>
+
+    <h3>Curves</h3>
+    <div class="curves" id="curves"></div>
+
+    <h3>Versions</h3>
+    <div class="demos">
+      <div class="demo dark">
+        <div class="stage"><svg class="ldg-mark" data-motion="reveal" viewBox="0 0 16 16" role="img" aria-label="Ledgendary"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg></div>
+        <h3>Reveal</h3>
+        <p>Splash, page load and first sight. Plays once.</p>
+        <span class="meta">10 beats · 1600 ms · motion/reveal.svg</span>
+        <button type="button" data-replay>Replay</button>
+      </div>
+      <div class="demo dark">
+        <div class="stage"><a href="#motion" aria-label="Ledgendary, hover to play" style="display:block;line-height:0"><svg class="ldg-mark" data-motion="hover" viewBox="0 0 16 16" role="img" aria-label="Ledgendary"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg></a></div>
+        <h3>Hover</h3>
+        <p>The nav logo, on hover and keyboard focus. The greys step back one module and a beat later the gold foot steps forward one, so the L sharpens.</p>
+        <span class="meta">in 3 beats · out 2 beats · motion/hover.svg</span>
+      </div>
+      <div class="demo dark">
+        <div class="stage"><svg class="ldg-mark" data-motion="loader" viewBox="0 0 16 16" role="img" aria-label="Loading"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg></div>
+        <h3>Loader</h3>
+        <p>Full-screen loading. The reveal, a hold, then back to dots together. Loops.</p>
+        <span class="meta">16 beats · 2560 ms · motion/loader.svg</span>
+      </div>
+      <div class="demo dark">
+        <div class="stage"><svg class="ldg-mark" data-motion="paid" viewBox="0 0 16 16" role="img" aria-label="Ledgendary"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg></div>
+        <h3>Paid</h3>
+        <p>The moment money lands. The greys step aside, the gold foot reaches one module further, holds, and everything returns.</p>
+        <span class="meta">8 beats · 1280 ms · motion/paid.svg</span>
+        <button type="button" data-replay>Replay</button>
+      </div>
+    </div>
+
+    <h3>Reveal, beat by beat</h3>
+    <div class="dark timeline" style="margin-bottom:24px" role="img" aria-label="Reveal timeline: top bar beats 1 to 3, middle bar beats 2 to 4, wait beats 4 to 7, gold foot beats 7 to 10">
+      <span></span><span class="h">0</span><span class="h">1</span><span class="h">2</span><span class="h">3</span><span class="h">4</span><span class="h">5</span><span class="h">6</span><span class="h">7</span><span class="h">8</span><span class="h">9</span>
+      <span class="lab">Top · enter</span><span class="seg g" style="grid-column:3 / span 2"></span>
+      <span class="lab" style="grid-column:1">Middle · enter</span><span class="seg g2" style="grid-column:4 / span 2"></span>
+      <span class="lab" style="grid-column:1">Wait for it…</span><span class="seg w" style="grid-column:6 / span 3"></span>
+      <span class="lab" style="grid-column:1">Foot · land</span><span class="seg f" style="grid-column:9 / span 3"></span>
+    </div>
+
+    <h3>Use</h3>
+    <p class="mut" style="font-size:.9375rem">Inline the mark and link <code>motion/motion.css</code>, or use the animated SVG files as-is. With reduced motion turned on, every version shows the still mark.</p>
+    <div class="dark"><pre>&lt;svg class="ldg-mark" data-motion="reveal hover" viewBox="0 0 16 16" role="img" aria-label="Ledgendary"&gt;
+  &lt;rect width="16" height="16" rx="4" fill="#0b0b0d"/&gt;
+  &lt;path class="ldg-t" d="M5 5H9"/&gt;
+  &lt;path class="ldg-m" d="M5 8H7"/&gt;
+  &lt;path class="ldg-f" d="M5 11H13"/&gt;
+&lt;/svg&gt;</pre></div>
+  </section>
+
+  <section id="kit">
+    <h2>Kit</h2>
+    <p class="sub">Every file is self-contained SVG with outlined text, so it has no fonts or external references. Click a tile to open its file.</p>
+    <div class="kit" id="kitgrid"></div>
+    <div class="ctx">
+      <div class="board lightb" id="ctx-l"></div>
+      <div class="board dark" id="ctx-d"></div>
+    </div>
+  </section>
+
+  <section id="wordmark">
+    <h2>Wordmark and tagline</h2>
+    <p class="sub">These work on their own, with no mark beside them. The wordmark is Mona Sans 800 at 116% width and −3% tracking, outlined. The tagline is Mona Sans 520: "From proposal to… wait for it… paid."</p>
+    <div class="kit" id="wordgrid"></div>
+  </section>
+
   <div class="notes">
-    <p><strong>Files.</strong> The mark kit is in <code>logo/mark/</code>, and the wordmark and tagline are in <code>logo/wordmark/</code>. Every SVG is self-contained: the text is outlined, so there are no fonts or external references. <code>logo/build/build.py</code> regenerates the whole kit.</p>
-    <p><strong>Construction.</strong> The mark uses a 32-unit tile with one module, the bar thickness of 5: gaps of 2.5, bars of 15, 10 and 20, round ends, and a 6-unit inset on every side. The favicon keeps those proportions with a module of 4, so every edge lands on a whole pixel at 16 and 32 px. <code>logomark-on-dark</code> adds a 1px hairline (white at 10%) so the tile doesn't sink into dark panels. Negative space is one colour with the letters cut out, for stamps, embossing and single-ink print.</p>
-    <p><strong>Wordmark.</strong> Mona Sans 800, width 116%, tracking -3%, outlined. Tagline: Mona Sans 520, "From proposal to… wait for it… paid." The wait sits right before the money lands, and the line still says what the product does without the wink.</p>
+    <p><strong>Files.</strong> The mark kit is in <code>logo/mark/</code>, the animated marks and <code>motion.css</code> are in <code>logo/motion/</code>, and the wordmark and tagline are in <code>logo/wordmark/</code>. <code>logo/build/build.py</code> regenerates all of them. <code>motion.css</code> is the source for the animated files.</p>
   </div>
 </main>
 
-<template id="tpl">
-  <section>
-    <header><img src="mark/logomark.svg" alt=""><div><h2><span data-k></span><span data-n></span></h2><p data-d></p></div></header>
-    <div class="kit" data-kit></div>
-    <div class="ctx" data-ctx></div>
-  </section>
-</template>
-
 <script>
-const OPTS = [
-  ["", "mark", "The kit", "Three bars and one module. The bar thickness sets everything: the gaps are half of it, the bars are three, two and four times it long, every end is fully round, and the letters sit the same distance from every edge of the tile. The top bar is 55% white, the middle 80%, and the foot is gold. The favicon is redrawn on whole pixels so it stays sharp at 16 px."]
-];
-// [file, label, note, background, img class]
 const KIT = [
-  ["logomark", "Logomark", "Tile and letters. App icon, social, favicon.", "l", ""],
-  ["logomark-on-dark", "Logomark on dark", "With a hairline edge for dark panels.", "d", ""],
-  ["lettermark-on-light", "Lettermark", "Letters only, on light backgrounds.", "l", "sm"],
-  ["lettermark-on-dark", "Lettermark on dark", "Letters only, on dark backgrounds.", "d", "sm"],
-  ["lettermark-mono-ink", "Lettermark, one colour", "Ink, for one-colour print and stamps.", "l", "sm"],
-  ["lettermark-mono-white", "Lettermark, white", "One colour, reversed.", "d", "sm"],
-  ["container-gold", "Container, gold", "Gold tile for loud placements.", "d", ""],
-  ["negative-space-ink", "Negative space, ink", "Letters cut out of the tile.", "l", ""],
-  ["negative-space-gold", "Negative space, gold", "One-colour knockout.", "d", ""],
-  ["negative-space-white", "Negative space, white", "Knockout on dark or photos.", "d", ""],
-  ["lockup-light", "Lockup", "Logomark and wordmark.", "l", "wide"],
-  ["lockup-dark", "Lockup on dark", "Logomark and wordmark.", "d", "wide"],
-  ["lockup-tagline-light", "Lockup with tagline", "For the site footer, decks and email.", "l", "wide"],
-  ["lockup-tagline-dark", "Lockup with tagline on dark", "", "d", "wide"]
+  ["mark/logomark", "Logomark", "App icon, social, every size that's a multiple of 16.", "l", ""],
+  ["mark/logomark-on-dark", "Logomark on dark", "With a hairline edge for dark panels.", "d", ""],
+  ["mark/logomark-24", "Logomark, 24 px", "Its own drawing for 24 px.", "l", ""],
+  ["mark/favicon", "Favicon", "16 and 32 px.", "l", ""],
+  ["mark/lettermark-on-light", "Lettermark", "Letters only, on light backgrounds.", "l", "sm"],
+  ["mark/lettermark-on-dark", "Lettermark on dark", "Letters only, on dark backgrounds.", "d", "sm"],
+  ["mark/lettermark-mono-ink", "Lettermark, one colour", "Ink, for one-colour print and stamps.", "l", "sm"],
+  ["mark/lettermark-mono-white", "Lettermark, white", "One colour, reversed.", "d", "sm"],
+  ["mark/container-gold", "Container, gold", "A gold tile for loud placements.", "d", ""],
+  ["mark/negative-space-ink", "Negative space, ink", "Letters cut out of the tile.", "l", ""],
+  ["mark/negative-space-gold", "Negative space, gold", "One-colour knockout.", "d", ""],
+  ["mark/negative-space-white", "Negative space, white", "Knockout on dark or photos.", "d", ""],
+  ["mark/lockup-light", "Lockup", "Logomark and wordmark.", "l", "wide"],
+  ["mark/lockup-dark", "Lockup on dark", "Logomark and wordmark.", "d", "wide"],
+  ["mark/lockup-tagline-light", "Lockup with tagline", "For the site footer, decks and email.", "l", "wide"],
+  ["mark/lockup-tagline-dark", "Lockup with tagline on dark", "", "d", "wide"]
 ];
 const WORD = [
   ["wordmark/wordmark-ink", "Wordmark", "Usable without the mark.", "l"],
@@ -107,44 +300,52 @@ const WORD = [
 ];
 const tile = (src, label, note, bg, cls) =>
   `<a href="${src}.svg"><div class="pv ${bg}"><img class="${cls || "wide"}" src="${src}.svg" alt=""></div><span>${label}<small>${note || "&nbsp;"}</small></span></a>`;
-const host = document.getElementById("host");
-const jump = document.getElementById("jump");
-const tpl = document.getElementById("tpl");
+document.getElementById("kitgrid").innerHTML = KIT.map(k => tile(...k)).join("");
+document.getElementById("wordgrid").innerHTML = WORD.map(k => tile(...k)).join("");
 
-// Sizes first, on light and dark
-{
-  const row = (bg) => `<div class="cmp ${bg}">` + [[160, "logomark"], [96, "logomark"], [64, "logomark"], [32, "favicon"], [16, "favicon"]].map(([px, f]) => `<figure><img src="mark/${bg === "d" && f === "logomark" ? "logomark-on-dark" : f}.svg" width="${px}" height="${px}" alt=""><figcaption>${px}</figcaption></figure>`).join("") + `</div>`;
-  host.insertAdjacentHTML("beforeend", row("l") + row("d"));
-}
-// Shared wordmark next
-{
-  const node = tpl.content.cloneNode(true);
-  const sec = node.querySelector("section");
-  sec.id = "wordmark";
-  node.querySelector("header").outerHTML = `<header style="grid-template-columns:1fr"><div><h2>Wordmark and tagline</h2><p>Usable on their own, with no mark beside them.</p></div></header>`;
-  node.querySelector("[data-kit]").innerHTML = WORD.map(([f, l, n, b]) => tile(f, l, n, b, "wide")).join("");
-  node.querySelector("[data-ctx]").remove();
-  host.appendChild(node);
-  jump.insertAdjacentHTML("beforeend", `<a href="#wordmark">Wordmark</a>`);
-}
+// Size ramps
+const SIZES = [[160, "logomark"], [128, "logomark"], [64, "logomark"], [48, "logomark"], [32, "favicon"], [24, "logomark-24"], [16, "favicon"]];
+const ramp = (dark) => `<div class="cmp ${dark ? "dark" : "lightb"}">` + SIZES.map(([px, f]) =>
+  `<figure><img src="mark/${dark && f === "logomark" ? "logomark-on-dark" : f}.svg" width="${px}" height="${px}" alt=""><figcaption>${px}</figcaption></figure>`).join("") + `</div>`;
+document.getElementById("ramps").innerHTML = ramp(false) + ramp(true);
 
-for (const [k, dir, name, desc] of OPTS) {
-  const node = tpl.content.cloneNode(true);
-  node.querySelector("section").id = "opt-" + dir;
-  const img = node.querySelector("header img");
-  img.src = `${dir}/logomark.svg`;
-  node.querySelector("[data-k]").textContent = k;
-  node.querySelector("[data-n]").textContent = name;
-  node.querySelector("[data-d]").textContent = desc;
-  node.querySelector("[data-kit]").innerHTML = KIT.map(([f, l, n, b, c]) => tile(`${dir}/${f}`, l, n, b, c)).join("");
-  const ctx = (bg, mark) =>
-    `<div class="board ${bg}"><div class="sizes">${[16, 24, 32, 48].map(s => `<figure><img width="${s}" height="${s}" src="${dir}/${s === 16 ? "favicon" : mark}.svg" alt=""><figcaption>${s}</figcaption></figure>`).join("")}</div>` +
-    `<span class="tab"><img width="16" height="16" src="${dir}/favicon.svg" alt="">Ledgendary</span>` +
-    `<span class="side"><img width="22" height="22" src="${dir}/logomark-on-dark.svg" alt="">Lumen Studio</span></div>`;
-  node.querySelector("[data-ctx]").innerHTML = ctx("l", "logomark") + ctx("d", "logomark-on-dark");
-  host.appendChild(node);
-  jump.insertAdjacentHTML("beforeend", `<a href="#opt-${dir}"><img src="${dir}/favicon.svg" alt="">${name}</a>`);
-}
+// In context
+const ctx = (dark) =>
+  `<span class="tab"><img width="16" height="16" src="mark/favicon.svg" alt="">Ledgendary</span>` +
+  `<a class="side" href="#kit"><svg class="ldg-mark" data-motion="hover" viewBox="0 0 16 16" width="24" height="24" aria-hidden="true"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg>Lumen Studio</a>` +
+  `<img src="mark/${dark ? "lockup-dark" : "lockup-light"}.svg" height="32" alt="Ledgendary">`;
+document.getElementById("ctx-l").innerHTML = ctx(false);
+document.getElementById("ctx-d").innerHTML = ctx(true);
+
+// Curves
+const CURVES = [
+  ["enter", [0.16, 1, 0.3, 1], "Things arriving: a fast start and a long settle. The grey bars growing, and the hover going in."],
+  ["land", [0.34, 1.56, 0.64, 1], "Only the gold foot. It goes about 10% past its length and comes home. This is the payoff, so it's the only curve with an overshoot."],
+  ["move", [0.65, 0, 0.35, 1], "Things changing place or returning: hover out and the Paid reach."],
+  ["exit", [0.7, 0, 0.84, 0], "Things leaving: a slow start and a quick finish. Bars going back to dots."]
+];
+const X = x => 14 + x * 172, Y = y => 108 - y * 72;
+document.getElementById("curves").innerHTML = CURVES.map(([name, [a, b, c, d], use]) => {
+  const v = `cubic-bezier(${a}, ${b}, ${c}, ${d})`;
+  return `<div class="curve dark" style="--c:${v}">
+    <svg viewBox="0 0 200 124" aria-hidden="true">
+      <path d="M${X(0)} ${Y(0)}H${X(1)}M${X(0)} ${Y(1)}H${X(1)}" stroke="rgba(255,255,255,.12)" stroke-dasharray="3 3"/>
+      <path d="M${X(0)} ${Y(0)}L${X(a)} ${Y(b)}M${X(1)} ${Y(1)}L${X(c)} ${Y(d)}" stroke="rgba(255,255,255,.3)"/>
+      <circle cx="${X(a)}" cy="${Y(b)}" r="3" fill="#b0b0b7"/><circle cx="${X(c)}" cy="${Y(d)}" r="3" fill="#b0b0b7"/>
+      <path d="M${X(0)} ${Y(0)}C${X(a)} ${Y(b)} ${X(c)} ${Y(d)} ${X(1)} ${Y(1)}" fill="none" stroke="#ffc629" stroke-width="2.5" stroke-linecap="round"/>
+    </svg>
+    <div class="track"><i></i></div>
+    <h3>${name}</h3><code>${v}</code><p style="margin-top:6px">${use}</p></div>`;
+}).join("");
+const sizeTracks = () => document.querySelectorAll(".track").forEach(t => t.style.setProperty("--w", t.clientWidth + "px"));
+sizeTracks(); addEventListener("resize", sizeTracks);
+
+// Replay
+document.querySelectorAll("[data-replay]").forEach(btn => btn.addEventListener("click", () => {
+  const svg = btn.closest(".demo").querySelector(".ldg-mark");
+  const m = svg.getAttribute("data-motion");
+  svg.removeAttribute("data-motion"); void svg.getBoundingClientRect(); svg.setAttribute("data-motion", m);
+}));
 </script>
 </body>
 </html>

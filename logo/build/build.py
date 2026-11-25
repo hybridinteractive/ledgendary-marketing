@@ -43,18 +43,28 @@ def _three(top, mid, rl=0, t=6, g=2, soft=None, foot=20, x0=6):
     ]
 
 
-# The final mark. One module, the bar thickness t = 5: gaps are t/2, the
-# bars are 2t, 3t and 4t long, every end is round (radius t/2), and the
-# glyph sits 6 units from every edge of the tile. Top 3t, middle 2t, foot 4t:
-# the steps between the bar ends equal the bar thickness, so the gaps and
-# the steps come from one number.
+# The final mark, drawn on a 16-unit grid (written here in 32 units, so
+# every coordinate is even). One module: the bar thickness t = 1/8 of the
+# tile. Gaps are t/2, the bars are 3t, 2t and 4t long, every end is round,
+# and the glyph sits 2t from every edge. Each bar end steps out by one t.
+#
+# Because every edge is a whole number of 16ths of the tile, the same
+# drawing lands on whole pixels at 16, 32, 48, 64, 96, 128, 256, 512 and
+# 1024 px. 24 px is the one common size that is not a multiple of 16; it
+# gets its own drawing (GLYPH_24) instead of a blurred scale.
 OPTIONS = {
-    "mark": ("Ledgendary mark", _three(15, 10, rl=2.5, t=5, g=2.5, soft=(0.55, 0.8), foot=20)),
+    "mark": ("Ledgendary mark", _three(12, 8, rl=2, t=4, g=2, soft=(0.55, 0.8), foot=16, x0=8)),
 }
+FAVICON = OPTIONS["mark"][1]
 
-# Favicon: the same proportions redrawn so every edge lands on a whole pixel
-# at 16 px (and 32 px): t = 4, gaps 2, bars 12, 8 and 16, inset 8.
-FAVICON = _three(12, 8, rl=2, t=4, g=2, soft=(0.55, 0.8), foot=16, x0=8)
+# 24 px, drawn in pixels on a 24 tile: t = 4, gaps 2, bars 12, 8 and 16,
+# inset 4. Same bar proportions, a little larger in the tile, which is the
+# usual optical correction for a small icon.
+GLYPH_24 = [
+    (4, 4, 12, 4, ("soft", 0.55), 2),
+    (4, 10, 8, 4, ("soft", 0.8), 2),
+    (4, 16, 16, 4, "gold", 2),
+]
 
 
 # =========================================================================
@@ -238,11 +248,11 @@ def build_option(key, label, glyph):
         body = tile(s=ms, edge=edge) + "\n" + bars(glyph, ON_DARK, s=ms) + "\n" + word(wx, baseline, size, wfill)
         write(out / f"lockup-{theme}.svg", svg(w, m, body, t))
     # Tagline lockup: larger mark, wordmark plus tagline beside it
-    m2 = 72
+    m2 = 64
     ms2 = m2 / 32
-    size2 = 36
+    size2 = 32
     ws2 = size2 / _upem
-    tsize = 15
+    tsize = 14
     tsc = tsize / _upem
     txmin, tymin, txmax, tymax = TAG_B
     gap2 = 18
@@ -261,10 +271,32 @@ def build_option(key, label, glyph):
         write(out / f"lockup-tagline-{theme}.svg", svg(w2, m2, body, f"Ledgendary. {TAGLINE}"))
     # Favicon: 32 grid, no edge
     write(out / "favicon.svg", svg(32, 32, tile() + "\n" + bars(FAVICON, ON_DARK), t))
+    tile24 = '<rect width="24" height="24" rx="6" fill="#0b0b0d"/>'
+    write(out / "logomark-24.svg", svg(24, 24, tile24 + "\n" + bars(GLYPH_24, ON_DARK), t))
+
+
+def build_motion():
+    """Animated marks: motion/motion.css is the source, embedded whole."""
+    out = ROOT / "motion"
+    import re
+    css = (out / "motion.css").read_text()
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+    css = re.sub(r"\n\s*\n+", "\n", css).strip()
+    for name in ("reveal", "loader", "paid", "hover"):
+        body = (
+            f'<svg xmlns="http://www.w3.org/2000/svg" class="ldg-mark" data-motion="{name}" '
+            f'viewBox="0 0 16 16" width="128" height="128" role="img" aria-label="Ledgendary">\n'
+            f"<title>Ledgendary</title>\n<style>\n{css}\n</style>\n"
+            '<rect width="16" height="16" rx="4" fill="#0b0b0d"/>\n'
+            '<path class="ldg-t" d="M5 5H9"/>\n<path class="ldg-m" d="M5 8H7"/>\n<path class="ldg-f" d="M5 11H13"/>\n'
+            "</svg>\n"
+        )
+        write(out / f"{name}.svg", body)
 
 
 if __name__ == "__main__":
     build_wordmark()
+    build_motion()
     for key, (label, glyph) in OPTIONS.items():
         build_option(key, label, glyph)
     print("built", sorted(p.relative_to(ROOT).as_posix() for p in ROOT.rglob("*.svg")).__len__(), "files")
