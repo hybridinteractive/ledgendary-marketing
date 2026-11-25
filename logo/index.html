@@ -21,6 +21,8 @@ h2 { font-size: 1.5rem; font-weight: 750; font-stretch: 108%; letter-spacing: -.
 h3 { font-size: 1rem; font-weight: 700; margin: 0 0 4px; }
 p { margin: 0 0 10px; }
 .lede { color: var(--ink-2); max-width: 68ch; margin: 0 0 20px; }
+.hex { display: inline-flex; align-items: center; gap: 6px; padding: 0 7px 0 5px; line-height: 1.45; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--ink); white-space: nowrap; vertical-align: 1px; }
+.hex::before { content: ""; width: 12px; height: 12px; border-radius: 4px; background: var(--c); box-shadow: inset 0 0 0 1px rgba(128,128,128,.35); }
 .jump { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 40px; }
 .jump a { color: var(--ink); text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-weight: 600; font-size: .9375rem; }
 .jump a:hover { border-color: var(--ink-2); }
@@ -119,7 +121,7 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
 <body>
 <main>
   <h1>Ledgendary mark</h1>
-  <p class="lede">The LE mark is three horizontal bars. Their rounded left ends line up into the L, the long gold bottom bar is its foot, and the two gaps make the E. The tile is the app's dark-mode frame (#0b0b0d) and the accent is gold (#ffc629). The mark and the wordmark can each be used on their own.</p>
+  <p class="lede">The LE mark is three horizontal bars. Their rounded left ends line up into the L, the long gold bottom bar is its foot, and the two gaps make the E. The tile is the app's dark-mode frame <code class="hex" style="--c:#0b0b0d">#0b0b0d</code> and the accent is gold <code class="hex" style="--c:#ffc629">#ffc629</code>. The mark and the wordmark can each be used on their own.</p>
   <nav class="jump" aria-label="Sections">
     <a href="#construction">Construction</a><a href="#beats">Three beats</a><a href="#sizes">Sizes</a><a href="#motion">Motion</a><a href="#kit">Kit</a><a href="#wordmark">Wordmark</a>
   </nav>
