@@ -39,6 +39,14 @@ code, pre { font: 500 .8125rem/1.6 ui-monospace, "SF Mono", Menlo, monospace; }
 .spec { display: grid; gap: 10px; margin: 0 0 18px; padding: 0; list-style: none; }
 .spec li { display: grid; grid-template-columns: 112px 1fr; gap: 12px; }
 .spec b { font-weight: 700; }
+.swatches { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 16px 0 0; }
+.swatches div { display: grid; gap: 2px; align-content: start; font-size: .8125rem; }
+.swatches .chip { display: grid; place-items: center; height: 72px; border-radius: 12px; background: #0b0b0d; border: 1px solid var(--line); margin-bottom: 8px; }
+.swatches .chip i { width: 60%; height: 14px; border-radius: 7px; }
+.swatches b { font-size: .875rem; }
+.swatches code { font-size: .75rem; color: var(--ink-2); }
+.swatches small { color: var(--ink-2); font-size: .75rem; line-height: 1.35; }
+@media (max-width: 560px) { .swatches { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 table { width: 100%; border-collapse: collapse; font-size: .875rem; font-variant-numeric: tabular-nums; }
 th, td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--line); }
 th { color: var(--ink-2); font-weight: 600; }
@@ -90,9 +98,13 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
 .kit .pv { display: grid; place-items: center; padding: 18px; }
 .kit .pv.l { background: var(--light); }
 .kit .pv.d { background: var(--dark); }
-.kit .pv img { max-width: 100%; max-height: 72px; }
-.kit .pv img.sm { max-height: 56px; }
-.kit .pv img.wide { max-height: 44px; }
+.kit .pv img { max-width: 100%; height: auto; }
+.kit a.span2 { grid-column: span 2; }
+#kitgrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 820px) { #kitgrid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+#wordgrid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+#wordgrid a.span2 { grid-column: auto; }
+@media (max-width: 560px) { .kit a.span2 { grid-column: auto; } }
 .kit span { padding: 8px 12px; font-size: .8125rem; font-weight: 600; border-top: 1px solid var(--line); background: var(--card); }
 .kit span small { display: block; font-weight: 450; color: var(--ink-2); }
 .ctx { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
@@ -116,6 +128,7 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
     <h2>Construction</h2>
     <p class="sub">One number builds the whole mark: the module <b>t</b>, the bar thickness, which is one eighth of the tile. Every edge sits on a 16-unit grid, so the same drawing lands on whole pixels at every size that's a multiple of 16.</p>
     <div class="con">
+      <div>
       <div class="dark">
         <svg class="diagram" viewBox="-4.5 -1.5 22 19" role="img" aria-label="The mark on its 16-unit grid, with its measurements">
           <defs>
@@ -145,6 +158,13 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
           </g>
         </svg>
       </div>
+        <div class="swatches" aria-label="Colours">
+          <div><span class="chip" style="background:#0b0b0d"></span><b>Tile</b><code>#0b0b0d</code><small>The app's dark frame</small></div>
+          <div><span class="chip"><i style="background:rgba(255,255,255,.55)"></i></span><b>Top</b><code>#fff · 55%</code><small>#919192 on the tile</small></div>
+          <div><span class="chip"><i style="background:rgba(255,255,255,.8)"></i></span><b>Middle</b><code>#fff · 80%</code><small>#cececf on the tile</small></div>
+          <div><span class="chip"><i style="background:#ffc629"></i></span><b>Foot</b><code>#ffc629</code><small>Gold, 12.5 : 1 on the tile</small></div>
+        </div>
+      </div>
       <div>
         <ul class="spec">
           <li><b>Module</b><span>t = 2 units, one eighth of the tile.</span></li>
@@ -153,7 +173,6 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
           <li><b>Inset</b><span>2t from all four edges of the tile.</span></li>
           <li><b>Ends</b><span>Fully round, radius ½t.</span></li>
           <li><b>Tile</b><span>16 units square, corner radius 2t (25%).</span></li>
-          <li><b>Colour</b><span>Top white at 55%, middle white at 80%, foot gold #ffc629, tile #0b0b0d.</span></li>
         </ul>
         <table>
           <thead><tr><th>Size</th><th>Bar</th><th>Gap</th><th>Inset</th><th>Drawing</th></tr></thead>
@@ -276,7 +295,7 @@ pre { margin: 0; padding: 18px; overflow-x: auto; color: #d7d7dc; }
 const KIT = [
   ["mark/logomark", "Logomark", "App icon, social, every size that's a multiple of 16.", "l", ""],
   ["mark/logomark-on-dark", "Logomark on dark", "With a hairline edge for dark panels.", "d", ""],
-  ["mark/logomark-24", "Logomark, 24 px", "Its own drawing for 24 px.", "l", ""],
+  ["mark/logomark-24", "Logomark, 24 px", "Its own drawing for 24 px, shown at 2x.", "l", "x24"],
   ["mark/favicon", "Favicon", "16 and 32 px.", "l", ""],
   ["mark/lettermark-on-light", "Lettermark", "Letters only, on light backgrounds.", "l", "sm"],
   ["mark/lettermark-on-dark", "Lettermark on dark", "Letters only, on dark backgrounds.", "d", "sm"],
@@ -298,8 +317,14 @@ const WORD = [
   ["wordmark/tagline-ink", "Tagline", "", "l"],
   ["wordmark/tagline-white", "Tagline, white", "", "d"]
 ];
-const tile = (src, label, note, bg, cls) =>
-  `<a href="${src}.svg"><div class="pv ${bg}"><img class="${cls || "wide"}" src="${src}.svg" alt=""></div><span>${label}<small>${note || "&nbsp;"}</small></span></a>`;
+// Previews are shown at sizes where the module is a whole number of pixels:
+// 128-unit marks at 64 px, 64-unit lettermarks at 48 px, lockups at their own size.
+const PX = { "": 64, sm: 48, x24: 48 };
+const tile = (src, label, note, bg, cls) => {
+  const wide = cls === "wide" || !(cls in PX);
+  const size = wide ? "" : `width="${PX[cls]}" height="${PX[cls]}"`;
+  return `<a href="${src}.svg"${wide ? ' class="span2"' : ""}><div class="pv ${bg}"><img ${size} src="${src}.svg" alt=""></div><span>${label}<small>${note || "&nbsp;"}</small></span></a>`;
+};
 document.getElementById("kitgrid").innerHTML = KIT.map(k => tile(...k)).join("");
 document.getElementById("wordgrid").innerHTML = WORD.map(k => tile(...k)).join("");
 
@@ -312,7 +337,7 @@ document.getElementById("ramps").innerHTML = ramp(false) + ramp(true);
 // In context
 const ctx = (dark) =>
   `<span class="tab"><img width="16" height="16" src="mark/favicon.svg" alt="">Ledgendary</span>` +
-  `<a class="side" href="#kit"><svg class="ldg-mark" data-motion="hover" viewBox="0 0 16 16" width="24" height="24" aria-hidden="true"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg>Lumen Studio</a>` +
+  `<a class="side" href="#kit"><svg class="ldg-mark" data-motion="hover" viewBox="0 0 16 16" width="32" height="32" aria-hidden="true"><rect width="16" height="16" rx="4" fill="#0b0b0d"/><path class="ldg-t" d="M5 5H9"/><path class="ldg-m" d="M5 8H7"/><path class="ldg-f" d="M5 11H13"/></svg>Lumen Studio</a>` +
   `<img src="mark/${dark ? "lockup-dark" : "lockup-light"}.svg" height="32" alt="Ledgendary">`;
 document.getElementById("ctx-l").innerHTML = ctx(false);
 document.getElementById("ctx-d").innerHTML = ctx(true);
