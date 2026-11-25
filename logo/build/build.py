@@ -25,7 +25,7 @@ WHITE = "#ffffff"
 EDGE = "rgba(255,255,255,0.1)"
 
 WORDMARK = "Ledgendary"
-TAGLINE = "From proposal to… wait for it… paid."
+TAGLINE = "From proposal to … wait for it … paid."
 
 # Glyphs on a 32-unit tile: three horizontal bars and nothing else.
 # (x, y, w, h, role, left_radius). Roles: main, ("soft", opacity), gold.
@@ -86,8 +86,12 @@ def _sfnt_bytes():
 _SFNT = _sfnt_bytes()
 
 
-def outline(text, location, tracking_em=0.0):
-    """Return (path_d, bounds) for text at 1 unit per font unit, baseline y=0, y down."""
+def outline(text, location, tracking_em=0.0, accent=""):
+    """Return (path_d, bounds, accent_d) for text at 1 unit per font unit, baseline y=0, y down.
+
+    Glyphs of characters in `accent` are drawn into accent_d instead of path_d,
+    so they can take their own colour.
+    """
     face = hb.Face(hb.Blob(_SFNT))
     font = hb.Font(face)
     font.set_variations(location)
@@ -98,24 +102,29 @@ def outline(text, location, tracking_em=0.0):
     glyphset = _font.getGlyphSet(location=location)
     order = _font.getGlyphOrder()
     pen = SVGPathPen(glyphset)
+    apen = SVGPathPen(glyphset)
     bpen = BoundsPen(glyphset)
     x = 0
     n = len(buf.glyph_infos)
     for i, (info, pos) in enumerate(zip(buf.glyph_infos, buf.glyph_positions)):
         name = order[info.codepoint]
         t = (1, 0, 0, -1, x + pos.x_offset, -pos.y_offset)
-        glyphset[name].draw(TransformPen(pen, t))
+        target = apen if text[info.cluster] in accent else pen
+        glyphset[name].draw(TransformPen(target, t))
         glyphset[name].draw(TransformPen(bpen, t))
         x += pos.x_advance
         if i < n - 1:
             x += tracking_em * _upem
-    return pen.getCommands(), bpen.bounds  # (xmin, ymin, xmax, ymax), y down
+    return pen.getCommands(), bpen.bounds, apen.getCommands()  # bounds: (xmin, ymin, xmax, ymax), y down
 
 
 WORD_LOC = {"wght": 800, "wdth": 116, "opsz": 32}
 TAG_LOC = {"wght": 520, "wdth": 100, "opsz": 16}
-WORD_D, WORD_B = outline(WORDMARK, WORD_LOC, -0.03)
-TAG_D, TAG_B = outline(TAGLINE, TAG_LOC, -0.005)
+WORD_D, WORD_B, _ = outline(WORDMARK, WORD_LOC, -0.03)
+# The ellipses stand apart from the words (a space on each side) and are
+# their own path: gold on dark, where gold measures 11 to 12.5 to 1, and the
+# tagline's own colour on light, where gold measures 1.5 to 1 and would fail.
+TAG_D, TAG_B, TAG_ACC = outline(TAGLINE, TAG_LOC, -0.005, accent="…")
 
 
 # =========================================================================
@@ -204,8 +213,9 @@ def build_wordmark():
     txmin, tymin, txmax, tymax = TAG_B
     ts = 24 / _upem
     tw, th = (txmax - txmin) * ts, (tymax - tymin) * ts
-    for name, fill in (("tagline-ink", TILE), ("tagline-white", WHITE)):
-        body = word(-txmin * ts, -tymin * ts, 24, fill, TAG_D)
+    for name, fill, acc in (("tagline-ink", TILE, TILE), ("tagline-white", WHITE, GOLD)):
+        body = (word(-txmin * ts, -tymin * ts, 24, fill, TAG_D) + "\n"
+                + word(-txmin * ts, -tymin * ts, 24, acc, TAG_ACC))
         write(out / f"{name}.svg", svg(tw, th, body, TAGLINE))
 
 
@@ -264,10 +274,12 @@ def build_option(key, label, glyph):
     tb = wb + 12 + _cap * tsc
     x0 = m2 + gap2
     w2 = x0 + max(word_w2, tag_w)
-    for theme, wfill, tfill, edge in (("light", TILE, "#565b68", False), ("dark", WHITE, "#b0b0b7", True)):
+    for theme, wfill, tfill, afill, edge in (("light", TILE, "#565b68", "#565b68", False),
+                                             ("dark", WHITE, "#b0b0b7", GOLD, True)):
         body = (tile(s=ms2, edge=edge) + "\n" + bars(glyph, ON_DARK, s=ms2) + "\n"
                 + word(x0 - xmin * ws2, wb, size2, wfill) + "\n"
-                + word(x0 - txmin * tsc, tb, tsize, tfill, TAG_D))
+                + word(x0 - txmin * tsc, tb, tsize, tfill, TAG_D) + "\n"
+                + word(x0 - txmin * tsc, tb, tsize, afill, TAG_ACC))
         write(out / f"lockup-tagline-{theme}.svg", svg(w2, m2, body, f"Ledgendary. {TAGLINE}"))
     # Favicon: 32 grid, no edge
     write(out / "favicon.svg", svg(32, 32, tile() + "\n" + bars(FAVICON, ON_DARK), t))
